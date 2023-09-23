@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.States;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure
 {
-    public class GameStateMachine
+    public class GameStateMachine : IService
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(LoadingCurtain curtain)
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services)
         {
             _states = new Dictionary<Type, IExitableState>
             {
