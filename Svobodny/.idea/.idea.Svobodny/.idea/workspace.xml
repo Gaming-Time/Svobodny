@@ -4,47 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/ICoroutineRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/ICoroutineRunner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Level.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Level.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/SceneLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/SceneLoader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/AssetProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/AssetProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/IAssets.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/IAssets.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/IStaticDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/IStaticDataService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Level.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Level/LevelStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Level/LevelStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/EnemySpawnerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/EnemySpawnerData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterTypeID.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterTypeID.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcSpawnerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcSpawnerData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcTypeId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Npc/NpcTypeId.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/StaticDataService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/StaticDataService.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +17,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2Vn8dC9SHgRAifGl7Mu0gYHIjHb" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -67,26 +29,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "mikhail/loading-and-resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mikhail/loading-and-resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.4f1\Editor\Unity.exe" />
@@ -133,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695460574179</updated>
-      <workItem from="1695460574181" duration="7313000" />
+      <workItem from="1695460574181" duration="7405000" />
+      <workItem from="1695741383341" duration="979000" />
     </task>
     <servers />
   </component>
@@ -145,5 +108,7 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
   </component>
 </project>
