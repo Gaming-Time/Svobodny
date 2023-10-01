@@ -9,6 +9,11 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Npc = "Static Data/ NPCs";
         }
 
-        
+        public static string TestEnemyPath = "Enemies/TestEnemy";
+        public static string TestNpcPath = "Npcs/TestNpc";
+        public static string CharacterPath = "Character/Character";
+        public static string EnemySpawnerPath = "Enemies/Enemy Spawner";
+        public static string NpcSpawnerPath = "Npcs/Npc Spawner";
+
     }
 }

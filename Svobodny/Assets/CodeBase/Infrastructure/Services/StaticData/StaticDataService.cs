@@ -17,7 +17,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
         public void LoadStaticData()
         {
             _levels = Resources.LoadAll<LevelStaticData>(AssetPath.StaticDataPath.Level)
-                .ToDictionary(name => name.name, data => data);
+                .ToDictionary(name => name.LevelKey, data => data);
             _monsters = Resources.LoadAll<MonsterStaticData>(AssetPath.StaticDataPath.Monster)
                 .ToDictionary(monsterData => monsterData.TypeID, monsterData => monsterData);
             _npcs = Resources.LoadAll<NpcStaticData>(AssetPath.StaticDataPath.Npc)

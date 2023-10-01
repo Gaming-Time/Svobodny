@@ -11,7 +11,12 @@ namespace CodeBase.Infrastructure.Services.StaticData.Level
         public string LevelKey;
         public List<EnemySpawnerData> EnemySpawners;
         public List<NpcSpawnerData> NpcSpawners;
-        public Transform DayPlayerTransform;
-        public Transform NightPlayerTrabsform;
+        
+        public Vector3 DayPlayerPosition;
+        public Quaternion DayPlayerRotation;
+        public Vector3 NightPlayerPosition;
+        public Quaternion NightPlayerRotation;
+
+        public LevelPhase initialPhase;
     }
 }
