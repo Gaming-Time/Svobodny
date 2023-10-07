@@ -40,6 +40,9 @@ namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
             characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
 
+            var mainCamera = Object.FindObjectOfType<Camera>();
+            character.GetComponent<PlayerTransparency>().Construct(mainCamera);
+
             return character;
 
         }

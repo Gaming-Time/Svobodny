@@ -67,8 +67,7 @@ namespace CodeBase.Infrastructure.States
             }
 
             var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
-            _gameFactory.InitCamera(character);
-            
+            _gameFactory.InitCamera(character); 
         }
 
         private void CreateEnemySpawners()

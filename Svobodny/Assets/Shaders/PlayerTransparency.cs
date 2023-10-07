@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTransparency : MonoBehaviour
@@ -9,6 +7,11 @@ public class PlayerTransparency : MonoBehaviour
     public Camera Camera;
     public static int PosId = Shader.PropertyToID("_PlayerPos");
     public static int SizeId = Shader.PropertyToID("_Size");
+
+    public void Construct(Camera camera)
+    {
+        Camera = camera;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +29,13 @@ public class PlayerTransparency : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(ray, out hit);
             Material = hit.collider.gameObject.GetComponent<Renderer>().material;
-            Material.SetFloat(SizeId, 1);
+            Material?.SetFloat(SizeId, 1);
         }
         else
         {
-            Material.SetFloat(SizeId, 0);
+            Material?.SetFloat(SizeId, 0);
         }
         var view = Camera.WorldToViewportPoint(transform.position);//Получение координат
-        Material.SetVector(PosId, view);
+        Material?.SetVector(PosId, view);
     }
 }

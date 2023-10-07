@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 572308972796664977}
   - component: {fileID: 8238671076012100340}
   - component: {fileID: 6941393606272124328}
+  - component: {fileID: 7297714240853265509}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -148,3 +149,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 0
   sneakSpeed: 0
+--- !u!114 &7297714240853265509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438274420124515833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a8936f35cd9664ebe909df0ccb710b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 0}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  Camera: {fileID: 0}
