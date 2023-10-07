@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.09
+    m_Value: -0.42
   contrast:
     m_OverrideState: 0
     m_Value: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
@@ -177,10 +177,10 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.828
+    m_Value: 0.68
   response:
     m_OverrideState: 1
     m_Value: 0.72
@@ -202,7 +202,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 0
     m_Value: 10
