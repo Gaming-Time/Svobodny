@@ -6,7 +6,8 @@ namespace CodeBase.Infrastructure.Helpers
         {
             public const string Level = "Static Data/Levels";
             public const string Monster = "Static Data/Monsters";
-            public const string Npc = "Static Data/ NPCs";
+            public const string Npc = "Static Data/NPCs";
+            public const string Character = "Static Data/Character/CharacterData";
         }
 
         public static string TestEnemyPath = "Enemies/TestEnemy";

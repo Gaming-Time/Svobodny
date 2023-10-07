@@ -2,6 +2,10 @@
 using Assets.CodeBase.Infrastructure.Logic.Npcs;
 using Assets.CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using Assets.CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using Assets.CodeBase.Infrastructure.Services.Input;
+using Assets.CodeBase.Infrastructure.Services.StaticData.Character;
+using Assets.CodeBase.Modules.Character;
+using Cinemachine;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
@@ -16,20 +20,28 @@ namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
         private IAssets _assetProvider;
         private IEnemyFactory _enemyFactory;
         private INpcFactory _npcFactory;
+        private IInputService _inputService;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
 
-        public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory)
+        public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory, IInputService inputService)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
             _npcFactory = npcFactory;
+            _inputService = inputService;
         }
 
-        public GameObject CreateCharacter(Vector3 position, Quaternion rotation)
+        public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
         {
-            return _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
+            var character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
+            var characterMove = character.GetComponent<CharacterMove>();
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
+            characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
+
+            return character;
+
         }
 
         public void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID)
@@ -44,6 +56,12 @@ namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
             NpcSpawner spawner = _assetProvider.Instantiate(AssetPath.NpcSpawnerPath, position,rotation).GetComponent<NpcSpawner>();
             spawner.Construct(_npcFactory);
             _npcSpawners.Add(spawnerId,spawner);
+        }
+
+        public void InitCamera(GameObject character)
+        {
+            var camera = Object.FindObjectOfType<CinemachineVirtualCamera>();
+            camera.Follow = character.transform;
         }
 
         public void SpawnAllMonsters()
