@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b421c07ef64363822580d5eb11e030, type: 3}
+  m_Name: Test Character Controller
+  m_EditorClassIdentifier: 
+  LevelKey: Character Controller
+  EnemySpawners: []
+  NpcSpawners: []
+  DayPlayerPosition: {x: -3.1463249, y: 0.506, z: -2.0177608}
+  DayPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  NightPlayerPosition: {x: -2.535, y: 0.506, z: -1.864}
+  NightPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  initialPhase: 0

@@ -1,6 +1,7 @@
 using CodeBase.Data;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.Editor
 {
@@ -18,7 +19,7 @@ namespace CodeBase.Editor
         {
             const string ProgressKey = "Progress";
             PlayerPrefs.DeleteKey(ProgressKey);
-            var progress = new PlayerProgress();
+            var progress = new PlayerProgress(SceneManager.GetActiveScene().name);
             
             PlayerPrefs.SetString(ProgressKey, JsonUtility.ToJson(progress));
             PlayerPrefs.Save();

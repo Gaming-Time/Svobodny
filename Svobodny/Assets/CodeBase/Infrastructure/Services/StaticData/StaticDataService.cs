@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Assets.CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.StaticData.Level;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
@@ -13,6 +14,9 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<string, LevelStaticData> _levels;
         private Dictionary<MonsterTypeID, MonsterStaticData> _monsters;
         private Dictionary<NpcTypeId, NpcStaticData> _npcs;
+        private CharacterStaticData _character;
+
+
 
         public void LoadStaticData()
         {
@@ -22,6 +26,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(monsterData => monsterData.TypeID, monsterData => monsterData);
             _npcs = Resources.LoadAll<NpcStaticData>(AssetPath.StaticDataPath.Npc)
                 .ToDictionary(npcData => npcData.TypeId, npcData => npcData);
+            _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
         public MonsterStaticData ForMonster(MonsterTypeID typeID) =>
@@ -32,5 +37,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
 
         public LevelStaticData ForLevel(string scene) =>
             _levels.TryGetValue(scene, out var staticData) ? staticData : null;
+
+        public CharacterStaticData ForCharacter() => _character ?? null;
     }
 }

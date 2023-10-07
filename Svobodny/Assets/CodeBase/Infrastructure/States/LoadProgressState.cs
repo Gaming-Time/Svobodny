@@ -1,4 +1,9 @@
-﻿using CodeBase.Infrastructure.Services.StaticData;
+﻿using Assets.CodeBase.Infrastructure.Services.Progress;
+using Assets.CodeBase.Logic;
+using CodeBase.Data;
+using CodeBase.Infrastructure.Services.StaticData;
+using System;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -6,11 +11,13 @@ namespace CodeBase.Infrastructure.States
     {
         private readonly GameStateMachine _gameStateMachine;
         private readonly IStaticDataService _staticDataService;
+        private readonly IProgressService _progressService;
 
-        public LoadProgressState(GameStateMachine gameStateMachine, IStaticDataService staticDataService)
+        public LoadProgressState(GameStateMachine gameStateMachine, IStaticDataService staticDataService, IProgressService progressService)
         {
             _gameStateMachine = gameStateMachine;
             _staticDataService = staticDataService;
+            _progressService = progressService;
         }
 
         public void Exit()
@@ -20,7 +27,20 @@ namespace CodeBase.Infrastructure.States
 
         public void Enter()
         {
-            _gameStateMachine.Enter<LoadLevelState, string>("Level1");
+            LoadProgress();
+            _gameStateMachine.Enter<LoadLevelState, string>(_progressService.Progress.LevelName);
+        }
+
+        private void LoadProgress()
+        {
+            _progressService.Progress = PlayerPrefs.GetString("Progress")?.ToDeserialized<PlayerProgress>() ?? NewProgress();
+        }
+
+        private PlayerProgress NewProgress()
+        {
+            PlayerProgress progress = new PlayerProgress("Level1");
+
+            return progress;
         }
     }
 }
