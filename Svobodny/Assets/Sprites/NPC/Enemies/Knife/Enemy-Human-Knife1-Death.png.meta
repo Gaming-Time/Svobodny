@@ -108,7 +108,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 41.81818
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f19cfe2a4c268740928b659f48953ac
+      internalID: -1901186288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 41.81818
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582b3b4f6e5864845822c447d3e14ae0
+      internalID: -1256090021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 41.81818
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9133e663cfaad4a90b82f43b17b61f
+      internalID: -374191514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 41.81818
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc33ff90bc986884da08b72656b2a890
+      internalID: -958236640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 41.81818
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ebd81af57bf854dbaf1448faa4fb82
+      internalID: -170326870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_5
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 42
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfeb47a5295e2349860e605bc940f73
+      internalID: -1191736166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_6
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012faf45662cfb5418db9171b9134f4a
+      internalID: 1677505192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_7
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 42
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5a89a8b0445034aa1aa52bd7f3c3e9
+      internalID: -1598396740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_8
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 42
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167ccced100ce6c4f92edb35effcd6ee
+      internalID: 1098441209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 0
+        width: 42
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55f485cea2279f4a93eb0d46334efc3
+      internalID: 1244904604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Death_10
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 42
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30fe54ef86b09542a7114daf5d35ec7
+      internalID: -1599041069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +350,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemy-Human-Knife1-Death_0: -1901186288
+      Enemy-Human-Knife1-Death_1: -1256090021
+      Enemy-Human-Knife1-Death_10: -1599041069
+      Enemy-Human-Knife1-Death_2: -374191514
+      Enemy-Human-Knife1-Death_3: -958236640
+      Enemy-Human-Knife1-Death_4: -170326870
+      Enemy-Human-Knife1-Death_5: -1191736166
+      Enemy-Human-Knife1-Death_6: 1677505192
+      Enemy-Human-Knife1-Death_7: -1598396740
+      Enemy-Human-Knife1-Death_8: 1098441209
+      Enemy-Human-Knife1-Death_9: 1244904604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
