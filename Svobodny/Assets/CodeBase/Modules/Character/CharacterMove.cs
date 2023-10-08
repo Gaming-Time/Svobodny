@@ -24,16 +24,12 @@ namespace Assets.CodeBase.Modules.Character
             (this.walkSpeed, this.sneakSpeed) = (walkSpeed, sneakSpeed);
         }
 
-        // Use this for initialization
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
         void Update()
         {
-            Vector3 move = new(_inputService.MovementInput.x, 0, _inputService.MovementInput.y);
+            var inputNormalized = _inputService.MovementInput.normalized;
+            Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
+
             move *= _inputService.IsSneakButtonDown() ? sneakSpeed : walkSpeed;
 
             _characterController.SimpleMove(move);
