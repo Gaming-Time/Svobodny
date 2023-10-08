@@ -15,6 +15,7 @@ public class FOV : MonoBehaviour {
 	public List<Transform> visibleTargets = new List<Transform>();
 	public int edgeResolveIterations;
 	public float edgeDstThreshold;
+	public float maskDistance = 0f;
 
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
@@ -82,7 +83,7 @@ public class FOV : MonoBehaviour {
         vertices[0]=Vector3.zero;
 
         for (int i = 0; i < vertexCount - 1; i++) {
-			vertices [i + 1] = transform.InverseTransformPoint(viewPoints [i]);
+			vertices [i + 1] = transform.InverseTransformPoint(viewPoints [i]) + Vector3.forward * maskDistance;
 
 			if (i < vertexCount - 2) {
 				triangles [i * 3] = 0;

@@ -275,4 +275,5 @@ MonoBehaviour:
   visibleTargets: []
   edgeResolveIterations: 0
   edgeDstThreshold: 0.5
+  maskDistance: 0
   viewMeshFilter: {fileID: 7011216880853603181}
