@@ -6,8 +6,8 @@ namespace Assets.CodeBase.Infrastructure.Services.Input
     {
         private const string HorizontalAxis = "Horizontal";
         private const string VerticalAxis = "Vertical";
-        private const string CameraVerticalAxis = "MouseY";
-        private const string CameraHorizontalAxis = "MouseX";
+        private const string CameraVerticalAxis = "Mouse Y";
+        private const string CameraHorizontalAxis = "Mouse X";
         private const string SneakButton = "Sneak";
 
         public abstract Vector2 MovementInput { get; }
