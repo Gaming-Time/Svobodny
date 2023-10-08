@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8238671076012100340}
   - component: {fileID: 6941393606272124328}
   - component: {fileID: 7297714240853265509}
+  - component: {fileID: 3382470346788906744}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -166,3 +167,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   Camera: {fileID: 0}
+--- !u!114 &3382470346788906744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438274420124515833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c3708086ef8a746aed4478abbe9dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 10.04
+  viewAngle: 154
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 55
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  meshResolution: 1.31
+  visibleTargets: []
+  viewMeshFilter: {fileID: 0}
