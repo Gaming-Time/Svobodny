@@ -46,9 +46,6 @@
             "m_Id": "fcacef0ee7434d658978677326f925fc"
         },
         {
-            "m_Id": "18cf65bc8aa24936b5400f2ebca24d82"
-        },
-        {
             "m_Id": "4862bc56d04742b2a5621f1b1b02cb98"
         },
         {
@@ -137,6 +134,9 @@
         },
         {
             "m_Id": "005b23b1fedb4f3482af9ace43942980"
+        },
+        {
+            "m_Id": "d21e8eef68b840a6a2338a2a2d856de8"
         }
     ],
     "m_GroupDatas": [
@@ -572,9 +572,6 @@
                 "m_Id": "fcacef0ee7434d658978677326f925fc"
             },
             {
-                "m_Id": "18cf65bc8aa24936b5400f2ebca24d82"
-            },
-            {
                 "m_Id": "8f544e05131a4ae9b1e4effb748753d7"
             },
             {
@@ -588,6 +585,9 @@
             },
             {
                 "m_Id": "200a0dfdc9b24e6ba1a29141df4bc16d"
+            },
+            {
+                "m_Id": "d21e8eef68b840a6a2338a2a2d856de8"
             }
         ]
     },
@@ -1026,40 +1026,6 @@
             "m_Id": "2edc9f7e162a452884c0461eebe3cfa5"
         }
     ]
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "18cf65bc8aa24936b5400f2ebca24d82",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.AlphaClipThreshold",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "9117d5afdbc54bc3a98e56b8326f7b39"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
 }
 
 {
@@ -1624,6 +1590,21 @@
         "x": -2365.999755859375,
         "y": 191.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "3d6d838ef4a84d829492cd5bad28f377",
+    "m_Id": 0,
+    "m_DisplayName": "Alpha Clip Threshold",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "AlphaClipThreshold",
+    "m_StageCapability": 2,
+    "m_Value": 0.5,
+    "m_DefaultValue": 0.5,
+    "m_Labels": []
 }
 
 {
@@ -2787,21 +2768,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "9117d5afdbc54bc3a98e56b8326f7b39",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha Clip Threshold",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "AlphaClipThreshold",
-    "m_StageCapability": 2,
-    "m_Value": 0.5,
-    "m_DefaultValue": 0.5,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "97e74f3e08f0460d879e748ac620f599",
     "m_Title": "Размер ореола",
@@ -3723,6 +3689,40 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "d21e8eef68b840a6a2338a2a2d856de8",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.AlphaClipThreshold",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "3d6d838ef4a84d829492cd5bad28f377"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "d516d8796e4a46a39cdad27efc210ab9",
     "m_Group": {
         "m_Id": ""
@@ -3927,7 +3927,7 @@
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
     "m_ZTestMode": 4,
-    "m_ZWriteControl": 0,
+    "m_ZWriteControl": 1,
     "m_AlphaMode": 0,
     "m_RenderFace": 2,
     "m_AlphaClip": true,
