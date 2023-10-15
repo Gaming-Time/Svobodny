@@ -2220,7 +2220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169218291}
   - component: {fileID: 169218290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4587,7 +4587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289329835}
   - component: {fileID: 289329834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6448,7 +6448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426223993}
   - component: {fileID: 426223992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9527,7 +9527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600617780}
   - component: {fileID: 600617779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10214,7 +10214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634405387}
   - component: {fileID: 634405386}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: DoorBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11664,7 +11664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737236783}
   - component: {fileID: 737236782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18400,7 +18400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 948885878}
   - component: {fileID: 948885877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23407,7 +23407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203232298}
   - component: {fileID: 1203232299}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: DoorBottom (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24078,7 +24078,7 @@ Transform:
   m_GameObject: {fileID: 1229825629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3054128, y: 0.7812201, z: -4.094}
+  m_LocalPosition: {x: -2.3054128, y: 0.7812201, z: -4.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27664,7 +27664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598219185}
   - component: {fileID: 1598219184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28734,7 +28734,7 @@ Transform:
   m_GameObject: {fileID: 1684596396}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.252537, y: 0.002, z: -4.565}
+  m_LocalPosition: {x: 9.252537, y: 0.01, z: -4.565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29447,7 +29447,7 @@ Transform:
   m_GameObject: {fileID: 1781755953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7035222, y: 1.053, z: -4.133}
+  m_LocalPosition: {x: 3.7035222, y: 1.053, z: -3.998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29547,7 +29547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809539969}
   - component: {fileID: 1809539968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorBottom (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
