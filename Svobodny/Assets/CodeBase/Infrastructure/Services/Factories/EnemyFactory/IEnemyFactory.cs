@@ -1,8 +1,7 @@
-﻿using CodeBase.Infrastructure.Services;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
+﻿using CodeBase.Infrastructure.Services.StaticData.Monster;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Services.Factories.EnemyFactory
+namespace CodeBase.Infrastructure.Services.Factories.EnemyFactory
 {
     public interface IEnemyFactory : IService  
     {

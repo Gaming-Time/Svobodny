@@ -1,8 +1,8 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Factories.NpcFactory;
+﻿using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Logic.Npcs
+namespace CodeBase.Infrastructure.Logic.Npcs
 {
     public class NpcSpawner : MonoBehaviour
     {

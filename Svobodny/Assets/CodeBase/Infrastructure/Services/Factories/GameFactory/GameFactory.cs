@@ -1,32 +1,34 @@
-﻿using Assets.CodeBase.Infrastructure.Logic.Enemies;
-using Assets.CodeBase.Infrastructure.Logic.Npcs;
-using Assets.CodeBase.Infrastructure.Services.Factories.EnemyFactory;
-using Assets.CodeBase.Infrastructure.Services.Factories.NpcFactory;
-using Assets.CodeBase.Infrastructure.Services.Input;
-using Assets.CodeBase.Infrastructure.Services.StaticData.Character;
-using Assets.CodeBase.Modules.Character;
-using Assets.CodeBase.Modules.Character.Animation;
+﻿using System.Collections.Generic;
 using Cinemachine;
 using CodeBase.Infrastructure.Helpers;
+using CodeBase.Infrastructure.Logic.Enemies;
+using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Services.AssetProvider;
+using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
+using CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
-using System.Collections.Generic;
+using CodeBase.Modules.Character;
+using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.FOV;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
+namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 {
     public class GameFactory : IGameFactory
     {
-        private IAssets _assetProvider;
-        private IEnemyFactory _enemyFactory;
-        private INpcFactory _npcFactory;
-        private IInputService _inputService;
+        private readonly IAssets _assetProvider;
+        private readonly IEnemyFactory _enemyFactory;
+        private readonly INpcFactory _npcFactory;
+        private readonly IInputService _inputService;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
 
-        public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory, IInputService inputService)
+        public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
+            IInputService inputService)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
@@ -37,26 +39,35 @@ namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
         {
             var character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
+            var camera = Object.FindObjectOfType<Camera>();
             InitMovement(staticData, character);
             InitAnimations(staticData, character);
-            InitTransparency(character);
+            InitTransparency(character, camera);
+            InitFov(character, camera, _inputService);
 
             return character;
+        }
 
+        private void InitFov(GameObject character, Camera camera, IInputService inputService)
+        {
+            var moveWithMouseScript = character.GetComponentInChildren<RotateWithMouse>();
+            moveWithMouseScript.Construct(camera, inputService);
         }
 
         public void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID)
         {
-            EnemySpawner spawner = _assetProvider.Instantiate(AssetPath.EnemySpawnerPath, position, rotation).GetComponent<EnemySpawner>();
+            EnemySpawner spawner = _assetProvider.Instantiate(AssetPath.EnemySpawnerPath, position, rotation)
+                .GetComponent<EnemySpawner>();
             spawner.Construct(_enemyFactory);
-            _enemySpawners.Add(spawnerID,spawner);
+            _enemySpawners.Add(spawnerID, spawner);
         }
 
         public void CreateNpcSpawner(Vector3 position, Quaternion rotation, string spawnerId, NpcTypeId typeID)
         {
-            NpcSpawner spawner = _assetProvider.Instantiate(AssetPath.NpcSpawnerPath, position,rotation).GetComponent<NpcSpawner>();
+            NpcSpawner spawner = _assetProvider.Instantiate(AssetPath.NpcSpawnerPath, position, rotation)
+                .GetComponent<NpcSpawner>();
             spawner.Construct(_npcFactory);
-            _npcSpawners.Add(spawnerId,spawner);
+            _npcSpawners.Add(spawnerId, spawner);
         }
 
         public void InitCamera(GameObject character)
@@ -75,22 +86,20 @@ namespace Assets.CodeBase.Infrastructure.Services.Factories.GameFactory
 
         public void SpawnAllNpcs()
         {
-            foreach(var spawner in _npcSpawners)
+            foreach (var spawner in _npcSpawners)
             {
                 spawner.Value.Spawn();
             }
         }
 
-        private static void InitTransparency(GameObject character)
-        {
-            var mainCamera = Object.FindObjectOfType<Camera>();
-            character.GetComponent<PlayerTransparency>().Construct(mainCamera);
-        }
+        private static void InitTransparency(GameObject character, Camera camera) =>
+            character.GetComponent<PlayerTransparency>().Construct(camera);
 
         private void InitAnimations(CharacterStaticData staticData, GameObject character)
         {
             var characterAnimationController = character.GetComponent<CharacterAnimatorController>();
-            characterAnimationController.Contsruct(_inputService, character.GetComponent<Animator>(), staticData.WalkSpeed, staticData.SneakSpeed);
+            characterAnimationController.Contsruct(_inputService, character.GetComponent<Animator>(),
+                staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
         private void InitMovement(CharacterStaticData staticData, GameObject character)

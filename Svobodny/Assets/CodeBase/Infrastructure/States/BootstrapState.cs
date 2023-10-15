@@ -1,10 +1,10 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Factories.EnemyFactory;
-using Assets.CodeBase.Infrastructure.Services.Factories.GameFactory;
-using Assets.CodeBase.Infrastructure.Services.Factories.NpcFactory;
-using Assets.CodeBase.Infrastructure.Services.Input;
-using Assets.CodeBase.Infrastructure.Services.Progress;
-using CodeBase.Infrastructure.Services;
+﻿using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.AssetProvider;
+using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
+using CodeBase.Infrastructure.Services.Factories.GameFactory;
+using CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.StaticData;
 
 namespace CodeBase.Infrastructure.States

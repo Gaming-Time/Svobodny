@@ -1,7 +1,7 @@
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using UnityEngine;
 
-namespace CodeBase.Editor
+namespace CodeBase.Logic
 {
     public class NPCSpawnMarker : MonoBehaviour
     {

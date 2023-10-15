@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CodeBase.Logic
+namespace CodeBase.Logic
 {
     public static class DataExtensions
     {

@@ -1,5 +1,8 @@
-﻿public enum LevelPhase
+﻿namespace CodeBase.Infrastructure.Services.StaticData.Level
 {
-    Day,
-    Night
+    public enum LevelPhase
+    {
+        Day,
+        Night
+    }
 }
