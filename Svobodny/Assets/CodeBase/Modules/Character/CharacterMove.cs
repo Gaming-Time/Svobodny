@@ -1,7 +1,7 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Input;
+﻿using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
 
-namespace Assets.CodeBase.Modules.Character
+namespace CodeBase.Modules.Character
 {
     public class CharacterMove : MonoBehaviour
     {

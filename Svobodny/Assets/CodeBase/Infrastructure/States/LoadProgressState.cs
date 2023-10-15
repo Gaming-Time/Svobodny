@@ -1,8 +1,8 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Progress;
-using Assets.CodeBase.Logic;
-using CodeBase.Data;
+﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Services.StaticData;
 using System;
+using CodeBase.Infrastructure.Services.Progress;
+using CodeBase.Logic;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.States

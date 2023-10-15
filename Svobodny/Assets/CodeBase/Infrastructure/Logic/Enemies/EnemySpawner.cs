@@ -1,9 +1,8 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Factories.EnemyFactory;
+﻿using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
-using System.Collections;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Logic.Enemies
+namespace CodeBase.Infrastructure.Logic.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {

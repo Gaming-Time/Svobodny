@@ -1,8 +1,7 @@
-﻿using Assets.CodeBase.Infrastructure.Services.Input;
-using System.Collections;
+﻿using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
 
-namespace Assets.CodeBase.Modules.Character.Animation
+namespace CodeBase.Modules.Character.Animation
 {
     public class CharacterAnimatorController : MonoBehaviour
     {

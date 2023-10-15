@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Assets.CodeBase.Infrastructure.Services.Progress;
-using Assets.CodeBase.Infrastructure.States;
 using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.Factories.GameFactory;
+using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.States;
 

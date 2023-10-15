@@ -1,15 +1,17 @@
-using Assets.CodeBase.Infrastructure.Services.StaticData.Character;
-using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using UnityEngine;
 
-public interface IGameFactory : IService
+namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 {
-    GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData);
-    void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID);
-    void CreateNpcSpawner(Vector3 position, Quaternion rotation, string spawnerId, NpcTypeId typeID);
-    void SpawnAllMonsters();
-    void SpawnAllNpcs();
-    void InitCamera(GameObject character);
+    public interface IGameFactory : IService
+    {
+        GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData);
+        void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID);
+        void CreateNpcSpawner(Vector3 position, Quaternion rotation, string spawnerId, NpcTypeId typeID);
+        void SpawnAllMonsters();
+        void SpawnAllNpcs();
+        void InitCamera(GameObject character);
+    }
 }

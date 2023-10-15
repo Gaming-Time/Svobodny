@@ -1,6 +1,4 @@
-﻿using CodeBase.Infrastructure.States;
-
-namespace Assets.CodeBase.Infrastructure.States
+﻿namespace CodeBase.Infrastructure.States
 {
     internal class GameLoopState : IState
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CodeBase.Modules.Character.Animation
+namespace CodeBase.Modules.Character.Animation
 {
     public static class CharacterAnimatorVariables
     {

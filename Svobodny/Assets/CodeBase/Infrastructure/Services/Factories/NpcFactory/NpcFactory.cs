@@ -1,10 +1,10 @@
-﻿using CodeBase.Infrastructure.Helpers;
+﻿using System;
+using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
-using System;
 using UnityEngine;
 
-namespace Assets.CodeBase.Infrastructure.Services.Factories.NpcFactory
+namespace CodeBase.Infrastructure.Services.Factories.NpcFactory
 {
     public class NpcFactory : INpcFactory
     {

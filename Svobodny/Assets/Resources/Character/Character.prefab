@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 678612021126133487}
   - component: {fileID: 8407585183439816932}
   - component: {fileID: 764110257600003438}
+  - component: {fileID: 3492123076607524245}
+  - component: {fileID: 4699968031450257136}
   m_Layer: 6
   m_Name: FOVviz
   m_TagString: Untagged
@@ -167,6 +169,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3492123076607524245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984984130017647273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aef9b2f96747cd95b7f74442164deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4699968031450257136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984984130017647273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c3708086ef8a746aed4478abbe9dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 10
+  viewAngle: 97
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 55
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  meshResolution: 10
+  visibleTargets: []
+  edgeResolveIterations: 0
+  edgeDstThreshold: 0.5
+  maskDistance: 0
+  viewMeshFilter: {fileID: 8407585183439816932}
 --- !u!1 &6438274420124515833
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +222,6 @@ GameObject:
   - component: {fileID: 6941393606272124328}
   - component: {fileID: 7297714240853265509}
   - component: {fileID: 7760809087704210232}
-  - component: {fileID: -820116990486964489}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -349,29 +388,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502746f7c1706d54e98cbd050a0e5cf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-820116990486964489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6438274420124515833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c3708086ef8a746aed4478abbe9dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 97
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 55
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 8
-  meshResolution: 10
-  visibleTargets: []
-  edgeResolveIterations: 0
-  edgeDstThreshold: 0.5
-  maskDistance: 0
-  viewMeshFilter: {fileID: 8407585183439816932}
