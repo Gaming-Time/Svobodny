@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7709659507708433337}
   - component: {fileID: 7331387409577066878}
   - component: {fileID: 7623042391105575793}
+  - component: {fileID: 6511386847963878434}
   m_Layer: 0
   m_Name: Couch1
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6090906368169392738}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 3.8575523, y: -4.5286813, z: 2.6993237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2008475731, guid: 68419834f53d16249927b4ca747a144e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,5 +105,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5833334, y: 0.8611111, z: 0.2}
-  m_Center: {x: 0, y: 0.43055555, z: 0.00000047683716}
+  m_Size: {x: 1.01, y: 0.52, z: 0.08}
+  m_Center: {x: 0, y: 0.65, z: 0.00000047683716}
+--- !u!114 &6511386847963878434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090906368169392738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

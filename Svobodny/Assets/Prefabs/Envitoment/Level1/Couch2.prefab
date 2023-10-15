@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9006709242307112377}
   - component: {fileID: 8361023941282174952}
   - component: {fileID: 6109997221427159452}
+  - component: {fileID: 6131617886221089356}
   m_Layer: 0
   m_Name: Couch2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526411002767078468}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5307465, y: 0.05612052, z: -0.035252124, w: 0.8449355}
+  m_LocalRotation: {x: 0.5307465, y: 0.056120515, z: -0.035252124, w: 0.8449354}
   m_LocalPosition: {x: -4.223, y: 0.12046537, z: 0.722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!65 &6109997221427159452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -104,5 +105,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6944445, y: 1.4166666, z: 0.20000008}
+  m_Size: {x: 0.45, y: 0.94, z: 0.20000008}
   m_Center: {x: -0.00000047683716, y: 0, z: -0.00000011920929}
+--- !u!114 &6131617886221089356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526411002767078468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
