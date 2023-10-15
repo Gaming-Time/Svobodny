@@ -98,8 +98,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitAnimations(CharacterStaticData staticData, GameObject character)
         {
             var characterAnimationController = character.GetComponent<CharacterAnimatorController>();
-            characterAnimationController.Contsruct(_inputService, character.GetComponent<Animator>(),
-                staticData.WalkSpeed, staticData.SneakSpeed);
+            characterAnimationController.Construct(_inputService, character.GetComponent<Animator>(),
+                character.GetComponent<CharacterController>(), staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
         private void InitMovement(CharacterStaticData staticData, GameObject character)
