@@ -10,5 +10,7 @@ namespace CodeBase.Modules.Character.Animation
         public static int Speed = Animator.StringToHash("Speed");
         public static int WalkSpeed = Animator.StringToHash("WalkSpeed");
         public static int SneakSpeed = Animator.StringToHash("SneakSpeed");
+        public static int MovementX = Animator.StringToHash("MovementX");
+        public static int MovementY = Animator.StringToHash("MovementY");
     }
 }
