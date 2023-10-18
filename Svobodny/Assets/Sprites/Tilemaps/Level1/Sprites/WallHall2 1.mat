@@ -42,8 +42,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Opacity: 0.483
-    - _Size: 1
+    - _Opacity: 0.818
+    - _Size: 0
     - _Smoothenes: 0
     m_Colors:
     - _PlayerPos: {r: 0.5, g: 0.5, b: 0, a: 0}

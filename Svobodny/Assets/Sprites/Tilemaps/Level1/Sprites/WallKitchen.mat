@@ -44,7 +44,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Opacity: 0.496
+    - _Opacity: 0.855
     - _Parallax: 0.02
     - _Smoothenes: 0
     m_Colors:
