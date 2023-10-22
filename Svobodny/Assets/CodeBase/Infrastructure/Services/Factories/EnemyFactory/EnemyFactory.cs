@@ -27,6 +27,7 @@ namespace CodeBase.Infrastructure.Services.Factories.EnemyFactory
             return typeId switch
             {
                 MonsterTypeID.Test => AssetPath.TestEnemyPath,
+                MonsterTypeID.Knife => AssetPath.EnemyKnifePath,
                 _ => throw new ArgumentException(typeId.ToString() + " не реализован в фабрике"),
             };
         }

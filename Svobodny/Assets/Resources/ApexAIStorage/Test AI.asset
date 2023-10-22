@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: Test AI
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: b91b31d1-d1a9-4775-ad6f-b6453ffd8b53
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":2d228f1f63494ab992a0b58705f684ba,"_id":b91b31d1d1a94775ad6fb6453ffd8b53,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":2d228f1f63494ab992a0b58705f684ba,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.HasMoveTarget,
+    Assembly-CSharp","Not":false,"score":5}]},{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[]},"score":4}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}}]}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":200,"@height":220},"QualifierView":{"Name":"Has
+    Move Target"},"QualifierView":{"Name":"Doesn''t have Move Target","ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{}}}'

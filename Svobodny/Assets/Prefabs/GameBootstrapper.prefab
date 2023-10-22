@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615249736124073745}
   - component: {fileID: 6918367515198222565}
+  - component: {fileID: 1995772606671344910}
   m_Layer: 0
   m_Name: GameBootstrapper
   m_TagString: Untagged
@@ -24,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8590765463744084363}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5156574, y: -0.61290485, z: 0.025649948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6918367515198222565
 MonoBehaviour:
@@ -45,3 +46,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurtainPrefab: {fileID: 1280110528234696394, guid: 8d44ee3409db29343a5941562df5d650, type: 3}
+--- !u!114 &1995772606671344910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590765463744084363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -927418779, guid: 41cdb5d7253968f41a8659c7eba5c2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _configurations:
+  - updateInterval: 1
+    maxUpdatesPerFrame: 200
+    maxUpdateTimeInMillisecondsPerUpdate: 4
+    autoAdjust: 0
+    targetLoadBalancer: aiLoadBalancer
+  - updateInterval: 0.1
+    maxUpdatesPerFrame: 20
+    maxUpdateTimeInMillisecondsPerUpdate: 4
+    autoAdjust: 0
+    targetLoadBalancer: defaultBalancer
+  - updateInterval: 0.1
+    maxUpdatesPerFrame: 20
+    maxUpdateTimeInMillisecondsPerUpdate: 4
+    autoAdjust: 0
+    targetLoadBalancer: unscaled
+  _mashallerMaxMillisecondPerFrame: 4
