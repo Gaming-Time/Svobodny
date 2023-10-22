@@ -108,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 22
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f82d8f4a9129474b80adcab62995546
+      internalID: 1197837148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 22
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be707cfeb66c274ca1673e88e7a2e46
+      internalID: 5015418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 25
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a58eccb65197d49bb063e546374dad
+      internalID: 231839056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 25
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47546acf1398bde4193fdadf40ca2736
+      internalID: -793815612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1
+        width: 25
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d1b35b66b7ea842a22f8d10df531fd
+      internalID: 103781389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1
+        width: 19
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc768f3e17dbff4585195a87e872e2d
+      internalID: -198862933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 14
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19bcce55517e6f48958722f1cf32dd7
+      internalID: 700767455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Left-Walk_7
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 20
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ace92051d825049b79da6c4b203e23
+      internalID: 868996808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +287,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemy-Human-Shovel-Left-Walk_0: 1197837148
+      Enemy-Human-Shovel-Left-Walk_1: 5015418
+      Enemy-Human-Shovel-Left-Walk_2: 231839056
+      Enemy-Human-Shovel-Left-Walk_3: -793815612
+      Enemy-Human-Shovel-Left-Walk_4: 103781389
+      Enemy-Human-Shovel-Left-Walk_5: -198862933
+      Enemy-Human-Shovel-Left-Walk_6: 700767455
+      Enemy-Human-Shovel-Left-Walk_7: 868996808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

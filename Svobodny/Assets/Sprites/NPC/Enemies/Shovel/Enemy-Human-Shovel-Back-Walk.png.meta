@@ -108,7 +108,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bb1b89cb70a58489a0e52e3151393a
+      internalID: -1102948707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7670edfc10c4bd4d8dd6aff1b77adda
+      internalID: 959350062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e73074dd0d67fc47b99a0036a310dc6
+      internalID: 2064327446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643a3d6aecd20c14ea4f53ce74e709cc
+      internalID: 347673681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a321859eac49f45aa7898d4c212f0c
+      internalID: -911296847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbe117158a6d1a488b61a619e8d9b3d
+      internalID: 1638756345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518d06b50923afd4da30b141da751a0f
+      internalID: -1576565235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Back-Walk_7
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7979a3222fec44695b7def36d0644e
+      internalID: -339713634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +287,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemy-Human-Shovel-Back-Walk_0: -1102948707
+      Enemy-Human-Shovel-Back-Walk_1: 959350062
+      Enemy-Human-Shovel-Back-Walk_2: 2064327446
+      Enemy-Human-Shovel-Back-Walk_3: 347673681
+      Enemy-Human-Shovel-Back-Walk_4: -911296847
+      Enemy-Human-Shovel-Back-Walk_5: 1638756345
+      Enemy-Human-Shovel-Back-Walk_6: -1576565235
+      Enemy-Human-Shovel-Back-Walk_7: -339713634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

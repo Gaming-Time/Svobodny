@@ -108,7 +108,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ed414ef3d95c74a8018b4379f2d89b
+      internalID: 1653000921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712d424834728cc458908dbe0ce9df02
+      internalID: 1677535657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febea252b011e894886f4c4de29dd352
+      internalID: 336003886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914f21f1ab020214a801f8bcd4979672
+      internalID: -756563736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c8ed88f6c59a84498117e144ba37f4
+      internalID: 685718579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e313ebaaf7660348954eb57e8d5c559
+      internalID: 1838872994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf782d86c17cb74091b8dd6b2ccef5e
+      internalID: 1922431719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ac4bc100b8cb849a60ff8e8a40e450
+      internalID: 414198191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9fe1bca14da124c92d1df0b92db92c
+      internalID: -1840973440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b083a24170dc1e44bbb00ce8674e3a9f
+      internalID: 1901744705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7ed2d993d76964c916feda7697442f
+      internalID: 1694213675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcf555aa4af77746889a70a246f8013
+      internalID: 475070655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4e2e72877c67e42b4b41fe15e7b401
+      internalID: 902944404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Shovel-Right-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 0
+        width: 25
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7514804721361f34a8886a5958907a17
+      internalID: -1831057178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +413,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemy-Human-Shovel-Right-Idle_0: 1653000921
+      Enemy-Human-Shovel-Right-Idle_1: 1677535657
+      Enemy-Human-Shovel-Right-Idle_10: 1694213675
+      Enemy-Human-Shovel-Right-Idle_11: 475070655
+      Enemy-Human-Shovel-Right-Idle_12: 902944404
+      Enemy-Human-Shovel-Right-Idle_13: -1831057178
+      Enemy-Human-Shovel-Right-Idle_2: 336003886
+      Enemy-Human-Shovel-Right-Idle_3: -756563736
+      Enemy-Human-Shovel-Right-Idle_4: 685718579
+      Enemy-Human-Shovel-Right-Idle_5: 1838872994
+      Enemy-Human-Shovel-Right-Idle_6: 1922431719
+      Enemy-Human-Shovel-Right-Idle_7: 414198191
+      Enemy-Human-Shovel-Right-Idle_8: -1840973440
+      Enemy-Human-Shovel-Right-Idle_9: 1901744705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
