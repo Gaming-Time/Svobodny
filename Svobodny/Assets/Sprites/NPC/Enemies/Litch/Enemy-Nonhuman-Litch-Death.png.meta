@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -108,7 +108,847 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ac61a2ea5233c46a452febe3f84037
+      internalID: -1701302449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc30b05532ce54b4e839048d2dd19440
+      internalID: 1025207320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee8a3963c350f54798f279ac59b6c3e
+      internalID: 142043980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b871c1e090fb5554a815ad44e6700741
+      internalID: -1287993062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e41586a9a5464a4cb89d3abae9b2a0c
+      internalID: -932227247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2027f297e12a26043b2aca044d50791b
+      internalID: 2144232847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177e0785608d6ac4cad7402ec733ebd8
+      internalID: 1592773707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_7
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad3730eb8e0a844bbd6bbbc46cec8f6
+      internalID: -2121125433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258cd0548adf98a4e93dce912cd01233
+      internalID: -1904090122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3761c9034b95ef840925ec5043cc404e
+      internalID: 1101367583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_10
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b333ed9b1d6df4da4ceba2a29b1a5d
+      internalID: -1670949696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_11
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203127a86596d9d4ba4c45f38e2d5aa5
+      internalID: 934810211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_12
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492495fda39e01348997bd24a35ca155
+      internalID: 2097609756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_13
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bd8d0d4c261064aaed4b3f6d6c663c
+      internalID: 1213180708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_14
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e43b2fea916024882daf67a5beaa72
+      internalID: 1683782131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_15
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c597797bf44c7e44ca6b1922761a1e48
+      internalID: -2091556024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_16
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a815c5fd2ab67474294c1984e69335cd
+      internalID: 1584546148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_17
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126748fd360246a4487d73e8ab1556a9
+      internalID: -1258251408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_18
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755b4e99e2cd9774d993b7508d44da9a
+      internalID: 2130850996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_19
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c659765da32144cb0c0b855bd7a5b9
+      internalID: 1121322166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_20
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566220cc853d42448b918fb1a47c3cc9
+      internalID: -1062846925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_21
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22e34138484c1e4bb1079fc6e242e6c
+      internalID: -789462941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_22
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8001cfc6ea25045855d7f3a607675a
+      internalID: 1157034598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_23
+      rect:
+        serializedVersion: 2
+        x: 2024
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1acef642646728347a977e1fe03d3b7a
+      internalID: 1400097574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_24
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33de30cae678b8848afdbc8000372ebf
+      internalID: -508542423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_25
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd075d62903ec14eb95feaf4fa724ef
+      internalID: -2117902421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_26
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d30c6a5fb40b8a4880caafa43904b9e
+      internalID: 1092836291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_27
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679065d71b482074b9f3cb5d7b8e1d2e
+      internalID: -288426097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_28
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d60b0d57124eea43a739899adac5d0d
+      internalID: -441251366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_29
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4632d090f26d81448070675dfba797c
+      internalID: -2132845749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_30
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500d9effa1212f649a3b5023f45b0d8d
+      internalID: -209880079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_31
+      rect:
+        serializedVersion: 2
+        x: 2728
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b8bdaef790bfd42a9c1aa88fda6a25
+      internalID: 1003773961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_32
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc07de107dfcdc40a4262669704a8ba
+      internalID: 935513127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_33
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4553f4d606e6bc14dbbde5a6f7cd20dc
+      internalID: -1646293590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_34
+      rect:
+        serializedVersion: 2
+        x: 2992
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acb7fb82becfce429175d58a87a028d
+      internalID: -1573268090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_35
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5d7359a142fe346bddf772b1413981
+      internalID: 1241381117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_36
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc68fb87926a5c42ba0aa9fccd1cab3
+      internalID: -2129990742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_37
+      rect:
+        serializedVersion: 2
+        x: 3256
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a25f7aa401955e4488a325812a907b0
+      internalID: 2110694140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_38
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181e6f7046fdb35498eba8cbe8f075f4
+      internalID: -1917645022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Nonhuman-Litch-Death_39
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 0
+        width: 88
+        height: 50
+      alignment: 9
+      pivot: {x: 0.59, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3773af117ca51a34b96d284fe74fff8f
+      internalID: 1477780145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +959,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Enemy-Nonhuman-Litch-Death_0: -1701302449
+      Enemy-Nonhuman-Litch-Death_1: 1025207320
+      Enemy-Nonhuman-Litch-Death_10: -1670949696
+      Enemy-Nonhuman-Litch-Death_11: 934810211
+      Enemy-Nonhuman-Litch-Death_12: 2097609756
+      Enemy-Nonhuman-Litch-Death_13: 1213180708
+      Enemy-Nonhuman-Litch-Death_14: 1683782131
+      Enemy-Nonhuman-Litch-Death_15: -2091556024
+      Enemy-Nonhuman-Litch-Death_16: 1584546148
+      Enemy-Nonhuman-Litch-Death_17: -1258251408
+      Enemy-Nonhuman-Litch-Death_18: 2130850996
+      Enemy-Nonhuman-Litch-Death_19: 1121322166
+      Enemy-Nonhuman-Litch-Death_2: 142043980
+      Enemy-Nonhuman-Litch-Death_20: -1062846925
+      Enemy-Nonhuman-Litch-Death_21: -789462941
+      Enemy-Nonhuman-Litch-Death_22: 1157034598
+      Enemy-Nonhuman-Litch-Death_23: 1400097574
+      Enemy-Nonhuman-Litch-Death_24: -508542423
+      Enemy-Nonhuman-Litch-Death_25: -2117902421
+      Enemy-Nonhuman-Litch-Death_26: 1092836291
+      Enemy-Nonhuman-Litch-Death_27: -288426097
+      Enemy-Nonhuman-Litch-Death_28: -441251366
+      Enemy-Nonhuman-Litch-Death_29: -2132845749
+      Enemy-Nonhuman-Litch-Death_3: -1287993062
+      Enemy-Nonhuman-Litch-Death_30: -209880079
+      Enemy-Nonhuman-Litch-Death_31: 1003773961
+      Enemy-Nonhuman-Litch-Death_32: 935513127
+      Enemy-Nonhuman-Litch-Death_33: -1646293590
+      Enemy-Nonhuman-Litch-Death_34: -1573268090
+      Enemy-Nonhuman-Litch-Death_35: 1241381117
+      Enemy-Nonhuman-Litch-Death_36: -2129990742
+      Enemy-Nonhuman-Litch-Death_37: 2110694140
+      Enemy-Nonhuman-Litch-Death_38: -1917645022
+      Enemy-Nonhuman-Litch-Death_39: 1477780145
+      Enemy-Nonhuman-Litch-Death_4: -932227247
+      Enemy-Nonhuman-Litch-Death_5: 2144232847
+      Enemy-Nonhuman-Litch-Death_6: 1592773707
+      Enemy-Nonhuman-Litch-Death_7: -2121125433
+      Enemy-Nonhuman-Litch-Death_8: -1904090122
+      Enemy-Nonhuman-Litch-Death_9: 1101367583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
