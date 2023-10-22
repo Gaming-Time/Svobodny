@@ -42,8 +42,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Opacity: 0.269
-    - _Smoothenes: 0.492
+    - _Opacity: 0.842
+    - _Smoothenes: 0
     m_Colors:
     - _Tint: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
   m_BuildTextureStacks: []
