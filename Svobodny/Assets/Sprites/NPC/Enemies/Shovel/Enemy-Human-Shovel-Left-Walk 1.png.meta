@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3895b2205d3d8e3499f9c6f983d62a05
+guid: b45e86cf2a57320479d3c443d7b08243
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -110,253 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_0
+      name: Enemy-Human-Shovel-Left-Walk 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e14b87ba21da1b48b7e91f0f9b4f6e2
-      internalID: 144369616
+      spriteID: 8a28704598427d14db7fa572ee17d90f
+      internalID: -1591636066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_1
+      name: Enemy-Human-Shovel-Left-Walk 1_1
       rect:
         serializedVersion: 2
-        x: 44
+        x: 26
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc995ef19154372499501bdb80902da5
-      internalID: -1532539117
+      spriteID: d3aa18c3e4caab64d9662426be6ace66
+      internalID: -2120612203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_2
+      name: Enemy-Human-Shovel-Left-Walk 1_2
       rect:
         serializedVersion: 2
-        x: 88
+        x: 52
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 719552064ab96d24c99842621b18551a
-      internalID: -278243998
+      spriteID: eddf8dc72f0851445bd786d42b70a147
+      internalID: 462598767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_3
+      name: Enemy-Human-Shovel-Left-Walk 1_3
       rect:
         serializedVersion: 2
-        x: 132
+        x: 78
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21202267d955e31418355270204b5d0f
-      internalID: -1079350656
+      spriteID: faba40ab6b19edf47a61546f5b89c78f
+      internalID: -1222056757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_4
+      name: Enemy-Human-Shovel-Left-Walk 1_4
       rect:
         serializedVersion: 2
-        x: 176
+        x: 104
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5862dd288c2f00e43baf987ccdab5eb3
-      internalID: -2039866926
+      spriteID: b4f103baba94eef498d3253373810d35
+      internalID: -122743090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_5
+      name: Enemy-Human-Shovel-Left-Walk 1_5
       rect:
         serializedVersion: 2
-        x: 220
+        x: 130
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce9b4ca74d981df4a87921c43776edcf
-      internalID: 291499241
+      spriteID: 7089afd77907667458a844246ad96994
+      internalID: -1095637341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_6
+      name: Enemy-Human-Shovel-Left-Walk 1_6
       rect:
         serializedVersion: 2
-        x: 264
+        x: 156
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a541b926ca6fa014a8be0921557a03c8
-      internalID: -2066577431
+      spriteID: ab1a3f8d2f1e64041813db8e0ad32937
+      internalID: -223730387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_7
+      name: Enemy-Human-Shovel-Left-Walk 1_7
       rect:
         serializedVersion: 2
-        x: 308
+        x: 182
         y: 0
-        width: 44
-        height: 55
+        width: 26
+        height: 41
       alignment: 9
-      pivot: {x: 0.34, y: 0}
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8b4b1a327a84cb48808bff9b9afc023
-      internalID: 1701568087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_8
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 44
-        height: 55
-      alignment: 9
-      pivot: {x: 0.34, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eae5c190fd67a44498d10f9ff99ed47f
-      internalID: 1862106835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_9
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 0
-        width: 44
-        height: 55
-      alignment: 9
-      pivot: {x: 0.34, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4420c374fd050734da57683890a6c63d
-      internalID: -536375149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_10
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 0
-        width: 44
-        height: 55
-      alignment: 9
-      pivot: {x: 0.34, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02e8144b77389bf4fa004f8a29d1c4f2
-      internalID: -1692401306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Shovel-Right-Attack_11
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 0
-        width: 44
-        height: 55
-      alignment: 9
-      pivot: {x: 0.34, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22265274c071ac247b375d1c57698d88
-      internalID: 858580480
+      spriteID: 781a84a4de0d98848afb13b1d08f26cc
+      internalID: -1544186989
       vertices: []
       indices: 
       edges: []
@@ -364,7 +280,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b94a3161d7c4e0941b32feb24322a1f7
     internalID: 0
     vertices: []
     indices: 
@@ -372,18 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy-Human-Shovel-Right-Attack_0: 144369616
-      Enemy-Human-Shovel-Right-Attack_1: -1532539117
-      Enemy-Human-Shovel-Right-Attack_10: -1692401306
-      Enemy-Human-Shovel-Right-Attack_11: 858580480
-      Enemy-Human-Shovel-Right-Attack_2: -278243998
-      Enemy-Human-Shovel-Right-Attack_3: -1079350656
-      Enemy-Human-Shovel-Right-Attack_4: -2039866926
-      Enemy-Human-Shovel-Right-Attack_5: 291499241
-      Enemy-Human-Shovel-Right-Attack_6: -2066577431
-      Enemy-Human-Shovel-Right-Attack_7: 1701568087
-      Enemy-Human-Shovel-Right-Attack_8: 1862106835
-      Enemy-Human-Shovel-Right-Attack_9: -536375149
+      Enemy-Human-Shovel-Left-Walk 1_0: -1591636066
+      Enemy-Human-Shovel-Left-Walk 1_1: -2120612203
+      Enemy-Human-Shovel-Left-Walk 1_2: 462598767
+      Enemy-Human-Shovel-Left-Walk 1_3: -1222056757
+      Enemy-Human-Shovel-Left-Walk 1_4: -122743090
+      Enemy-Human-Shovel-Left-Walk 1_5: -1095637341
+      Enemy-Human-Shovel-Left-Walk 1_6: -223730387
+      Enemy-Human-Shovel-Left-Walk 1_7: -1544186989
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

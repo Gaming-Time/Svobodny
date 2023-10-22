@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5812788628573844601}
   - component: {fileID: 1698304435873870355}
   - component: {fileID: 7312195933126275743}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemy-Human-Shovel-Front-Idle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

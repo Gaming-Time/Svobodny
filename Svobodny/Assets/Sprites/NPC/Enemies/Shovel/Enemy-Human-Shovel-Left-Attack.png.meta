@@ -113,12 +113,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 2
-        width: 32
-        height: 53
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 1
-        width: 32
-        height: 54
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 44
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_2
       rect:
         serializedVersion: 2
-        x: 95
-        y: 1
-        width: 32
-        height: 54
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 88
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_3
       rect:
         serializedVersion: 2
-        x: 137
-        y: 1
-        width: 37
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 132
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_4
       rect:
         serializedVersion: 2
-        x: 185
-        y: 1
-        width: 35
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 176
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_5
       rect:
         serializedVersion: 2
-        x: 235
-        y: 1
-        width: 25
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 220
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_6
       rect:
         serializedVersion: 2
-        x: 272
-        y: 1
-        width: 25
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 264
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_7
       rect:
         serializedVersion: 2
-        x: 321
+        x: 308
         y: 0
-        width: 25
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_8
       rect:
         serializedVersion: 2
-        x: 371
-        y: 1
-        width: 25
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 352
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_9
       rect:
         serializedVersion: 2
-        x: 409
-        y: 1
-        width: 25
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 396
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_10
       rect:
         serializedVersion: 2
-        x: 448
-        y: 1
-        width: 25
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 440
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: Enemy-Human-Shovel-Left-Attack_11
       rect:
         serializedVersion: 2
-        x: 494
-        y: 1
-        width: 25
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 484
+        y: 0
+        width: 44
+        height: 55
+      alignment: 9
+      pivot: {x: 0.34, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
