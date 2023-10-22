@@ -10,9 +10,10 @@ namespace CodeBase.Infrastructure.Logic.Enemies
 
         public MonsterTypeID TypeID;
 
-        public void Construct(IEnemyFactory enemyFactory)
+        public void Construct(IEnemyFactory enemyFactory, MonsterTypeID typeID)
         {
             _enemyFactory = enemyFactory;
+            TypeID = typeID;
         }
 
         public GameObject Spawn()

@@ -7,12 +7,15 @@ using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
+using CodeBase.Modules.Enemies.Ai;
+using CodeBase.Modules.Enemies.Ai.Entity;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
@@ -23,17 +26,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private readonly IEnemyFactory _enemyFactory;
         private readonly INpcFactory _npcFactory;
         private readonly IInputService _inputService;
+        private readonly IStaticDataService _staticData;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
-            IInputService inputService)
+            IInputService inputService, IStaticDataService staticData)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
             _npcFactory = npcFactory;
             _inputService = inputService;
+            _staticData = staticData;
         }
 
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
@@ -58,7 +63,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             EnemySpawner spawner = _assetProvider.Instantiate(AssetPath.EnemySpawnerPath, position, rotation)
                 .GetComponent<EnemySpawner>();
-            spawner.Construct(_enemyFactory);
+            spawner.Construct(_enemyFactory, typeID);
             _enemySpawners.Add(spawnerID, spawner);
         }
 
@@ -80,7 +85,17 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             foreach (var spawner in _enemySpawners)
             {
-                spawner.Value.Spawn();
+                var monster = spawner.Value.Spawn();
+                var monsterType = spawner.Value.TypeID;
+                var monsterData = _staticData.ForMonster(monsterType);
+                
+                var monsterEntity = monster.GetComponentInChildren<EnemyAiEntity>();
+                monsterEntity.Construct(monsterData.ScanRange,monsterData.MeleeAttackRange);
+
+                var monsterContextProvider = monster.GetComponentInChildren<EnemyContextProvider>();
+                monsterContextProvider.Construct(monsterEntity,spawner.Value.transform.position);
+                
+                monster.GetComponentInChildren<CollisionOwner>().Construct(monsterEntity);
             }
         }
 
