@@ -20,7 +20,7 @@ MonoBehaviour:
     Position: {x: -3.5678282, y: 0, z: -5.167078}
   NpcSpawners: []
   DayPlayerPosition: {x: -3.0873597, y: 0.56, z: -1.6887487}
-  DayPlayerRotation: {x: 0, y: 0, z: 0, w: 1}
+  DayPlayerRotation: {x: 0.17364818, y: 0, z: 0, w: 0.9848077}
   NightPlayerPosition: {x: -3.8731177, y: 0.56, z: -1.9252775}
-  NightPlayerRotation: {x: 0, y: 0, z: 0, w: 1}
+  NightPlayerRotation: {x: 0.17364818, y: 0, z: 0, w: 0.9848077}
   initialPhase: 1
