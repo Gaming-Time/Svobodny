@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d94273745d1fbc4d85302995994034c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameLevel: 
+  _newGameLevel: Level1test
 --- !u!4 &610630427
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,6 +1823,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016882253}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
 --- !u!1 &1088830126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1904,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088830126}
   m_CullTransparentMesh: 1
+>>>>>>> Stashed changes
 --- !u!1 &1328295798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2056,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361501460}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
 --- !u!1 &1554732428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1554732429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2129,6 +2134,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554732428}
   m_CullTransparentMesh: 1
+>>>>>>> Stashed changes
 --- !u!1 &1602895252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2232,6 @@ RectTransform:
   - {fileID: 1361501461}
   - {fileID: 560248024}
   - {fileID: 1328295799}
-  - {fileID: 1554732429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
