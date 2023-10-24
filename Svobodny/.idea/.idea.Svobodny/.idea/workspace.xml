@@ -4,65 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="рефакторинг menuUI">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Ai.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Ai/PlayerEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Ai/PlayerEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/ScanForEntities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/ScanForEntities.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/CollisionOwner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/CollisionOwner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/EnemyAiContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/EnemyAiContext.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyContextProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyContextProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EntityType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EntityType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IAiEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IAiEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Helpers/Utilities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Helpers/Utilities.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Memory.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Memory/AiMemory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Memory/AiMemory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Memory/Observation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Memory/Observation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/HasMoveTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/HasMoveTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/IsEntityVisibleAndInScanRange.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/IsEntityVisibleAndInScanRange.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset.meta" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="Fix FOV">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test/NavMesh-NavMesh 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test/NavMesh-NavMesh 2.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/New Animator Override Controller.overrideController" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Enemies/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Enemies/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/EnemyFactory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/EnemyFactory/EnemyFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterTypeID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Monster/MonsterTypeID.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FieldOfView/Scripts/FOV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FieldOfView/Scripts/FOV.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameBootstrapper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameBootstrapper.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Enemies/Enemy-Human-Knife1-Front-Idle_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Enemies/Enemy-Human-Knife1-Front-Idle_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Enemy Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Enemy Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,27 +24,9 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Scenes/Level1test.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Character/CharacterAnimator.controller" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -109,28 +41,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.88590604&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mikhail/base-ai&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.88590604",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -158,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19572">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19572" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -182,6 +114,7 @@
       <workItem from="1696068346326" duration="6823000" />
       <workItem from="1697361581989" duration="6414000" />
       <workItem from="1697968105530" duration="14448000" />
+      <workItem from="1698142550232" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -215,7 +148,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
     <MESSAGE value="рефакторинг menuUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="рефакторинг menuUI" />
+    <MESSAGE value="Fix FOV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix FOV" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
