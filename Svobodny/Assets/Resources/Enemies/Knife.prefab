@@ -76,6 +76,12 @@ MonoBehaviour:
     startDelayMin: 0
     startDelayMax: 0
     isActive: 1
+  - aiId: 769626e1-133a-458f-b833-6e0ceb127851
+    intervalMin: 1
+    intervalMax: 1
+    startDelayMin: 3
+    startDelayMax: 3
+    isActive: 1
 --- !u!114 &1312011722134564088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanRange: 0
   meleeAttackRange: 0
+  fovAngle: 97
 --- !u!1 &3702559615869342975
 GameObject:
   m_ObjectHideFlags: 0

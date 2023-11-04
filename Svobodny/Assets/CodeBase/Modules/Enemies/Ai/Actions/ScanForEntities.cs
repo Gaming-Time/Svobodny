@@ -36,8 +36,12 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                 if (ReferenceEquals(hitEntity, enemyEntity))
                     continue;
 
-                var visibility = Utilities.IsVisible(enemyEntity.Position, hitEntity.Position,
-                    enemyEntity.ScanRange, BlockLayers);
+                var visibility = (hitEntity.Type == EntityType.Player)
+                    ? Utilities.IsVisibleWithFov(enemyEntity.Position, hitEntity.Position, Vector3.right,
+                        enemyEntity.ScanRange, enemyEntity.FovAngle, BlockLayers)
+                    : Utilities.IsVisible(enemyEntity.Position, hitEntity.Position,
+                        enemyEntity.ScanRange, BlockLayers);
+
 
                 enemyContext.Memory.AddOrUpdateObservation(new Observation(hitEntity, visibility));
             }
