@@ -10,5 +10,9 @@ namespace CodeBase.Infrastructure.Services.StaticData.Monster
         [Range(1, 100)] public int Health;
 
         public GameObject Prefab;
+
+        public float ScanRange;
+        public float MeleeAttackRange;
+        public float Speed;
     }
 }

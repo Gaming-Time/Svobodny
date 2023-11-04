@@ -28,14 +28,13 @@ namespace CodeBase.Infrastructure.States
 
         public void Exit()
         {
-            
         }
 
         public void Enter()
         {
             _sceneLoader.Load(Initial, () => _stateMachine.Enter<LoadProgressState>());
         }
-        
+
         private void RegisterServices()
         {
             _services.RegisterSingle(_stateMachine);
@@ -45,12 +44,13 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<INpcFactory>(new NpcFactory(_services.GetSingle<IAssets>()));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.GetSingle<IAssets>()));
             _services.RegisterSingle<IGameFactory>(new GameFactory(_services.GetSingle<IAssets>(),
-                _services.GetSingle<IEnemyFactory>(), _services.GetSingle<INpcFactory>(), _services.GetSingle<IInputService>()));
+                _services.GetSingle<IEnemyFactory>(), _services.GetSingle<INpcFactory>(),
+                _services.GetSingle<IInputService>(), _services.GetSingle<IStaticDataService>()));
             _services.RegisterSingle<IProgressService>(new ProgressService());
         }
+
         private void ConfigFactories()
         {
-            
         }
 
         private IStaticDataService GetLoadedStaticData()

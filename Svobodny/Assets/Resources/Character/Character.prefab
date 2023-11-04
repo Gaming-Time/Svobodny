@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433170125108446718}
   - component: {fileID: 7378573651756019313}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8084237753713580761}
   - component: {fileID: 7608910307192044116}
   - component: {fileID: 2657502627189157464}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 764110257600003438}
   - component: {fileID: 3492123076607524245}
   - component: {fileID: 4699968031450257136}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: FOVviz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,8 @@ GameObject:
   - component: {fileID: 6941393606272124328}
   - component: {fileID: 7297714240853265509}
   - component: {fileID: 7760809087704210232}
-  m_Layer: 6
+  - component: {fileID: 3110804838448881855}
+  m_Layer: 10
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,5 +495,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 502746f7c1706d54e98cbd050a0e5cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3110804838448881855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438274420124515833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ac67db79eb4b02bf5cb512a81788dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

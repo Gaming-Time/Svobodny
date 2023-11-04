@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FOV : MonoBehaviour {
-
+public class FOV : MonoBehaviour
+{
+	private Collider[] _targetsInViewRadius = new Collider[15];
 	public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
@@ -39,10 +40,11 @@ public class FOV : MonoBehaviour {
 
 	void FindVisibleTargets() {
 		visibleTargets.Clear ();
-		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
+		int targetsCount = Physics.OverlapSphereNonAlloc(transform.position, viewRadius, _targetsInViewRadius, targetMask);
 
-		for (int i = 0; i < targetsInViewRadius.Length; i++) {
-			Transform target = targetsInViewRadius [i].transform;
+		for (int i = 0; i < targetsCount; i++)
+		{
+			Transform target = _targetsInViewRadius[i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized; //вектор до цели
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);//растояние до цели
@@ -52,6 +54,7 @@ public class FOV : MonoBehaviour {
 				}
 			}
 		}
+		
 	}
     void DrawFOV(){
         int rayCount = Mathf.RoundToInt(viewAngle * meshResolution); 

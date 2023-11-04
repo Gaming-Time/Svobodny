@@ -2,6 +2,8 @@ namespace CodeBase.Infrastructure.Helpers
 {
     public static class AssetPath
     {
+        public const string EnemyKnifePath = "Enemies/Knife";
+
         public static class StaticDataPath
         {
             public const string Level = "Static Data/Levels";

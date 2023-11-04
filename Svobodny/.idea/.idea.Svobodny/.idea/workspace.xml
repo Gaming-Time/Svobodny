@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI/MainMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI/MainMenu/MenuController.cs" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="Fix FOV">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test/NavMesh-NavMesh 2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test/NavMesh-NavMesh 2.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FieldOfView/Scripts/FOV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FieldOfView/Scripts/FOV.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameBootstrapper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameBootstrapper.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/MainMenu/MenuController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/MainMenu/MenuController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI/MainMenu/MenuController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +24,9 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Character/CharacterAnimator.controller" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/CodeBase/Logic/NPCSpawnMarker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Prefabs/Camera/Virtual Camera.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Scenes/Level1test.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -44,10 +43,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UI",
+    "XThreadsFramesViewSplitterKey": "0.88590604",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,8 +113,18 @@
       <workItem from="1695741383341" duration="979000" />
       <workItem from="1696068346326" duration="6823000" />
       <workItem from="1697361581989" duration="6414000" />
-      <workItem from="1697968105530" duration="1130000" />
+      <workItem from="1697968105530" duration="14448000" />
+      <workItem from="1698142550232" duration="2025000" />
     </task>
+    <task id="LOCAL-00001" summary="рефакторинг menuUI">
+      <option name="closed" value="true" />
+      <created>1697969283220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697969283220</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +147,53 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
+    <MESSAGE value="рефакторинг menuUI" />
+    <MESSAGE value="Fix FOV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix FOV" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
+          <line>87</line>
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'">
+            <startOffsets>
+              <option value="3678" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3714" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
+          <line>74</line>
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="74" containingFunctionPresentation="Method 'CreateEnemySpawners'">
+            <startOffsets>
+              <option value="2779" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2825" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/ScanForEntities.cs</url>
+          <line>18</line>
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\ScanForEntities.cs" initialLine="13" containingFunctionPresentation="Method 'Execute'">
+            <startOffsets>
+              <option value="570" />
+            </startOffsets>
+            <endOffsets>
+              <option value="615" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
