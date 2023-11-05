@@ -16,7 +16,9 @@ using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 {
@@ -88,13 +90,17 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monster = spawner.Value.Spawn();
                 var monsterType = spawner.Value.TypeID;
                 var monsterData = _staticData.ForMonster(monsterType);
-                
+
+                var monsterAgent = monster.GetComponent<NavMeshAgent>();
+                var monsterMover = monster.GetComponent<HumanoidMove>();
+                monsterMover.Construct(monsterAgent, monsterData.Speed);
+
                 var monsterEntity = monster.GetComponentInChildren<EnemyAiEntity>();
-                monsterEntity.Construct(monsterData.ScanRange,monsterData.MeleeAttackRange);
+                monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
 
                 var monsterContextProvider = monster.GetComponentInChildren<EnemyContextProvider>();
-                monsterContextProvider.Construct(monsterEntity,spawner.Value.transform.position);
-                
+                monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
+
                 monster.GetComponentInChildren<CollisionOwner>().Construct(monsterEntity);
             }
         }
