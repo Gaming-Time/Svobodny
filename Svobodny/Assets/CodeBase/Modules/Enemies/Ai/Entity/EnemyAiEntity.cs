@@ -20,6 +20,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public float ScanRange => scanRange;
         public float FovAngle => fovAngle;
         public float MeleeAttackRange => meleeAttackRange;
+        public Vector3 Velocity => _mover.Velocity;
 
         public void Construct(IMove mover, float scanRange, float meleeAttackRange)
         {

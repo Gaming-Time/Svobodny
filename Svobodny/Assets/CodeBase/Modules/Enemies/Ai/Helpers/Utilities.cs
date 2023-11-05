@@ -28,7 +28,7 @@ namespace CodeBase.Modules.Enemies.Ai.Helpers
                 return false;
 
             var sqrMag = (to - from).sqrMagnitude;
-            if (sqrMag == 0f)
+            if (sqrMag <= 1.5f)
                 return true;
 
             if (sqrMag > range * range)

@@ -94,6 +94,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterAgent = monster.GetComponent<NavMeshAgent>();
                 var monsterMover = monster.GetComponent<HumanoidMove>();
                 monsterMover.Construct(monsterAgent, monsterData.Speed);
+                monster.GetComponentInChildren<HumanoidAnimatorController>()
+                    .Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
 
                 var monsterEntity = monster.GetComponentInChildren<EnemyAiEntity>();
                 monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);

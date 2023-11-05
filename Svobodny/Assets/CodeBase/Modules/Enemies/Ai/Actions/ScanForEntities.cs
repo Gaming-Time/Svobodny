@@ -24,6 +24,9 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                 TargetLayerMask,
                 QueryTriggerInteraction.Collide);
 
+            
+            Debug.Log(enemyEntity.Velocity);
+
             for (int i = 0; i < hitsCount; i++)
             {
                 var hit = hits[i];
@@ -36,8 +39,12 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                 if (ReferenceEquals(hitEntity, enemyEntity))
                     continue;
 
+                var direction = (enemyEntity.Velocity == Vector3.zero)
+                ? (hitEntity.Position - enemyEntity.Position).normalized 
+                : Vector3.Normalize(enemyEntity.Velocity);
+
                 var visibility = (hitEntity.Type == EntityType.Player)
-                    ? Utilities.IsVisibleWithFov(enemyEntity.Position, hitEntity.Position, Vector3.right,
+                    ? Utilities.IsVisibleWithFov(enemyEntity.Position, hitEntity.Position, direction,
                         enemyEntity.ScanRange, enemyEntity.FovAngle, BlockLayers)
                     : Utilities.IsVisible(enemyEntity.Position, hitEntity.Position,
                         enemyEntity.ScanRange, BlockLayers);

@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 1204923544041526684}
   - component: {fileID: 918843206089727718}
   - component: {fileID: 7847418504548026731}
+  - component: {fileID: 673232896192805746}
   m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
@@ -255,7 +256,7 @@ Animator:
   m_GameObject: {fileID: 3854678585324618653}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54e3d0cfc94cb314f9412fb6f2bdf5ab, type: 2}
+  m_Controller: {fileID: 9100000, guid: 45dd628d1b612ee42babca087c2f33e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -266,6 +267,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &673232896192805746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854678585324618653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7271a99eccc4dea4e84c6171ecc754b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8954773150905848177
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +329,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1

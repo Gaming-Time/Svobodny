@@ -9,6 +9,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         float ScanRange { get; }
         float FovAngle { get; }
         float MeleeAttackRange { get; }
+        Vector3 Velocity { get; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);
