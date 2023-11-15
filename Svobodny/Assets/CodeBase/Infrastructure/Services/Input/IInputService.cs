@@ -9,5 +9,6 @@ namespace CodeBase.Infrastructure.Services.Input
         Vector3 MousePosition { get; }
 
         bool IsSneakButtonDown();
+        bool IsUseButtonDown();
     }
 }

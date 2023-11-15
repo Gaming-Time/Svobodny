@@ -9,6 +9,7 @@ namespace CodeBase.Infrastructure.Services.Input
         private const string CameraVerticalAxis = "Mouse Y";
         private const string CameraHorizontalAxis = "Mouse X";
         private const string SneakButton = "Sneak";
+        private const string UseButton = "Use";
 
         public abstract Vector2 MovementInput { get; }
 
@@ -24,5 +25,6 @@ namespace CodeBase.Infrastructure.Services.Input
         protected Vector3 GetMousePosition() => UnityEngine.Input.mousePosition;
 
         public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButton(SneakButton);
+        public bool IsUseButtonDown() => UnityEngine.Input.GetButtonDown(UseButton);
     }
 }

@@ -3,7 +3,12 @@ namespace CodeBase.Infrastructure.Helpers
     public static class AssetPath
     {
         public const string EnemyKnifePath = "Enemies/Knife";
-
+        public const string TestEnemyPath = "Enemies/TestEnemy";
+        public const string TestNpcPath = "Npcs/TestNpc";
+        public const string CharacterPath = "Character/Character";
+        public const string EnemySpawnerPath = "Enemies/Enemy Spawner";
+        public const string NpcSpawnerPath = "Npcs/Npc Spawner";
+        
         public static class StaticDataPath
         {
             public const string Level = "Static Data/Levels";
@@ -12,11 +17,9 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Character = "Static Data/Character/CharacterData";
         }
 
-        public static string TestEnemyPath = "Enemies/TestEnemy";
-        public static string TestNpcPath = "Npcs/TestNpc";
-        public static string CharacterPath = "Character/Character";
-        public static string EnemySpawnerPath = "Enemies/Enemy Spawner";
-        public static string NpcSpawnerPath = "Npcs/Npc Spawner";
-
+        public static class ObjectsPath
+        {
+            public const string WardrobePath = "UsableObjects/Wardrobe";
+        }
     }
 }
