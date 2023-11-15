@@ -16,7 +16,6 @@ public class PlayerTransparency : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,13 +28,19 @@ public class PlayerTransparency : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(ray, out hit);
             Material = hit.collider.gameObject.GetComponent<Renderer>().material;
-            Material?.SetFloat(SizeId, 1);
+
+            if (Material != null)
+                Material.SetFloat(SizeId, 1);
         }
         else
         {
-            Material?.SetFloat(SizeId, 0);
+            if (Material != null)
+                Material.SetFloat(SizeId, 0);
         }
-        var view = Camera.WorldToViewportPoint(transform.position);//Получение координат
-        Material?.SetVector(PosId, view);
+
+        var view = Camera.WorldToViewportPoint(transform.position); //Получение координат
+
+        if (Material != null)
+            Material.SetVector(PosId, view);
     }
 }

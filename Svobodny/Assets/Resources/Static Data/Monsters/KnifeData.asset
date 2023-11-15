@@ -15,6 +15,6 @@ MonoBehaviour:
   TypeID: 1
   Health: 0
   Prefab: {fileID: 8954773150905848177, guid: 8203e827ef328bd41ab91d1dd71afa31, type: 3}
-  ScanRange: 10
+  ScanRange: 5
   MeleeAttackRange: 2
-  Speed: 3
+  Speed: 1

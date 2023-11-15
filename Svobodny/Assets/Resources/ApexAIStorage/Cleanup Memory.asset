@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: Cleanup Memory
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: 769626e1-133a-458f-b833-6e0ceb127851
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":9cd6886bbedd4b27894a7584285ee1f6,"_id":769626e1133a458fb8336e0ceb127851,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":9cd6886bbedd4b27894a7584285ee1f6,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.CleanupMemory,
+    Assembly-CSharp","VisibilityExpirationThreshold":1.5}}}]}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":200,"@height":100},"DefaultQualifier":{"ActionView":{}}}}'
