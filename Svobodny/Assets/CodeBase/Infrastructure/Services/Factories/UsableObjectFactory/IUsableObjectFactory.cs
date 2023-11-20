@@ -24,7 +24,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
         {
             string objectPath = GetObjectPath(typeId);
 
-            return _assetProvider.Instantiate(objectPath, position, rotation);
+            return _assetProvider.Instantiate(objectPath, position);
         }
 
         private static string GetObjectPath(UsableObjectTypeId typeId)

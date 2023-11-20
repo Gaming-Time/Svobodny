@@ -1,3 +1,4 @@
+using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
@@ -13,5 +14,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void SpawnAllMonsters();
         void SpawnAllNpcs();
         void InitCamera(GameObject character);
+        void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId);
+        void SpawnAllObjects();
     }
 }

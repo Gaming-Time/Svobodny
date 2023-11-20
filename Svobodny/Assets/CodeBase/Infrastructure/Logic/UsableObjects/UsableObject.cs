@@ -19,7 +19,11 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
 
         private void OnTriggerStay(Collider other)
         {
-            Use();
+            if (other.gameObject.layer != LayerMask.NameToLayer("Character Trigger"))
+                return;
+            
+            if(_isRequested)
+                Use();
         }
 
         public abstract void Use();
@@ -27,6 +31,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
         protected virtual void OnUpdate()
         {
             _isRequested = InputService.IsUseButtonDown();
+            Debug.Log(_isRequested);
         }
     }
 }

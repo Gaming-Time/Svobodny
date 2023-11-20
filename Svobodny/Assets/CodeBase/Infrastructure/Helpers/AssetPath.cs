@@ -8,6 +8,7 @@ namespace CodeBase.Infrastructure.Helpers
         public const string CharacterPath = "Character/Character";
         public const string EnemySpawnerPath = "Enemies/Enemy Spawner";
         public const string NpcSpawnerPath = "Npcs/Npc Spawner";
+        public const string ObjectSpawnerPath = "UsableObjects/Object Spawner";
         
         public static class StaticDataPath
         {

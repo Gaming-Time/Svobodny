@@ -16,18 +16,28 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
             _character = character;
         }
 
-        public override void Use()
+        protected override void OnUpdate()
         {
             if (!_isActive)
             {
-                _character.SetActive(false);
-                _isActive = true;
+                base.OnUpdate();
+                return;
             }
-            else
-            {
-                _character.SetActive(true);
-                _isActive = false;
-            }
+            
+            if(InputService.IsUseButtonDown())
+                GetOut();
+        }
+
+        public override void Use()
+        {
+            _character.SetActive(false);
+            _isActive = true;
+        }
+
+        public void GetOut()
+        {
+            _character.SetActive(true);
+            _isActive = false;
         }
     }
 }

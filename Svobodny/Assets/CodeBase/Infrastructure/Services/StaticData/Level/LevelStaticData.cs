@@ -12,7 +12,7 @@ namespace CodeBase.Infrastructure.Services.StaticData.Level
         public string LevelKey;
         public List<EnemySpawnerData> EnemySpawners;
         public List<NpcSpawnerData> NpcSpawners;
-        public List<ObjectStaticData> ObjectsSpawners;
+        public List<ObjectSpawnerData> ObjectsSpawners;
 
         public Vector3 DayPlayerPosition;
         public Quaternion DayPlayerRotation;

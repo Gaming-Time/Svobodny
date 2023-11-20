@@ -9,7 +9,7 @@ namespace CodeBase.Editor
     public class UsableObjectSpawnMarkerEditor : UnityEditor.Editor
     {
         [DrawGizmo(GizmoType.Active | GizmoType.Pickable | GizmoType.NonSelected)]
-        public static void RenderCustomGizmo(EnemySpawnMarker marker, GizmoType gizmo)
+        public static void RenderCustomGizmo(UsableObjectSpawnMarker marker, GizmoType gizmo)
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawSphere(marker.transform.position, 0.5f);

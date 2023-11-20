@@ -6,14 +6,15 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
     public class UsableObjectSpawner : MonoBehaviour
     {
         private IUsableObjectFactory _factory;
-        private UsableObjectTypeId _typeId;
+
+        public UsableObjectTypeId TypeId { get; private set; }
 
         public void Construct(IUsableObjectFactory factory, UsableObjectTypeId typeId)
         {
             _factory = factory;
-            _typeId = typeId;
+            TypeId = typeId;
         }
 
-        public GameObject Spawn() => _factory.CreateUsableObject(_typeId, transform.position, transform.rotation);
+        public GameObject Spawn() => _factory.CreateUsableObject(TypeId, transform.position, transform.rotation);
     }
 }

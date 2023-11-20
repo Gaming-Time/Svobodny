@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.StaticData;
@@ -43,9 +44,11 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle(GetLoadedStaticData());
             _services.RegisterSingle<INpcFactory>(new NpcFactory(_services.GetSingle<IAssets>()));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.GetSingle<IAssets>()));
+            _services.RegisterSingle<IUsableObjectFactory>(new UsableObjectFactory(_services.GetSingle<IAssets>()));
             _services.RegisterSingle<IGameFactory>(new GameFactory(_services.GetSingle<IAssets>(),
                 _services.GetSingle<IEnemyFactory>(), _services.GetSingle<INpcFactory>(),
-                _services.GetSingle<IInputService>(), _services.GetSingle<IStaticDataService>()));
+                _services.GetSingle<IInputService>(), _services.GetSingle<IStaticDataService>(),
+                _services.GetSingle<IUsableObjectFactory>()));
             _services.RegisterSingle<IProgressService>(new ProgressService());
         }
 
