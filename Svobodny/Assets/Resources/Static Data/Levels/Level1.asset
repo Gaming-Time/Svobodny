@@ -14,11 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelKey: Level1test
   EnemySpawners:
-  - Id: Level1test_2fef202f-643f-4ddf-9d98-fce886166e55
+  - Id: Level1test_a436b491-de3a-4599-ae56-624da2e7aff9
     TypeId: 1
-    Rotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-    Position: {x: -2.263695, y: 0, z: -5.3120856}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 1.2976408, y: 0, z: -5}
   NpcSpawners: []
+  ObjectsSpawners:
+  - Id: Level1test_6256ef7a-d6ef-4726-a59b-b1985f5e5f16
+    TypeId: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 16.75, y: 0, z: -5.0126824}
   DayPlayerPosition: {x: -3.0873597, y: 0.56, z: -1.6887487}
   DayPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   NightPlayerPosition: {x: -3.8731177, y: 0.56, z: -1.9252775}

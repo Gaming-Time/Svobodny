@@ -1,7 +1,9 @@
 using System.Linq;
+using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Services.StaticData.Level;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
+using CodeBase.Infrastructure.Services.StaticData.UsableObjects;
 using CodeBase.Logic;
 using UnityEditor;
 using UnityEngine;
@@ -23,11 +25,14 @@ namespace CodeBase.Editor
 
             if (GUILayout.Button("Collect"))
             {
-                levelData.EnemySpawners = FindObjectsOfType<EnemySpawnMarker>().Select(x =>
+                levelData!.EnemySpawners = FindObjectsOfType<EnemySpawnMarker>().Select(x =>
                     new EnemySpawnerData(x.GetComponent<UniqueId>().Id, x.TypeID, x.transform.rotation,
                         x.transform.position)).ToList();
                 levelData.NpcSpawners = FindObjectsOfType<NPCSpawnMarker>().Select(x =>
                     new NpcSpawnerData(x.GetComponent<UniqueId>().Id, x.TypeId, x.transform.rotation,
+                        x.transform.position)).ToList();
+                levelData.ObjectsSpawners = FindObjectsOfType<UsableObjectSpawnMarker>().Select(x =>
+                    new ObjectSpawnerData(x.GetComponent<UniqueId>().Id, x.TypeId, x.transform.rotation,
                         x.transform.position)).ToList();
 
                 levelData.LevelKey = SceneManager.GetActiveScene().name;
@@ -38,7 +43,7 @@ namespace CodeBase.Editor
                 levelData.NightPlayerPosition = nightPlayer.transform.position;
                 levelData.NightPlayerRotation = nightPlayer.transform.rotation;
             }
-            
+
             EditorUtility.SetDirty(target);
         }
     }

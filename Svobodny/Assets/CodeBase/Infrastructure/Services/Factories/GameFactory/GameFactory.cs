@@ -3,9 +3,11 @@ using Cinemachine;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
+using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.StaticData.Character;
@@ -29,30 +31,35 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private readonly INpcFactory _npcFactory;
         private readonly IInputService _inputService;
         private readonly IStaticDataService _staticData;
+        private readonly IUsableObjectFactory _usableObjectFactory;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
+        private Dictionary<string, UsableObjectSpawner> _objectSpawners = new();
+
+        private GameObject _character;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
-            IInputService inputService, IStaticDataService staticData)
+            IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
             _npcFactory = npcFactory;
             _inputService = inputService;
             _staticData = staticData;
+            _usableObjectFactory = usableObjectFactory;
         }
 
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
         {
-            var character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
+            _character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
             var camera = Object.FindObjectOfType<Camera>();
-            InitMovement(staticData, character);
-            InitAnimations(staticData, character);
-            InitTransparency(character, camera);
-            InitFov(character, camera, _inputService);
+            InitMovement(staticData, _character);
+            InitAnimations(staticData, _character);
+            InitTransparency(_character, camera);
+            InitFov(_character, camera, _inputService);
 
-            return character;
+            return _character;
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)
@@ -81,6 +88,28 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var camera = Object.FindObjectOfType<CinemachineVirtualCamera>();
             camera.Follow = character.transform;
+        }
+
+        public void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId)
+        {
+            var spawner = _assetProvider.Instantiate(AssetPath.ObjectSpawnerPath, spawnerPosition).GetComponent<UsableObjectSpawner>();
+            spawner.Construct(_usableObjectFactory, spawnerTypeId);
+            _objectSpawners.Add(spawnerId, spawner);
+        }
+
+        public void SpawnAllObjects()
+        {
+            foreach (var spawner in _objectSpawners)
+            {
+                var usableObject = spawner.Value.Spawn();
+
+                switch (spawner.Value.TypeId)
+                {
+                    case UsableObjectTypeId.Wardrobe:
+                        usableObject.GetComponent<Wardrobe>().Construct(_inputService, _character);
+                        break;
+                }
+            }
         }
 
         public void SpawnAllMonsters()

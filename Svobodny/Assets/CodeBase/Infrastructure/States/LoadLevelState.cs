@@ -67,7 +67,20 @@ namespace CodeBase.Infrastructure.States
             }
 
             var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
-            _gameFactory.InitCamera(character); 
+            _gameFactory.InitCamera(character);
+
+            CreateObjectSpawners();
+            _gameFactory.SpawnAllObjects();
+        }
+
+        private void CreateObjectSpawners()
+        {
+            var spawners = _levelStaticData.ObjectsSpawners;
+
+            foreach (var spawner in spawners)
+            {
+                _gameFactory.CreateObjectSpawner(spawner.Position, spawner.Id, spawner.TypeId);
+            }
         }
 
         private void CreateEnemySpawners()

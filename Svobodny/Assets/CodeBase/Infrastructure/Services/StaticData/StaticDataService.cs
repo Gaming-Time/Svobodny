@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Level;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
+using CodeBase.Infrastructure.Services.StaticData.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.StaticData

@@ -28,6 +28,9 @@ namespace CodeBase.Editor
 
         private void Generate(UniqueId uniqueId)
         {
+            if (uniqueId.gameObject.scene.name == null)
+                return;
+            
             uniqueId.Id = $"{uniqueId.gameObject.scene.name}_{Guid.NewGuid().ToString()}";
 
             if (Application.isPlaying)
