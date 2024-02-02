@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Opacity: 1
-    - _Size: 0.8
+    - _Size: 0
     - _Smoothenes: 0
     m_Colors:
     - _PlayerPos: {r: 0.5, g: 0.5, b: 0, a: 0}

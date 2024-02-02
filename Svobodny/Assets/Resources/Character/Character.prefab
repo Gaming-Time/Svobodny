@@ -537,9 +537,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 0}
-  LayerMask:
+  WallLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  characterLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
   Camera: {fileID: 0}
 --- !u!114 &7760809087704210232
 MonoBehaviour:
