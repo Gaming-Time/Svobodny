@@ -191,7 +191,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4611230056651840008}
   m_Father: {fileID: 4676986946427676157}
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!212 &918843206089727718
@@ -279,6 +280,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7271a99eccc4dea4e84c6171ecc754b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7155071112578737813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4611230056651840008}
+  m_Layer: 11
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4611230056651840008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155071112578737813}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1204923544041526684}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8954773150905848177
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +323,7 @@ GameObject:
   - component: {fileID: 6033645586036839379}
   - component: {fileID: 4781311383347931026}
   - component: {fileID: 6240907821012130194}
+  - component: {fileID: 6717516889644333040}
   m_Layer: 11
   m_Name: Knife
   m_TagString: Untagged
@@ -362,3 +395,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b6972ba456415cbb7d546f1c4898a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHealth: 0
+--- !u!114 &6717516889644333040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954773150905848177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6800cf1f7fe1489596dfe1b4bc114d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 4611230056651840008}
+  attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  overlapRadius: 0

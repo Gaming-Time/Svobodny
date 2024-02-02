@@ -5,29 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/UsableObjects/ObjectSpawnerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/UsableObjects/ObjectSpawnerData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_idle_down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_idle_down.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/UniqueIdEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Editor/UniqueIdEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/UsableObjectSpawnMarkerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Editor/UsableObjectSpawnMarkerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/IGameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Level/LevelStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/StaticData/Level/LevelStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Movement/HumanoidMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Movement/HumanoidMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +30,10 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/62/633f0ff3/Material.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -65,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.88590604",
-    "git-widget-placeholder": "mikhail/SVO-41",
+    "git-widget-placeholder": "mikhail/svo-49",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8088">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8088" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -140,6 +130,7 @@
       <workItem from="1700036232072" duration="688000" />
       <workItem from="1700469316855" duration="16000" />
       <workItem from="1700469787951" duration="9038000" />
+      <workItem from="1706777217240" duration="3965000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -190,13 +181,13 @@
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>118</line>
+          <line>119</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'">
             <startOffsets>
-              <option value="6289" />
+              <option value="6401" />
             </startOffsets>
             <endOffsets>
-              <option value="6325" />
+              <option value="6437" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

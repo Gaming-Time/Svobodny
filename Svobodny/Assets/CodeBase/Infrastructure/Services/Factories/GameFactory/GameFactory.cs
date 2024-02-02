@@ -20,6 +20,7 @@ using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
@@ -138,6 +139,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterContextProvider = monster.GetComponentInChildren<EnemyContextProvider>();
                 var monsterAnimatorController = monster.GetComponentInChildren<HumanoidAnimatorController>();
                 var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
+                var monsterAttack = monster.GetComponent<EnemyAttack>();
 
 
                 monsterMover.Construct(monsterAgent, monsterData.Speed);
@@ -146,6 +148,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
+                monsterAttack.Construct(monsterData.MeleeAttackRange);
             }
         }
 
