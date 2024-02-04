@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camera/Virtual Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Camera/Virtual Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/SeeThrough 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/SeeThrough 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +19,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Character/CharacterAnimator.controller" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Closet_Anim/Closet_Controller.controller" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Scenes/Level1 1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Shaders/PlayerTransparency.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -129,7 +120,7 @@
       <workItem from="1700469316855" duration="16000" />
       <workItem from="1700469787951" duration="9038000" />
       <workItem from="1706865460562" duration="2280000" />
-      <workItem from="1707052289232" duration="6188000" />
+      <workItem from="1707052289232" duration="6301000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -147,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700041217931</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="123">
+      <option name="closed" value="true" />
+      <created>1707061548973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707061548973</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +172,8 @@
     <MESSAGE value="рефакторинг menuUI" />
     <MESSAGE value="Fix FOV" />
     <MESSAGE value="SVO-41 - База для Usable Objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-41 - База для Usable Objects" />
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
