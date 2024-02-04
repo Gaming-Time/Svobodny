@@ -6,14 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camera/Virtual Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Camera/Virtual Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/SeeThrough 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/SeeThrough 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 6.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 6.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 Top_Tran.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallHall2 Top_Tran.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallToilet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Tilemaps/Level1/Sprites/WallToilet.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +46,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.88590604",
-    "git-widget-placeholder": "Opt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.88590604&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Opt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -125,7 +128,8 @@
       <workItem from="1700036232072" duration="688000" />
       <workItem from="1700469316855" duration="16000" />
       <workItem from="1700469787951" duration="9038000" />
-      <workItem from="1706865460562" duration="2034000" />
+      <workItem from="1706865460562" duration="2280000" />
+      <workItem from="1707052289232" duration="6188000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
