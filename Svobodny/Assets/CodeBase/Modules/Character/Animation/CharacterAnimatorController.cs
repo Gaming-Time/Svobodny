@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.Input;
+﻿using CodeBase.Infrastructure.Logic.Animations;
+using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character.Animation
@@ -25,14 +26,14 @@ namespace CodeBase.Modules.Character.Animation
         void Update()
         {
             var cameraInput = _inputService.CameraInput;
-            _animator.SetFloat(CharacterAnimatorVariables.MouseX, cameraInput.x);
-            _animator.SetFloat(CharacterAnimatorVariables.MouseY, cameraInput.y);
-            _animator.SetFloat(CharacterAnimatorVariables.Speed, _controller.velocity.sqrMagnitude);
-            _animator.SetFloat(CharacterAnimatorVariables.WalkSpeed, _walkSpeed);
-            _animator.SetFloat(CharacterAnimatorVariables.SneakSpeed, _sneakSpeed);
-            _animator.SetBool(CharacterAnimatorVariables.IsSneaking, _inputService.IsSneakButtonDown());
-            _animator.SetFloat(CharacterAnimatorVariables.MovementX, _inputService.MovementInput.x);
-            _animator.SetFloat(CharacterAnimatorVariables.MovementY, _inputService.MovementInput.y);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseX, cameraInput.x);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseY, cameraInput.y);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.Speed, _controller.velocity.sqrMagnitude);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.WalkSpeed, _walkSpeed);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.SneakSpeed, _sneakSpeed);
+            _animator.SetBool(AnimatorVariables.Character.Movement.IsSneaking, _inputService.IsSneakButtonDown());
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MovementX, _inputService.MovementInput.x);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MovementY, _inputService.MovementInput.y);
         }
     }
 }

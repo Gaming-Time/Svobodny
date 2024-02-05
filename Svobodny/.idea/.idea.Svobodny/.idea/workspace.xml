@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimatorController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimatorController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorVariables.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorVariables.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Wardrobe-enter_Player2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Wardrobe-enter_Player2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-activated.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-activated.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter_Closet2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter_Closet2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,14 +42,17 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/62/633f0ff3/Material.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Character/CharacterAnimator.controller" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Closet_Anim/Closet_Controller.controller" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Scenes/Level1 1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Shaders/PlayerTransparency.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -37,29 +67,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.88590604&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Opt&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.88590604",
+    "git-widget-placeholder": "mikhail/svo-54",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -180,13 +210,13 @@
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>106</line>
+          <line>107</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'">
             <startOffsets>
-              <option value="6289" />
+              <option value="6835" />
             </startOffsets>
             <endOffsets>
-              <option value="6325" />
+              <option value="6871" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

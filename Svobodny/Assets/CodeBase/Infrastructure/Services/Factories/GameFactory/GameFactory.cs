@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -117,7 +118,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 switch (spawner.Value.TypeId)
                 {
                     case UsableObjectTypeId.Wardrobe:
-                        usableObject.GetComponent<Wardrobe>().Construct(_inputService, _character);
+                        var wardrobeAnimatorController = usableObject.GetComponent<WardrobeAnimatorController>();
+                        wardrobeAnimatorController.Construct(usableObject.GetComponentInChildren<Animator>());
+
+                        var characterAnimatorController =
+                            _character.GetComponentInChildren<CharacterAnimatorController>();
+                        usableObject.GetComponent<Wardrobe>().Construct(_inputService, _character,
+                            wardrobeAnimatorController, characterAnimatorController);
+                        
                         break;
                 }
             }
