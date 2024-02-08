@@ -35,5 +35,8 @@ namespace CodeBase.Modules.Character.Animation
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementX, _inputService.MovementInput.x);
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementY, _inputService.MovementInput.y);
         }
+
+        public void EnterWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.EnterWardrobe);
+        public void ExitWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.ExitWardrobe);
     }
 }

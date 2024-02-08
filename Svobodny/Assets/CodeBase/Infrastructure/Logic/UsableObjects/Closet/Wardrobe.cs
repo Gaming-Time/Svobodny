@@ -1,26 +1,29 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Interaction;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
 {
     public class Wardrobe : UsableObject
     {
+        [SerializeField] private Transform characterPivot;
+        
         private GameObject _character;
         private WardrobeAnimatorController _animatorController;
-        private CharacterAnimatorController _characterAnimatorController;
+        private CharacterWardrobeInteraction _characterWardrobeInteraction;
 
         private bool _isActive;
 
         protected override IInputService InputService { get; set; }
 
         public void Construct(IInputService inputService, GameObject character,
-            WardrobeAnimatorController animatorController, CharacterAnimatorController characterAnimatorController)
+            WardrobeAnimatorController animatorController, CharacterWardrobeInteraction wardrobeInteraction)
         {
             InputService = inputService;
             _character = character;
             _animatorController = animatorController;
-            _characterAnimatorController = characterAnimatorController;
+            _characterWardrobeInteraction = wardrobeInteraction;
         }
 
         protected override void OnUpdate()
@@ -37,14 +40,17 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
 
         public override void Use()
         {
-            _character.SetActive(false);
             _isActive = true;
+            _animatorController.Enter();
+            _characterWardrobeInteraction.Enter(characterPivot.position);
         }
 
         public void GetOut()
         {
-            _character.SetActive(true);
             _isActive = false;
+            _animatorController.Exit();
         }
+
+        public void OnExitAnimationFinished() => _characterWardrobeInteraction.Exit();
     }
 }

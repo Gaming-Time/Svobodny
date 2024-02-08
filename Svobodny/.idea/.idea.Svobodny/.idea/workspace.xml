@@ -5,32 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimatorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimatorController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Closet_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Wardrobe.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_enter-closet.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_enter-closet.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorVariables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorVariables.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Wardrobe-enter_Player2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Wardrobe-enter_Player2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-activated.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-activated.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter_Closet2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-enter_Closet2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Closet/Wardrobe-exit.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,29 +54,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.88590604",
-    "git-widget-placeholder": "mikhail/svo-54",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.8860648&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-54&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\daggenroll\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -151,6 +138,7 @@
       <workItem from="1700469787951" duration="9038000" />
       <workItem from="1706865460562" duration="2280000" />
       <workItem from="1707052289232" duration="6301000" />
+      <workItem from="1707381995693" duration="2914000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -176,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707061548973</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SVO-45 - Спрайты, аниматор, контроллеры">
+      <option name="closed" value="true" />
+      <created>1707148041522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707148041522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,20 +199,21 @@
     <MESSAGE value="Fix FOV" />
     <MESSAGE value="SVO-41 - База для Usable Objects" />
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="SVO-45 - Спрайты, аниматор, контроллеры" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-45 - Спрайты, аниматор, контроллеры" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>107</line>
+          <line>119</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'">
             <startOffsets>
-              <option value="6835" />
+              <option value="7677" />
             </startOffsets>
             <endOffsets>
-              <option value="6871" />
+              <option value="7713" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

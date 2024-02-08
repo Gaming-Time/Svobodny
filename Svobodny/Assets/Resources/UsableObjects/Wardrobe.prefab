@@ -35,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 6774997041890795472}
   - {fileID: 242216152392476803}
+  - {fileID: 8276482445620688252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1470637787208880755
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2b5829e22f4fc2b50c1c51fc2d8b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterPivot: {fileID: 8276482445620688252}
 --- !u!114 &4709016410449298737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +111,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7210771550724401aee797b58bbc69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5841597028190005471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8276482445620688252}
+  m_Layer: 0
+  m_Name: CharacterPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8276482445620688252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841597028190005471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07872009, y: 0.49701107, z: 0.019833684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6692760980265842073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8142779083923296341
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +206,7 @@ GameObject:
   - component: {fileID: 6774997041890795472}
   - component: {fileID: 2116588801494915687}
   - component: {fileID: 714403302694206985}
+  - component: {fileID: 4525526352926118219}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -268,3 +302,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4525526352926118219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497591389041747396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194d26ad6a384924b0589849a8989704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
