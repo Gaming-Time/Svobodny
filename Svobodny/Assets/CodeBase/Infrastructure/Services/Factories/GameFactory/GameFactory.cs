@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -17,6 +18,7 @@ using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
+using CodeBase.Modules.Character.Interaction;
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
@@ -62,8 +64,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
+            InitInteractions(_character);
 
             return _character;
+        }
+
+        private void InitInteractions(GameObject character)
+        {
+            var wardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+            var animatorController = character.GetComponent<CharacterAnimatorController>();
+            var characterController = character.GetComponent<CharacterController>();
+            var characterMove = character.GetComponent<CharacterMove>();
+
+            wardrobeInteraction.Construct(animatorController, characterController, characterMove);
         }
 
         private void InitHealth(CharacterStaticData staticData, GameObject character)
@@ -117,7 +130,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 switch (spawner.Value.TypeId)
                 {
                     case UsableObjectTypeId.Wardrobe:
-                        usableObject.GetComponent<Wardrobe>().Construct(_inputService, _character);
+                        var wardrobeAnimatorController = usableObject.GetComponent<WardrobeAnimatorController>();
+                        wardrobeAnimatorController.Construct(usableObject.GetComponentInChildren<Animator>());
+
+                        var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+
+                        var wardrobe = usableObject.GetComponent<Wardrobe>();
+                        wardrobe.Construct(_inputService, _character,
+                            wardrobeAnimatorController, characterWardrobeInteraction);
+
+                        var wardrobeAnimationEventsManager =
+                            usableObject.GetComponentInChildren<WardrobeAnimationEventsManager>();
+                        wardrobeAnimationEventsManager.Construct(wardrobe);
+
                         break;
                 }
             }

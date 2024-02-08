@@ -15,6 +15,7 @@ MonoBehaviour:
   LevelKey: Character Controller
   EnemySpawners: []
   NpcSpawners: []
+  ObjectsSpawners: []
   DayPlayerPosition: {x: -3.1463249, y: 0.506, z: -2.0177608}
   DayPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   NightPlayerPosition: {x: -2.535, y: 0.506, z: -1.864}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1470637787208880755}
   - component: {fileID: 8426388182542206479}
   - component: {fileID: 7918942273231537543}
+  - component: {fileID: 4709016410449298737}
   m_Layer: 0
   m_Name: Wardrobe
   m_TagString: Untagged
@@ -34,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 6774997041890795472}
   - {fileID: 242216152392476803}
+  - {fileID: 8276482445620688252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1470637787208880755
@@ -96,6 +98,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2b5829e22f4fc2b50c1c51fc2d8b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterPivot: {fileID: 8276482445620688252}
+--- !u!114 &4709016410449298737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705906543741043804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7210771550724401aee797b58bbc69b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5841597028190005471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8276482445620688252}
+  m_Layer: 0
+  m_Name: CharacterPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8276482445620688252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841597028190005471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07872009, y: 0.49701107, z: 0.019833684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6692760980265842073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8142779083923296341
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,8 +193,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.852495, z: 0.7098355}
-  m_Center: {x: 0, y: 1.013723, z: 0.33731294}
+  m_Size: {x: 1, y: 1.6829479, z: 0.65008175}
+  m_Center: {x: 0, y: 0.8346391, z: 0.30743605}
 --- !u!1 &8497591389041747396
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +205,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6774997041890795472}
   - component: {fileID: 2116588801494915687}
+  - component: {fileID: 714403302694206985}
+  - component: {fileID: 4525526352926118219}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -222,7 +270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47fd94793987edc4da000d1f220b6b96, type: 3}
+  m_Sprite: {fileID: 744533387, guid: 372cda82a3b134c40b63166a3467c388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,3 +281,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &714403302694206985
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497591389041747396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57bfe94c92e06664aa6432871d93dab3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4525526352926118219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497591389041747396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194d26ad6a384924b0589849a8989704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
