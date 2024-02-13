@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053d253b565e039449fff209eec2b5f5, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: 
+  Health: 1
   WalkSpeed: 1.7
   SneakSpeed: 1

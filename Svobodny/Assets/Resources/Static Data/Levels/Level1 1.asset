@@ -15,7 +15,11 @@ MonoBehaviour:
   LevelKey: Level1 1
   EnemySpawners: []
   NpcSpawners: []
-  ObjectsSpawners: []
+  ObjectsSpawners:
+  - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
+    TypeId: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 24.819107, y: -0.25001097, z: 0.30092898}
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
   DayPlayerRotation: {x: -0, y: -0, z: -0, w: 1}
   NightPlayerPosition: {x: 6.3334117, y: 0, z: -0.06520569}

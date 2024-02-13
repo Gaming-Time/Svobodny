@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_enter-closet.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_enter-closet.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Interaction/CharacterWardrobeInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,14 +29,17 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/62/633f0ff3/Material.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af915f417e934a00aa13521095bfbb66f600/49/af361569/IAIContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/2d/533f1648/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Character/CharacterAnimator.controller" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Animations/Closet_Anim/Closet_Controller.controller" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Scenes/Level1 1.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/repos/Univer/Svobodny/Svobodny/Assets/Shaders/PlayerTransparency.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -43,8 +60,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.88590604&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Opt&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.8860648&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-54&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -121,6 +138,7 @@
       <workItem from="1700469787951" duration="9038000" />
       <workItem from="1706865460562" duration="2280000" />
       <workItem from="1707052289232" duration="6301000" />
+      <workItem from="1707381995693" duration="2914000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -146,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707061548973</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SVO-45 - Спрайты, аниматор, контроллеры">
+      <option name="closed" value="true" />
+      <created>1707148041522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707148041522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,20 +199,21 @@
     <MESSAGE value="Fix FOV" />
     <MESSAGE value="SVO-41 - База для Usable Objects" />
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="SVO-45 - Спрайты, аниматор, контроллеры" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-45 - Спрайты, аниматор, контроллеры" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>106</line>
+          <line>119</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'">
             <startOffsets>
-              <option value="6289" />
+              <option value="7677" />
             </startOffsets>
             <endOffsets>
-              <option value="6325" />
+              <option value="7713" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

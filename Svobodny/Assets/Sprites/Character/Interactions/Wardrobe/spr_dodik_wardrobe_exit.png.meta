@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 372cda82a3b134c40b63166a3467c388
+guid: 6382e14cbee35f343a9a4772a7848045
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
-  spritePivot: {x: 0, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 36
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wardrobe-activated_0
+      name: spr_dodik_wardrobe_exit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bcdd6db82100754a9da8594b204ab3f
-      internalID: 744533387
+      spriteID: 0bad8820db5927e48b88e667bebdc204
+      internalID: -1228841482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_1
+      name: spr_dodik_wardrobe_exit_1
       rect:
         serializedVersion: 2
-        x: 41
+        x: 24
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56cb8756436cd2f48912e575a4fa8378
-      internalID: -425808065
+      spriteID: d1e5bf2cf97ac6a4dabe116445a64edd
+      internalID: 79566195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_2
+      name: spr_dodik_wardrobe_exit_2
       rect:
         serializedVersion: 2
-        x: 82
+        x: 48
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24d6f50ab07d6c74d9ea6cb19a0f266e
-      internalID: 1779519401
+      spriteID: 2cfe62e853b54fa4eb51ac8efd794f5d
+      internalID: -1626495962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_3
+      name: spr_dodik_wardrobe_exit_3
       rect:
         serializedVersion: 2
-        x: 123
+        x: 72
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b227589cb3cdca42b8658e3507b4b60
-      internalID: -1619779634
+      spriteID: db3a019f88f286140b5a2db3153018a5
+      internalID: 1807229016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_4
+      name: spr_dodik_wardrobe_exit_4
       rect:
         serializedVersion: 2
-        x: 164
+        x: 96
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99bf5f1e128e53f4794f3ac3587c930b
-      internalID: 342707618
+      spriteID: 9e5f9e45532e2114fb6fdc5b1d2ded71
+      internalID: 656816002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_5
+      name: spr_dodik_wardrobe_exit_5
       rect:
         serializedVersion: 2
-        x: 205
+        x: 120
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5336a8f8edb4ee547b7e25aa1a6befd2
-      internalID: -1672009563
+      spriteID: 81777292355c52744a910b8cfc8e7e7e
+      internalID: 1036803968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_6
+      name: spr_dodik_wardrobe_exit_6
       rect:
         serializedVersion: 2
-        x: 246
+        x: 144
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6e9854c783907746909056de3e36446
-      internalID: 330962404
+      spriteID: 8a4b9328f65e5514d86353b163be1148
+      internalID: 1603752968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_7
+      name: spr_dodik_wardrobe_exit_7
       rect:
         serializedVersion: 2
-        x: 287
+        x: 168
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e78e63fcccb4224cb74e50a7cee1a2c
-      internalID: 187789103
+      spriteID: d4898622b0b17cd499cbff9156118184
+      internalID: 421848546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wardrobe-activated_8
+      name: spr_dodik_wardrobe_exit_8
       rect:
         serializedVersion: 2
-        x: 328
+        x: 192
         y: 0
-        width: 38
-        height: 65
+        width: 24
+        height: 39
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,50 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e7a5691065ba643a6d657b42fc8796
-      internalID: -1236408852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wardrobe-activated_9
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 0
-        width: 38
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb1d57592f9e2f241a6c0f5006b8f463
-      internalID: -1703005701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wardrobe-activated_10
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 0
-        width: 38
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42df0e1d113e6de4faf28bc34c526e75
-      internalID: -1785305198
+      spriteID: 28b25b9d747c7d4488865c4727ce8933
+      internalID: 1905710223
       vertices: []
       indices: 
       edges: []
@@ -343,7 +301,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a6fb4bb7ebe2f644cac8025ddbaa44a0
+    spriteID: d1b7836b3bf703c43bf4949717132a00
     internalID: 0
     vertices: []
     indices: 
@@ -351,17 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wardrobe-activated_0: 744533387
-      Wardrobe-activated_1: -425808065
-      Wardrobe-activated_10: -1785305198
-      Wardrobe-activated_2: 1779519401
-      Wardrobe-activated_3: -1619779634
-      Wardrobe-activated_4: 342707618
-      Wardrobe-activated_5: -1672009563
-      Wardrobe-activated_6: 330962404
-      Wardrobe-activated_7: 187789103
-      Wardrobe-activated_8: -1236408852
-      Wardrobe-activated_9: -1703005701
+      spr_dodik_wardrobe_exit_0: -1228841482
+      spr_dodik_wardrobe_exit_1: 79566195
+      spr_dodik_wardrobe_exit_2: -1626495962
+      spr_dodik_wardrobe_exit_3: 1807229016
+      spr_dodik_wardrobe_exit_4: 656816002
+      spr_dodik_wardrobe_exit_5: 1036803968
+      spr_dodik_wardrobe_exit_6: 1603752968
+      spr_dodik_wardrobe_exit_7: 421848546
+      spr_dodik_wardrobe_exit_8: 1905710223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

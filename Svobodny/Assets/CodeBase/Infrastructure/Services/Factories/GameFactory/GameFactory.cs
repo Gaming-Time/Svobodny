@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -16,8 +17,12 @@ using CodeBase.Infrastructure.Services.StaticData.Npc;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
+using CodeBase.Modules.Character.Health;
+using CodeBase.Modules.Character.Interaction;
+using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
 using UnityEngine.AI;
@@ -58,8 +63,26 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitAnimations(staticData, _character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
+            InitHealth(staticData, _character);
+            InitInteractions(_character);
 
             return _character;
+        }
+
+        private void InitInteractions(GameObject character)
+        {
+            var wardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+            var animatorController = character.GetComponent<CharacterAnimatorController>();
+            var characterController = character.GetComponent<CharacterController>();
+            var characterMove = character.GetComponent<CharacterMove>();
+
+            wardrobeInteraction.Construct(animatorController, characterController, characterMove);
+        }
+
+        private void InitHealth(CharacterStaticData staticData, GameObject character)
+        {
+            var characterHealth = character.GetComponent<CharacterHealth>();
+            characterHealth.Construct(staticData.Health);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)
@@ -92,7 +115,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         public void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId)
         {
-            var spawner = _assetProvider.Instantiate(AssetPath.ObjectSpawnerPath, spawnerPosition).GetComponent<UsableObjectSpawner>();
+            var spawner = _assetProvider.Instantiate(AssetPath.ObjectSpawnerPath, spawnerPosition)
+                .GetComponent<UsableObjectSpawner>();
             spawner.Construct(_usableObjectFactory, spawnerTypeId);
             _objectSpawners.Add(spawnerId, spawner);
         }
@@ -106,7 +130,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 switch (spawner.Value.TypeId)
                 {
                     case UsableObjectTypeId.Wardrobe:
-                        usableObject.GetComponent<Wardrobe>().Construct(_inputService, _character);
+                        var wardrobeAnimatorController = usableObject.GetComponent<WardrobeAnimatorController>();
+                        wardrobeAnimatorController.Construct(usableObject.GetComponentInChildren<Animator>());
+
+                        var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+
+                        var wardrobe = usableObject.GetComponent<Wardrobe>();
+                        wardrobe.Construct(_inputService, _character,
+                            wardrobeAnimatorController, characterWardrobeInteraction);
+
+                        var wardrobeAnimationEventsManager =
+                            usableObject.GetComponentInChildren<WardrobeAnimationEventsManager>();
+                        wardrobeAnimationEventsManager.Construct(wardrobe);
+
                         break;
                 }
             }
@@ -122,17 +158,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
                 var monsterAgent = monster.GetComponent<NavMeshAgent>();
                 var monsterMover = monster.GetComponent<HumanoidMove>();
-                monsterMover.Construct(monsterAgent, monsterData.Speed);
-                monster.GetComponentInChildren<HumanoidAnimatorController>()
-                    .Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-
+                var monsterHealth = monster.GetComponent<EnemyHealth>();
                 var monsterEntity = monster.GetComponentInChildren<EnemyAiEntity>();
-                monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
-
                 var monsterContextProvider = monster.GetComponentInChildren<EnemyContextProvider>();
-                monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
+                var monsterAnimatorController = monster.GetComponentInChildren<HumanoidAnimatorController>();
+                var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
 
-                monster.GetComponentInChildren<CollisionOwner>().Construct(monsterEntity);
+
+                monsterMover.Construct(monsterAgent, monsterData.Speed);
+                monsterHealth.Construct(monsterData.Health);
+                monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
+                monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
+                monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
+                collisionOwner.Construct(monsterEntity);
             }
         }
 
