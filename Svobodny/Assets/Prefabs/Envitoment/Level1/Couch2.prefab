@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9006709242307112377}
   - component: {fileID: 8361023941282174952}
-  - component: {fileID: 6109997221427159452}
-  - component: {fileID: 6131617886221089356}
   m_Layer: 0
   m_Name: Couch2
   m_TagString: Untagged
@@ -31,7 +29,8 @@ Transform:
   m_LocalPosition: {x: -4.223, y: 0.12046537, z: 0.722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3125988198390899923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 64.27, y: 7.6, z: 0}
 --- !u!212 &8361023941282174952
@@ -86,13 +85,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!65 &6109997221427159452
+--- !u!1 &3532265356806793561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3125988198390899923}
+  - component: {fileID: 8023822546172483280}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3125988198390899923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532265356806793561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5319159, y: 0, z: 0, w: 0.84679717}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9006709242307112377}
+  m_LocalEulerAnglesHint: {x: -64.27, y: 0, z: 0}
+--- !u!65 &8023822546172483280
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526411002767078468}
+  m_GameObject: {fileID: 3532265356806793561}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -105,21 +136,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45, y: 0.94, z: 0.20000008}
-  m_Center: {x: -0.00000047683716, y: 0, z: -0.00000011920929}
---- !u!114 &6131617886221089356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526411002767078468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  m_Size: {x: 0.78, y: 0.52, z: 1.33}
+  m_Center: {x: 0, y: 0, z: 0}
