@@ -173,7 +173,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
-                monsterAttack.Construct(monsterData.MeleeAttackRange);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController);
             }
         }
 

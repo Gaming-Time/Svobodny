@@ -32,4 +32,6 @@ public class HumanoidAnimatorController : MonoBehaviour {
         _animator.SetFloat(HumanoidAnimationVariables.SpeedHash, _speed);
     }
 
+    public void PlayAttackAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.AttackTriggerHash);
+
 }

@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Level1 1
   m_EditorClassIdentifier: 
   LevelKey: Level1 1
-  EnemySpawners: []
+  EnemySpawners:
+  - Id: Level1 1_5a5f9877-6bf5-4f26-8154-dfc93694b45b
+    TypeId: 1
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 9.404925, y: 0, z: -0.05683297}
   NpcSpawners: []
   ObjectsSpawners:
   - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
