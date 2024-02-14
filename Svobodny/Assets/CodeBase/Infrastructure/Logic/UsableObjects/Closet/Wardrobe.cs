@@ -8,20 +8,19 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
     public class Wardrobe : UsableObject
     {
         [SerializeField] private Transform characterPivot;
-        
-        private GameObject _character;
+
         private WardrobeAnimatorController _animatorController;
         private CharacterWardrobeInteraction _characterWardrobeInteraction;
 
         private bool _isActive;
+        private bool _isBeingAnimated;
 
         protected override IInputService InputService { get; set; }
 
-        public void Construct(IInputService inputService, GameObject character,
+        public void Construct(IInputService inputService,
             WardrobeAnimatorController animatorController, CharacterWardrobeInteraction wardrobeInteraction)
         {
             InputService = inputService;
-            _character = character;
             _animatorController = animatorController;
             _characterWardrobeInteraction = wardrobeInteraction;
         }
@@ -41,16 +40,18 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
         public override void Use()
         {
             _isActive = true;
+            _isBeingAnimated = true;
             _animatorController.Enter();
             _characterWardrobeInteraction.Enter(characterPivot.position);
         }
 
         public void GetOut()
         {
-            _isActive = false;
             _animatorController.Exit();
         }
 
-        public void OnExitAnimationFinished() => _characterWardrobeInteraction.Exit();
+        public void StartPlayerAnimation() => _characterWardrobeInteraction.Exit();
+
+        public void OnExitAnimationFinished() => _isActive = false;
     }
 }
