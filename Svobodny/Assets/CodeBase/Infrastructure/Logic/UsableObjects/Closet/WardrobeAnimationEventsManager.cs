@@ -11,6 +11,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
             _wardrobe = wardrobe;
         }
 
+        public void OnPlayerTimeCome() => _wardrobe.StartPlayerAnimation();
         public void OnExitAnimationFinished() => _wardrobe.OnExitAnimationFinished();
     }
 }

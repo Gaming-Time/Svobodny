@@ -137,7 +137,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                         var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
 
                         var wardrobe = usableObject.GetComponent<Wardrobe>();
-                        wardrobe.Construct(_inputService, _character,
+                        wardrobe.Construct(_inputService,
                             wardrobeAnimatorController, characterWardrobeInteraction);
 
                         var wardrobeAnimationEventsManager =
