@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Enter2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Exit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Closet_Anim/Exit.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/WardrobeAnimationEventsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair3 (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair3 (1).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair3 (2).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Chair3 (2).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Couch1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Couch1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Couch2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Couch2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Plant1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Plant1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Stool.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Stool.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Toilet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Envitoment/Level1/Toilet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1/NavMesh-NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1/NavMesh-NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/Materials/Bed.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-    </list>
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +127,7 @@
       <workItem from="1707052289232" duration="6301000" />
       <workItem from="1707381995693" duration="2914000" />
       <workItem from="1707814148741" duration="3278000" />
-      <workItem from="1707913842315" duration="2081000" />
+      <workItem from="1707913842315" duration="2422000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -181,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707148041522</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Убрал баг с анимацией шкафа, подделал навмеш">
+      <option name="closed" value="true" />
+      <created>1707918334298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707918334298</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +197,8 @@
     <MESSAGE value="SVO-41 - База для Usable Objects" />
     <MESSAGE value="123" />
     <MESSAGE value="SVO-45 - Спрайты, аниматор, контроллеры" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-45 - Спрайты, аниматор, контроллеры" />
+    <MESSAGE value="Убрал баг с анимацией шкафа, подделал навмеш" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал баг с анимацией шкафа, подделал навмеш" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
