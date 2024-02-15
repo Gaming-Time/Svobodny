@@ -23,7 +23,7 @@ Material:
   m_Name: WallHall2 Top_Tran
   m_Shader: {fileID: -6465566751694194690, guid: 8073bad5f9719cc4aa33d5d83565574f, type: 3}
   m_Parent: {fileID: 2100000, guid: 0746ac7ca4c3db84db45084be71a2882, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 4
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4

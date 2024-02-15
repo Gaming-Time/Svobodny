@@ -28,6 +28,40 @@ MonoBehaviour:
   saturation:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-5202746485630440782
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9246055, z: 0.756482, w: 0}
+  midtones:
+    m_OverrideState: 0
+    m_Value: {x: 0.95442915, y: 1, z: 0.96582204, w: 0}
+  highlights:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 0.9969564, z: 0.8926894, w: 0}
+  shadowsStart:
+    m_OverrideState: 0
+    m_Value: 0
+  shadowsEnd:
+    m_OverrideState: 0
+    m_Value: 0.3
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &-4863623678070907559
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -49,7 +83,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.321
+    m_Value: 0.46
   smoothness:
     m_OverrideState: 1
     m_Value: 0.13
@@ -68,16 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   skipIterations:
     m_OverrideState: 0
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 2.62
+    m_Value: 0.91
   intensity:
     m_OverrideState: 1
-    m_Value: 8.26
+    m_Value: 3.8
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -102,7 +136,7 @@ MonoBehaviour:
     dimension: 1
   dirtIntensity:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 2.81
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +156,7 @@ MonoBehaviour:
   - {fileID: 6822900505517826672}
   - {fileID: -4863623678070907559}
   - {fileID: -6944290235802466708}
+  - {fileID: -5202746485630440782}
 --- !u!114 &1881579288749618558
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -177,7 +212,7 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 8
   intensity:
     m_OverrideState: 1
     m_Value: 0.68
