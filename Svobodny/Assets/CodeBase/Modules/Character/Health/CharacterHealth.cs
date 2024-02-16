@@ -17,6 +17,7 @@ namespace CodeBase.Modules.Character.Health
         
         public void DoDamage(int damage)
         {
+            Debug.Log("damage");
             _currentHealth -= damage;
             if(_currentHealth < 1)
                 Die();

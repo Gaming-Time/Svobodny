@@ -13,7 +13,6 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
         private CharacterWardrobeInteraction _characterWardrobeInteraction;
 
         private bool _isActive;
-        private bool _isBeingAnimated;
 
         protected override IInputService InputService { get; set; }
 
@@ -40,7 +39,6 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
         public override void Use()
         {
             _isActive = true;
-            _isBeingAnimated = true;
             _animatorController.Enter();
             _characterWardrobeInteraction.Enter(characterPivot.position);
         }

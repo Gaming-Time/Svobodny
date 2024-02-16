@@ -5,7 +5,7 @@ namespace CodeBase.Modules.Enemies.Movement
 {
     public class HumanoidMove : MonoBehaviour, IMove
     {
-        [SerializeField] private float stopDistance = 0.5f;
+        [SerializeField] private float stopDistance = 0.2f;
         
         private NavMeshAgent _agent;
 
@@ -33,7 +33,7 @@ namespace CodeBase.Modules.Enemies.Movement
             if ((destination - transform.position).sqrMagnitude < stopDistance)
                 return;
 
-            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, stopDistance, _agent.areaMask))
+            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, 1f, _agent.areaMask))
                 _agent.SetDestination(hit.position);
         }
     }

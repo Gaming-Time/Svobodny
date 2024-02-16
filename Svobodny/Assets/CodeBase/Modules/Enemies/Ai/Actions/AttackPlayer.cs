@@ -4,14 +4,14 @@ using JetBrains.Annotations;
 namespace CodeBase.Modules.Enemies.Ai.Actions
 {
     [UsedImplicitly]
-    public class MoveToMoveTarget : ActionBase
+    public class AttackPlayer : ActionBase
     {
         public override void Execute(IAIContext context)
         {
             var enemyContext = (EnemyAiContext)context;
             var enemyEntity = enemyContext.Entity;
             
-            enemyEntity.MoveTo(enemyEntity.MoveTarget.Value);
+            enemyEntity.MeleeAttack(null);
         }
     }
 }

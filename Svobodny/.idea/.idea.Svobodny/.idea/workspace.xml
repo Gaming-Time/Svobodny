@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationEventsHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationEventsHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Closet/Wardrobe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/MoveToMoveTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/MoveToMoveTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Movement/HumanoidMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Movement/HumanoidMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/AttackPlayer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/AttackPlayer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +57,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2Vn8dC9SHgRAifGl7Mu0gYHIjHb" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -47,13 +71,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.8860648",
-    "git-widget-placeholder": "Nikolai/level1",
+    "git-widget-placeholder": "mikhail/svo-49",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -128,6 +152,7 @@
       <workItem from="1707381995693" duration="2914000" />
       <workItem from="1707814148741" duration="3278000" />
       <workItem from="1707913842315" duration="2422000" />
+      <workItem from="1708070896330" duration="3359000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -190,6 +215,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Packages/NavMeshPlus" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Asset provider, Static data service, Monster static data, Level static data, Npc static data, monster spawners, npc spawners, SceneLoader" />
     <MESSAGE value="рефакторинг menuUI" />

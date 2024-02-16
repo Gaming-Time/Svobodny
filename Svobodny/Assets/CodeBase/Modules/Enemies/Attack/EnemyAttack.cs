@@ -40,7 +40,8 @@ namespace CodeBase.Modules.Enemies.Attack
             if (hitCount==0)
                 return;
 
-            var hitCollider = _hitCollection[1];
+            Debug.Log("hit");
+            var hitCollider = _hitCollection[0];
 
             var health = hitCollider.GetComponentInParent<IHealth>();
             health.DoDamage(damage);

@@ -19,9 +19,9 @@ using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
-using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
@@ -165,15 +165,18 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterAnimatorController = monster.GetComponentInChildren<HumanoidAnimatorController>();
                 var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
+                var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
 
 
                 monsterMover.Construct(monsterAgent, monsterData.Speed);
                 monsterHealth.Construct(monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-                monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController);
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterData.ScanRange,
+                    monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
-                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController);
+                animationEventHandler.Construct(monsterAttack);
             }
         }
 

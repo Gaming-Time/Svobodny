@@ -1,3 +1,4 @@
+using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +8,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
     public class EnemyAiEntity : MonoBehaviour, IAiEntity
     {
         private IMove _mover;
+        private EnemyAttack _attacker;
 
         [SerializeField] private float scanRange;
         [SerializeField] private float meleeAttackRange;
@@ -22,9 +24,10 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public float MeleeAttackRange => meleeAttackRange;
         public Vector3 Velocity => _mover.Velocity;
 
-        public void Construct(IMove mover, float scanRange, float meleeAttackRange)
+        public void Construct(IMove mover, EnemyAttack attacker, float scanRange, float meleeAttackRange)
         {
             _mover = mover;
+            _attacker = attacker;
 
             this.scanRange = scanRange;
             this.meleeAttackRange = meleeAttackRange;
@@ -37,7 +40,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
         public void MeleeAttack(IEntity target)
         {
-            throw new System.NotImplementedException();
+            _attacker.PlayAttackAnimation();
         }
 
         public void StartMovement()
