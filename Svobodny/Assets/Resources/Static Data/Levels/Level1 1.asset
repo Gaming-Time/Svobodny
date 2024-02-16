@@ -20,10 +20,14 @@ MonoBehaviour:
     Position: {x: 9.404925, y: 0, z: -0.05683297}
   NpcSpawners: []
   ObjectsSpawners:
+  - Id: Level1 1_0419d9d2-37b3-4e92-9cb7-ae92e3f7931d
+    TypeId: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 26.83, y: -0.25001097, z: -2.74}
   - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
     TypeId: 0
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 12.44, y: -0.25001097, z: -2.97}
+    Position: {x: 11.552, y: -0.25001097, z: -2.64}
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
   DayPlayerRotation: {x: -0, y: -0, z: -0, w: 1}
   NightPlayerPosition: {x: 6.3334117, y: 0, z: -0.06520569}
