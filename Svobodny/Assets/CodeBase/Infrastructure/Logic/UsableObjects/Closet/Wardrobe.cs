@@ -8,8 +8,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
     public class Wardrobe : UsableObject
     {
         [SerializeField] private Transform characterPivot;
-        
-        private GameObject _character;
+
         private WardrobeAnimatorController _animatorController;
         private CharacterWardrobeInteraction _characterWardrobeInteraction;
 
@@ -17,11 +16,10 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
 
         protected override IInputService InputService { get; set; }
 
-        public void Construct(IInputService inputService, GameObject character,
+        public void Construct(IInputService inputService,
             WardrobeAnimatorController animatorController, CharacterWardrobeInteraction wardrobeInteraction)
         {
             InputService = inputService;
-            _character = character;
             _animatorController = animatorController;
             _characterWardrobeInteraction = wardrobeInteraction;
         }
@@ -47,10 +45,11 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
 
         public void GetOut()
         {
-            _isActive = false;
             _animatorController.Exit();
         }
 
-        public void OnExitAnimationFinished() => _characterWardrobeInteraction.Exit();
+        public void StartPlayerAnimation() => _characterWardrobeInteraction.Exit();
+
+        public void OnExitAnimationFinished() => _isActive = false;
     }
 }

@@ -5,6 +5,8 @@ namespace CodeBase.Modules.Enemies.Movement
 {
     public class HumanoidMove : MonoBehaviour, IMove
     {
+        [SerializeField] private float stopDistance = 0.2f;
+        
         private NavMeshAgent _agent;
 
         public Vector3 Velocity => _agent.velocity;
@@ -28,10 +30,10 @@ namespace CodeBase.Modules.Enemies.Movement
 
         public void MoveToPosition(Vector3 destination)
         {
-            if ((destination - transform.position).sqrMagnitude < 1f)
+            if ((destination - transform.position).sqrMagnitude < stopDistance)
                 return;
 
-            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, 1f, _agent.areaMask))
+            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, 0.5f, _agent.areaMask))
                 _agent.SetDestination(hit.position);
         }
     }

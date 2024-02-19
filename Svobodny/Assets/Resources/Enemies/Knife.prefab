@@ -65,6 +65,12 @@ MonoBehaviour:
     startDelayMin: 0
     startDelayMax: 0
     isActive: 1
+  - aiId: c76d248a-3aa4-48f6-8850-2bccbc1ef5bc
+    intervalMin: 0.5
+    intervalMax: 0.5
+    startDelayMin: 0
+    startDelayMax: 0
+    isActive: 1
 --- !u!114 &1312011722134564088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +178,8 @@ GameObject:
   - component: {fileID: 918843206089727718}
   - component: {fileID: 7847418504548026731}
   - component: {fileID: 673232896192805746}
-  m_Layer: 11
+  - component: {fileID: 1007112028211076619}
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +198,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6238923393931538627}
   m_Father: {fileID: 4676986946427676157}
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!212 &918843206089727718
@@ -256,7 +264,7 @@ Animator:
   m_GameObject: {fileID: 3854678585324618653}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54e3d0cfc94cb314f9412fb6f2bdf5ab, type: 2}
+  m_Controller: {fileID: 9100000, guid: 45dd628d1b612ee42babca087c2f33e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -279,6 +287,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7271a99eccc4dea4e84c6171ecc754b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1007112028211076619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854678585324618653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0233d09f66d04faf8761b14934ff7c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7670903313287531421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6238923393931538627}
+  m_Layer: 11
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6238923393931538627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670903313287531421}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17364816, y: -0, z: -0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1204923544041526684}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8954773150905848177
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +342,7 @@ GameObject:
   - component: {fileID: 6033645586036839379}
   - component: {fileID: 4781311383347931026}
   - component: {fileID: 6240907821012130194}
+  - component: {fileID: 6717516889644333040}
   m_Layer: 11
   m_Name: Knife
   m_TagString: Untagged
@@ -350,6 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3296749fb4af48b7ad37b660caf3bffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopDistance: 0.2
 --- !u!114 &6240907821012130194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,3 +415,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b6972ba456415cbb7d546f1c4898a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHealth: 0
+--- !u!114 &6717516889644333040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954773150905848177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6800cf1f7fe1489596dfe1b4bc114d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 6238923393931538627}
+  attackLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  overlapRadius: 0
+  damage: 0
+  attackDelay: 3

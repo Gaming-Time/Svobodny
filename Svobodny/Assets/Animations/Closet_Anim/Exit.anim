@@ -143,6 +143,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 2.2833333
+    functionName: OnPlayerTimeCome
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.45
     functionName: OnExitAnimationFinished
     data: 
     objectReferenceParameter: {fileID: 0}

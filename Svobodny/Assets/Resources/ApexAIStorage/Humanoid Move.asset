@@ -25,7 +25,7 @@ MonoBehaviour:
     ApexAI","_id":a69940863e2345608f8972cc24fda5c9,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.MoveToMoveTarget,
     Assembly-CSharp"}}}]}'
-  editorConfiguration: '{"offset":{"@x":63,"@y":77},"zoom":0.85000002,"SelectorView":{"ViewArea":{"@left":148,"@top":162,"@width":170,"@height":136},"QualifierView":{"Name":"Player
+  editorConfiguration: '{"offset":{"@x":5,"@y":-7},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":100,"@top":88,"@width":190,"@height":152},"QualifierView":{"Name":"Player
     is visible","ActionView":{"@connectorType":"Composite","Name":"Move to player"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Move
-    to start position"}}},"SelectorView":{"ViewArea":{"@left":471,"@top":230,"@width":170,"@height":85},"Name":"Move
+    to start position"}}},"SelectorView":{"ViewArea":{"@left":461,"@top":164,"@width":190,"@height":95},"Name":"Move
     to move target","DefaultQualifier":{"ActionView":{}}}}'

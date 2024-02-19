@@ -8,6 +8,8 @@ namespace CodeBase.Modules.Character
         private IInputService _inputService;
         private CharacterController _characterController;
 
+        private bool _isStopped;
+
         [SerializeField]
         private float walkSpeed;
         [SerializeField]
@@ -27,6 +29,9 @@ namespace CodeBase.Modules.Character
 
         void Update()
         {
+            if(_isStopped)
+                return;
+            
             var inputNormalized = _inputService.MovementInput.normalized;
             Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
 
@@ -34,5 +39,8 @@ namespace CodeBase.Modules.Character
 
             _characterController.SimpleMove(move);
         }
+
+        public void StopMovement() => _isStopped = true;
+        public void AllowMovement() => _isStopped = false;
     }
 }

@@ -23,6 +23,11 @@ namespace CodeBase.Infrastructure.Logic.Animations
                 public static int EnterWardrobe = Animator.StringToHash("EnterWardrobe");
                 public static int ExitWardrobe = Animator.StringToHash("ExitWardrobe");
             }
+
+            public static class Battle
+            {
+                public static int HitTriggerHash = Animator.StringToHash("Hit");
+            }
         }
 
         public static class Wardrobe

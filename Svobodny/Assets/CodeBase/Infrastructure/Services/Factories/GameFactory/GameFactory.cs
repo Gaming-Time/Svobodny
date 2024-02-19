@@ -19,9 +19,10 @@ using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
-using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using CodeBase.Modules.Enemies.Animation;
+using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
@@ -82,7 +83,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
-            characterHealth.Construct(staticData.Health);
+            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(),
+                character.GetComponent<CharacterMove>(), staticData.Health);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)
@@ -136,7 +138,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                         var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
 
                         var wardrobe = usableObject.GetComponent<Wardrobe>();
-                        wardrobe.Construct(_inputService, _character,
+                        wardrobe.Construct(_inputService,
                             wardrobeAnimatorController, characterWardrobeInteraction);
 
                         var wardrobeAnimationEventsManager =
@@ -163,14 +165,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterContextProvider = monster.GetComponentInChildren<EnemyContextProvider>();
                 var monsterAnimatorController = monster.GetComponentInChildren<HumanoidAnimatorController>();
                 var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
+                var monsterAttack = monster.GetComponent<EnemyAttack>();
+                var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
 
 
                 monsterMover.Construct(monsterAgent, monsterData.Speed);
                 monsterHealth.Construct(monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-                monsterEntity.Construct(monsterMover, monsterData.ScanRange, monsterData.MeleeAttackRange);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController);
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterData.ScanRange,
+                    monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
+                animationEventHandler.Construct(monsterAttack);
             }
         }
 

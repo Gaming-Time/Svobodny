@@ -1,9 +1,11 @@
 using System.Linq;
 using Apex.AI;
 using CodeBase.Modules.Enemies.Ai.Entity;
+using JetBrains.Annotations;
 
 namespace CodeBase.Modules.Enemies.Ai.Actions
 {
+    [UsedImplicitly]
     public class SetPlayerAsMoveTarget : ActionBase
     {
         public override void Execute(IAIContext context)
