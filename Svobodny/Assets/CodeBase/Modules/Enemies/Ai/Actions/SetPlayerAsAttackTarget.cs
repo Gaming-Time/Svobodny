@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace CodeBase.Modules.Enemies.Ai.Actions
 {
     [UsedImplicitly]
-    public class SetPlayerAsMoveTarget : ActionBase
+    public class SetPlayerAsAttackTarget : ActionBase
     {
         public override void Execute(IAIContext context)
         {
@@ -16,7 +16,7 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
             var playerEntity = enemyContext.Memory.allObservations
                 .First(observation => observation.entity.Type == EntityType.Player).entity;
 
-            enemyEntity.MoveTarget = playerEntity.Position;
+            enemyEntity.AttackTarget = playerEntity;
         }
     }
 }

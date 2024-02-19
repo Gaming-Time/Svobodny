@@ -32,6 +32,19 @@ public class HumanoidAnimatorController : MonoBehaviour {
         _animator.SetFloat(HumanoidAnimationVariables.SpeedHash, _speed);
     }
 
+    public void SetAttackDirection(Vector3 targetPosition)
+    {
+        var position = transform.position;
+
+        var deltaX = targetPosition.x - position.x;
+        var deltaY = targetPosition.z - position.z;
+        
+        _animator.SetFloat(HumanoidAnimationVariables.AttackDirectionXHash, deltaX);
+        _animator.SetFloat(HumanoidAnimationVariables.AttackDirectionYHash, deltaY);
+        
+        Debug.LogWarning($"Delta {new Vector2(deltaX, deltaY)}");
+    }
+    
     public void PlayAttackAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.AttackTriggerHash);
 
 }

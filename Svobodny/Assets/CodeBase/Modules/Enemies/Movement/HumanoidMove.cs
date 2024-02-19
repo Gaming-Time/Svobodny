@@ -33,7 +33,7 @@ namespace CodeBase.Modules.Enemies.Movement
             if ((destination - transform.position).sqrMagnitude < stopDistance)
                 return;
 
-            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, 1f, _agent.areaMask))
+            if (_agent.isOnNavMesh && NavMesh.SamplePosition(destination, out var hit, 0.5f, _agent.areaMask))
                 _agent.SetDestination(hit.position);
         }
     }

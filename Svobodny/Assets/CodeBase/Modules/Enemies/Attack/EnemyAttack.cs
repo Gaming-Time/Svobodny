@@ -23,11 +23,12 @@ namespace CodeBase.Modules.Enemies.Attack
             _animatorController = animatorController;
         }
 
-        public void PlayAttackAnimation()
+        public void PlayAttackAnimation(Vector3 targetPosition)
         {
             if(Time.time < _lastAttackTime + attackDelay)
                 return;
             
+            _animatorController.SetAttackDirection(targetPosition);
             _animatorController.PlayAttackAnimation();
 
             _lastAttackTime = Time.time;

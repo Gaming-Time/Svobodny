@@ -83,7 +83,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
-            characterHealth.Construct(staticData.Health);
+            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(),
+                character.GetComponent<CharacterMove>(), staticData.Health);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)

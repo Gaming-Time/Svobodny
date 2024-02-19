@@ -38,5 +38,6 @@ namespace CodeBase.Modules.Character.Animation
 
         public void EnterWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.EnterWardrobe);
         public void ExitWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.ExitWardrobe);
+        public void Damage() => _animator.SetTrigger(AnimatorVariables.Character.Battle.HitTriggerHash);
     }
 }
