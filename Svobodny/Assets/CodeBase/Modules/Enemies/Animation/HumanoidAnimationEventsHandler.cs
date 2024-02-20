@@ -1,14 +1,16 @@
-using CodeBase.Modules.Enemies.Attack;
+using System;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Animation
 {
     public class HumanoidAnimationEventsHandler : MonoBehaviour
     {
-        private EnemyAttack _enemyAttack;
+        public event Action DoDamageAnimationEvent;
+        public event Action EnterAttackAnimationEvent;
+        public event Action ExitAttackAnimationEvent;
 
-        public void Construct(EnemyAttack enemyAttack) => _enemyAttack = enemyAttack;
-
-        public void OnAttackAnimationEvent() => _enemyAttack.Attack();
+        public void OnEnterAttackAnimation() => EnterAttackAnimationEvent?.Invoke();
+        public void OnExitAttackAnimation() => ExitAttackAnimationEvent?.Invoke();
+        public void OnAttackAnimation() => DoDamageAnimationEvent?.Invoke();
     }
 }

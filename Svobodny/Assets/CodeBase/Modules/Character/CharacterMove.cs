@@ -1,4 +1,6 @@
-﻿using CodeBase.Infrastructure.Services.Input;
+﻿using System;
+using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Modules.Character.Animation;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character
@@ -6,6 +8,7 @@ namespace CodeBase.Modules.Character
     public class CharacterMove : MonoBehaviour
     {
         private IInputService _inputService;
+        private CharacterAnimationEventsHandler _animationEventsHandler;
         private CharacterController _characterController;
 
         private bool _isStopped;
@@ -15,10 +18,14 @@ namespace CodeBase.Modules.Character
         [SerializeField]
         private float sneakSpeed;
 
-        public void Construct(IInputService inputService, CharacterController characterController)
+        public void Construct(IInputService inputService, CharacterController characterController, CharacterAnimationEventsHandler animationEventsHandler)
         {
             _inputService = inputService;
             _characterController = characterController;
+            _animationEventsHandler = animationEventsHandler;
+
+            animationEventsHandler.EnterHitAnimationEvent += StopMovement;
+            animationEventsHandler.ExitHitAnimationEvent += AllowMovement;
         }
 
         public void Init(float walkSpeed, float sneakSpeed)
@@ -38,6 +45,12 @@ namespace CodeBase.Modules.Character
             move *= _inputService.IsSneakButtonDown() ? sneakSpeed : walkSpeed;
 
             _characterController.SimpleMove(move);
+        }
+
+        private void OnDestroy()
+        {
+            _animationEventsHandler.EnterHitAnimationEvent -= StopMovement;
+            _animationEventsHandler.ExitHitAnimationEvent -= AllowMovement;
         }
 
         public void StopMovement() => _isStopped = true;

@@ -83,8 +83,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
-            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(),
-                character.GetComponent<CharacterMove>(), staticData.Health);
+            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), staticData.Health);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)
@@ -169,15 +168,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
 
 
-                monsterMover.Construct(monsterAgent, monsterData.Speed);
+                monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
                 monsterHealth.Construct(monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler);
                 monsterEntity.Construct(monsterMover, monsterAttack, monsterData.ScanRange,
                     monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
-                animationEventHandler.Construct(monsterAttack);
             }
         }
 
@@ -202,7 +200,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitMovement(CharacterStaticData staticData, GameObject character)
         {
             var characterMove = character.GetComponent<CharacterMove>();
-            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>(),
+                character.GetComponent<CharacterAnimationEventsHandler>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
         }
     }
