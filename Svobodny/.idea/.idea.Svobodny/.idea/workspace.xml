@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-57 - теперь игрок останавливается во время анимации получения урона, а враг останавливается во время анимации удара">
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/nm_Couch1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Enviroment/Level1/Sprites/nm_Couch1.mat" afterDir="false" />
-    </list>
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-58" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +16,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Scenes/MainMenu.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Settings/High_PipelineAsset.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -42,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.8860648",
-    "git-widget-placeholder": "mikhail/svo-57",
+    "git-widget-placeholder": "mikhail/svo-58",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -126,7 +125,7 @@
       <workItem from="1707913842315" duration="2422000" />
       <workItem from="1708070896330" duration="5051000" />
       <workItem from="1708330233782" duration="6404000" />
-      <workItem from="1708420323520" duration="2700000" />
+      <workItem from="1708420323520" duration="3429000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -184,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708423094442</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="SVO-58">
+      <option name="closed" value="true" />
+      <created>1708423450362</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708423450362</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +225,8 @@
     <MESSAGE value="Убрал баг с анимацией шкафа, подделал навмеш" />
     <MESSAGE value="SVO-49 - Урон проходит. Надо теперь сделать атаку во все стороны" />
     <MESSAGE value="SVO-57 - теперь игрок останавливается во время анимации получения урона, а враг останавливается во время анимации удара" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-57 - теперь игрок останавливается во время анимации получения урона, а враг останавливается во время анимации удара" />
+    <MESSAGE value="SVO-58" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-58" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
