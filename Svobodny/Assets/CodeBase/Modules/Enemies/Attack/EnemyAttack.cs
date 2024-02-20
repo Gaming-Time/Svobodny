@@ -46,7 +46,7 @@ namespace CodeBase.Modules.Enemies.Attack
             _lastAttackTime = Time.time;
         }
 
-        public void Attack()
+        private void Attack()
         {
             var hitCount = Physics.OverlapSphereNonAlloc(attackPoint.position, overlapRadius, _hitCollection,
                 attackLayerMask, QueryTriggerInteraction.Ignore);

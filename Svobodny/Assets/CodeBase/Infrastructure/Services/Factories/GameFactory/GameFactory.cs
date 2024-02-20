@@ -16,6 +16,7 @@ using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
@@ -66,8 +67,16 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
             InitInteractions(_character);
+            InitCharacterAttack(_character);
 
             return _character;
+        }
+
+        private void InitCharacterAttack(GameObject character)
+        {
+            var characterAttack = character.GetComponent<CharacterAttack>();
+            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(), _inputService,
+                character.GetComponent<CharacterAnimationEventsHandler>());
         }
 
         private void InitInteractions(GameObject character)
