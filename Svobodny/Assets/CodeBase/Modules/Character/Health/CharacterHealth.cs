@@ -10,14 +10,12 @@ namespace CodeBase.Modules.Character.Health
         private int _currentHealth;
 
         private CharacterAnimatorController _animatorController;
-        private CharacterMove _characterMove;
 
         public int Health => _currentHealth;
 
-        public void Construct(CharacterAnimatorController animatorController, CharacterMove characterMove, int health)
+        public void Construct(CharacterAnimatorController animatorController, int health)
         {
             _animatorController = animatorController;
-            _characterMove = characterMove;
             
             _currentHealth = health;
         }
@@ -25,17 +23,13 @@ namespace CodeBase.Modules.Character.Health
         public void DoDamage(int damage)
         {
             _animatorController.Damage();
-            _characterMove.StopMovement();
             
             _currentHealth -= damage;
-            if (_currentHealth < 1)
-            {
-                Die();
-                
-                return;
-            }
             
-            _characterMove.AllowMovement();
+            if (_currentHealth >= 1) 
+                return;
+            
+            Die();
         }
 
         public void DoDamage(DamageType damageType, int damage)
