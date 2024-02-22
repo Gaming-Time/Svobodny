@@ -1,28 +1,43 @@
+using System;
 using CodeBase.Modules.Common.Health;
+using CodeBase.Modules.Enemies.Animation;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Health
 {
     public class EnemyHealth : MonoBehaviour, IHealth
     {
-        [SerializeField]
-        private int _currentHealth;
+        [SerializeField] private int _currentHealth;
+        [SerializeField] private float destroyDelay = 3f;
+
+        private HumanoidAnimatorController _animatorController;
+        private HumanoidAnimationEventsHandler _animationEventsHandler;
 
         public int Health => _currentHealth;
 
-        public void Construct(int health)
+        public void Construct(HumanoidAnimatorController animatorController,
+            HumanoidAnimationEventsHandler animationEventsHandler, int health)
         {
+            _animatorController = animatorController;
+            _animationEventsHandler = animationEventsHandler;
+
+            _animationEventsHandler.ExitDeathAnimationEvent += DestroyAfterDeath;
             _currentHealth = health;
         }
-        
+
+        private void OnDestroy()
+        {
+            _animationEventsHandler.ExitDeathAnimationEvent -= DestroyAfterDeath;
+        }
+
         public void DoDamage(int damage)
         {
             _currentHealth -= damage;
-            
+
             Debug.Log("Enemy hit");
-            
-            if(_currentHealth < 1)
-                Die();
+
+            if (_currentHealth < 1)
+                PlayDeathAnimation();
         }
 
         public void DoDamage(DamageType damageType, int damage)
@@ -35,9 +50,11 @@ namespace CodeBase.Modules.Enemies.Health
             DoDamage(damage);
         }
 
-        public void Die()
+        public void PlayDeathAnimation()
         {
-            Destroy(gameObject);
+            _animatorController.PlayDeathAnimation();
         }
+
+        private void DestroyAfterDeath() => Destroy(gameObject, destroyDelay);
     }
 }

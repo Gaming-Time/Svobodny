@@ -10,6 +10,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         float FovAngle { get; }
         float MeleeAttackRange { get; }
         Vector3 Velocity { get; }
+        public bool IsDead { get; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);

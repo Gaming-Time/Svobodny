@@ -8,7 +8,7 @@ namespace CodeBase.Modules.Common.Health
         void DoDamage(int damage);
         void DoDamage(DamageType damageType, int damage);
         void DoDamage(DamageType damageType, int damage, Vector3 direction);
-        void Die();
+        void PlayDeathAnimation();
     }
 
     public enum DamageType

@@ -4,32 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-53 - Атака готова">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/IsEntityDead.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Scorers/IsEntityDead.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Death.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Death.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IAiEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/IAiEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationEventsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.gif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_10.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_11.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_6.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_7.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_8.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_9.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Scan For Entities.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Scan For Entities.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +53,7 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Enemies/Knife.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -174,7 +163,7 @@
       <workItem from="1708330233782" duration="6404000" />
       <workItem from="1708420323520" duration="3429000" />
       <workItem from="1708445590938" duration="3031000" />
-      <workItem from="1708591888628" duration="2729000" />
+      <workItem from="1708591888628" duration="3975000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -248,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708448626490</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="SVO-53 - Атака готова">
+      <option name="closed" value="true" />
+      <created>1708596525910</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708596525910</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +281,8 @@
     <MESSAGE value="SVO-57 - теперь игрок останавливается во время анимации получения урона, а враг останавливается во время анимации удара" />
     <MESSAGE value="SVO-58" />
     <MESSAGE value="SVO-53" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-53" />
+    <MESSAGE value="SVO-53 - Атака готова" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-53 - Атака готова" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

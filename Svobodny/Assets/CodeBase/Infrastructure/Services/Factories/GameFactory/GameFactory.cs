@@ -178,10 +178,10 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
 
                 monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
-                monsterHealth.Construct(monsterData.Health);
+                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler);
-                monsterEntity.Construct(monsterMover, monsterAttack, monsterData.ScanRange,
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
                     monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);

@@ -17,6 +17,8 @@ MonoBehaviour:
   aiId: e69ca060-5719-4a23-8a93-5307d37b46c1
   configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":e37cd079d9cb46bcb7b84887be0fb703,"_id":e69ca06057194a238a935307d37b46c1,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
     ApexAI","_id":e37cd079d9cb46bcb7b84887be0fb703,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
+    Assembly-CSharp","Not":false,"score":100}]},{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.SetPlayerAsMoveTarget,
     Assembly-CSharp"}],"_connectorAction":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":a69940863e2345608f8972cc24fda5c9}},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityVisibleAndInScanRange,
     Assembly-CSharp","Not":false,"EntityType":Player,"score":50}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
@@ -25,7 +27,8 @@ MonoBehaviour:
     ApexAI","_id":a69940863e2345608f8972cc24fda5c9,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.MoveToMoveTarget,
     Assembly-CSharp"}}}]}'
-  editorConfiguration: '{"offset":{"@x":5,"@y":-7},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":100,"@top":88,"@width":190,"@height":152},"QualifierView":{"Name":"Player
-    is visible","ActionView":{"@connectorType":"Composite","Name":"Move to player"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Move
+  editorConfiguration: '{"offset":{"@x":5,"@y":-7},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":100,"@top":88,"@width":190,"@height":209},"QualifierView":{"Name":"Entity
+    Is Dead"},"QualifierView":{"Name":"Player is visible","ActionView":{"@connectorType":"Composite","Name":"Move
+    to player"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Move
     to start position"}}},"SelectorView":{"ViewArea":{"@left":461,"@top":164,"@width":190,"@height":95},"Name":"Move
     to move target","DefaultQualifier":{"ActionView":{}}}}'

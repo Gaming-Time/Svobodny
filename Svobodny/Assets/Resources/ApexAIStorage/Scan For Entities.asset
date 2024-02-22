@@ -16,7 +16,10 @@ MonoBehaviour:
   version: 16779010
   aiId: e2e168f6-d5c6-4fc1-9b79-49a3128e67b7
   configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":e956d7e4e0a543e8af00b4bdf25bd4d3,"_id":e2e168f6d5c64fc19b7949a3128e67b7,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
-    ApexAI","_id":e956d7e4e0a543e8af00b4bdf25bd4d3,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","_id":e956d7e4e0a543e8af00b4bdf25bd4d3,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
+    Assembly-CSharp","Not":false,"score":10}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.ScanForEntities,
     Assembly-CSharp","TargetLayerMask":3072,"BlockLayers":8}}}]}'
-  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":200,"@height":100},"DefaultQualifier":{"ActionView":{}}}}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":200,"@height":160},"QualifierView":{"Name":"Entity
+    is dead"},"DefaultQualifier":{"ActionView":{}}}}'
