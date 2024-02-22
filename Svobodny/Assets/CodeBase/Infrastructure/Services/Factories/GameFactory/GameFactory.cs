@@ -16,6 +16,7 @@ using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
@@ -66,8 +67,16 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
             InitInteractions(_character);
+            InitCharacterAttack(_character);
 
             return _character;
+        }
+
+        private void InitCharacterAttack(GameObject character)
+        {
+            var characterAttack = character.GetComponent<CharacterAttack>();
+            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(), _inputService,
+                character.GetComponent<CharacterAnimationEventsHandler>());
         }
 
         private void InitInteractions(GameObject character)
@@ -169,10 +178,10 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
 
                 monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
-                monsterHealth.Construct(monsterData.Health);
+                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler);
-                monsterEntity.Construct(monsterMover, monsterAttack, monsterData.ScanRange,
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
                     monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);

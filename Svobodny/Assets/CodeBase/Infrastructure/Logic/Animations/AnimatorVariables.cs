@@ -27,6 +27,7 @@ namespace CodeBase.Infrastructure.Logic.Animations
             public static class Battle
             {
                 public static int HitTriggerHash = Animator.StringToHash("Hit");
+                public static int AttackTriggerHash = Animator.StringToHash("Attack");
             }
         }
 

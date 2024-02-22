@@ -7,15 +7,15 @@ namespace CodeBase.Modules.Character.Animation
     {
         public event Action EnterHitAnimationEvent;
         public event Action ExitHitAnimationEvent;
-        
-        public void OnEnterHitAnimation()
-        {
-            EnterHitAnimationEvent?.Invoke();
-        }
+        public event Action AttackEvent;
+        public event Action EnterAttackAnimationEvent;
+        public event Action ExitAttackAnimationEvent;
 
-        public void OnExitHitAnimation()
-        {
-            ExitHitAnimationEvent?.Invoke();
-        }
+        public void OnEnterHitAnimation() => EnterHitAnimationEvent?.Invoke();
+        public void OnExitHitAnimation() => ExitHitAnimationEvent?.Invoke();
+
+        public void OnAttack() => AttackEvent?.Invoke();
+        public void OnEnterAttackAnimation() => EnterAttackAnimationEvent?.Invoke();
+        public void OnExitAttackAnimation() => ExitAttackAnimationEvent?.Invoke();
     }
 }

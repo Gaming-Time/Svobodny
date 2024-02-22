@@ -29,7 +29,7 @@ namespace CodeBase.Modules.Character.Health
             if (_currentHealth >= 1) 
                 return;
             
-            Die();
+            PlayDeathAnimation();
         }
 
         public void DoDamage(DamageType damageType, int damage)
@@ -42,7 +42,7 @@ namespace CodeBase.Modules.Character.Health
             DoDamage(damage);
         }
 
-        public void Die()
+        public void PlayDeathAnimation()
         {
             Debug.Log("Character is dead");
         }

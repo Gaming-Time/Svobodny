@@ -26,6 +26,8 @@ namespace CodeBase.Modules.Character
 
             animationEventsHandler.EnterHitAnimationEvent += StopMovement;
             animationEventsHandler.ExitHitAnimationEvent += AllowMovement;
+            animationEventsHandler.EnterAttackAnimationEvent += StopMovement;
+            animationEventsHandler.ExitAttackAnimationEvent += AllowMovement;
         }
 
         public void Init(float walkSpeed, float sneakSpeed)
@@ -51,6 +53,8 @@ namespace CodeBase.Modules.Character
         {
             _animationEventsHandler.EnterHitAnimationEvent -= StopMovement;
             _animationEventsHandler.ExitHitAnimationEvent -= AllowMovement;
+            _animationEventsHandler.EnterAttackAnimationEvent -= StopMovement;
+            _animationEventsHandler.ExitAttackAnimationEvent -= AllowMovement;
         }
 
         public void StopMovement() => _isStopped = true;
