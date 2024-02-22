@@ -19,7 +19,9 @@ namespace CodeBase.Modules.Enemies.Health
         {
             _currentHealth -= damage;
             
-            if(damage < 1)
+            Debug.Log("Enemy hit");
+            
+            if(_currentHealth < 1)
                 Die();
         }
 

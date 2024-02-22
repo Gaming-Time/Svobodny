@@ -4,22 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-58">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs.meta" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/CharacterAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Input/AbstractInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Input/AbstractInputService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Input/IInputService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Input/IInputService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimationEventsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimationEventsHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/CharacterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/CharacterMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackBack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackFront.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/AttackLeft.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Character/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.gif.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_11.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/Attack/spr_dodik_attack_left/spr_dodik_attack_left_9.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +41,31 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Animations/Npc/Enemies/Knife/AttackRight.anim" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Scenes/MainMenu.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Settings/High_PipelineAsset.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Enemies/Knife.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -51,31 +81,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.8860648",
-    "git-widget-placeholder": "mikhail/svo-53",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.8860648&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-53&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\dagge\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\dagge\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -103,10 +133,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14116">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14116" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -143,7 +173,8 @@
       <workItem from="1708070896330" duration="5051000" />
       <workItem from="1708330233782" duration="6404000" />
       <workItem from="1708420323520" duration="3429000" />
-      <workItem from="1708445590938" duration="2928000" />
+      <workItem from="1708445590938" duration="3031000" />
+      <workItem from="1708591888628" duration="2729000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -209,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708423450362</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="SVO-53">
+      <option name="closed" value="true" />
+      <created>1708448626490</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708448626490</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +283,8 @@
     <MESSAGE value="SVO-49 - Урон проходит. Надо теперь сделать атаку во все стороны" />
     <MESSAGE value="SVO-57 - теперь игрок останавливается во время анимации получения урона, а враг останавливается во время анимации удара" />
     <MESSAGE value="SVO-58" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-58" />
+    <MESSAGE value="SVO-53" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-53" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -285,7 +325,7 @@
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Logic\UsableObjects\UsableObject.cs" initialLine="25" containingFunctionPresentation="Method 'OnTriggerStay'" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetPlayerAsAttackTarget.cs</url>
           <line>12</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\SetPlayerAsAttackTarget.cs" initialLine="12" containingFunctionPresentation="Method 'Execute'">
@@ -298,7 +338,7 @@
           </properties>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackPlayer.cs</url>
           <line>10</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackPlayer.cs" initialLine="10" containingFunctionPresentation="Method 'Execute'">
@@ -311,7 +351,7 @@
           </properties>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackTarget.cs</url>
           <line>10</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackTarget.cs" initialLine="10" containingFunctionPresentation="Method 'Execute'">
@@ -323,6 +363,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs</url>
+          <line>68</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Attack\CharacterAttack.cs" initialLine="68" containingFunctionPresentation="Method 'ScanForTargets'">
+            <startOffsets>
+              <option value="2366" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2400" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs</url>
+          <line>49</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Attack\CharacterAttack.cs" initialLine="49" containingFunctionPresentation="Method 'Update'">
+            <startOffsets>
+              <option value="1701" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1743" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Animation/CharacterAnimationEventsHandler.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Animation\CharacterAnimationEventsHandler.cs" initialLine="16" containingFunctionPresentation="Method 'OnAttack'">
+            <startOffsets>
+              <option value="599" />
+            </startOffsets>
+            <endOffsets>
+              <option value="620" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

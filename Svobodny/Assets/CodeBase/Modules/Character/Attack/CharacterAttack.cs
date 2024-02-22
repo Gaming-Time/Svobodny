@@ -48,6 +48,7 @@ namespace CodeBase.Modules.Character.Attack
             if (_inputService.IsAttackButtonDown())
             {
                 _animatorController.PlayAttackAnimation();
+                _previousAttackTimeStamp = Time.time;
             }
         }
 

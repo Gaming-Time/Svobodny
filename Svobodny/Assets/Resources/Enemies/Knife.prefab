@@ -52,25 +52,25 @@ MonoBehaviour:
     intervalMax: 1
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 1
+    isActive: 0
   - aiId: 769626e1-133a-458f-b833-6e0ceb127851
     intervalMin: 1
     intervalMax: 1
     startDelayMin: 3
     startDelayMax: 3
-    isActive: 1
+    isActive: 0
   - aiId: e69ca060-5719-4a23-8a93-5307d37b46c1
     intervalMin: 0.2
     intervalMax: 0.2
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 1
+    isActive: 0
   - aiId: c76d248a-3aa4-48f6-8850-2bccbc1ef5bc
     intervalMin: 0.5
     intervalMax: 0.5
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 1
+    isActive: 0
 --- !u!114 &1312011722134564088
 MonoBehaviour:
   m_ObjectHideFlags: 0

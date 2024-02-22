@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  attackCooldown: 3
+  attackCooldown: 1
   attackRadius: 0.5
   attackLayerMask:
     serializedVersion: 2
