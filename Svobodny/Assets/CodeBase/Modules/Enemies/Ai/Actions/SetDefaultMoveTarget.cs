@@ -1,13 +1,15 @@
 using Apex.AI;
-using CodeBase.Modules.Enemies.Ai;
 
-public class SetDefaultMoveTarget : ActionBase
+namespace CodeBase.Modules.Enemies.Ai.Actions
 {
-    public override void Execute(IAIContext context)
+    public class SetDefaultMoveTarget : ActionBase
     {
-        var enemyContext = (EnemyAiContext)context;
-        var enemyEntity = enemyContext.Entity;
+        public override void Execute(IAIContext context)
+        {
+            var enemyContext = (EnemyAiContext)context;
+            var enemyEntity = enemyContext.Entity;
 
-        enemyEntity.MoveTarget = enemyContext.StartPosition;
+            enemyEntity.MoveTarget = enemyContext.StartPosition;
+        }
     }
 }

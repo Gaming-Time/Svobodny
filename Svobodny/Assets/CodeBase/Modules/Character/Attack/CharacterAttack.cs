@@ -28,8 +28,7 @@ namespace CodeBase.Modules.Character.Attack
             _animatorController = animatorController;
             _animationEvents = animationEvents;
             _inputService = inputService;
-
-            _animationEvents.AttackEvent += ScanForTargets;
+            
             _animationEvents.EnterHitAnimationEvent += DisableAttack;
             _animationEvents.ExitHitAnimationEvent += AllowAttack;
 
@@ -48,13 +47,13 @@ namespace CodeBase.Modules.Character.Attack
             if (_inputService.IsAttackButtonDown())
             {
                 _animatorController.PlayAttackAnimation();
+                ScanForTargets();
                 _previousAttackTimeStamp = Time.time;
             }
         }
 
         private void OnDestroy()
         {
-            _animationEvents.AttackEvent -= ScanForTargets;
             _animationEvents.EnterHitAnimationEvent -= DisableAttack;
             _animationEvents.ExitHitAnimationEvent -= AllowAttack;
         }
@@ -69,7 +68,7 @@ namespace CodeBase.Modules.Character.Attack
             for (int i = 0; i < hitCount; i++)
             {
                 var health = _hitCollection[i].GetComponentInParent<IHealth>();
-                health.DoDamage(damage);
+                health.DoDamage(DamageType.Melee, damage, transform.position);
             }
         }
 

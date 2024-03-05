@@ -22,7 +22,7 @@ MonoBehaviour:
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.SetPlayerAsMoveTarget,
     Assembly-CSharp"}],"_connectorAction":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":a69940863e2345608f8972cc24fda5c9}},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityVisibleAndInScanRange,
     Assembly-CSharp","Not":false,"EntityType":Player,"score":50}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
-    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"SetDefaultMoveTarget,
+    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.SetDefaultMoveTarget,
     Assembly-CSharp"}],"_connectorAction":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":a69940863e2345608f8972cc24fda5c9}}}},{"@type":"Apex.AI.PrioritySelector,
     ApexAI","_id":a69940863e2345608f8972cc24fda5c9,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.MoveToMoveTarget,

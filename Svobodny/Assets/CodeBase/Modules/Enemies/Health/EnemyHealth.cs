@@ -1,4 +1,3 @@
-using System;
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Animation;
 using UnityEngine;
@@ -32,28 +31,35 @@ namespace CodeBase.Modules.Enemies.Health
 
         public void DoDamage(int damage)
         {
+            if (_currentHealth < 1)
+                return;
+
             _currentHealth -= damage;
 
-            Debug.Log("Enemy hit");
 
             if (_currentHealth < 1)
-                PlayDeathAnimation();
+            {
+                Die();
+                return;
+            }
+
+            _animatorController.PLayHitAnimation();
         }
+
 
         public void DoDamage(DamageType damageType, int damage)
         {
             DoDamage(damage);
         }
 
-        public void DoDamage(DamageType damageType, int damage, Vector3 direction)
+        public void DoDamage(DamageType damageType, int damage, Vector3 from)
         {
+            _animatorController.SetHitDirection(from);
+
             DoDamage(damage);
         }
 
-        public void PlayDeathAnimation()
-        {
-            _animatorController.PlayDeathAnimation();
-        }
+        public void Die() => _animatorController.PlayDeathAnimation();
 
         private void DestroyAfterDeath() => Destroy(gameObject, destroyDelay);
     }
