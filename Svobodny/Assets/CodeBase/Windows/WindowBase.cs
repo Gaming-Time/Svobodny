@@ -11,8 +11,8 @@ namespace CodeBase.Windows
 
         protected virtual void Enable(){}
 
-        protected virtual void Activate() => gameObject.SetActive(true);
+        public virtual void Activate() => gameObject.SetActive(true);
 
-        protected virtual void Hide() => gameObject.SetActive(false);
+        public virtual void Hide() => gameObject.SetActive(false);
     }
 }

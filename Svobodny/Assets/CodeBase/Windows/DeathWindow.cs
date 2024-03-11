@@ -4,13 +4,13 @@ namespace CodeBase.Windows
 {
     public class DeathWindow : WindowBase
     {
-        protected override void Activate()
+        public override void Activate()
         {
             base.Activate();
             Time.timeScale = 0;
         }
 
-        protected override void Hide()
+        public override void Hide()
         {
             base.Hide();
             Time.timeScale = 1;

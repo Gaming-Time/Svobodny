@@ -18,7 +18,7 @@ namespace CodeBase.Infrastructure.Services
         public void RegisterSingle<TService>(TService implementation) where TService : IService =>
             _serviceInstances.Add(typeof(TService), implementation);
 
-        public TService GetSingle<TService>() where TService : class, IService =>
+        public TService Single<TService>() where TService : class, IService =>
             _serviceInstances[typeof(TService)] as TService;
     }
 }

@@ -26,7 +26,7 @@ namespace CodeBase.Infrastructure.Helpers
         public static class UIPath
         {
             public const string UIRoot = "UI/UIRoot";
-            public const string DeathMenu = "UI/DeathMenu";
+            public const string DeathMenu = "UI/DeathWindow";
         }
     }
 }

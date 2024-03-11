@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
+using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.States;
@@ -18,9 +19,12 @@ namespace CodeBase.Infrastructure
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadProgressState)] = new LoadProgressState(this, services.GetSingle<IStaticDataService>(), services.GetSingle<IProgressService>()),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain, services.GetSingle<IGameFactory>(),
-                services.GetSingle<IStaticDataService>(), services.GetSingle<IProgressService>()),
+                [typeof(LoadProgressState)] = new LoadProgressState(this,
+                    services.Single<IStaticDataService>(), services.Single<IProgressService>()),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain,
+                    services.Single<IGameFactory>(),
+                    services.Single<IStaticDataService>(), services.Single<IProgressService>(),
+                    services.Single<IUIFactory>()),
                 [typeof(GameLoopState)] = new GameLoopState(),
             };
         }

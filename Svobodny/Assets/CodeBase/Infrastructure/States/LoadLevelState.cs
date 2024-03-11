@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Services.StaticData.Level;
 using System;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
+using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
 using UnityEngine;
 
@@ -15,11 +16,13 @@ namespace CodeBase.Infrastructure.States
         private readonly IGameFactory _gameFactory;
         private readonly IStaticDataService _staticDataService;
         private readonly IProgressService _progressService;
+        private readonly IUIFactory _uiFactory;
 
         private LevelStaticData _levelStaticData;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, 
-            IGameFactory gameFactory, IStaticDataService staticDataService, IProgressService progressService)
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+            IGameFactory gameFactory, IStaticDataService staticDataService, IProgressService progressService,
+            IUIFactory uiFactory)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -27,6 +30,7 @@ namespace CodeBase.Infrastructure.States
             _gameFactory = gameFactory;
             _staticDataService = staticDataService;
             _progressService = progressService;
+            _uiFactory = uiFactory;
         }
 
         public void Enter(string payload)
@@ -38,6 +42,7 @@ namespace CodeBase.Infrastructure.States
         private void OnLoaded()
         {
             InitLevel();
+            InitUI();
 
             _gameStateMachine.Enter<GameLoopState>();
         }
@@ -49,9 +54,8 @@ namespace CodeBase.Infrastructure.States
             Vector3 playerPosition = new();
             Quaternion playerRotation = new();
 
-
-
-            switch (_levelStaticData.initialPhase) {
+            switch (_levelStaticData.initialPhase)
+            {
                 case LevelPhase.Day:
                     CreateNpcSpawners();
                     _gameFactory.SpawnAllNpcs();
@@ -71,6 +75,11 @@ namespace CodeBase.Infrastructure.States
 
             CreateObjectSpawners();
             _gameFactory.SpawnAllObjects();
+        }
+
+        private void InitUI()
+        {
+            _uiFactory.CreateRoot();
         }
 
         private void CreateObjectSpawners()
@@ -95,7 +104,7 @@ namespace CodeBase.Infrastructure.States
         private void CreateNpcSpawners()
         {
             var spawners = _levelStaticData.NpcSpawners;
-            foreach(var spawner in spawners)
+            foreach (var spawner in spawners)
             {
                 _gameFactory.CreateNpcSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
             }
