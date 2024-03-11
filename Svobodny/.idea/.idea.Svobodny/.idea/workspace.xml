@@ -5,25 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UIFactory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UIFactory/IUIFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UIFactory/IUIFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Windows.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Windows/DeathWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Windows/DeathWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Windows/WindowBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Windows/WindowBase.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_back.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_back.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_front.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_front.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_left.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_left.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetDefaultMoveTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetDefaultMoveTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationVariables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationVariables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/AssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/AssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/IAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AssetProvider/IAssets.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,31 +54,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.7636081&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-59&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.7636081",
+    "git-widget-placeholder": "mikhail/svo-62",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\dagge\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\dagge\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -113,10 +106,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9624" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -157,6 +150,7 @@
       <workItem from="1708591888628" duration="3975000" />
       <workItem from="1709376160092" duration="5082000" />
       <workItem from="1709626504292" duration="3333000" />
+      <workItem from="1710145055296" duration="3179000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
