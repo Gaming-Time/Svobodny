@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 25.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 7056948170477604962}
   - component: {fileID: 4625669213971369182}
   - component: {fileID: 8127512786913430954}
+  - component: {fileID: 1551200703653189141}
   m_Layer: 0
   m_Name: Button Main Menu
   m_TagString: Untagged
@@ -254,7 +255,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4625669213971369182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1551200703653189141}
+        m_TargetAssemblyTypeName: CodeBase.Modules.UI.ButtonHandler.ButtonHandler,
+          Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1551200703653189141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480492208520478879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a2204a3b54eb0b105fed449c1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 1
 --- !u!1 &3925542309416187459
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 25.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -491,6 +518,7 @@ GameObject:
   - component: {fileID: 3948606108731870410}
   - component: {fileID: 1497062837656373402}
   - component: {fileID: 4632032196023557282}
+  - component: {fileID: 5781207391708802023}
   m_Layer: 0
   m_Name: Button Respawn
   m_TagString: Untagged
@@ -599,7 +627,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1497062837656373402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5781207391708802023}
+        m_TargetAssemblyTypeName: CodeBase.Modules.UI.ButtonHandler.ButtonHandler,
+          Assembly-CSharp
+        m_MethodName: InvokeEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5781207391708802023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717816877369919040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a2204a3b54eb0b105fed449c1b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 0
 --- !u!1 &6248691257453745299
 GameObject:
   m_ObjectHideFlags: 0

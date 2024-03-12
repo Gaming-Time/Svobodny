@@ -200,6 +200,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             }
         }
 
+        public void Cleanup()
+        {
+            _enemySpawners.Clear();
+            _npcSpawners.Clear();
+            _objectSpawners.Clear();
+        }
+
         private static void InitTransparency(GameObject character, Camera camera) =>
             character.GetComponent<PlayerTransparency>().Construct(camera);
 

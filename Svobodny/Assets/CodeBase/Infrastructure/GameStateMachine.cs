@@ -25,7 +25,7 @@ namespace CodeBase.Infrastructure
                     services.Single<IGameFactory>(),
                     services.Single<IStaticDataService>(), services.Single<IProgressService>(),
                     services.Single<IUIFactory>()),
-                [typeof(GameLoopState)] = new GameLoopState(),
+                [typeof(GameLoopState)] = new GameLoopState(services.Single<IGameFactory>()),
             };
         }
 
