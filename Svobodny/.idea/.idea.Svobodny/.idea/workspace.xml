@@ -4,26 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-65 SVO-66 - Всё работает">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_back.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_back.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_front.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_front.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_left.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_left.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/character_attack_right.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Npc/Enemies/Knife/Enemy-knife-controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Common/Health/IHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetDefaultMoveTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetDefaultMoveTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Entity/EnemyAiEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationVariables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimationVariables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Animation/HumanoidAnimatorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Attack/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ApexAIStorage/Humanoid Move.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Monsters/KnifeData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +29,21 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/c7/1b895935/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/AllServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -68,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.7636081&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-59&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mikhail/svo-62&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -113,10 +111,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6064">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9624" />
+      <option name="pid" value="6064" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -157,6 +155,8 @@
       <workItem from="1708591888628" duration="3975000" />
       <workItem from="1709376160092" duration="5082000" />
       <workItem from="1709626504292" duration="3333000" />
+      <workItem from="1710145055296" duration="4542000" />
+      <workItem from="1710490106333" duration="5747000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -238,7 +238,39 @@
       <option name="project" value="LOCAL" />
       <updated>1708596525910</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1710149114623</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710149114623</updated>
+    </task>
+    <task id="LOCAL-00012" summary="SVO-62 - Префабы и фабрика">
+      <option name="closed" value="true" />
+      <created>1710149146642</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710149146642</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SVO-62 - Сделал меню смерти">
+      <option name="closed" value="true" />
+      <created>1710242945825</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710242945825</updated>
+    </task>
+    <task id="LOCAL-00014" summary="SVO-65 SVO-66 - Всё работает">
+      <option name="closed" value="true" />
+      <created>1710495652956</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710495652956</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,20 +307,24 @@
     <MESSAGE value="SVO-58" />
     <MESSAGE value="SVO-53" />
     <MESSAGE value="SVO-53 - Атака готова" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-53 - Атака готова" />
+    <MESSAGE value="gitignore" />
+    <MESSAGE value="SVO-62 - Префабы и фабрика" />
+    <MESSAGE value="SVO-62 - Сделал меню смерти" />
+    <MESSAGE value="SVO-65 SVO-66 - Всё работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-65 SVO-66 - Всё работает" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>128</line>
+          <line>133</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
-          <line>87</line>
+          <line>95</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="74" containingFunctionPresentation="Method 'CreateEnemySpawners'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -355,7 +391,7 @@
           </properties>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs</url>
           <line>33</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Health\EnemyHealth.cs" initialLine="33" containingFunctionPresentation="Method 'DoDamage'">
@@ -368,7 +404,7 @@
           </properties>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs</url>
           <line>62</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Attack\CharacterAttack.cs" initialLine="63" containingFunctionPresentation="Method 'ScanForTargets'">
@@ -380,6 +416,58 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="51" containingFunctionPresentation="Method 'InitLevel'">
+            <startOffsets>
+              <option value="1808" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1892" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
+          <line>111</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="112" containingFunctionPresentation="Method 'Exit'">
+            <startOffsets>
+              <option value="4018" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4040" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/LoadingCurtain.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\LoadingCurtain.cs" initialLine="24" containingFunctionPresentation="Method 'DoFadeIn'">
+            <startOffsets>
+              <option value="512" />
+            </startOffsets>
+            <endOffsets>
+              <option value="537" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/MainMenuState.cs</url>
+          <line>38</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\MainMenuState.cs" initialLine="38" containingFunctionPresentation="Lambda expression inside Method 'Enter'">
+            <startOffsets>
+              <option value="1113" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

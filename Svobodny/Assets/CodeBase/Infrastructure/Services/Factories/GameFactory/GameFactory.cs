@@ -14,6 +14,7 @@ using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.StaticData.Character;
 using CodeBase.Infrastructure.Services.StaticData.Monster;
 using CodeBase.Infrastructure.Services.StaticData.Npc;
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
@@ -39,6 +40,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private readonly IInputService _inputService;
         private readonly IStaticDataService _staticData;
         private readonly IUsableObjectFactory _usableObjectFactory;
+        private readonly IWindowService _windowService;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
@@ -47,7 +49,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private GameObject _character;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
-            IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory)
+            IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
+            IWindowService windowService)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
@@ -55,6 +58,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _inputService = inputService;
             _staticData = staticData;
             _usableObjectFactory = usableObjectFactory;
+            _windowService = windowService;
         }
 
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
@@ -92,7 +96,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
-            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), staticData.Health);
+            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
+                staticData.Health);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)
@@ -176,7 +181,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
 
-
                 monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
@@ -194,6 +198,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             {
                 spawner.Value.Spawn();
             }
+        }
+
+        public void Cleanup()
+        {
+            _enemySpawners.Clear();
+            _npcSpawners.Clear();
+            _objectSpawners.Clear();
         }
 
         private static void InitTransparency(GameObject character, Camera camera) =>
