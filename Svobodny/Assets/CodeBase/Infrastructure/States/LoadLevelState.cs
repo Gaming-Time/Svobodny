@@ -1,6 +1,5 @@
 ﻿using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.StaticData.Level;
-using System;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;

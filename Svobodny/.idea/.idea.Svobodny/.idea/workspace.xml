@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/MainMenuState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/MainMenuState.cs.meta" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-65 SVO-66 - Всё работает">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Mediator/Mediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Mediator/Mediator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/WindowService/IWindowService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/WindowService/IWindowService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/WindowService/WindowService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/WindowService/WindowService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameLoopState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameLoopState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI/MainMenu/MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/UI/MainMenu/MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Infrastructure/Curtain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Infrastructure/Curtain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Health/CharacterHealth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +43,7 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/c7/1b895935/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/AllServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -166,7 +156,7 @@
       <workItem from="1709376160092" duration="5082000" />
       <workItem from="1709626504292" duration="3333000" />
       <workItem from="1710145055296" duration="4542000" />
-      <workItem from="1710490106333" duration="4854000" />
+      <workItem from="1710490106333" duration="5747000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -272,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710242945825</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="SVO-65 SVO-66 - Всё работает">
+      <option name="closed" value="true" />
+      <created>1710495652956</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710495652956</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +310,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="SVO-62 - Префабы и фабрика" />
     <MESSAGE value="SVO-62 - Сделал меню смерти" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-62 - Сделал меню смерти" />
+    <MESSAGE value="SVO-65 SVO-66 - Всё работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-65 SVO-66 - Всё работает" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -325,7 +324,7 @@
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
-          <line>96</line>
+          <line>95</line>
           <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="74" containingFunctionPresentation="Method 'CreateEnemySpawners'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -420,26 +419,26 @@
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
-          <line>51</line>
+          <line>50</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="51" containingFunctionPresentation="Method 'InitLevel'">
             <startOffsets>
-              <option value="1822" />
+              <option value="1808" />
             </startOffsets>
             <endOffsets>
-              <option value="1906" />
+              <option value="1892" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
-          <line>112</line>
+          <line>111</line>
           <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="112" containingFunctionPresentation="Method 'Exit'">
             <startOffsets>
-              <option value="4032" />
+              <option value="4018" />
             </startOffsets>
             <endOffsets>
-              <option value="4054" />
+              <option value="4040" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="33" />

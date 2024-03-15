@@ -47,6 +47,7 @@ namespace CodeBase.Modules.Character.Health
 
         public void Die()
         {
+            gameObject.SetActive(false);
             _windowService.OpenOrCreateWindow(WindowID.Death);
         }
     }
