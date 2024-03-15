@@ -4,5 +4,6 @@ namespace CodeBase.Infrastructure.Services.WindowService
     {
         void OpenOrCreateWindow(WindowID windowID);
         void CloseWindow(WindowID windowID);
+        void Cleanup();
     }
 }

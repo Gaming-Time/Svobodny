@@ -20,5 +20,7 @@ namespace CodeBase.Infrastructure.Services
 
         public TService Single<TService>() where TService : class, IService =>
             _serviceInstances[typeof(TService)] as TService;
+
+        public void ClenUp() => _serviceInstances.Clear();
     }
 }

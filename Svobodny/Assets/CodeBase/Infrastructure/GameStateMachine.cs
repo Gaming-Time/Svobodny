@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.StaticData;
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Infrastructure.States;
 
 namespace CodeBase.Infrastructure
@@ -18,6 +19,7 @@ namespace CodeBase.Infrastructure
         {
             _states = new Dictionary<Type, IExitableState>
             {
+                [typeof(MainMenuState)] = new MainMenuState(curtain, sceneLoader, this),
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
                 [typeof(LoadProgressState)] = new LoadProgressState(this,
                     services.Single<IStaticDataService>(), services.Single<IProgressService>()),
@@ -25,7 +27,8 @@ namespace CodeBase.Infrastructure
                     services.Single<IGameFactory>(),
                     services.Single<IStaticDataService>(), services.Single<IProgressService>(),
                     services.Single<IUIFactory>()),
-                [typeof(GameLoopState)] = new GameLoopState(services.Single<IGameFactory>()),
+                [typeof(GameLoopState)] =
+                    new GameLoopState(services.Single<IGameFactory>(), services.Single<IWindowService>()),
             };
         }
 

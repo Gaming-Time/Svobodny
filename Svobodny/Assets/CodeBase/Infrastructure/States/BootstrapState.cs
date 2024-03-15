@@ -27,6 +27,7 @@ namespace CodeBase.Infrastructure.States
             _sceneLoader = sceneLoader;
             _services = allServices;
 
+            allServices.ClenUp();
             RegisterServices();
             ConfigFactories();
         }

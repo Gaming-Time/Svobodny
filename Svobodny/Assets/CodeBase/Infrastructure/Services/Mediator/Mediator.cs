@@ -25,11 +25,13 @@ namespace CodeBase.Infrastructure.Services.Mediator
 
         private void ExitToMenu()
         {
-            _sceneLoader.Load(LevelType.MainMenu);
+            Time.timeScale = 1f;
+            _gameStateMachine.Enter<MainMenuState>();
         }
 
         private void RestartLevel()
         {
+            Time.timeScale = 1f;
             _gameStateMachine.Enter<LoadProgressState>();
         }
     }

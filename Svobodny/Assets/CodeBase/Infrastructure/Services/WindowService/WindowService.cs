@@ -46,6 +46,8 @@ namespace CodeBase.Infrastructure.Services.WindowService
         }
 
         private void OpenWindow(WindowBase window) => window.Activate();
+
+        public void Cleanup() => _windows.Clear();
     }
 
     public enum WindowID
