@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KnifeData
   m_EditorClassIdentifier: 
   TypeID: 1
-  Health: 10
+  Health: 2
   Prefab: {fileID: 8954773150905848177, guid: 8203e827ef328bd41ab91d1dd71afa31, type: 3}
   ScanRange: 5
   MeleeAttackRange: 1
