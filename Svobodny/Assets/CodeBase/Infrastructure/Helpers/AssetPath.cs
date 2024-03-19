@@ -21,6 +21,7 @@ namespace CodeBase.Infrastructure.Helpers
         public static class ObjectsPath
         {
             public const string WardrobePath = "UsableObjects/Wardrobe";
+            public const string DoorPath = "UsableObjects/Door";
         }
 
         public static class UIPath

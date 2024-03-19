@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
+using CodeBase.Infrastructure.Logic.UsableObjects.Door;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -158,6 +159,17 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                             usableObject.GetComponentInChildren<WardrobeAnimationEventsManager>();
                         wardrobeAnimationEventsManager.Construct(wardrobe);
 
+                        break;
+                    
+                    case UsableObjectTypeId.Door:
+                        var door = usableObject.GetComponent<Door>();
+                        var doorAnimatorController = door.GetComponent<DoorAnimatorController>();
+
+                        var doorAnimator = door.GetComponent<Animator>();
+                        
+                        doorAnimatorController.Construct(doorAnimator);
+                        door.Construct(_inputService, doorAnimatorController);
+                        
                         break;
                 }
             }
