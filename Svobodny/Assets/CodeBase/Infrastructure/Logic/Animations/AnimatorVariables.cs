@@ -20,14 +20,14 @@ namespace CodeBase.Infrastructure.Logic.Animations
 
             public static class Interactions
             {
-                public static int EnterWardrobe = Animator.StringToHash("EnterWardrobe");
-                public static int ExitWardrobe = Animator.StringToHash("ExitWardrobe");
+                public static readonly int EnterWardrobe = Animator.StringToHash("EnterWardrobe");
+                public static readonly int ExitWardrobe = Animator.StringToHash("ExitWardrobe");
             }
 
             public static class Battle
             {
-                public static int HitTriggerHash = Animator.StringToHash("Hit");
-                public static int AttackTriggerHash = Animator.StringToHash("Attack");
+                public static readonly int HitTriggerHash = Animator.StringToHash("Hit");
+                public static readonly int AttackTriggerHash = Animator.StringToHash("Attack");
             }
         }
 
@@ -35,6 +35,12 @@ namespace CodeBase.Infrastructure.Logic.Animations
         {
             public static readonly int EnterTrigger = Animator.StringToHash("Enter");
             public static readonly int ExitTrigger = Animator.StringToHash("Exit");
+        }
+
+        public static class Door
+        {
+            public static readonly int OpenTrigger = Animator.StringToHash("Open");
+            public static readonly int CloseTrigger = Animator.StringToHash("Close");
         }
     }
 }
