@@ -11,7 +11,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Door
         
         protected override IInputService InputService { get; set; }
 
-        public void Construct(IInputService inputService, DoorAnimatorController animatorController, bool isOpen)
+        public void Construct(IInputService inputService, DoorAnimatorController animatorController)
         {
             InputService = inputService;
             _animatorController = animatorController;

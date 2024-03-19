@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-65 SVO-66 - Всё работает">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/DoorAnimatorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/DoorAnimatorController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/DoorSpawnMarker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/DoorSpawnMarker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/WardrobeSpawnMarker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/WardrobeSpawnMarker.cs.meta" afterDir="false" />
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-39">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D/Doors/DooePivot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D/Doors/DooePivot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3D/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3D/Doors/Door.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawnMarker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawnMarker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectTypeId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectTypeId.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Knife.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Static Data/Levels/Level1 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Object Spawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Object Spawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UsableObjects/Wardrobe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +19,18 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/c7/1b895935/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/AllServices.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawnMarker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectTypeId.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Enemies/Knife.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Static Data/Levels/Level1 1.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/UsableObjects/Wardrobe.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -179,7 +144,7 @@
       <workItem from="1709626504292" duration="3333000" />
       <workItem from="1710145055296" duration="4542000" />
       <workItem from="1710490106333" duration="5747000" />
-      <workItem from="1710840588973" duration="3270000" />
+      <workItem from="1710840588973" duration="3710000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -293,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710495652956</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="SVO-39">
+      <option name="closed" value="true" />
+      <created>1710845142445</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710845142445</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +307,8 @@
     <MESSAGE value="SVO-62 - Префабы и фабрика" />
     <MESSAGE value="SVO-62 - Сделал меню смерти" />
     <MESSAGE value="SVO-65 SVO-66 - Всё работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-65 SVO-66 - Всё работает" />
+    <MESSAGE value="SVO-39" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-39" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
