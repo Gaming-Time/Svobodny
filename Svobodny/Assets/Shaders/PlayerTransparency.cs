@@ -25,6 +25,7 @@ public class PlayerTransparency : MonoBehaviour
         var ray = new Ray(transform.position, dir.normalized);
         if (Physics.Raycast(ray, out var hit, 3000, WallLayerMask))
         {
+            Debug.Log(hit.collider.gameObject.name);
             if(!Equals(hit, _previousHit))
                 _wallMaterials?.ForEach(material => material.SetFloat(SizeId, 0));
             
