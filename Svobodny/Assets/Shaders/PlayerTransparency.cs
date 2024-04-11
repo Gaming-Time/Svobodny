@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,51 +11,35 @@ public class PlayerTransparency : MonoBehaviour
     public static int PosId = Shader.PropertyToID("_PlayerPos");
     public static int SizeId = Shader.PropertyToID("_Size");
 
-    private Material[] _wallMaterials;
+    private List<Material> _wallMaterials;
+    private RaycastHit _previousHit;
 
     public void Construct(Camera camera)
     {
         Camera = camera;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         var dir = Camera.transform.position - transform.position;
         var ray = new Ray(transform.position, dir.normalized);
-        if (Physics.Raycast(ray, 3000, WallLayerMask))
+        if (Physics.Raycast(ray, out var hit, 3000, WallLayerMask))
         {
-            RaycastHit hit;
-            Physics.Raycast(ray, out hit, 3000, WallLayerMask);
-            _wallMaterials = hit.collider.gameObject.GetComponent<Renderer>()?.materials;
+            if(!Equals(hit, _previousHit))
+                _wallMaterials?.ForEach(material => material.SetFloat(SizeId, 0));
+            
+            _wallMaterials = hit.collider.gameObject.GetComponent<Renderer>()?.materials.ToList();
 
-            if (_wallMaterials != null)
-            {
-                foreach (var wallMaterial in _wallMaterials)
-                {
-                    wallMaterial.SetFloat(SizeId, 1);
-                }
-            }
+            _wallMaterials?.ForEach(material => material.SetFloat(SizeId, 1));
+            _previousHit = hit;
         }
         else
         {
-            if (_wallMaterials != null)
-            {
-                foreach (var wallMaterial in _wallMaterials)
-                {
-                    wallMaterial.SetFloat(SizeId, 0);
-                }
-            }
+            _wallMaterials?.ForEach(material => material.SetFloat(SizeId, 0));
         }
 
         var view = Camera.WorldToViewportPoint(transform.position); //Получение координат
 
-        if (_wallMaterials != null)
-        {
-            foreach (var wallMaterial in _wallMaterials)
-            {
-                wallMaterial.SetVector(PosId, view);
-            }
-        }
+        _wallMaterials?.ForEach(material => material.SetVector(PosId, view));
     }
 }
