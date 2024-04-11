@@ -32,6 +32,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
             return typeId switch
             {
                 UsableObjectTypeId.Wardrobe => AssetPath.ObjectsPath.WardrobePath,
+                UsableObjectTypeId.Door => AssetPath.ObjectsPath.DoorPath,
                 _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }

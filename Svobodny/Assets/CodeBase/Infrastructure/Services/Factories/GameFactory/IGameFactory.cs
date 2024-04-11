@@ -16,5 +16,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void InitCamera(GameObject character);
         void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId);
         void SpawnAllObjects();
+        void Cleanup();
     }
 }

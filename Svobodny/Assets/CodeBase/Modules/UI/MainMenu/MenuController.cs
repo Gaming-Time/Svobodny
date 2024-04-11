@@ -1,3 +1,5 @@
+using CodeBase.Infrastructure;
+using CodeBase.Infrastructure.States;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +11,14 @@ namespace CodeBase.Modules.UI.MainMenu
         [SerializeField]
         private string newGameLevel;
 
+        private GameStateMachine _gameStateMachine;
         private string _levelToLoad;
 
+        public void Construct(GameStateMachine gameStateMachine) => _gameStateMachine = gameStateMachine;
+        
         public void NewGameDialogYes()
         {
-            SceneManager.LoadScene(newGameLevel);
+            _gameStateMachine.Enter<BootstrapState>();
         }
 
         public void LoadGameDialogYes()

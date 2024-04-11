@@ -1,3 +1,4 @@
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
@@ -10,12 +11,14 @@ namespace CodeBase.Modules.Character.Health
         private int _currentHealth;
 
         private CharacterAnimatorController _animatorController;
+        private IWindowService _windowService;
 
         public int Health => _currentHealth;
 
-        public void Construct(CharacterAnimatorController animatorController, int health)
+        public void Construct(CharacterAnimatorController animatorController, IWindowService windowService, int health)
         {
             _animatorController = animatorController;
+            _windowService = windowService;
             
             _currentHealth = health;
         }
@@ -44,7 +47,8 @@ namespace CodeBase.Modules.Character.Health
 
         public void Die()
         {
-            Debug.Log("Character is dead");
+            gameObject.SetActive(false);
+            _windowService.OpenOrCreateWindow(WindowID.Death);
         }
     }
 }

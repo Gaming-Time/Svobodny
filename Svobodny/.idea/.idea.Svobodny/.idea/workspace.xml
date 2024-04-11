@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-56 - Пофиксил лишнюю прозрачность">
+    <list default="true" id="e901b704-a717-4164-909e-bb503d55420a" name="Changes" comment="SVO-39">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Svobodny/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/PlayerTransparency.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/Door/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,20 +18,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DaggeNRoll"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Gaming-Time/Svobodny.git",
-    "accountId": "06b04ab5-dfea-4b12-b1cc-5cabe5e653b7"
-  }
-}]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Shaders/PlayerTransparency.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3b24cc7fa9794ed8ab04312c53e6dedd172c00/c7/1b895935/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe7039efe678478d9c83e73bc6a6566d94b400/73/e78f97ca/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Helpers/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/Animations/AnimatorVariables.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawnMarker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectSpawner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObjectTypeId.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/CodeBase/Infrastructure/Services/Factories/UsableObjectFactory/IUsableObjectFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Enemies/Knife.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/Static Data/Levels/Level1 1.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/repos/Svobodny/Svobodny/Assets/Resources/UsableObjects/Wardrobe.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.8/Editor/Data/Util/PooledList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -53,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "XThreadsFramesViewSplitterKey": "0.7636081",
-    "git-widget-placeholder": "mikhail/svo-56",
+    "git-widget-placeholder": "mikhail/svo-39",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -65,8 +65,8 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\dagge\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
       "C:\\Users\\dagge\\AppData\\Local\\Symbols\\src"
     ]
   }
@@ -142,7 +142,9 @@
       <workItem from="1708591888628" duration="3975000" />
       <workItem from="1709376160092" duration="5082000" />
       <workItem from="1709626504292" duration="3333000" />
-      <workItem from="1712821228147" duration="2852000" />
+      <workItem from="1710145055296" duration="4542000" />
+      <workItem from="1710490106333" duration="5747000" />
+      <workItem from="1710840588973" duration="3710000" />
     </task>
     <task id="LOCAL-00001" summary="рефакторинг menuUI">
       <option name="closed" value="true" />
@@ -224,15 +226,47 @@
       <option name="project" value="LOCAL" />
       <updated>1708596525910</updated>
     </task>
-    <task id="LOCAL-00011" summary="SVO-56 - Пофиксил лишнюю прозрачность">
+    <task id="LOCAL-00011" summary="gitignore">
       <option name="closed" value="true" />
-      <created>1712823355836</created>
+      <created>1710149114623</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1712823355836</updated>
+      <updated>1710149114623</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="SVO-62 - Префабы и фабрика">
+      <option name="closed" value="true" />
+      <created>1710149146642</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710149146642</updated>
+    </task>
+    <task id="LOCAL-00013" summary="SVO-62 - Сделал меню смерти">
+      <option name="closed" value="true" />
+      <created>1710242945825</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710242945825</updated>
+    </task>
+    <task id="LOCAL-00014" summary="SVO-65 SVO-66 - Всё работает">
+      <option name="closed" value="true" />
+      <created>1710495652956</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710495652956</updated>
+    </task>
+    <task id="LOCAL-00015" summary="SVO-39">
+      <option name="closed" value="true" />
+      <created>1710845142445</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710845142445</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,10 +274,6 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityProjectDiscoverer">
-    <option name="unityProject" value="true" />
-    <option name="unityProjectFolder" value="true" />
-  </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -273,52 +303,56 @@
     <MESSAGE value="SVO-58" />
     <MESSAGE value="SVO-53" />
     <MESSAGE value="SVO-53 - Атака готова" />
-    <MESSAGE value="SVO-56 - Пофиксил лишнюю прозрачность" />
-    <option name="LAST_COMMIT_MESSAGE" value="SVO-56 - Пофиксил лишнюю прозрачность" />
+    <MESSAGE value="gitignore" />
+    <MESSAGE value="SVO-62 - Префабы и фабрика" />
+    <MESSAGE value="SVO-62 - Сделал меню смерти" />
+    <MESSAGE value="SVO-65 SVO-66 - Всё работает" />
+    <MESSAGE value="SVO-39" />
+    <option name="LAST_COMMIT_MESSAGE" value="SVO-39" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/Factories/GameFactory/GameFactory.cs</url>
-          <line>128</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" containingFunctionPresentation="Method 'SpawnAllMonsters'" />
+          <line>134</line>
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Services\Factories\GameFactory\GameFactory.cs" initialLine="86" containingFunctionPresentation="Method 'SpawnAllMonsters'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
-          <line>87</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" containingFunctionPresentation="Method 'CreateEnemySpawners'" />
+          <line>95</line>
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="74" containingFunctionPresentation="Method 'CreateEnemySpawners'" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/ScanForEntities.cs</url>
           <line>18</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\ScanForEntities.cs" containingFunctionPresentation="Method 'Execute'" />
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\ScanForEntities.cs" initialLine="13" containingFunctionPresentation="Method 'Execute'" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Helpers/Utilities.cs</url>
           <line>29</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Helpers\Utilities.cs" containingFunctionPresentation="Method 'IsVisibleWithFov'" />
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Helpers\Utilities.cs" initialLine="29" containingFunctionPresentation="Method 'IsVisibleWithFov'" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/ScanForEntities.cs</url>
           <line>21</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\ScanForEntities.cs" containingFunctionPresentation="Method 'Execute'" />
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\ScanForEntities.cs" initialLine="21" containingFunctionPresentation="Method 'Execute'" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Logic/UsableObjects/UsableObject.cs</url>
           <line>25</line>
-          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Logic\UsableObjects\UsableObject.cs" containingFunctionPresentation="Method 'OnTriggerStay'" />
+          <properties documentPath="D:\repos\Univer\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\Logic\UsableObjects\UsableObject.cs" initialLine="25" containingFunctionPresentation="Method 'OnTriggerStay'" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/SetPlayerAsAttackTarget.cs</url>
           <line>12</line>
-          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\SetPlayerAsAttackTarget.cs" containingFunctionPresentation="Method 'Execute'">
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\SetPlayerAsAttackTarget.cs" initialLine="12" containingFunctionPresentation="Method 'Execute'">
             <startOffsets>
               <option value="314" />
             </startOffsets>
@@ -331,7 +365,7 @@
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackPlayer.cs</url>
           <line>10</line>
-          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackPlayer.cs" containingFunctionPresentation="Method 'Execute'">
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackPlayer.cs" initialLine="10" containingFunctionPresentation="Method 'Execute'">
             <startOffsets>
               <option value="242" />
             </startOffsets>
@@ -344,7 +378,7 @@
         <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Ai/Actions/AttackTarget.cs</url>
           <line>10</line>
-          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackTarget.cs" containingFunctionPresentation="Method 'Execute'">
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Ai\Actions\AttackTarget.cs" initialLine="10" containingFunctionPresentation="Method 'Execute'">
             <startOffsets>
               <option value="242" />
             </startOffsets>
@@ -354,10 +388,10 @@
           </properties>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Enemies/Health/EnemyHealth.cs</url>
           <line>33</line>
-          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Health\EnemyHealth.cs" containingFunctionPresentation="Method 'DoDamage'">
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Enemies\Health\EnemyHealth.cs" initialLine="33" containingFunctionPresentation="Method 'DoDamage'">
             <startOffsets>
               <option value="1111" />
             </startOffsets>
@@ -367,10 +401,10 @@
           </properties>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/CodeBase/Modules/Character/Attack/CharacterAttack.cs</url>
           <line>62</line>
-          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Attack\CharacterAttack.cs" containingFunctionPresentation="Method 'ScanForTargets'">
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Modules\Character\Attack\CharacterAttack.cs" initialLine="63" containingFunctionPresentation="Method 'ScanForTargets'">
             <startOffsets>
               <option value="2060" />
             </startOffsets>
@@ -379,6 +413,58 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="51" containingFunctionPresentation="Method 'InitLevel'">
+            <startOffsets>
+              <option value="1808" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1892" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs</url>
+          <line>111</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\LoadLevelState.cs" initialLine="112" containingFunctionPresentation="Method 'Exit'">
+            <startOffsets>
+              <option value="4018" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4040" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/LoadingCurtain.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\LoadingCurtain.cs" initialLine="24" containingFunctionPresentation="Method 'DoFadeIn'">
+            <startOffsets>
+              <option value="512" />
+            </startOffsets>
+            <endOffsets>
+              <option value="537" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/MainMenuState.cs</url>
+          <line>38</line>
+          <properties documentPath="C:\repos\Svobodny\Svobodny\Assets\CodeBase\Infrastructure\States\MainMenuState.cs" initialLine="38" containingFunctionPresentation="Lambda expression inside Method 'Enter'">
+            <startOffsets>
+              <option value="1113" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
