@@ -9,6 +9,7 @@ namespace CodeBase.Infrastructure.Helpers
         public const string EnemySpawnerPath = "Enemies/Enemy Spawner";
         public const string NpcSpawnerPath = "Npcs/Npc Spawner";
         public const string ObjectSpawnerPath = "UsableObjects/Object Spawner";
+        public const string InventoryHandlerPath = "InventoryHandler";
         
         public static class StaticDataPath
         {
@@ -22,6 +23,7 @@ namespace CodeBase.Infrastructure.Helpers
         {
             public const string WardrobePath = "UsableObjects/Wardrobe";
             public const string DoorPath = "UsableObjects/Door";
+            public const string RedKeyPath = "UsableObjects/RedKey";
         }
 
         public static class UIPath

@@ -17,5 +17,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId);
         void SpawnAllObjects();
         void Cleanup();
+        void CreateInventoryHandler();
     }
 }

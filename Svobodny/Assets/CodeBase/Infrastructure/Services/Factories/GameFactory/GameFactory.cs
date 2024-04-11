@@ -6,6 +6,7 @@ using CodeBase.Infrastructure.Logic.Npcs;
 using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
 using CodeBase.Infrastructure.Logic.UsableObjects.Door;
+using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -28,6 +29,7 @@ using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
+using CodeBase.Modules.Inventory;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -48,6 +50,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Dictionary<string, UsableObjectSpawner> _objectSpawners = new();
 
         private GameObject _character;
+        private InventoryHandler _inventoryHandler;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -137,41 +140,16 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Add(spawnerId, spawner);
         }
 
+        public void CreateInventoryHandler() => _inventoryHandler =
+            _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
+
         public void SpawnAllObjects()
         {
             foreach (var spawner in _objectSpawners)
             {
                 var usableObject = spawner.Value.Spawn();
 
-                switch (spawner.Value.TypeId)
-                {
-                    case UsableObjectTypeId.Wardrobe:
-                        var wardrobeAnimatorController = usableObject.GetComponent<WardrobeAnimatorController>();
-                        wardrobeAnimatorController.Construct(usableObject.GetComponentInChildren<Animator>());
-
-                        var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
-
-                        var wardrobe = usableObject.GetComponent<Wardrobe>();
-                        wardrobe.Construct(_inputService,
-                            wardrobeAnimatorController, characterWardrobeInteraction);
-
-                        var wardrobeAnimationEventsManager =
-                            usableObject.GetComponentInChildren<WardrobeAnimationEventsManager>();
-                        wardrobeAnimationEventsManager.Construct(wardrobe);
-
-                        break;
-                    
-                    case UsableObjectTypeId.Door:
-                        var door = usableObject.GetComponent<Door>();
-                        var doorAnimatorController = door.GetComponent<DoorAnimatorController>();
-
-                        var doorAnimator = door.GetComponent<Animator>();
-                        
-                        doorAnimatorController.Construct(doorAnimator);
-                        door.Construct(_inputService, doorAnimatorController);
-                        
-                        break;
-                }
+                InitUsableObject(spawner, usableObject);
             }
         }
 
@@ -235,6 +213,45 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             characterMove.Construct(_inputService, character.GetComponent<CharacterController>(),
                 character.GetComponent<CharacterAnimationEventsHandler>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
+        }
+
+        private void InitUsableObject(KeyValuePair<string, UsableObjectSpawner> spawner, GameObject usableObject)
+        {
+            switch (spawner.Value.TypeId)
+            {
+                case UsableObjectTypeId.Wardrobe:
+                    var wardrobeAnimatorController = usableObject.GetComponent<WardrobeAnimatorController>();
+                    wardrobeAnimatorController.Construct(usableObject.GetComponentInChildren<Animator>());
+
+                    var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+
+                    var wardrobe = usableObject.GetComponent<Wardrobe>();
+                    wardrobe.Construct(_inputService,
+                        wardrobeAnimatorController, characterWardrobeInteraction);
+
+                    var wardrobeAnimationEventsManager =
+                        usableObject.GetComponentInChildren<WardrobeAnimationEventsManager>();
+                    wardrobeAnimationEventsManager.Construct(wardrobe);
+
+                    break;
+
+                case UsableObjectTypeId.Door:
+                    var door = usableObject.GetComponent<Door>();
+                    var doorAnimatorController = door.GetComponent<DoorAnimatorController>();
+
+                    var doorAnimator = door.GetComponent<Animator>();
+
+                    doorAnimatorController.Construct(doorAnimator);
+                    door.Construct(_inputService, doorAnimatorController);
+
+                    break;
+
+                case UsableObjectTypeId.RedKey:
+                    var key = usableObject.GetComponent<KeyUsableObject>();
+                    key.Construct(_inputService, _inventoryHandler);
+
+                    break;
+            }
         }
     }
 }

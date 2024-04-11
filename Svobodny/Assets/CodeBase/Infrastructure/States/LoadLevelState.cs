@@ -73,6 +73,7 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.InitCamera(character);
 
             CreateObjectSpawners();
+            _gameFactory.CreateInventoryHandler();
             _gameFactory.SpawnAllObjects();
         }
 
