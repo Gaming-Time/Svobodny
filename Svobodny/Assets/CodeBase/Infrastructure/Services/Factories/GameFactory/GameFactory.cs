@@ -247,7 +247,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     break;
 
                 case UsableObjectTypeId.RedKey:
-                    var key = usableObject.GetComponent<KeyUsableObject>();
+                    var key = usableObject.GetComponent<RedKey>();
                     key.Construct(_inputService, _inventoryHandler);
 
                     break;

@@ -1,30 +1,24 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Inventory;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.Logic.UsableObjects.Key
 {
-    public abstract class KeyUsableObject : UsableObject
+    public class RedKey : UsableObject
     {
-        private InventoryHandler _inventoryHandler;
         protected override IInputService InputService { get; set; }
 
-        protected abstract KeyType KeyType { get; }
+        private InventoryHandler _inventoryHandler;
 
         public void Construct(IInputService inputService, InventoryHandler inventoryHandler)
         {
             InputService = inputService;
             _inventoryHandler = inventoryHandler;
         }
-
         public override void Use()
         {
-            _inventoryHandler.AddKey(KeyType);
+            _inventoryHandler.AddKey(KeyType.Red);
             Destroy(gameObject);
         }
-    }
-
-    public enum KeyType
-    {
-        Red,
     }
 }
