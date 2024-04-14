@@ -27,6 +27,12 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
             _canvas = _uiRoot.GetComponentInChildren<Canvas>().transform;
         }
 
+        public GameObject CreateItemsInventory()
+        {
+            var inventory = _assetProvider.Instantiate(AssetPath.UIPath.ItemsInventory, _canvas);
+            return inventory;
+        }
+
         public WindowBase CreateDeathWindow()
         {
             var window = _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DeathMenu, _canvas);

@@ -1,5 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.Factories.NpcFactory;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
+﻿using CodeBase.Data.StaticData.Npc;
+using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Logic.Npcs

@@ -1,4 +1,4 @@
-﻿using CodeBase.Infrastructure.Services.StaticData.Monster;
+﻿using CodeBase.Data.StaticData.Monster;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.EnemyFactory

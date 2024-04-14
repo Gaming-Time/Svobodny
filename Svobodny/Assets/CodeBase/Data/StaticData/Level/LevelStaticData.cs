@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
-using CodeBase.Infrastructure.Services.StaticData.UsableObjects;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
+using CodeBase.Data.StaticData.UsableObjects;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Services.StaticData.Level
+namespace CodeBase.Data.StaticData.Level
 {
     [CreateAssetMenu(menuName = "Static Data/Level", fileName = "LevelData", order = 0)]
     public class LevelStaticData : ScriptableObject

@@ -1,9 +1,9 @@
 using System.Linq;
+using CodeBase.Data.StaticData.Level;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
+using CodeBase.Data.StaticData.UsableObjects;
 using CodeBase.Infrastructure.Logic.UsableObjects;
-using CodeBase.Infrastructure.Services.StaticData.Level;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
-using CodeBase.Infrastructure.Services.StaticData.UsableObjects;
 using CodeBase.Logic;
 using UnityEditor;
 using UnityEngine;

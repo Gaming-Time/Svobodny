@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using UnityEngine;
 
@@ -8,17 +10,24 @@ namespace CodeBase.Modules.Inventory
     {
         private List<Item> _items = new();
 
-        public void AddKey(KeyType keyType)
-        {
-        }
-        public void AddItem(Item item){}
-        public void RemoveItem(Item item){}
-    }
+        public event Action<ItemType> ItemAdded;
+        public event Action<ItemType> ItemRemoved; 
 
-    public class UIHandler : MonoBehaviour
-    {
-        public void AddItemView(){}
-        public void RemoveItemView(){}
+        public void AddItem(ItemType itemType)
+        {
+            _items.Add(new Item(itemType));
+            ItemAdded?.Invoke(itemType);
+        }
+
+        public void RemoveItem(ItemType itemType)
+        {
+            var item = _items.FirstOrDefault(item => item.ItemType == itemType);
+            if(item == null)
+                return;
+
+            _items.Remove(item);
+            ItemRemoved?.Invoke(itemType);
+        }
     }
 
     [System.Serializable]

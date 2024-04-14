@@ -1,4 +1,4 @@
-namespace CodeBase.Infrastructure.Services.StaticData.Monster
+namespace CodeBase.Data.StaticData.Monster
 {
     public enum MonsterTypeID
     {

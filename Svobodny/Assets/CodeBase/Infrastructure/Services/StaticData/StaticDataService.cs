@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Items;
+using CodeBase.Data.StaticData.Level;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
-using CodeBase.Infrastructure.Services.StaticData.Character;
-using CodeBase.Infrastructure.Services.StaticData.Level;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
-using CodeBase.Infrastructure.Services.StaticData.UsableObjects;
+using CodeBase.Modules.Inventory;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.StaticData
@@ -15,8 +16,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<string, LevelStaticData> _levels;
         private Dictionary<MonsterTypeID, MonsterStaticData> _monsters;
         private Dictionary<NpcTypeId, NpcStaticData> _npcs;
+        private Dictionary<ItemType, ItemStaticData> _items;
         private CharacterStaticData _character;
-
 
 
         public void LoadStaticData()
@@ -27,17 +28,22 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(monsterData => monsterData.TypeID, monsterData => monsterData);
             _npcs = Resources.LoadAll<NpcStaticData>(AssetPath.StaticDataPath.Npc)
                 .ToDictionary(npcData => npcData.TypeId, npcData => npcData);
+            _items = Resources.LoadAll<ItemStaticData>(AssetPath.StaticDataPath.Item)
+                .ToDictionary(itemData => itemData.ItemType, itemData => itemData);
             _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
         public MonsterStaticData ForMonster(MonsterTypeID typeID) =>
-            _monsters.TryGetValue(typeID, out var staticData) ? staticData : null;
+            _monsters.GetValueOrDefault(typeID);
 
         public NpcStaticData ForNpc(NpcTypeId typeId) =>
-            _npcs.TryGetValue(typeId, out var staticData) ? staticData : null;
+            _npcs.GetValueOrDefault(typeId);
 
         public LevelStaticData ForLevel(string scene) =>
-            _levels.TryGetValue(scene, out var staticData) ? staticData : null;
+            _levels.GetValueOrDefault(scene);
+
+        public ItemStaticData ForItem(ItemType itemType) =>
+            _items.GetValueOrDefault(itemType);
 
         public CharacterStaticData ForCharacter() => _character ?? null;
     }

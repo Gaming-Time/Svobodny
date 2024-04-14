@@ -1,4 +1,4 @@
-namespace CodeBase.Infrastructure.Services.StaticData.Npc
+namespace CodeBase.Data.StaticData.Npc
 {
     public enum NpcTypeId
     {

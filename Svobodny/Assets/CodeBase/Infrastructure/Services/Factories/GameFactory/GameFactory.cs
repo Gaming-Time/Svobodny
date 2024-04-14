@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using Cinemachine;
+using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic.Enemies;
 using CodeBase.Infrastructure.Logic.Npcs;
@@ -10,12 +13,10 @@ using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
+using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
-using CodeBase.Infrastructure.Services.StaticData.Character;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
@@ -44,6 +45,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private readonly IStaticDataService _staticData;
         private readonly IUsableObjectFactory _usableObjectFactory;
         private readonly IWindowService _windowService;
+        private readonly IUIFactory _uiFactory;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
@@ -51,10 +53,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         private GameObject _character;
         private InventoryHandler _inventoryHandler;
+        private UIHandler _uiHandler;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
-            IWindowService windowService)
+            IWindowService windowService, IUIFactory uiFactory)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
@@ -63,6 +66,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _staticData = staticData;
             _usableObjectFactory = usableObjectFactory;
             _windowService = windowService;
+            _uiFactory = uiFactory;
         }
 
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
@@ -142,6 +146,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         public void CreateInventoryHandler() => _inventoryHandler =
             _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
+
+        public void CreateUIHandler()
+        {
+            _uiHandler = _assetProvider.Instantiate<UIHandler>(AssetPath.UIHandlerPath);
+            _uiHandler.Construct(_inventoryHandler, _staticData, _assetProvider, _uiFactory);
+        }
 
         public void SpawnAllObjects()
         {

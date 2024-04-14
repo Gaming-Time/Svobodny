@@ -1,5 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.StaticData;
-using CodeBase.Infrastructure.Services.StaticData.Level;
+﻿using CodeBase.Data.StaticData.Level;
+using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
@@ -40,8 +40,8 @@ namespace CodeBase.Infrastructure.States
 
         private void OnLoaded()
         {
-            InitLevel();
             InitUI();
+            InitLevel();
 
             _gameStateMachine.Enter<GameLoopState>();
         }
@@ -74,6 +74,7 @@ namespace CodeBase.Infrastructure.States
 
             CreateObjectSpawners();
             _gameFactory.CreateInventoryHandler();
+            _gameFactory.CreateUIHandler();
             _gameFactory.SpawnAllObjects();
         }
 

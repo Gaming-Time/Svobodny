@@ -17,7 +17,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Key
         }
         public override void Use()
         {
-            _inventoryHandler.AddKey(KeyType.Red);
+            _inventoryHandler.AddItem(ItemType.RedKey);
             Destroy(gameObject);
         }
     }

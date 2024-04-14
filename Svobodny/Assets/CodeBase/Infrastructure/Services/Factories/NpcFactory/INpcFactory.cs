@@ -1,4 +1,4 @@
-﻿using CodeBase.Infrastructure.Services.StaticData.Npc;
+﻿using CodeBase.Data.StaticData.Npc;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.NpcFactory

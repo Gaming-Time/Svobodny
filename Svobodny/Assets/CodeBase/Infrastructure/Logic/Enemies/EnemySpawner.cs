@@ -1,5 +1,5 @@
-﻿using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
+﻿using CodeBase.Data.StaticData.Monster;
+using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Logic.Enemies
