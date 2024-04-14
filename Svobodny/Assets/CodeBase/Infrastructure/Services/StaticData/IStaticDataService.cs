@@ -1,7 +1,10 @@
-using CodeBase.Infrastructure.Services.StaticData.Character;
-using CodeBase.Infrastructure.Services.StaticData.Level;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
+using System.Collections.Generic;
+using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Items;
+using CodeBase.Data.StaticData.Level;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
+using CodeBase.Modules.Inventory;
 
 namespace CodeBase.Infrastructure.Services.StaticData
 {
@@ -12,5 +15,6 @@ namespace CodeBase.Infrastructure.Services.StaticData
         NpcStaticData ForNpc(NpcTypeId typeId);
         LevelStaticData ForLevel(string scene);
         CharacterStaticData ForCharacter();
+        ItemStaticData ForItem(ItemType itemType);
     }
 }

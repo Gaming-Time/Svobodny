@@ -1,5 +1,4 @@
 using CodeBase.Infrastructure.Services.Input;
-using UnityEngine;
 
 namespace CodeBase.Infrastructure.Logic.UsableObjects.Door
 {

@@ -4,6 +4,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
     {
         Wardrobe,
         Door,
+        RedKey,
         Count
     }
 }

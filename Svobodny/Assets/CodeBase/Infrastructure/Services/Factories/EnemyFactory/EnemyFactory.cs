@@ -1,7 +1,7 @@
 ﻿using System;
+using CodeBase.Data.StaticData.Monster;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.EnemyFactory

@@ -1,7 +1,7 @@
+using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Monster;
+using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Logic.UsableObjects;
-using CodeBase.Infrastructure.Services.StaticData.Character;
-using CodeBase.Infrastructure.Services.StaticData.Monster;
-using CodeBase.Infrastructure.Services.StaticData.Npc;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
@@ -17,5 +17,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId);
         void SpawnAllObjects();
         void Cleanup();
+        void CreateInventoryHandler();
+        void CreateUIHandler();
     }
 }

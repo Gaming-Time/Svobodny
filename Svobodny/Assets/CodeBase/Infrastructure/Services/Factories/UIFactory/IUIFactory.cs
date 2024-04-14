@@ -1,4 +1,5 @@
 using CodeBase.Windows;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UIFactory
 {
@@ -6,5 +7,6 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
     {
         void CreateRoot();
         WindowBase CreateDeathWindow();
+        GameObject CreateItemsInventory();
     }
 }

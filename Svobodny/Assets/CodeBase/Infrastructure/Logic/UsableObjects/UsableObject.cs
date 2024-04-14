@@ -8,7 +8,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects
     [RequireComponent(typeof(Collider))]
     public abstract class UsableObject : MonoBehaviour
     {
-        protected abstract IInputService InputService { get; set; }
+        protected abstract IInputService InputService {  get; set; }
         private bool _isRequested;
 
 

@@ -59,7 +59,8 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>(),
                 _services.Single<IEnemyFactory>(), _services.Single<INpcFactory>(),
                 _services.Single<IInputService>(), _services.Single<IStaticDataService>(),
-                _services.Single<IUsableObjectFactory>(), _services.Single<IWindowService>()));
+                _services.Single<IUsableObjectFactory>(), _services.Single<IWindowService>(),
+                _services.Single<IUIFactory>()));
             _services.RegisterSingle<IProgressService>(new ProgressService());
         }
 
