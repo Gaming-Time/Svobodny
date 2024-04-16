@@ -1,8 +1,7 @@
-using System;
 using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects
+namespace CodeBase.Logic.UsableObjects
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]

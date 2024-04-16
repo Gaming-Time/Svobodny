@@ -1,7 +1,7 @@
 using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects
+namespace CodeBase.Logic.UsableObjects
 {
     public class UsableObjectSpawner : MonoBehaviour
     {

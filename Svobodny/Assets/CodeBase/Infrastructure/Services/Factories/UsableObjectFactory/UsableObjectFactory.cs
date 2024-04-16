@@ -1,7 +1,7 @@
 using System;
 using CodeBase.Infrastructure.Helpers;
-using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Services.AssetProvider;
+using CodeBase.Logic.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
@@ -29,6 +29,9 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
                 UsableObjectTypeId.Wardrobe => AssetPath.ObjectsPath.WardrobePath,
                 UsableObjectTypeId.Door => AssetPath.ObjectsPath.DoorPath,
                 UsableObjectTypeId.RedKey => AssetPath.ObjectsPath.RedKeyPath,
+                UsableObjectTypeId.ClosedDoorOne => AssetPath.ObjectsPath.DoorOnePath,
+                UsableObjectTypeId.CloseDoorTwo => AssetPath.ObjectsPath.DoorTwoPath,
+                UsableObjectTypeId.CloseDoorThree => AssetPath.ObjectsPath.DoorThreePath,
                 _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }

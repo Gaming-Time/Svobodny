@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects
+namespace CodeBase.Logic.UsableObjects
 {
     public class UsableObjectSpawnMarker : MonoBehaviour
     {

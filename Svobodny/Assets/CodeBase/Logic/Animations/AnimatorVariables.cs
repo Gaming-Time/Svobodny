@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.Animations
+namespace CodeBase.Logic.Animations
 {
     public static class AnimatorVariables
     {

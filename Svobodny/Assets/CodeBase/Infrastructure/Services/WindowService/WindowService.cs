@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Windows;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.WindowService
 {
@@ -32,17 +33,10 @@ namespace CodeBase.Infrastructure.Services.WindowService
 
         private WindowBase CreateWindow(WindowID windowID)
         {
-            switch (windowID)
-            {
-                case WindowID.Death:
-                    var deathWindow = _uiFactory.CreateDeathWindow();
-                    _windows.TryAdd(windowID, deathWindow);
+            var window = _uiFactory.CreateWindow(windowID);
+            _windows.TryAdd(windowID, window);
 
-                    return deathWindow;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(windowID), windowID,
-                        $"{windowID} не определён в фабрике");
-            }
+            return window;
         }
 
         private void OpenWindow(WindowBase window) => window.Activate();
@@ -53,6 +47,9 @@ namespace CodeBase.Infrastructure.Services.WindowService
     public enum WindowID
     {
         Death,
+        DoorOneWindow,
+        DoorTwoWindow,
+        DoorThreeWindow,
         Count
     }
 }

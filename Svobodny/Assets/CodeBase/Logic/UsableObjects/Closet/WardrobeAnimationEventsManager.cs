@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
+namespace CodeBase.Logic.UsableObjects.Closet
 {
     public class WardrobeAnimationEventsManager : MonoBehaviour
     {

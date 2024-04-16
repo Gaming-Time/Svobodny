@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cinemachine;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
-using CodeBase.Infrastructure.Logic.Enemies;
-using CodeBase.Infrastructure.Logic.Npcs;
-using CodeBase.Infrastructure.Logic.UsableObjects;
-using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
-using CodeBase.Infrastructure.Logic.UsableObjects.Door;
-using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -18,6 +13,12 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Logic.Enemies;
+using CodeBase.Logic.Npcs;
+using CodeBase.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects.Closet;
+using CodeBase.Logic.UsableObjects.Doors;
+using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
@@ -33,6 +34,7 @@ using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 using UnityEngine.AI;
+using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 {
@@ -252,7 +254,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     var doorAnimator = door.GetComponent<Animator>();
 
                     doorAnimatorController.Construct(doorAnimator);
-                    door.Construct(_inputService, doorAnimatorController);
+                    door.Construct(_inputService, _inventoryHandler, doorAnimatorController);
 
                     break;
 
@@ -261,6 +263,27 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     key.Construct(_inputService, _inventoryHandler);
 
                     break;
+                case UsableObjectTypeId.ClosedDoorOne:
+                    var doorOne = usableObject.GetComponent<ClosedDoorOne>();
+                    var doorOneAnimatorController = doorOne.GetComponent<DoorAnimatorController>();
+                    doorOneAnimatorController.Construct(doorOne.GetComponent<Animator>());
+                    doorOne.Construct(_inputService, _windowService, _inventoryHandler, doorOneAnimatorController);
+                    break;
+                case UsableObjectTypeId.CloseDoorTwo:
+                    var doorTwo = usableObject.GetComponent<ClosedDoorTwo>();
+                    var doorTwoAnimatorController = doorTwo.GetComponent<DoorAnimatorController>();
+                    doorTwoAnimatorController.Construct(doorTwo.GetComponent<Animator>());
+                    doorTwo.Construct(_inputService, _windowService, _inventoryHandler, doorTwoAnimatorController);
+                    break;
+                case UsableObjectTypeId.CloseDoorThree:
+                    var doorThree = usableObject.GetComponent<ClosedDoorThree>();
+                    var doorThreeAnimatorController = doorThree.GetComponent<DoorAnimatorController>();
+                    doorThreeAnimatorController.Construct(doorThree.GetComponent<Animator>());
+                    doorThree.Construct(_inputService, _windowService, _inventoryHandler, doorThreeAnimatorController);
+                    break;
+                case UsableObjectTypeId.Count:
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }

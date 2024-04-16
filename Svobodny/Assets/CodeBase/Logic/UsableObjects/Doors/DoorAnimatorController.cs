@@ -1,7 +1,7 @@
-using CodeBase.Infrastructure.Logic.Animations;
+using CodeBase.Logic.Animations;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects.Door
+namespace CodeBase.Logic.UsableObjects.Doors
 {
     public class DoorAnimatorController : MonoBehaviour
     {

@@ -24,16 +24,22 @@ namespace CodeBase.Infrastructure.Helpers
         public static class ObjectsPath
         {
             public const string WardrobePath = "UsableObjects/Wardrobe";
-            public const string DoorPath = "UsableObjects/Door";
             public const string RedKeyPath = "UsableObjects/RedKey";
+            public const string DoorPath = "UsableObjects/Doors/Door";
+            public const string DoorOnePath = "UsableObjects/Doors/ClosedDoorOne";
+            public const string DoorTwoPath = "UsableObjects/Doors/ClosedDoorTwo";
+            public const string DoorThreePath = "UsableObjects/Doors/ClosedDoorThree";
         }
 
         public static class UIPath
         {
             public const string UIRoot = "UI/UIRoot";
-            public const string DeathMenu = "UI/DeathWindow";
             public const string Slot = "UI/Slot";
             public const string ItemsInventory = "UI/ItemsInventory";
+            public const string DeathMenu = "UI/Windows/DeathWindow";
+            public const string DoorOneWindow = "UI/Windows/DoorOneWindow";
+            public const string DoorTwoWindow = "UI/Windows/DoorTwoWindow";
+            public const string DoorThreeWindow = "UI/Windows/DoorThreeWindow";
         }
     }
 }

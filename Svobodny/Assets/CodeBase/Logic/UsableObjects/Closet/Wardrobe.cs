@@ -1,9 +1,8 @@
 using CodeBase.Infrastructure.Services.Input;
-using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Interaction;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects.Closet
+namespace CodeBase.Logic.UsableObjects.Closet
 {
     public class Wardrobe : UsableObject
     {

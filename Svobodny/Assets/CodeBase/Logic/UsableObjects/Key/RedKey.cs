@@ -1,8 +1,7 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Inventory;
-using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.UsableObjects.Key
+namespace CodeBase.Logic.UsableObjects.Key
 {
     public class RedKey : UsableObject
     {
@@ -17,7 +16,7 @@ namespace CodeBase.Infrastructure.Logic.UsableObjects.Key
         }
         public override void Use()
         {
-            _inventoryHandler.AddItem(ItemType.RedKey);
+            _inventoryHandler.AddItem(ItemType.KeyOne);
             Destroy(gameObject);
         }
     }

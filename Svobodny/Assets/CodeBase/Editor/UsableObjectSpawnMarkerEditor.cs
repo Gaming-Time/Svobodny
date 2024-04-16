@@ -1,5 +1,5 @@
-using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Logic;
+using CodeBase.Logic.UsableObjects;
 using UnityEditor;
 using UnityEngine;
 

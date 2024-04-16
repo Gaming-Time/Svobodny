@@ -1,7 +1,7 @@
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
-using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory

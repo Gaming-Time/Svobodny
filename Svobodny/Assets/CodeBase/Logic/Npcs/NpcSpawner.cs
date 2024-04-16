@@ -2,7 +2,7 @@
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.Npcs
+namespace CodeBase.Logic.Npcs
 {
     public class NpcSpawner : MonoBehaviour
     {

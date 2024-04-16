@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db163a916504228ae9ac8e07a8bff61, type: 3}
   m_Name: Red Key Data
   m_EditorClassIdentifier: 
-  ItemType: 0
+  ItemType: 1
   Sprite: {fileID: 255105026, guid: de940058ff555444781577449661bcc8, type: 3}

@@ -2,7 +2,7 @@
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Logic.Enemies
+namespace CodeBase.Logic.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
