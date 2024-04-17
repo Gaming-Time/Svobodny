@@ -47,6 +47,9 @@ namespace CodeBase.Modules.Inventory
         None,
         KeyOne,
         KeyTwo,
-        KeyThree
+        KeyThree,
+        KeyFour,
+        KeyFive,
+        KeySix,
     }
 }

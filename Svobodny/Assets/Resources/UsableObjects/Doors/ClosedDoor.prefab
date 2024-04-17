@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7641411693089764433}
   - component: {fileID: 1306873836506549410}
   m_Layer: 0
-  m_Name: ClosedDoorOne
+  m_Name: ClosedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

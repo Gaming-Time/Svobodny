@@ -26,12 +26,19 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
         {
             return typeId switch
             {
+                UsableObjectTypeId.ClosedDoorOne or UsableObjectTypeId.ClosedDoorTwo
+                    or UsableObjectTypeId.ClosedDoorThree or UsableObjectTypeId.ClosedDoorFour
+                    or UsableObjectTypeId.ClosedDoorFive
+                    => AssetPath.ObjectsPath.ClosedDoorPath,
                 UsableObjectTypeId.Wardrobe => AssetPath.ObjectsPath.WardrobePath,
                 UsableObjectTypeId.Door => AssetPath.ObjectsPath.DoorPath,
-                UsableObjectTypeId.RedKey => AssetPath.ObjectsPath.RedKeyPath,
-                UsableObjectTypeId.ClosedDoorOne => AssetPath.ObjectsPath.DoorOnePath,
-                UsableObjectTypeId.CloseDoorTwo => AssetPath.ObjectsPath.DoorTwoPath,
-                UsableObjectTypeId.CloseDoorThree => AssetPath.ObjectsPath.DoorThreePath,
+                UsableObjectTypeId.KeyOne => AssetPath.ObjectsPath.KeyOnePath,
+                UsableObjectTypeId.KeyTwo => AssetPath.ObjectsPath.KeyTwoPath,
+                UsableObjectTypeId.KeyThree => AssetPath.ObjectsPath.KeyThreePath,
+                UsableObjectTypeId.KeyFour => AssetPath.ObjectsPath.KeyFourPath,
+                UsableObjectTypeId.KeyFive => AssetPath.ObjectsPath.KeyFivePath,
+                UsableObjectTypeId.KeySix => AssetPath.ObjectsPath.KeySixPath,
+
                 _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }

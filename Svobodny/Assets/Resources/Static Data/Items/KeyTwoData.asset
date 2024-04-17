@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1db163a916504228ae9ac8e07a8bff61, type: 3}
-  m_Name: Red Key Data
+  m_Name: KeyTwoData
   m_EditorClassIdentifier: 
-  ItemType: 1
-  Sprite: {fileID: 255105026, guid: de940058ff555444781577449661bcc8, type: 3}
+  ItemType: 2
+  Sprite: {fileID: 21300000, guid: ff3f327f2d10bf448a71ce081e77ceb9, type: 3}

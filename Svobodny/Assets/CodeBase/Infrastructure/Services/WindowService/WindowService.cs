@@ -50,6 +50,9 @@ namespace CodeBase.Infrastructure.Services.WindowService
         DoorOneWindow,
         DoorTwoWindow,
         DoorThreeWindow,
+        DoorFourWindow,
+        DoorFiveWindow,
+        DoorSixWindow,
         Count
     }
 }

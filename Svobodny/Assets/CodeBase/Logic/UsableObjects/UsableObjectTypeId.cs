@@ -4,10 +4,18 @@ namespace CodeBase.Logic.UsableObjects
     {
         Wardrobe,
         Door,
-        RedKey,
+        KeyOne,
+        KeyTwo,
+        KeyThree,
+        KeyFour,
+        KeyFive,
+        KeySix,
         ClosedDoorOne,
-        CloseDoorTwo,
-        CloseDoorThree,
+        ClosedDoorTwo,
+        ClosedDoorThree,
+        ClosedDoorFour,
+        ClosedDoorFive,
+        ClosedDoorSix,
         Count
     }
 }

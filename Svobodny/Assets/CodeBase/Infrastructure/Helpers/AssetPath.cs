@@ -24,11 +24,14 @@ namespace CodeBase.Infrastructure.Helpers
         public static class ObjectsPath
         {
             public const string WardrobePath = "UsableObjects/Wardrobe";
-            public const string RedKeyPath = "UsableObjects/RedKey";
+            public const string KeyOnePath = "UsableObjects/Keys/KeyOne";
+            public const string KeyTwoPath = "UsableObjects/Keys/KeyTwo";
+            public const string KeyThreePath = "UsableObjects/Keys/KeyThree";
+            public const string KeyFourPath = "UsableObjects/Keys/KeyFour";
+            public const string KeyFivePath = "UsableObjects/Keys/KeyFive";
+            public const string KeySixPath = "UsableObjects/Keys/KeySix";
             public const string DoorPath = "UsableObjects/Doors/Door";
-            public const string DoorOnePath = "UsableObjects/Doors/ClosedDoorOne";
-            public const string DoorTwoPath = "UsableObjects/Doors/ClosedDoorTwo";
-            public const string DoorThreePath = "UsableObjects/Doors/ClosedDoorThree";
+            public const string ClosedDoorPath = "UsableObjects/Doors/ClosedDoor";
         }
 
         public static class UIPath

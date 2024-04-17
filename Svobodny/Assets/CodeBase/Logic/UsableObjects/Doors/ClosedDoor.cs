@@ -5,23 +5,27 @@ using UnityEngine;
 
 namespace CodeBase.Logic.UsableObjects.Doors
 {
-    public class ClosedDoorOne : UsableObject
+    public class ClosedDoor : UsableObject
     {
         protected override IInputService InputService { get; set; }
         private InventoryHandler _inventoryHandler;
         private DoorAnimatorController _animatorController;
         private IWindowService _windowService;
+        private ItemType _itemType;
+        private WindowID _windowId;
 
         private bool _isOpen;
 
         public void Construct(IInputService inputService, IWindowService windowService,
             InventoryHandler inventoryHandler,
-            DoorAnimatorController animatorController)
+            DoorAnimatorController animatorController, ItemType itemType, WindowID windowID)
         {
             InputService = inputService;
             _windowService = windowService;
             _inventoryHandler = inventoryHandler;
             _animatorController = animatorController;
+            _itemType = itemType;
+            _windowId = windowID;
         }
 
         public override void Use()
@@ -34,9 +38,9 @@ namespace CodeBase.Logic.UsableObjects.Doors
                 return;
             }
 
-            if (!_inventoryHandler.HasItem(ItemType.KeyOne))
+            if (!_inventoryHandler.HasItem(_itemType))
             {
-                _windowService.OpenOrCreateWindow(WindowID.DoorOneWindow);
+                _windowService.OpenOrCreateWindow(_windowId);
 
                 return;
             }

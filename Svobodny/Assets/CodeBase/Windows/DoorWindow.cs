@@ -8,6 +8,8 @@ namespace CodeBase.Windows
         [SerializeField] private float stayActiveTime;
         [SerializeField] private CanvasGroup canvasGroup;
 
+        private WaitForSeconds _waitForSecondsRoutine = new WaitForSeconds(0.03f);
+
         public override void Activate()
         {
             base.Activate();
@@ -20,7 +22,7 @@ namespace CodeBase.Windows
             while (canvasGroup.alpha < 1)
             {
                 canvasGroup.alpha += 0.03f;
-                yield return new WaitForSeconds(0.03f);
+                yield return _waitForSecondsRoutine;
             }
 
             StartCoroutine(WaitAndFadeOut());
@@ -33,7 +35,7 @@ namespace CodeBase.Windows
             while (canvasGroup.alpha > 0)
             {
                 canvasGroup.alpha -= 0.03f;
-                yield return new WaitForSeconds(0.03f);
+                yield return _waitForSecondsRoutine;
             }
             
             Hide();

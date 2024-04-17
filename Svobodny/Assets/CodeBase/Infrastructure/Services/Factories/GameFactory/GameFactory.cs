@@ -258,33 +258,64 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
                     break;
 
-                case UsableObjectTypeId.RedKey:
-                    var key = usableObject.GetComponent<RedKey>();
-                    key.Construct(_inputService, _inventoryHandler);
+                //Лютый хардкод, нет времени написать нормально
+                case UsableObjectTypeId.KeyOne:
+                case UsableObjectTypeId.KeyTwo:
+                case UsableObjectTypeId.KeyThree:
+                case UsableObjectTypeId.KeyFour:
+                case UsableObjectTypeId.KeyFive:
+                case UsableObjectTypeId.KeySix:
+                    var key = usableObject.GetComponent<Key>();
+                    var itemType = spawner.Value.TypeId switch
+                    {
+                        UsableObjectTypeId.KeyOne => ItemType.KeyOne,
+                        UsableObjectTypeId.KeyTwo => ItemType.KeyTwo,
+                        UsableObjectTypeId.KeyThree => ItemType.KeyThree,
+                        UsableObjectTypeId.KeyFour => ItemType.KeyFour,
+                        UsableObjectTypeId.KeyFive => ItemType.KeyFive,
+                        UsableObjectTypeId.KeySix => ItemType.KeySix,
+                    };
+                    key.Construct(_inputService, _inventoryHandler, itemType);
 
                     break;
+
                 case UsableObjectTypeId.ClosedDoorOne:
-                    var doorOne = usableObject.GetComponent<ClosedDoorOne>();
-                    var doorOneAnimatorController = doorOne.GetComponent<DoorAnimatorController>();
-                    doorOneAnimatorController.Construct(doorOne.GetComponent<Animator>());
-                    doorOne.Construct(_inputService, _windowService, _inventoryHandler, doorOneAnimatorController);
-                    break;
-                case UsableObjectTypeId.CloseDoorTwo:
-                    var doorTwo = usableObject.GetComponent<ClosedDoorTwo>();
-                    var doorTwoAnimatorController = doorTwo.GetComponent<DoorAnimatorController>();
-                    doorTwoAnimatorController.Construct(doorTwo.GetComponent<Animator>());
-                    doorTwo.Construct(_inputService, _windowService, _inventoryHandler, doorTwoAnimatorController);
-                    break;
-                case UsableObjectTypeId.CloseDoorThree:
-                    var doorThree = usableObject.GetComponent<ClosedDoorThree>();
-                    var doorThreeAnimatorController = doorThree.GetComponent<DoorAnimatorController>();
-                    doorThreeAnimatorController.Construct(doorThree.GetComponent<Animator>());
-                    doorThree.Construct(_inputService, _windowService, _inventoryHandler, doorThreeAnimatorController);
+                case UsableObjectTypeId.ClosedDoorTwo:
+                case UsableObjectTypeId.ClosedDoorThree:
+                case UsableObjectTypeId.ClosedDoorFour:
+                case UsableObjectTypeId.ClosedDoorFive:
+                case UsableObjectTypeId.ClosedDoorSix:
+                    InitializeClosedDoor(usableObject, spawner.Value.TypeId);
+
                     break;
                 case UsableObjectTypeId.Count:
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private void InitializeClosedDoor(GameObject doorObject, UsableObjectTypeId typeId)
+        {
+            var door = doorObject.GetComponent<ClosedDoor>();
+            var animatorController = doorObject.GetComponent<DoorAnimatorController>();
+            var animator = door.GetComponent<Animator>();
+            animatorController.Construct(animator);
+
+            WindowID popupWindow;
+            ItemType keyType;
+
+            (keyType, popupWindow) = typeId switch
+            {
+                UsableObjectTypeId.ClosedDoorOne => (ItemType.KeyOne, WindowID.DoorOneWindow),
+                UsableObjectTypeId.ClosedDoorTwo => (ItemType.KeyTwo, WindowID.DoorTwoWindow),
+                UsableObjectTypeId.ClosedDoorThree => (ItemType.KeyThree, WindowID.DoorThreeWindow),
+                UsableObjectTypeId.ClosedDoorFour => (ItemType.KeyFour, WindowID.DoorFourWindow),
+                UsableObjectTypeId.ClosedDoorFive => (ItemType.KeyFive, WindowID.DoorFiveWindow),
+                UsableObjectTypeId.ClosedDoorSix => (ItemType.KeySix, WindowID.DoorSixWindow),
+                _ => throw new ArgumentOutOfRangeException(nameof(typeId), typeId, null)
+            };
+
+            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, keyType, popupWindow);
         }
     }
 }
