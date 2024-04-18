@@ -28,7 +28,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
             {
                 UsableObjectTypeId.ClosedDoorOne or UsableObjectTypeId.ClosedDoorTwo
                     or UsableObjectTypeId.ClosedDoorThree or UsableObjectTypeId.ClosedDoorFour
-                    or UsableObjectTypeId.ClosedDoorFive
+                    or UsableObjectTypeId.ClosedDoorFive or UsableObjectTypeId.ClosedDoorSix
                     => AssetPath.ObjectsPath.ClosedDoorPath,
                 UsableObjectTypeId.Wardrobe => AssetPath.ObjectsPath.WardrobePath,
                 UsableObjectTypeId.Door => AssetPath.ObjectsPath.DoorPath,

@@ -35,15 +35,6 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
             return inventory;
         }
 
-        public WindowBase CreateDeathWindow()
-        {
-            var window = _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DeathMenu, _canvas);
-
-            InitializeButtons(window.gameObject);
-
-            return window;
-        }
-
         public WindowBase CreateWindow(WindowID windowID)
         {
             switch (windowID)
@@ -59,6 +50,12 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DoorTwoWindow, _canvas);
                 case WindowID.DoorThreeWindow:
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DoorThreeWindow, _canvas);
+                case WindowID.DoorFourWindow:
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DoorFourWindow, _canvas);
+                case WindowID.DoorFiveWindow:
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DoorFiveWindow, _canvas);
+                case WindowID.DoorSixWindow:
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.DoorSixWindow, _canvas);
                 case WindowID.Count:
                 default:
                     throw new ArgumentOutOfRangeException(nameof(windowID), windowID, null);

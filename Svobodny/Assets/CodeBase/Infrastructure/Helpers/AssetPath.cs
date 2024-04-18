@@ -43,6 +43,9 @@ namespace CodeBase.Infrastructure.Helpers
             public const string DoorOneWindow = "UI/Windows/DoorOneWindow";
             public const string DoorTwoWindow = "UI/Windows/DoorTwoWindow";
             public const string DoorThreeWindow = "UI/Windows/DoorThreeWindow";
+            public const string DoorFourWindow = "UI/Windows/DoorFourWindow";
+            public const string DoorFiveWindow = "UI/Windows/DoorFiveWindow";
+            public const string DoorSixWindow = "UI/Windows/DoorSixWindow";
         }
     }
 }
