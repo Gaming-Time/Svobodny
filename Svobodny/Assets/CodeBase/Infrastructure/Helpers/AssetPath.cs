@@ -24,16 +24,28 @@ namespace CodeBase.Infrastructure.Helpers
         public static class ObjectsPath
         {
             public const string WardrobePath = "UsableObjects/Wardrobe";
-            public const string DoorPath = "UsableObjects/Door";
-            public const string RedKeyPath = "UsableObjects/RedKey";
+            public const string KeyOnePath = "UsableObjects/Keys/KeyOne";
+            public const string KeyTwoPath = "UsableObjects/Keys/KeyTwo";
+            public const string KeyThreePath = "UsableObjects/Keys/KeyThree";
+            public const string KeyFourPath = "UsableObjects/Keys/KeyFour";
+            public const string KeyFivePath = "UsableObjects/Keys/KeyFive";
+            public const string KeySixPath = "UsableObjects/Keys/KeySix";
+            public const string DoorPath = "UsableObjects/Doors/Door";
+            public const string ClosedDoorPath = "UsableObjects/Doors/ClosedDoor";
         }
 
         public static class UIPath
         {
             public const string UIRoot = "UI/UIRoot";
-            public const string DeathMenu = "UI/DeathWindow";
             public const string Slot = "UI/Slot";
             public const string ItemsInventory = "UI/ItemsInventory";
+            public const string DeathMenu = "UI/Windows/DeathWindow";
+            public const string DoorOneWindow = "UI/Windows/DoorOneWindow";
+            public const string DoorTwoWindow = "UI/Windows/DoorTwoWindow";
+            public const string DoorThreeWindow = "UI/Windows/DoorThreeWindow";
+            public const string DoorFourWindow = "UI/Windows/DoorFourWindow";
+            public const string DoorFiveWindow = "UI/Windows/DoorFiveWindow";
+            public const string DoorSixWindow = "UI/Windows/DoorSixWindow";
         }
     }
 }

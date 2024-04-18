@@ -1,5 +1,5 @@
 using System;
-using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Data.StaticData.UsableObjects

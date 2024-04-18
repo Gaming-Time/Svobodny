@@ -1,5 +1,5 @@
-﻿using CodeBase.Infrastructure.Logic.Animations;
-using CodeBase.Infrastructure.Services.Input;
+﻿using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Logic.Animations;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character.Animation

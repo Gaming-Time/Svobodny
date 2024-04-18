@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using UnityEngine;
 
 namespace CodeBase.Modules.Inventory
@@ -11,7 +10,7 @@ namespace CodeBase.Modules.Inventory
         private List<Item> _items = new();
 
         public event Action<ItemType> ItemAdded;
-        public event Action<ItemType> ItemRemoved; 
+        public event Action<ItemType> ItemRemoved;
 
         public void AddItem(ItemType itemType)
         {
@@ -22,12 +21,14 @@ namespace CodeBase.Modules.Inventory
         public void RemoveItem(ItemType itemType)
         {
             var item = _items.FirstOrDefault(item => item.ItemType == itemType);
-            if(item == null)
+            if (item == null)
                 return;
 
             _items.Remove(item);
             ItemRemoved?.Invoke(itemType);
         }
+
+        public bool HasItem(ItemType itemType) => _items.Exists(item => item.ItemType == itemType);
     }
 
     [System.Serializable]
@@ -43,6 +44,12 @@ namespace CodeBase.Modules.Inventory
 
     public enum ItemType
     {
-        RedKey
+        None,
+        KeyOne,
+        KeyTwo,
+        KeyThree,
+        KeyFour,
+        KeyFive,
+        KeySix,
     }
 }

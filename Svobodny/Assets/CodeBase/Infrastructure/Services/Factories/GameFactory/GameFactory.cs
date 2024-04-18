@@ -1,15 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cinemachine;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
-using CodeBase.Infrastructure.Logic.Enemies;
-using CodeBase.Infrastructure.Logic.Npcs;
-using CodeBase.Infrastructure.Logic.UsableObjects;
-using CodeBase.Infrastructure.Logic.UsableObjects.Closet;
-using CodeBase.Infrastructure.Logic.UsableObjects.Door;
-using CodeBase.Infrastructure.Logic.UsableObjects.Key;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -18,6 +13,12 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Logic.Enemies;
+using CodeBase.Logic.Npcs;
+using CodeBase.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects.Closet;
+using CodeBase.Logic.UsableObjects.Doors;
+using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
@@ -33,6 +34,7 @@ using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 using UnityEngine.AI;
+using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 {
@@ -252,16 +254,68 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     var doorAnimator = door.GetComponent<Animator>();
 
                     doorAnimatorController.Construct(doorAnimator);
-                    door.Construct(_inputService, doorAnimatorController);
+                    door.Construct(_inputService, _inventoryHandler, doorAnimatorController);
 
                     break;
 
-                case UsableObjectTypeId.RedKey:
-                    var key = usableObject.GetComponent<RedKey>();
-                    key.Construct(_inputService, _inventoryHandler);
+                //Лютый хардкод, нет времени написать нормально
+                case UsableObjectTypeId.KeyOne:
+                case UsableObjectTypeId.KeyTwo:
+                case UsableObjectTypeId.KeyThree:
+                case UsableObjectTypeId.KeyFour:
+                case UsableObjectTypeId.KeyFive:
+                case UsableObjectTypeId.KeySix:
+                    var key = usableObject.GetComponent<Key>();
+                    var itemType = spawner.Value.TypeId switch
+                    {
+                        UsableObjectTypeId.KeyOne => ItemType.KeyOne,
+                        UsableObjectTypeId.KeyTwo => ItemType.KeyTwo,
+                        UsableObjectTypeId.KeyThree => ItemType.KeyThree,
+                        UsableObjectTypeId.KeyFour => ItemType.KeyFour,
+                        UsableObjectTypeId.KeyFive => ItemType.KeyFive,
+                        UsableObjectTypeId.KeySix => ItemType.KeySix,
+                    };
+                    key.Construct(_inputService, _inventoryHandler, itemType);
 
                     break;
+
+                case UsableObjectTypeId.ClosedDoorOne:
+                case UsableObjectTypeId.ClosedDoorTwo:
+                case UsableObjectTypeId.ClosedDoorThree:
+                case UsableObjectTypeId.ClosedDoorFour:
+                case UsableObjectTypeId.ClosedDoorFive:
+                case UsableObjectTypeId.ClosedDoorSix:
+                    InitializeClosedDoor(usableObject, spawner.Value.TypeId);
+
+                    break;
+                case UsableObjectTypeId.Count:
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private void InitializeClosedDoor(GameObject doorObject, UsableObjectTypeId typeId)
+        {
+            var door = doorObject.GetComponent<ClosedDoor>();
+            var animatorController = doorObject.GetComponent<DoorAnimatorController>();
+            var animator = door.GetComponent<Animator>();
+            animatorController.Construct(animator);
+
+            WindowID popupWindow;
+            ItemType keyType;
+
+            (keyType, popupWindow) = typeId switch
+            {
+                UsableObjectTypeId.ClosedDoorOne => (ItemType.KeyOne, WindowID.DoorOneWindow),
+                UsableObjectTypeId.ClosedDoorTwo => (ItemType.KeyTwo, WindowID.DoorTwoWindow),
+                UsableObjectTypeId.ClosedDoorThree => (ItemType.KeyThree, WindowID.DoorThreeWindow),
+                UsableObjectTypeId.ClosedDoorFour => (ItemType.KeyFour, WindowID.DoorFourWindow),
+                UsableObjectTypeId.ClosedDoorFive => (ItemType.KeyFive, WindowID.DoorFiveWindow),
+                UsableObjectTypeId.ClosedDoorSix => (ItemType.KeySix, WindowID.DoorSixWindow),
+                _ => throw new ArgumentOutOfRangeException(nameof(typeId), typeId, null)
+            };
+
+            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, keyType, popupWindow);
         }
     }
 }

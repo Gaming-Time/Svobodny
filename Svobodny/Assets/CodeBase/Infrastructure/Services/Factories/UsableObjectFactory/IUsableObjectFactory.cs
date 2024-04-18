@@ -1,4 +1,4 @@
-using CodeBase.Infrastructure.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory

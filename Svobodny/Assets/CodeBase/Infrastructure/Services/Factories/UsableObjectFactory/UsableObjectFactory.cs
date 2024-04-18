@@ -1,7 +1,7 @@
 using System;
 using CodeBase.Infrastructure.Helpers;
-using CodeBase.Infrastructure.Logic.UsableObjects;
 using CodeBase.Infrastructure.Services.AssetProvider;
+using CodeBase.Logic.UsableObjects;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
@@ -26,9 +26,19 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
         {
             return typeId switch
             {
+                UsableObjectTypeId.ClosedDoorOne or UsableObjectTypeId.ClosedDoorTwo
+                    or UsableObjectTypeId.ClosedDoorThree or UsableObjectTypeId.ClosedDoorFour
+                    or UsableObjectTypeId.ClosedDoorFive or UsableObjectTypeId.ClosedDoorSix
+                    => AssetPath.ObjectsPath.ClosedDoorPath,
                 UsableObjectTypeId.Wardrobe => AssetPath.ObjectsPath.WardrobePath,
                 UsableObjectTypeId.Door => AssetPath.ObjectsPath.DoorPath,
-                UsableObjectTypeId.RedKey => AssetPath.ObjectsPath.RedKeyPath,
+                UsableObjectTypeId.KeyOne => AssetPath.ObjectsPath.KeyOnePath,
+                UsableObjectTypeId.KeyTwo => AssetPath.ObjectsPath.KeyTwoPath,
+                UsableObjectTypeId.KeyThree => AssetPath.ObjectsPath.KeyThreePath,
+                UsableObjectTypeId.KeyFour => AssetPath.ObjectsPath.KeyFourPath,
+                UsableObjectTypeId.KeyFive => AssetPath.ObjectsPath.KeyFivePath,
+                UsableObjectTypeId.KeySix => AssetPath.ObjectsPath.KeySixPath,
+
                 _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }
