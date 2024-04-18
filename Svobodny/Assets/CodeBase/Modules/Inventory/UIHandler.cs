@@ -34,7 +34,7 @@ namespace CodeBase.Modules.Inventory
         private void Initialize()
         {
             var inventoryRoot = _uiFactory.CreateItemsInventory();
-            _scrollRectangleTransform = inventoryRoot.GetComponentInChildren<VerticalLayoutGroup>().transform;
+            _scrollRectangleTransform = inventoryRoot.transform;
         }
 
         public void Cleanup()
