@@ -7,6 +7,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.emrecelik95.lightscrollsnap": {
+      "version": "https://github.com/emrecelik95/LightScrollSnap.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5a65ed4d8064d12c02c19e0418604e87f6f6a138"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,

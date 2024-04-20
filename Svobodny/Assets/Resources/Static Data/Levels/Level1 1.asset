@@ -20,26 +20,30 @@ MonoBehaviour:
     Position: {x: 9.404925, y: 0, z: -0.05683297}
   NpcSpawners: []
   ObjectsSpawners:
-  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
-    TypeId: 13
+  - Id: Level1 1_299581a8-3279-4ded-8d4d-afe1618c17b1
+    TypeId: 2
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 18.165, y: 0.4353053, z: 1.288}
-  - Id: Level1 1_acfae95a-2949-4cc0-841c-ab0ff0a83f6a
-    TypeId: 12
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 13.016, y: 0.4353053, z: 1.288}
+    Position: {x: 15.41, y: 0.022, z: 0.314}
   - Id: Level1 1_693e65ff-4b40-4308-b811-3fc71e87e11d
-    TypeId: 8
+    TypeId: 5
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 7.553, y: 0.4353053, z: 1.288}
-  - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
-    TypeId: 0
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 12.44, y: -0.25001097, z: -2.97}
+    Position: {x: 7.553, y: -0.008, z: 0.25}
   - Id: Level1 1_76591f7f-f211-4e94-be66-b048c4a2713e
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 2.069395, y: 0.4353053, z: 1.288}
+  - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
+    TypeId: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 12.44, y: -0.25001097, z: -2.97}
+  - Id: Level1 1_acfae95a-2949-4cc0-841c-ab0ff0a83f6a
+    TypeId: 7
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 13.08, y: 0.022, z: 0.314}
+  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
+    TypeId: 13
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 18.165, y: 0.4353053, z: 1.288}
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
   DayPlayerRotation: {x: -0, y: -0, z: -0, w: 1}
   NightPlayerPosition: {x: 6.3334117, y: 0, z: -0.06520569}
