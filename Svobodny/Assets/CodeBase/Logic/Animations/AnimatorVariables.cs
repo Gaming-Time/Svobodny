@@ -42,5 +42,14 @@ namespace CodeBase.Logic.Animations
             public static readonly int OpenTrigger = Animator.StringToHash("Open");
             public static readonly int CloseTrigger = Animator.StringToHash("Close");
         }
+
+        public static class UI
+        {
+            public static class ItemsInventory
+            {
+                public static readonly int OpenDescriptionTrigger = Animator.StringToHash("OpenDescription");
+                public static readonly int CloseDescriptionTrigger = Animator.StringToHash("CloseDescription");
+            }
+        }
     }
 }
