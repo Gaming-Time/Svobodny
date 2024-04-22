@@ -16,6 +16,7 @@ namespace CodeBase.Infrastructure.Services.Input
 
         public abstract Vector2 CameraInput { get; }
         public abstract Vector3 MousePosition { get; }
+        public abstract float ScrollInput { get; }
 
         protected virtual Vector2 GetMovementInput() => 
             new(UnityEngine.Input.GetAxis(HorizontalAxis), UnityEngine.Input.GetAxis(VerticalAxis));
@@ -24,6 +25,8 @@ namespace CodeBase.Infrastructure.Services.Input
             new(UnityEngine.Input.GetAxis(CameraHorizontalAxis), UnityEngine.Input.GetAxis(CameraVerticalAxis));
 
         protected Vector3 GetMousePosition() => UnityEngine.Input.mousePosition;
+
+        protected float GetScrollInput() => UnityEngine.Input.mouseScrollDelta.y;
 
         public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButton(SneakButton);
         public bool IsUseButtonDown() => UnityEngine.Input.GetButtonDown(UseButton);

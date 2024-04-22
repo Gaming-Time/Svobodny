@@ -152,7 +152,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         public void CreateUIHandler()
         {
             _uiHandler = _assetProvider.Instantiate<UIHandler>(AssetPath.UIHandlerPath);
-            _uiHandler.Construct(_inventoryHandler, _staticData, _assetProvider, _uiFactory);
+            _uiHandler.Construct(_inventoryHandler, _staticData, _assetProvider, _uiFactory, _inputService);
         }
 
         public void SpawnAllObjects()

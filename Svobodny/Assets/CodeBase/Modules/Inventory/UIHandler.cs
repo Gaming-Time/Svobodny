@@ -4,6 +4,7 @@ using System.Linq;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
+using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Modules.Inventory.Slots;
 using TMPro;
@@ -19,10 +20,9 @@ namespace CodeBase.Modules.Inventory
         private IStaticDataService _staticData;
         private IAssets _assetProvider;
         private IUIFactory _uiFactory;
+        private IInputService _inputService;
 
-        private Dictionary<ItemType, Slot> _slots = new();
-        private LinkedList<Slot> _inventorySlots = new();
-        private Transform _scrollRectangleTransform;
+        private readonly LinkedList<Slot> _inventorySlots = new();
         private Transform _upSlotContainer;
         private Transform _centralSlotContainer;
         private Transform _downSlotContainer;
@@ -34,12 +34,13 @@ namespace CodeBase.Modules.Inventory
         private WaitForSeconds _waitForFadeOutTime;
 
         public void Construct(InventoryHandler inventoryHandler, IStaticDataService staticData, IAssets assetProvider,
-            IUIFactory uiFactory)
+            IUIFactory uiFactory, IInputService inputService)
         {
             _inventoryHandler = inventoryHandler;
             _staticData = staticData;
             _assetProvider = assetProvider;
             _uiFactory = uiFactory;
+            _inputService = inputService;
 
             Subscribe();
             Initialize();
@@ -50,20 +51,23 @@ namespace CodeBase.Modules.Inventory
             if (_activeSlot == null)
                 return;
 
-            if (Input.mouseScrollDelta.y < 0)
+            var scrollInput = _inputService.ScrollInput;
+
+            
+            switch (scrollInput)
             {
-                SelectNextItem();
-            }
-            else if (Input.mouseScrollDelta.y > 0)
-            {
-                SelectPreviousItem();
+                case < 0:
+                    SelectNextItem();
+                    break;
+                case > 0:
+                    SelectPreviousItem();
+                    break;
             }
         }
 
         private void Initialize()
         {
             var inventoryRoot = _uiFactory.CreateItemsInventory();
-            _scrollRectangleTransform = inventoryRoot.transform;
             var inventoryScript = inventoryRoot.GetComponent<ItemsInventory>();
             _upSlotContainer = inventoryScript.UpSlotContainer;
             _centralSlotContainer = inventoryScript.CentralSlotContainer;

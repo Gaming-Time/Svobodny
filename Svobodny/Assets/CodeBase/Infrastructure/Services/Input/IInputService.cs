@@ -7,6 +7,7 @@ namespace CodeBase.Infrastructure.Services.Input
         Vector2 MovementInput { get; }
         Vector2 CameraInput { get; }
         Vector3 MousePosition { get; }
+        float ScrollInput { get; }
 
         bool IsSneakButtonDown();
         bool IsUseButtonDown();
