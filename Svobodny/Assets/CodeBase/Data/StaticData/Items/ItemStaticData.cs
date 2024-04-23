@@ -8,5 +8,6 @@ namespace CodeBase.Data.StaticData.Items
     {
         public ItemType ItemType;
         public Sprite Sprite;
+        public string Description;
     }
 }

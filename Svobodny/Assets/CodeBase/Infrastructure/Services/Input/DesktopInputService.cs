@@ -8,6 +8,8 @@ namespace CodeBase.Infrastructure.Services.Input
 
         public override Vector2 CameraInput => GetCameraInput();
         public override Vector3 MousePosition => GetMousePosition();
+        public override float ScrollInput => GetScrollInput();
+
 
         protected override Vector2 GetCameraInput()
         {

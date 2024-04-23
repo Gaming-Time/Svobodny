@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemType: 4
   Sprite: {fileID: 21300000, guid: ee72750277c84b840ac6d596a88c62a3, type: 3}
+  Description: "\u041A\u043B\u044E\u0447 \u0434\u043B\u044F \u0434\u0432\u0435\u0440\u0438
+    \u0447\u0435\u0442\u044B\u0440\u0435"
