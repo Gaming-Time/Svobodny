@@ -21275,7 +21275,7 @@ Transform:
   m_GameObject: {fileID: 1836992828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3, y: -0.92, z: 2.197}
+  m_LocalPosition: {x: 4.3, y: -0.92, z: 2.145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23999,6 +23999,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 300885750429518616, guid: 4a6957c864d80a84d925a23006940eb5, type: 3}
+      propertyPath: antialiasingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3377505986715375621, guid: 4a6957c864d80a84d925a23006940eb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.17
@@ -24042,10 +24046,6 @@ PrefabInstance:
     - target: {fileID: 4126746788919377654, guid: 4a6957c864d80a84d925a23006940eb5, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903060247898824552, guid: 4a6957c864d80a84d925a23006940eb5, type: 3}
-      propertyPath: field of view
-      value: 40.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
