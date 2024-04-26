@@ -19,5 +19,5 @@ MonoBehaviour:
   DayPlayerPosition: {x: 12.813968, y: 0.41, z: 1.8198357}
   DayPlayerRotation: {x: 0, y: 0, z: 0, w: 1}
   NightPlayerPosition: {x: 11.27272, y: 0.469, z: 1.701}
-  NightPlayerRotation: {x: 0, y: 0, z: 0, w: 1}
+  NightPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   initialPhase: 1

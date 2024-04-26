@@ -22195,18 +22195,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1235969747098909961, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
-      propertyPath: m_FollowOffset.y
-      value: 8.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235969747098909961, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
-      propertyPath: m_FollowOffset.z
-      value: -12.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546524616649536847, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 40.68
-      objectReference: {fileID: 0}
     - target: {fileID: 5728071908433048740, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
