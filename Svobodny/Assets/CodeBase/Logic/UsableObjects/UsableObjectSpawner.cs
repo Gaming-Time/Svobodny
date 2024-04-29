@@ -15,6 +15,7 @@ namespace CodeBase.Logic.UsableObjects
             TypeId = typeId;
         }
 
-        public GameObject Spawn() => _factory.CreateUsableObject(TypeId, transform.position, transform.rotation);
+        public GameObject Spawn() =>
+            _factory.CreateUsableObject(TypeId, transform.position, transform.rotation);
     }
 }
