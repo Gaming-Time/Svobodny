@@ -73,9 +73,13 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.InitCamera(character);
 
             CreateObjectSpawners();
+            CreateGunObjectsSpawners();
+            _gameFactory.CreateHud();
             _gameFactory.CreateInventoryHandler();
-            _gameFactory.CreateUIHandler();
+            _gameFactory.CreateItemsUIHandler();
+            _gameFactory.CreateGunsUiHandler();
             _gameFactory.SpawnAllObjects();
+            _gameFactory.SpawnGuns();
         }
 
         private void InitUI()
@@ -91,6 +95,14 @@ namespace CodeBase.Infrastructure.States
             {
                 _gameFactory.CreateObjectSpawner(spawner.Position, spawner.Id, spawner.TypeId);
             }
+        }
+
+        private void CreateGunObjectsSpawners()
+        {
+            var spawners = _levelStaticData.GunsSpawners;
+
+            spawners.ForEach(spawner =>
+                _gameFactory.CreateGunObjectSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.GunType));
         }
 
         private void CreateEnemySpawners()

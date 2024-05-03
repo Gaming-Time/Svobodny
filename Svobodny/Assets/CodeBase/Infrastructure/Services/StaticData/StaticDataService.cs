@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
@@ -17,6 +18,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<MonsterTypeID, MonsterStaticData> _monsters;
         private Dictionary<NpcTypeId, NpcStaticData> _npcs;
         private Dictionary<ItemType, ItemStaticData> _items;
+        private Dictionary<GunType, GunStaticData> _guns;
         private CharacterStaticData _character;
 
 
@@ -30,6 +32,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(npcData => npcData.TypeId, npcData => npcData);
             _items = Resources.LoadAll<ItemStaticData>(AssetPath.StaticDataPath.Item)
                 .ToDictionary(itemData => itemData.ItemType, itemData => itemData);
+            _guns = Resources.LoadAll<GunStaticData>(AssetPath.StaticDataPath.Gun)
+                .ToDictionary(gunData => gunData.GunType, gunData => gunData);
             _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
@@ -45,6 +49,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
         public ItemStaticData ForItem(ItemType itemType) =>
             _items.GetValueOrDefault(itemType);
 
-        public CharacterStaticData ForCharacter() => _character ?? null;
+        public GunStaticData ForGun(GunType gunType) => _guns.GetValueOrDefault(gunType);
+
+        public CharacterStaticData ForCharacter() => _character;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
@@ -16,5 +17,6 @@ namespace CodeBase.Infrastructure.Services.StaticData
         LevelStaticData ForLevel(string scene);
         CharacterStaticData ForCharacter();
         ItemStaticData ForItem(ItemType itemType);
+        GunStaticData ForGun(GunType gunType);
     }
 }

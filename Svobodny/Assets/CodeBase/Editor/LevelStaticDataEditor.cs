@@ -34,6 +34,9 @@ namespace CodeBase.Editor
                 levelData.ObjectsSpawners = FindObjectsOfType<UsableObjectSpawnMarker>().Select(x =>
                     new ObjectSpawnerData(x.GetComponent<UniqueId>().Id, x.TypeId, x.transform.rotation,
                         x.transform.position)).ToList();
+                levelData.GunsSpawners = FindObjectsOfType<GunUsableObjectSpawnMarker>().Select(marker =>
+                    new GunSpawnerData(marker.GetComponent<UniqueId>().Id, marker.GunType, marker.transform.rotation,
+                        marker.transform.position)).ToList();
 
                 levelData.LevelKey = SceneManager.GetActiveScene().name;
                 var dayPlayer = GameObject.FindWithTag(InitialDayPointTag);

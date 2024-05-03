@@ -13,6 +13,7 @@ namespace CodeBase.Data.StaticData.Level
         public List<EnemySpawnerData> EnemySpawners;
         public List<NpcSpawnerData> NpcSpawners;
         public List<ObjectSpawnerData> ObjectsSpawners;
+        public List<GunSpawnerData> GunsSpawners;
 
         public Vector3 DayPlayerPosition;
         public Quaternion DayPlayerRotation;

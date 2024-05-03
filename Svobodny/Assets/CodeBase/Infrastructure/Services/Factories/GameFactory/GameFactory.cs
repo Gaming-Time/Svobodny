@@ -32,8 +32,11 @@ using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Inventory;
+using CodeBase.Modules.Inventory.Guns;
+using CodeBase.Modules.Inventory.Items;
 using UnityEngine;
 using UnityEngine.AI;
+using Gun = CodeBase.Logic.UsableObjects.Gun;
 using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
@@ -52,10 +55,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
         private Dictionary<string, UsableObjectSpawner> _objectSpawners = new();
+        private Dictionary<string, GunUsableObjectSpawner> _gunSpawners = new();
 
         private GameObject _character;
         private InventoryHandler _inventoryHandler;
-        private UIHandler _uiHandler;
+        private ItemsUIHandler _itemsUIHandler;
+        private GunsUIHandler _gunsUIHandler;
+        private Hud _hud;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -146,13 +152,34 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Add(spawnerId, spawner);
         }
 
-        public void CreateInventoryHandler() => _inventoryHandler =
-            _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
-
-        public void CreateUIHandler()
+        public void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId, GunType gunType)
         {
-            _uiHandler = _assetProvider.Instantiate<UIHandler>(AssetPath.UIHandlerPath);
-            _uiHandler.Construct(_inventoryHandler, _staticData, _assetProvider, _uiFactory, _inputService);
+            var spawner = _assetProvider.Instantiate<GunUsableObjectSpawner>(AssetPath.GunObjectSpawnerPath,
+                spawnerPosition, spawnerRotation);
+            spawner.Construct(_usableObjectFactory, gunType);
+            _gunSpawners.Add(spawnerId, spawner);
+        }
+
+        public void CreateHud() => _hud = _uiFactory.CreateHud().GetComponent<Hud>();
+
+        public void CreateInventoryHandler()
+        {
+            _inventoryHandler =
+                _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
+            
+            _inventoryHandler.Construct(_inputService);
+        }
+
+        public void CreateItemsUIHandler()
+        {
+            _itemsUIHandler = _assetProvider.Instantiate<ItemsUIHandler>(AssetPath.ItemsUIHandlerPath);
+            _itemsUIHandler.Construct(_inventoryHandler, _hud, _staticData, _assetProvider, _uiFactory, _inputService);
+        }
+
+        public void CreateGunsUiHandler()
+        {
+            _gunsUIHandler = _assetProvider.Instantiate<GunsUIHandler>(AssetPath.GunsUIHandlerPath);
+            _gunsUIHandler.Construct(_inventoryHandler, _hud, _assetProvider, _staticData);
         }
 
         public void SpawnAllObjects()
@@ -162,6 +189,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var usableObject = spawner.Value.Spawn();
 
                 InitUsableObject(spawner, usableObject);
+            }
+        }
+
+        public void SpawnGuns()
+        {
+            foreach (var gunSpawner in _gunSpawners)
+            {
+                var gun = gunSpawner.Value.Spawn();
+                gun.GetComponent<Gun>().Construct(_inputService, _inventoryHandler, gunSpawner.Value.GunType);
             }
         }
 

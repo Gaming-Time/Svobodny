@@ -2,6 +2,7 @@ using System;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Modules.Inventory;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
@@ -20,6 +21,18 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
             string objectPath = GetObjectPath(typeId);
 
             return _assetProvider.Instantiate(objectPath, position);
+        }
+
+        public GameObject CreateGunUsableObject(GunType gunType, Vector3 position, Quaternion rotation)
+        {
+            var objectPath = gunType switch
+            {
+                GunType.Knife => AssetPath.ObjectsPath.Guns.KnifePath,
+                GunType.Pistol => AssetPath.ObjectsPath.Guns.PistolPath,
+                _ => throw new ArgumentOutOfRangeException(nameof(gunType), gunType, null)
+            };
+
+            return _assetProvider.Instantiate(objectPath, position, rotation);
         }
 
         private static string GetObjectPath(UsableObjectTypeId typeId)
@@ -42,5 +55,6 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
                 _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }
+        
     }
 }

@@ -32,6 +32,10 @@ MonoBehaviour:
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 2.069395, y: 0.4353053, z: 1.288}
+  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
+    TypeId: 13
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 18.165, y: 0.4353053, z: 1.288}
   - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
     TypeId: 0
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -40,10 +44,15 @@ MonoBehaviour:
     TypeId: 7
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 13.08, y: 0.022, z: 0.314}
-  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
-    TypeId: 13
+  GunsSpawners:
+  - Id: Level1 1_abe789e7-2b29-469c-bd4e-3f706a8869e1
+    GunType: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 18.165, y: 0.4353053, z: 1.288}
+    Position: {x: 14.008, y: 0.024, z: 0}
+  - Id: Level1 1_f3443bf3-8647-4ae6-8f73-65551725a0f2
+    GunType: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 10.91, y: 0.024, z: 0}
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
   DayPlayerRotation: {x: -0, y: -0, z: -0, w: 1}
   NightPlayerPosition: {x: 6.3334117, y: 0, z: -0.06520569}

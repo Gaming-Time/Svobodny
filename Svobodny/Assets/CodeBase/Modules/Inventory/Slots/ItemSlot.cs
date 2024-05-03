@@ -1,11 +1,10 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 namespace CodeBase.Modules.Inventory.Slots
 {
-    public class Slot : MonoBehaviour
+    public class ItemSlot : MonoBehaviour
     {
         public ItemType ItemType;
         public Image ItemSprite;

@@ -6,37 +6,40 @@ using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
+using CodeBase.Modules.Inventory.Items;
 using CodeBase.Modules.Inventory.Slots;
 using TMPro;
 using UnityEngine;
 
 namespace CodeBase.Modules.Inventory
 {
-    public class UIHandler : MonoBehaviour
+    public class ItemsUIHandler : MonoBehaviour
     {
         [SerializeField] private float fadeOutTime = 3f;
 
         private InventoryHandler _inventoryHandler;
         private IStaticDataService _staticData;
+        private Hud _hud;
         private IAssets _assetProvider;
         private IUIFactory _uiFactory;
         private IInputService _inputService;
 
-        private readonly LinkedList<Slot> _inventorySlots = new();
+        private readonly LinkedList<ItemSlot> _inventorySlots = new();
         private Transform _upSlotContainer;
         private Transform _centralSlotContainer;
         private Transform _downSlotContainer;
         private Transform _inactiveSlotsContainer;
-        private LinkedListNode<Slot> _activeSlot;
+        private LinkedListNode<ItemSlot> _activeSlot;
         private TextMeshProUGUI _description;
         private AnimatorController _inventoryAnimatorController;
         private Coroutine _fadeOutCoroutine;
         private WaitForSeconds _waitForFadeOutTime;
 
-        public void Construct(InventoryHandler inventoryHandler, IStaticDataService staticData, IAssets assetProvider,
+        public void Construct(InventoryHandler inventoryHandler, Hud hud, IStaticDataService staticData, IAssets assetProvider,
             IUIFactory uiFactory, IInputService inputService)
         {
             _inventoryHandler = inventoryHandler;
+            _hud = hud;
             _staticData = staticData;
             _assetProvider = assetProvider;
             _uiFactory = uiFactory;
@@ -67,13 +70,11 @@ namespace CodeBase.Modules.Inventory
 
         private void Initialize()
         {
-            var inventoryRoot = _uiFactory.CreateItemsInventory();
-            var inventoryScript = inventoryRoot.GetComponent<ItemsInventory>();
-            _upSlotContainer = inventoryScript.UpSlotContainer;
-            _centralSlotContainer = inventoryScript.CentralSlotContainer;
-            _downSlotContainer = inventoryScript.DownSlotContainer;
-            _description = inventoryScript.Description;
-            _inventoryAnimatorController = inventoryScript.AnimatorController;
+            _upSlotContainer = _hud.UpSlotContainer;
+            _centralSlotContainer = _hud.CentralSlotContainer;
+            _downSlotContainer = _hud.DownSlotContainer;
+            _description = _hud.Description;
+            _inventoryAnimatorController = _hud.AnimatorController;
 
             _waitForFadeOutTime = new WaitForSeconds(fadeOutTime);
         }
@@ -148,7 +149,7 @@ namespace CodeBase.Modules.Inventory
             }
 
             var itemStaticData = _staticData.ForItem(itemType);
-            slot = _assetProvider.Instantiate<Slot>(AssetPath.UIPath.Slot);
+            slot = _assetProvider.Instantiate<ItemSlot>(AssetPath.UIPath.ItemSlot);
             var sprite = itemStaticData.Sprite;
             slot.Construct(itemType, sprite, 1);
 
