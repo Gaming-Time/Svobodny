@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pistol Data
   m_EditorClassIdentifier: 
   GunType: 1
-  Sprite: {fileID: 21300000, guid: 91d1aea6675c7414e811e5e19fa86f5b, type: 3}
+  Sprite: {fileID: 21300000, guid: 9bbca56af748cf1499c2918e02d56394, type: 3}
