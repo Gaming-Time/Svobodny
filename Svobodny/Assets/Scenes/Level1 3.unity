@@ -5709,14 +5709,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1235969747098909961, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
-      propertyPath: m_FollowOffset.y
-      value: 8.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235969747098909961, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
-      propertyPath: m_FollowOffset.z
-      value: -8.73
-      objectReference: {fileID: 0}
     - target: {fileID: 5728071908433048740, guid: 988b9cb4fc0dd1440b35918c4f84cca0, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
@@ -23250,11 +23242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955905310443235329, guid: 8dae9b8b27f1da548b4fbc27f11edb6c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9848078
       objectReference: {fileID: 0}
     - target: {fileID: 8955905310443235329, guid: 8dae9b8b27f1da548b4fbc27f11edb6c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.17364816
       objectReference: {fileID: 0}
     - target: {fileID: 8955905310443235329, guid: 8dae9b8b27f1da548b4fbc27f11edb6c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -23266,7 +23258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955905310443235329, guid: 8dae9b8b27f1da548b4fbc27f11edb6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8955905310443235329, guid: 8dae9b8b27f1da548b4fbc27f11edb6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
