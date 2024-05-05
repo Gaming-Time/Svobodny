@@ -15,7 +15,7 @@ namespace CodeBase.Modules.Inventory
         private List<Item> _items = new();
         private List<Gun> _guns = new();
 
-        private GunType? _selectedGun;
+        public GunType? SelectedGun { get; private set; }
 
         public event Action<ItemType> ItemAdded;
         public event Action<ItemType> ItemRemoved;
@@ -23,6 +23,7 @@ namespace CodeBase.Modules.Inventory
         public event Action<GunType> GunAdded;
         public event Action<GunType> GunRemoved;
         public event Action<GunType?> GunSelected;
+        
 
         public void Construct(IInputService inputService, CharacterAnimatorController animatorController)
         {
@@ -40,7 +41,7 @@ namespace CodeBase.Modules.Inventory
         private void Update()
         {
             if (_inputService.IsKnifeSlotSelectedButtonDown() && _guns.Exists(gun => gun.GunType == GunType.Knife) &&
-                _selectedGun != GunType.Knife)
+                SelectedGun != GunType.Knife)
             {
                 SelectGun(GunType.Knife);
 
@@ -48,7 +49,7 @@ namespace CodeBase.Modules.Inventory
             }
 
             if (_inputService.IsPistolSLotSelectedButtonDown() && _guns.Exists(gun => gun.GunType == GunType.Pistol) &&
-                _selectedGun != GunType.Pistol)
+                SelectedGun != GunType.Pistol)
             {
                 SelectGun(GunType.Pistol);
             }
@@ -78,7 +79,7 @@ namespace CodeBase.Modules.Inventory
             _guns.Add(new Gun(gunType));
             GunAdded?.Invoke(gunType);
 
-            if (_selectedGun == null)
+            if (SelectedGun == null)
                 SelectGun(gunType);
         }
 
@@ -91,7 +92,7 @@ namespace CodeBase.Modules.Inventory
             _guns.Remove(gun);
             GunRemoved?.Invoke(gunType);
 
-            if (_selectedGun == gunType)
+            if (SelectedGun == gunType)
                 SelectGun(null);
         }
 
@@ -99,7 +100,7 @@ namespace CodeBase.Modules.Inventory
 
         private void SelectGun(GunType? gunType)
         {
-            _selectedGun = gunType;
+            SelectedGun = gunType;
             GunSelected?.Invoke(gunType);
             _characterAnimatorController.SelectGun(gunType);
         }

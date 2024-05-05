@@ -38,9 +38,11 @@ namespace CodeBase.Modules.Character
 
         void Update()
         {
-            if(_isStopped)
-                return;
             
+        }
+
+        public void Move()
+        {
             var inputNormalized = _inputService.MovementInput.normalized;
             Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
 

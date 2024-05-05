@@ -42,6 +42,7 @@ namespace CodeBase.Modules.Character.Animation
             _animator.SetFloat(AnimatorVariables.Character.Movement.WalkSpeed, _walkSpeed);
             _animator.SetFloat(AnimatorVariables.Character.Movement.SneakSpeed, _sneakSpeed);
             _animator.SetBool(AnimatorVariables.Character.Movement.IsSneaking, _inputService.IsSneakButtonDown());
+            _animator.SetBool(AnimatorVariables.Character.Battle.IsAiming, _inputService.IsAimButtonHeld());
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementX, _inputService.MovementInput.x);
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementY, _inputService.MovementInput.y);
         }

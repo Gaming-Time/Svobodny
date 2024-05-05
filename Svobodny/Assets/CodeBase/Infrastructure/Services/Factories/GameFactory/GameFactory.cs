@@ -101,8 +101,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         private void InitCharacterAttack(GameObject character)
         {
-            var characterAttack = character.GetComponent<CharacterAttack>();
-            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(), _inputService,
+            var characterAttack = character.GetComponent<CharacterMeleeAttack>();
+            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
                 character.GetComponent<CharacterAnimationEventsHandler>());
         }
 
