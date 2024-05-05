@@ -12,5 +12,7 @@ namespace CodeBase.Infrastructure.Services.Input
         bool IsSneakButtonDown();
         bool IsUseButtonDown();
         bool IsAttackButtonDown();
+        bool IsKnifeSlotSelectedButtonDown();
+        bool IsPistolSLotSelectedButtonDown();
     }
 }

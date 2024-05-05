@@ -83,6 +83,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             var camera = Object.FindObjectOfType<Camera>();
             InitMovement(staticData, _character);
             InitAnimations(staticData, _character);
+            InitInventoryHandler(_character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
@@ -90,6 +91,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitCharacterAttack(_character);
 
             return _character;
+        }
+
+        private void InitInventoryHandler(GameObject character)
+        {
+            _inventoryHandler = character.GetComponent<InventoryHandler>();
+            _inventoryHandler.Construct(_inputService, character.GetComponent<CharacterAnimatorController>());
         }
 
         private void InitCharacterAttack(GameObject character)
@@ -152,7 +159,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Add(spawnerId, spawner);
         }
 
-        public void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId, GunType gunType)
+        public void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId,
+            GunType gunType)
         {
             var spawner = _assetProvider.Instantiate<GunUsableObjectSpawner>(AssetPath.GunObjectSpawnerPath,
                 spawnerPosition, spawnerRotation);
@@ -161,14 +169,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         }
 
         public void CreateHud() => _hud = _uiFactory.CreateHud().GetComponent<Hud>();
-
-        public void CreateInventoryHandler()
-        {
-            _inventoryHandler =
-                _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
-            
-            _inventoryHandler.Construct(_inputService);
-        }
 
         public void CreateItemsUIHandler()
         {
@@ -251,7 +251,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitAnimations(CharacterStaticData staticData, GameObject character)
         {
             var characterAnimationController = character.GetComponent<CharacterAnimatorController>();
-            characterAnimationController.Construct(_inputService, character.GetComponent<Animator>(),
+            characterAnimationController.Construct(_inputService, _inventoryHandler, character.GetComponent<Animator>(),
                 character.GetComponent<CharacterController>(), staticData.WalkSpeed, staticData.SneakSpeed);
         }
 

@@ -68,18 +68,20 @@ namespace CodeBase.Infrastructure.States
                     playerRotation = _levelStaticData.NightPlayerRotation;
                     break;
             }
-
-            var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
-            _gameFactory.InitCamera(character);
-
+            
             CreateObjectSpawners();
             CreateGunObjectsSpawners();
+            var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
+            
             _gameFactory.CreateHud();
-            _gameFactory.CreateInventoryHandler();
             _gameFactory.CreateItemsUIHandler();
             _gameFactory.CreateGunsUiHandler();
+            
+            _gameFactory.InitCamera(character);
+            
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
+            
         }
 
         private void InitUI()

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Modules.Character.Animation;
 using UnityEngine;
 
 namespace CodeBase.Modules.Inventory
@@ -9,7 +10,8 @@ namespace CodeBase.Modules.Inventory
     public class InventoryHandler : MonoBehaviour
     {
         private IInputService _inputService;
-        
+        private CharacterAnimatorController _characterAnimatorController;
+
         private List<Item> _items = new();
         private List<Gun> _guns = new();
 
@@ -22,9 +24,10 @@ namespace CodeBase.Modules.Inventory
         public event Action<GunType> GunRemoved;
         public event Action<GunType?> GunSelected;
 
-        public void Construct(IInputService inputService)
+        public void Construct(IInputService inputService, CharacterAnimatorController animatorController)
         {
             _inputService = inputService;
+            _characterAnimatorController = animatorController;
 
             Initialize();
         }
@@ -32,6 +35,23 @@ namespace CodeBase.Modules.Inventory
         private void Initialize()
         {
             SelectGun(null);
+        }
+
+        private void Update()
+        {
+            if (_inputService.IsKnifeSlotSelectedButtonDown() && _guns.Exists(gun => gun.GunType == GunType.Knife) &&
+                _selectedGun != GunType.Knife)
+            {
+                SelectGun(GunType.Knife);
+
+                return;
+            }
+
+            if (_inputService.IsPistolSLotSelectedButtonDown() && _guns.Exists(gun => gun.GunType == GunType.Pistol) &&
+                _selectedGun != GunType.Pistol)
+            {
+                SelectGun(GunType.Pistol);
+            }
         }
 
         public void AddItem(ItemType itemType)
@@ -52,9 +72,9 @@ namespace CodeBase.Modules.Inventory
 
         public void AddGun(GunType gunType)
         {
-            if(_guns.Exists(gun => gun.GunType == gunType))
+            if (_guns.Exists(gun => gun.GunType == gunType))
                 return;
-            
+
             _guns.Add(new Gun(gunType));
             GunAdded?.Invoke(gunType);
 
@@ -65,22 +85,23 @@ namespace CodeBase.Modules.Inventory
         public void RemoveGun(GunType gunType)
         {
             var gun = _guns.FirstOrDefault(gun => gun.GunType == gunType);
-            if(gun == null)
+            if (gun == null)
                 return;
 
             _guns.Remove(gun);
             GunRemoved?.Invoke(gunType);
-            
-            if(_selectedGun == gunType)
+
+            if (_selectedGun == gunType)
                 SelectGun(null);
         }
-        
+
         public bool HasItem(ItemType itemType) => _items.Exists(item => item.ItemType == itemType);
-        
+
         private void SelectGun(GunType? gunType)
         {
             _selectedGun = gunType;
             GunSelected?.Invoke(gunType);
+            _characterAnimatorController.SelectGun(gunType);
         }
     }
 

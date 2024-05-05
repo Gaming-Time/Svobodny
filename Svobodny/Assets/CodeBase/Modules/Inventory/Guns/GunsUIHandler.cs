@@ -85,9 +85,11 @@ namespace CodeBase.Modules.Inventory.Guns
 
         private void OnGunSelected(GunType? gunType)
         {
+            _selectedSlot?.UnSelect();
             var slot = _gunSlots.FirstOrDefault(gun => gun.GunType == gunType);
 
             slot?.Select();
+            _selectedSlot = slot;
         }
     }
 }

@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 6793251854950668844}
   - component: {fileID: 2068938010228127509}
   - component: {fileID: 3512542710191524167}
+  - component: {fileID: 550955127458413277}
   m_Layer: 10
   m_Name: Character
   m_TagString: Untagged
@@ -778,3 +779,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   attackPoint: {fileID: 2430071437837134090}
+--- !u!114 &550955127458413277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6438274420124515833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206a3267edc849e985b9601b8c01dd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

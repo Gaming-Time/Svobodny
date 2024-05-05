@@ -7,6 +7,7 @@ namespace CodeBase.Modules.Inventory.Slots
     {
         public GunType GunType;
         public Image Image;
+        public Image Frame;
 
         public void Construct(GunType gunType, Sprite sprite)
         {
@@ -16,7 +17,12 @@ namespace CodeBase.Modules.Inventory.Slots
 
         public void Select()
         {
-            
+            Frame.enabled = true;
+        }
+
+        public void UnSelect()
+        {
+            Frame.enabled = false;
         }
     }
 }

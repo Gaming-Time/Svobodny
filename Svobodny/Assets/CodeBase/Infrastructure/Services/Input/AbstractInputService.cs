@@ -11,6 +11,8 @@ namespace CodeBase.Infrastructure.Services.Input
         private const string SneakButton = "Sneak";
         private const string UseButton = "Use";
         private const string AttackButton = "Fire1";
+        private const string KnifeSlotSelectedButton = "Knife Slot";
+        private const string PistolSlotSelectedButton = "Pistol Slot";
 
         public abstract Vector2 MovementInput { get; }
 
@@ -31,5 +33,7 @@ namespace CodeBase.Infrastructure.Services.Input
         public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButton(SneakButton);
         public bool IsUseButtonDown() => UnityEngine.Input.GetButtonDown(UseButton);
         public bool IsAttackButtonDown() => UnityEngine.Input.GetButtonDown(AttackButton);
+        public bool IsKnifeSlotSelectedButtonDown() => UnityEngine.Input.GetButtonDown(KnifeSlotSelectedButton);
+        public bool IsPistolSLotSelectedButtonDown() => UnityEngine.Input.GetButtonDown(PistolSlotSelectedButton);
     }
 }

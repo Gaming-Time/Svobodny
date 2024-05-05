@@ -29,6 +29,13 @@ namespace CodeBase.Logic.Animations
                 public static readonly int HitTriggerHash = Animator.StringToHash("Hit");
                 public static readonly int AttackTriggerHash = Animator.StringToHash("Attack");
             }
+
+            public static class Inventory
+            {
+                public static readonly int IsBearArms = Animator.StringToHash("IsBearArms");
+                public static readonly int IsKnifeSelected = Animator.StringToHash("IsKnifeSelected");
+                public static readonly int IsPistolSelected = Animator.StringToHash("IsPistolSelected");
+            }
         }
 
         public static class Wardrobe
