@@ -35,7 +35,7 @@ MonoBehaviour:
   - Id: Level1 3_9c902ac8-ab34-4a99-ac2d-eb15fc6f7b93
     TypeId: 3
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: -2.1000001, y: -0, z: -22}
+    Position: {x: -5.55, y: 0.45000002, z: -23.75}
   - Id: Level1 3_d8e921f7-ba5b-4fa6-9781-43854aa590a4
     TypeId: 12
     Rotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
@@ -67,7 +67,7 @@ MonoBehaviour:
   - Id: Level1 3_d5e34a74-1518-4030-b11b-fae7a46cf7e3
     TypeId: 2
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: -9.85, y: 0.05, z: -13.5}
+    Position: {x: -9.25, y: 0.7, z: -12.900001}
   - Id: Level1 3_977755cd-5db2-4392-89cb-d3274d6a4c44
     TypeId: 8
     Rotation: {x: 0, y: 0, z: 0, w: 1}
