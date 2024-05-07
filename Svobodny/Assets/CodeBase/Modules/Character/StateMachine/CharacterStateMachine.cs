@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
@@ -14,13 +15,25 @@ namespace CodeBase.Modules.Character.StateMachine
         private Dictionary<Type, IUpdatableState> _states;
         private IUpdatableState _activeState;
 
+        private IInputService _inputService;
         private InventoryHandler _inventoryHandler;
         private CharacterMove _characterMove;
         private CharacterMeleeAttack _characterMeleeAttack;
         private CharacterAnimationEventsHandler _animationEventsHandler;
+        private CharacterRangeAttack _rangeAttack;
 
-        public void Construct()
+        [SerializeField] private Transform arm;
+
+        public void Construct(IInputService inputService, CharacterMove characterMove, CharacterMeleeAttack meleeAttack,
+            CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler, CharacterRangeAttack rangeAttack)
         {
+            _inputService = inputService;
+            _characterMove = characterMove;
+            _characterMeleeAttack = meleeAttack;
+            _animationEventsHandler = animationEventsHandler;
+            _inventoryHandler = inventoryHandler;
+            _rangeAttack = rangeAttack;
+
             InitializeStateMachine();
             Enter<MoveState>();
         }
@@ -38,9 +51,9 @@ namespace CodeBase.Modules.Character.StateMachine
         {
             _states = new Dictionary<Type, IUpdatableState>()
             {
-                [typeof(MoveState)] = new MoveState(this, _characterMove, _inventoryHandler),
+                [typeof(MoveState)] = new MoveState(this, _characterMove, _inventoryHandler, _inputService),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, _animationEventsHandler),
-                [typeof(ShootState)] = new ShootState(),
+                [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm),
             };
         }
 

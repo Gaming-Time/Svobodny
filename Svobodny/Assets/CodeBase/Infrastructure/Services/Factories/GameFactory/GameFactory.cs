@@ -25,6 +25,7 @@ using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
+using CodeBase.Modules.Character.StateMachine;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
@@ -89,8 +90,17 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character);
+            InitStateMachine(_character);
 
             return _character;
+        }
+
+        private void InitStateMachine(GameObject character)
+        {
+            character.GetComponent<CharacterStateMachine>().Construct(_inputService,
+                character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
+                character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
+                character.GetComponent<CharacterRangeAttack>());
         }
 
         private void InitInventoryHandler(GameObject character)

@@ -12,11 +12,13 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly InventoryHandler _inventoryHandler;
         private readonly IInputService _inputService;
 
-        public MoveState(CharacterStateMachine stateMachine, CharacterMove characterMove, InventoryHandler inventoryHandler)
+        public MoveState(CharacterStateMachine stateMachine, CharacterMove characterMove,
+            InventoryHandler inventoryHandler, IInputService inputService)
         {
             _stateMachine = stateMachine;
             _characterMove = characterMove;
             _inventoryHandler = inventoryHandler;
+            _inputService = inputService;
         }
 
 
@@ -30,24 +32,13 @@ namespace CodeBase.Modules.Character.StateMachine.States
 
         public void Update()
         {
-            _characterMove.Move();
-            
-            if(!_inputService.IsAttackButtonDown())
-                return;
+            if (_inputService.IsAttackButtonDown() && _inventoryHandler.SelectedGun == GunType.Knife)
+                _stateMachine.Enter<MeleeAttackState>();
 
-            switch (_inventoryHandler.SelectedGun)
-            {
-                case GunType.Knife:
-                    _stateMachine.Enter<MeleeAttackState>();
-                    break;
-                case GunType.Pistol:
-                    _stateMachine.Enter<ShootState>();
-                    break;
-                case null:
-                    return;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            if (_inputService.IsAimButtonHeld() && _inventoryHandler.SelectedGun == GunType.Pistol)
+                _stateMachine.Enter<ShootState>();
+
+            _characterMove.Move();
         }
     }
 }

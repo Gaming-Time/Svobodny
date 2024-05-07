@@ -15,10 +15,13 @@ namespace CodeBase.Infrastructure.Services.Input
         private const string PistolSlotSelectedButton = "Pistol Slot";
         private const string AimButton = "Aim Button";
 
+        private Camera _mainCamera;
+
         public abstract Vector2 MovementInput { get; }
 
         public abstract Vector2 CameraInput { get; }
         public abstract Vector3 MousePosition { get; }
+        
         public abstract float ScrollInput { get; }
 
         protected virtual Vector2 GetMovementInput() => 
@@ -30,6 +33,18 @@ namespace CodeBase.Infrastructure.Services.Input
         protected Vector3 GetMousePosition() => UnityEngine.Input.mousePosition;
 
         protected float GetScrollInput() => UnityEngine.Input.mouseScrollDelta.y;
+
+        public virtual Vector3 MouseWorldPosition(Vector3 position)
+        {
+            _mainCamera ??= Camera.main;
+            var mousePosition = MousePosition;
+            
+            var worldMousePosition = _mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x,
+                UnityEngine.Input.mousePosition.y,
+                Mathf.Abs(position.z - _mainCamera.transform.position.z)));
+
+            return worldMousePosition;
+        }
 
         public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButton(SneakButton);
         public bool IsUseButtonDown() => UnityEngine.Input.GetButtonDown(UseButton);
