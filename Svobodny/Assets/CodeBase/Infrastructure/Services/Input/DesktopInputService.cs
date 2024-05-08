@@ -14,9 +14,10 @@ namespace CodeBase.Infrastructure.Services.Input
         protected override Vector2 GetCameraInput()
         {
             var camera = Camera.main;
-            var mouseViewportPosition = camera.ScreenToViewportPoint(UnityEngine.Input.mousePosition);
+            var mouseViewportPosition = UnityEngine.Input.mousePosition;
 
-            return new Vector2(mouseViewportPosition.x - 0.5f, mouseViewportPosition.y - 0.5f);
+            return new Vector2(mouseViewportPosition.x - Screen.width / 2f,
+                mouseViewportPosition.y - Screen.height / 2f).normalized;
         }
     }
 }
