@@ -48,7 +48,7 @@ namespace CodeBase.Modules.Character.StateMachine.States
             if (_plane.Raycast(ray, out var distance))
             {
                 _worldPosition = ray.GetPoint(distance);
-            }
+            } 
 
             _worldPosition.z = _arm.position.z;
             

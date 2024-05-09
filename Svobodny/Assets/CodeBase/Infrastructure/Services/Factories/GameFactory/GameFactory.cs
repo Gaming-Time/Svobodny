@@ -21,6 +21,7 @@ using CodeBase.Logic.UsableObjects.Doors;
 using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
@@ -91,8 +92,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitInteractions(_character);
             InitCharacterAttack(_character);
             InitStateMachine(_character);
+            InitArm(_character);
 
             return _character;
+        }
+
+        private void InitArm(GameObject character)
+        {
+            character.GetComponentInChildren<ArmAnimatorController>(true).Construct(_inputService);
         }
 
         private void InitStateMachine(GameObject character)

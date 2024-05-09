@@ -29,10 +29,6 @@ namespace CodeBase.Modules.Character.Animation
             
         }
 
-        private void OnDestroy()
-        {
-        }
-
         void Update()
         {
             var cameraInput = _inputService.CameraInput;
