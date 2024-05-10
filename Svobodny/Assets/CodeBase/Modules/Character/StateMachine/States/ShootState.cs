@@ -49,6 +49,9 @@ namespace CodeBase.Modules.Character.StateMachine.States
             SetArmPosition();
             _armAnimatorController.SetMouseVariables();
             SetArmRotation();
+            
+            if(_inputService.IsAttackButtonDown())
+                _rangeAttack.Shoot();
         }
 
         private void SetArmRotation()

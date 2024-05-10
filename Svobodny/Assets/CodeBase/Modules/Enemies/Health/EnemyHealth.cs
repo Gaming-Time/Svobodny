@@ -1,5 +1,6 @@
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Animation;
+using CodeBase.Modules.Enemies.VFX;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Health
@@ -11,14 +12,16 @@ namespace CodeBase.Modules.Enemies.Health
 
         private HumanoidAnimatorController _animatorController;
         private HumanoidAnimationEventsHandler _animationEventsHandler;
+        private EnemyVFXController _vfxController;
 
         public int Health => _currentHealth;
 
         public void Construct(HumanoidAnimatorController animatorController,
-            HumanoidAnimationEventsHandler animationEventsHandler, int health)
+            HumanoidAnimationEventsHandler animationEventsHandler, EnemyVFXController vfxController, int health)
         {
             _animatorController = animatorController;
             _animationEventsHandler = animationEventsHandler;
+            _vfxController = vfxController;
 
             _animationEventsHandler.ExitDeathAnimationEvent += DestroyAfterDeath;
             _currentHealth = health;
@@ -56,6 +59,9 @@ namespace CodeBase.Modules.Enemies.Health
         {
             _animatorController.SetHitDirection(from);
 
+            var direction = (from - transform.position).normalized;
+
+            _vfxController.PlayBlood(direction);
             DoDamage(damage);
         }
 

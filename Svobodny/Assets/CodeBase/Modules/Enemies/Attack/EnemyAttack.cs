@@ -1,5 +1,6 @@
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Animation;
+using CodeBase.Modules.Enemies.VFX;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Attack
@@ -14,16 +15,18 @@ namespace CodeBase.Modules.Enemies.Attack
 
         private HumanoidAnimatorController _animatorController;
         private HumanoidAnimationEventsHandler _animationEventsHandler;
+        private EnemyVFXController _vfxController;
 
         private Collider[] _hitCollection = new Collider[1];
         private float _lastAttackTime = 0f;
 
         public void Construct(float attackRange, HumanoidAnimatorController animatorController,
-            HumanoidAnimationEventsHandler animationEventsHandler)
+            HumanoidAnimationEventsHandler animationEventsHandler, EnemyVFXController vfxController)
         {
             overlapRadius = attackRange;
             _animatorController = animatorController;
             _animationEventsHandler = animationEventsHandler;
+            _vfxController = vfxController;
         }
 
         public void Attack(Vector3 targetPosition)
@@ -33,6 +36,7 @@ namespace CodeBase.Modules.Enemies.Attack
 
             _animatorController.SetAttackDirection(targetPosition);
             _animatorController.PlayAttackAnimation();
+            _vfxController.PlaySlice();
             ScanForTargets();
 
             _lastAttackTime = Time.time;
@@ -49,7 +53,7 @@ namespace CodeBase.Modules.Enemies.Attack
             var hitCollider = _hitCollection[0];
 
             var health = hitCollider.GetComponentInParent<IHealth>();
-            health.DoDamage(damage);
+            health.DoDamage(DamageType.Melee, damage, attackPoint.position);
         }
     }
 }

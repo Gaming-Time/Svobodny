@@ -1,4 +1,5 @@
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
 
@@ -14,24 +15,36 @@ namespace CodeBase.Modules.Character.Attack
 
         private CharacterAnimatorController _animatorController;
         private CharacterAnimationEventsHandler _animationEvents;
+        private CharacterVFXController _vfxController;
+        
         private Collider[] _hitCollection = new Collider[5];
 
         public void Construct(CharacterAnimatorController animatorController,
-            CharacterAnimationEventsHandler animationEvents)
+            CharacterAnimationEventsHandler animationEvents, CharacterVFXController vfxController)
         {
             _animatorController = animatorController;
             _animationEvents = animationEvents;
+            _vfxController = vfxController;
 
-            _animationEvents.AttackEvent += ScanForTargets;
+            _animationEvents.AttackEvent += OnAttack;
         }
 
         private void OnDestroy()
         {
             if (_animationEvents)
-                _animationEvents.AttackEvent -= ScanForTargets;
+                _animationEvents.AttackEvent -= OnAttack;
         }
 
-        public void Attack() => _animatorController.PlayAttackAnimation();
+        public void Attack()
+        {
+            _animatorController.PlayAttackAnimation();
+        }
+
+        public void OnAttack()
+        {
+            _vfxController.PlaySlice();
+            ScanForTargets();
+        }
 
         private void ScanForTargets()
         {

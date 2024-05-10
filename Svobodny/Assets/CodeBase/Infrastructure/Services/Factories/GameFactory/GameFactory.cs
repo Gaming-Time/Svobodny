@@ -27,12 +27,14 @@ using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
 using CodeBase.Modules.Character.StateMachine;
+using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
+using CodeBase.Modules.Enemies.VFX;
 using CodeBase.Modules.Inventory;
 using CodeBase.Modules.Inventory.Guns;
 using CodeBase.Modules.Inventory.Items;
@@ -91,6 +93,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character);
+            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, camera);
             InitStateMachine(_character, camera);
             InitArm(_character);
 
@@ -120,7 +123,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var characterAttack = character.GetComponent<CharacterMeleeAttack>();
             characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
-                character.GetComponent<CharacterAnimationEventsHandler>());
+                character.GetComponent<CharacterAnimationEventsHandler>(),
+                character.GetComponent<CharacterVFXController>());
         }
 
         private void InitInteractions(GameObject character)
@@ -137,6 +141,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
+                character.GetComponent<CharacterVFXController>(),
                 staticData.Health);
         }
 
@@ -235,11 +240,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
+                var vfxController = monster.GetComponent<EnemyVFXController>();
 
                 monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
-                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, monsterData.Health);
+                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
+                    monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
+                    vfxController);
                 monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
                     monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
