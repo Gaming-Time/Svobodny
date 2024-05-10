@@ -21,11 +21,13 @@ namespace CodeBase.Modules.Character.StateMachine
         private CharacterMeleeAttack _characterMeleeAttack;
         private CharacterAnimationEventsHandler _animationEventsHandler;
         private CharacterRangeAttack _rangeAttack;
+        private Camera _camera;
 
         [SerializeField] private Transform arm;
 
         public void Construct(IInputService inputService, CharacterMove characterMove, CharacterMeleeAttack meleeAttack,
-            CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler, CharacterRangeAttack rangeAttack)
+            CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler,
+            CharacterRangeAttack rangeAttack, Camera camera)
         {
             _inputService = inputService;
             _characterMove = characterMove;
@@ -33,6 +35,7 @@ namespace CodeBase.Modules.Character.StateMachine
             _animationEventsHandler = animationEventsHandler;
             _inventoryHandler = inventoryHandler;
             _rangeAttack = rangeAttack;
+            _camera = camera;
 
             InitializeStateMachine();
             Enter<MoveState>();
@@ -53,7 +56,7 @@ namespace CodeBase.Modules.Character.StateMachine
             {
                 [typeof(MoveState)] = new MoveState(this, _characterMove, _inventoryHandler, _inputService),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, _animationEventsHandler),
-                [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm),
+                [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera),
             };
         }
 

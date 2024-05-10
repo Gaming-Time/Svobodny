@@ -91,7 +91,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character);
-            InitStateMachine(_character);
+            InitStateMachine(_character, camera);
             InitArm(_character);
 
             return _character;
@@ -102,12 +102,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             character.GetComponentInChildren<ArmAnimatorController>(true).Construct(_inputService);
         }
 
-        private void InitStateMachine(GameObject character)
+        private void InitStateMachine(GameObject character, Camera camera)
         {
             character.GetComponent<CharacterStateMachine>().Construct(_inputService,
                 character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
-                character.GetComponent<CharacterRangeAttack>());
+                character.GetComponent<CharacterRangeAttack>(), camera);
         }
 
         private void InitInventoryHandler(GameObject character)
