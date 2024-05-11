@@ -56,7 +56,7 @@ namespace CodeBase.Modules.Character.StateMachine
             {
                 [typeof(MoveState)] = new MoveState(this, _characterMove, _inventoryHandler, _inputService),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, _animationEventsHandler),
-                [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera),
+                [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera, transform),
             };
         }
 

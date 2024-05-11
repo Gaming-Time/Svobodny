@@ -10,17 +10,23 @@ namespace CodeBase.Modules.Character.Arm
         [SerializeField] private Animator animator;
 
         private IInputService _inputService;
+        private Transform _characterTransform;
+        private Camera _camera;
 
-        public void Construct(IInputService inputService)
+        public void Construct(IInputService inputService, Camera camera, Transform characterTransform)
         {
             _inputService = inputService;
+            _camera = camera;
+            _characterTransform = characterTransform;
         }
 
         public void SetMouseVariables()
         {
-            var cameraInput = _inputService.CameraInput;
-            animator.SetFloat(AnimatorVariables.Arm.MouseX, cameraInput.x);
-            animator.SetFloat(AnimatorVariables.Arm.MouseY, cameraInput.y);
+            var mouseInput = _inputService.MousePosition;
+            var playerScreenPosition = _camera.WorldToScreenPoint(_characterTransform.position);
+            var direction = (mouseInput - playerScreenPosition).normalized;
+            animator.SetFloat(AnimatorVariables.Arm.MouseX, direction.x);
+            animator.SetFloat(AnimatorVariables.Arm.MouseY, direction.y);
         }
     }
 }

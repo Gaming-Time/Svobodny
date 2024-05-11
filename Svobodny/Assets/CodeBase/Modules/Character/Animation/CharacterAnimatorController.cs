@@ -13,27 +13,31 @@ namespace CodeBase.Modules.Character.Animation
         private IInputService _inputService;
 
         private CharacterController _controller;
-        private InventoryHandler _inventoryHandler;
+        private Camera _camera;
 
         private Animator _animator;
 
-        public void Construct(IInputService inputService, InventoryHandler inventoryHandler, Animator animator,
-            CharacterController controller, float walkSpeed, float sneakSpeed)
+        public void Construct(IInputService inputService, Animator animator,
+            CharacterController controller, Camera camera, float walkSpeed, float sneakSpeed)
         {
             _inputService = inputService;
-            _inventoryHandler = inventoryHandler;
             _animator = animator;
             _controller = controller;
             _walkSpeed = walkSpeed;
             _sneakSpeed = sneakSpeed;
-            
+            _camera = camera;
         }
 
         void Update()
         {
-            var cameraInput = _inputService.CameraInput;
-            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseX, cameraInput.x);
-            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseY, cameraInput.y);
+            var mousePosition = _inputService.MousePosition;
+            var playerScreenPosition = _camera.WorldToScreenPoint(transform.position);
+            var direction = (mousePosition - playerScreenPosition).normalized;
+            var angle = Vector2.SignedAngle(Vector2.right, direction);
+
+            _animator.SetFloat(AnimatorVariables.Character.Angle, angle);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseX, direction.x);
+            _animator.SetFloat(AnimatorVariables.Character.Movement.MouseY, direction.y);
             _animator.SetFloat(AnimatorVariables.Character.Movement.Speed, _controller.velocity.sqrMagnitude);
             _animator.SetFloat(AnimatorVariables.Character.Movement.WalkSpeed, _walkSpeed);
             _animator.SetFloat(AnimatorVariables.Character.Movement.SneakSpeed, _sneakSpeed);
@@ -47,7 +51,7 @@ namespace CodeBase.Modules.Character.Animation
         public void ExitWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.ExitWardrobe);
         public void Damage() => _animator.SetTrigger(AnimatorVariables.Character.Battle.HitTriggerHash);
         public void PlayAttackAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.AttackTriggerHash);
-        
+
         public void SelectGun(GunType? gun)
         {
             switch (gun)

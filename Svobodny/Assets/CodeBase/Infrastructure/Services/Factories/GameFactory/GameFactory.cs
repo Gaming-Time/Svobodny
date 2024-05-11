@@ -86,7 +86,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
             var camera = Object.FindObjectOfType<Camera>();
             InitMovement(staticData, _character);
-            InitAnimations(staticData, _character);
+            InitAnimations(staticData, _character, camera);
             InitInventoryHandler(_character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
@@ -95,14 +95,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitCharacterAttack(_character);
             _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, camera);
             InitStateMachine(_character, camera);
-            InitArm(_character);
+            InitArm(_character, camera);
 
             return _character;
         }
 
-        private void InitArm(GameObject character)
+        private void InitArm(GameObject character, Camera camera)
         {
-            character.GetComponentInChildren<ArmAnimatorController>(true).Construct(_inputService);
+            character.GetComponentInChildren<ArmAnimatorController>(true)
+                .Construct(_inputService, camera, character.transform);
         }
 
         private void InitStateMachine(GameObject character, Camera camera)
@@ -273,11 +274,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private static void InitTransparency(GameObject character, Camera camera) =>
             character.GetComponent<PlayerTransparency>().Construct(camera);
 
-        private void InitAnimations(CharacterStaticData staticData, GameObject character)
+        private void InitAnimations(CharacterStaticData staticData, GameObject character, Camera camera)
         {
             var characterAnimationController = character.GetComponent<CharacterAnimatorController>();
-            characterAnimationController.Construct(_inputService, _inventoryHandler, character.GetComponent<Animator>(),
-                character.GetComponent<CharacterController>(), staticData.WalkSpeed, staticData.SneakSpeed);
+            characterAnimationController.Construct(_inputService, character.GetComponent<Animator>(),
+                character.GetComponent<CharacterController>(), camera, staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
         private void InitMovement(CharacterStaticData staticData, GameObject character)

@@ -6,6 +6,7 @@ namespace CodeBase.Logic.Animations
     {
         public static class Character
         {
+            public static readonly int Angle = Animator.StringToHash("Angle");
             public static class Movement
             {
                 public static readonly int MouseX = Animator.StringToHash("MouseX");

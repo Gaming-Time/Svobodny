@@ -14,17 +14,20 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly Transform _arm;
         private readonly ArmAnimatorController _armAnimatorController;
         private readonly Camera _camera;
+        private readonly Transform _characterTransform;
+        
         private  Plane _plane;
         private Vector3 _worldPosition;
 
         public ShootState(CharacterStateMachine stateMachine, IInputService inputService,
-            CharacterRangeAttack rangeAttack, Transform arm, Camera camera)
+            CharacterRangeAttack rangeAttack, Transform arm, Camera camera, Transform playerTransform)
         {
             _stateMachine = stateMachine;
             _inputService = inputService;
             _rangeAttack = rangeAttack;
             _arm = arm;
             _camera = camera;
+            _characterTransform = playerTransform;
 
             _armAnimatorController = _arm.GetComponent<ArmAnimatorController>();
         }
@@ -75,8 +78,11 @@ namespace CodeBase.Modules.Character.StateMachine.States
 
         private void SetArmPosition()
         {
-            var cameraInput = _inputService.CameraInput;
-            var angle = Vector2.SignedAngle(Vector2.right, cameraInput);
+            var mousePosition = _inputService.MousePosition;
+            var playerScreenPosition = _camera.WorldToScreenPoint(_characterTransform.position);
+            var direction = (mousePosition - playerScreenPosition).normalized;
+            
+            var angle = Vector2.SignedAngle(Vector2.right, direction);
                 
             _arm.localPosition = angle switch
             {
