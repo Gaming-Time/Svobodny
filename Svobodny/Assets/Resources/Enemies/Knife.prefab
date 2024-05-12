@@ -437,7 +437,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   overlapRadius: 0
-  damage: 1
+  damage: 0
   attackDelay: 3
 --- !u!114 &8455908824405780128
 MonoBehaviour:
