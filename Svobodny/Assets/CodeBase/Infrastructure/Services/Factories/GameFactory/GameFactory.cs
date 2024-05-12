@@ -150,6 +150,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             healthHandler.Construct(_healthUIHandler, staticData.Health);
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
                 character.GetComponent<CharacterVFXController>(), healthHandler,
+                character.GetComponent<CharacterStateMachine>(),
                 staticData.Health);
         }
 
