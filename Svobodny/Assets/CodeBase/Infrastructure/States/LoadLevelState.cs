@@ -97,7 +97,7 @@ namespace CodeBase.Infrastructure.States
 
             foreach (var spawner in spawners)
             {
-                _gameFactory.CreateObjectSpawner(spawner.Position, spawner.Id, spawner.TypeId);
+                _gameFactory.CreateObjectSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
             }
         }
 

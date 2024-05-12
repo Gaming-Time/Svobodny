@@ -21,7 +21,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
         {
             string objectPath = GetObjectPath(typeId);
 
-            return _assetProvider.Instantiate(objectPath, position);
+            return _assetProvider.Instantiate(objectPath, position, rotation);
         }
 
         public GameObject CreateGunUsableObject(GunType gunType, Vector3 position, Quaternion rotation)

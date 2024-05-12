@@ -17,8 +17,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: -0.42
   contrast:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 13.8
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -90,6 +90,29 @@ MonoBehaviour:
   rounded:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-2930301702668712125
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a1bd58dd7548198609eabd8ae2bb7d, type: 3}
+  m_Name: Pixelation
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  widthPixelation:
+    m_OverrideState: 1
+    m_Value: 16
+  heightPixelation:
+    m_OverrideState: 1
+    m_Value: 16
+  colorPrecision:
+    m_OverrideState: 1
+    m_Value: 32
 --- !u!114 &-32820517437979890
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -108,7 +131,7 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.91
+    m_Value: 1.99
   intensity:
     m_OverrideState: 1
     m_Value: 3.8
