@@ -14,7 +14,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void SpawnAllMonsters();
         void SpawnAllNpcs();
         void InitCamera(GameObject character);
-        void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId);
+        void CreateObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId,
+            UsableObjectTypeId spawnerTypeId);
         void SpawnAllObjects();
         void Cleanup();
         void CreateInventoryHandler();

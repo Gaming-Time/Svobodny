@@ -138,9 +138,10 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             camera.Follow = character.transform;
         }
 
-        public void CreateObjectSpawner(Vector3 spawnerPosition, string spawnerId, UsableObjectTypeId spawnerTypeId)
+        public void CreateObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId,
+            UsableObjectTypeId spawnerTypeId)
         {
-            var spawner = _assetProvider.Instantiate(AssetPath.ObjectSpawnerPath, spawnerPosition)
+            var spawner = _assetProvider.Instantiate(AssetPath.ObjectSpawnerPath, spawnerPosition, spawnerRotation)
                 .GetComponent<UsableObjectSpawner>();
             spawner.Construct(_usableObjectFactory, spawnerTypeId);
             _objectSpawners.Add(spawnerId, spawner);
