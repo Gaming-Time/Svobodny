@@ -68,14 +68,22 @@ namespace CodeBase.Infrastructure.States
                     playerRotation = _levelStaticData.NightPlayerRotation;
                     break;
             }
-
-            var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
-            _gameFactory.InitCamera(character);
-
+            
             CreateObjectSpawners();
-            _gameFactory.CreateInventoryHandler();
-            _gameFactory.CreateUIHandler();
+            CreateGunObjectsSpawners();
+            _gameFactory.CreateHud();
+            _gameFactory.CreateHealthUIHandler();
+            
+            var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
+            
+            _gameFactory.CreateItemsUIHandler();
+            _gameFactory.CreateGunsUiHandler();
+            
+            _gameFactory.InitCamera(character);
+            
             _gameFactory.SpawnAllObjects();
+            _gameFactory.SpawnGuns();
+            
         }
 
         private void InitUI()
@@ -91,6 +99,14 @@ namespace CodeBase.Infrastructure.States
             {
                 _gameFactory.CreateObjectSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
             }
+        }
+
+        private void CreateGunObjectsSpawners()
+        {
+            var spawners = _levelStaticData.GunsSpawners;
+
+            spawners.ForEach(spawner =>
+                _gameFactory.CreateGunObjectSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.GunType));
         }
 
         private void CreateEnemySpawners()

@@ -7,7 +7,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
     public interface IUIFactory : IService
     {
         void CreateRoot();
-        GameObject CreateItemsInventory();
+        GameObject CreateHud();
         WindowBase CreateWindow(WindowID windowID);
     }
 }

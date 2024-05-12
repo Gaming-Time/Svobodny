@@ -6,6 +6,7 @@ namespace CodeBase.Logic.Animations
     {
         public static class Character
         {
+            public static readonly int Angle = Animator.StringToHash("Angle");
             public static class Movement
             {
                 public static readonly int MouseX = Animator.StringToHash("MouseX");
@@ -28,7 +29,21 @@ namespace CodeBase.Logic.Animations
             {
                 public static readonly int HitTriggerHash = Animator.StringToHash("Hit");
                 public static readonly int AttackTriggerHash = Animator.StringToHash("Attack");
+                public static readonly int IsAiming = Animator.StringToHash("IsAiming");
             }
+
+            public static class Inventory
+            {
+                public static readonly int IsBearArms = Animator.StringToHash("IsBearArms");
+                public static readonly int IsKnifeSelected = Animator.StringToHash("IsKnifeSelected");
+                public static readonly int IsPistolSelected = Animator.StringToHash("IsPistolSelected");
+            }
+        }
+
+        public static class Arm
+        {
+            public static readonly int MouseX = Animator.StringToHash("MouseX");
+            public static readonly int MouseY = Animator.StringToHash("MouseY");
         }
 
         public static class Wardrobe

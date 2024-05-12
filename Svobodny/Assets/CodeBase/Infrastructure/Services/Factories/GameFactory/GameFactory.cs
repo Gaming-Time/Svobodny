@@ -21,19 +21,28 @@ using CodeBase.Logic.UsableObjects.Doors;
 using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
+using CodeBase.Modules.Character.StateMachine;
+using CodeBase.Modules.Character.UI;
+using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
+using CodeBase.Modules.Enemies.VFX;
+using CodeBase.Modules.Health;
 using CodeBase.Modules.Inventory;
+using CodeBase.Modules.Inventory.Guns;
+using CodeBase.Modules.UI;
 using UnityEngine;
 using UnityEngine.AI;
+using Gun = CodeBase.Logic.UsableObjects.Gun;
 using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure.Services.Factories.GameFactory
@@ -52,10 +61,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
         private Dictionary<string, UsableObjectSpawner> _objectSpawners = new();
+        private Dictionary<string, GunUsableObjectSpawner> _gunSpawners = new();
 
         private GameObject _character;
         private InventoryHandler _inventoryHandler;
-        private UIHandler _uiHandler;
+        private ItemsUIHandler _itemsUIHandler;
+        private GunsUIHandler _gunsUIHandler;
+        private Hud _hud;
+        private HealthUIHandler _healthUIHandler;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -76,21 +89,46 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
             var camera = Object.FindObjectOfType<Camera>();
             InitMovement(staticData, _character);
-            InitAnimations(staticData, _character);
+            InitAnimations(staticData, _character, camera);
+            InitInventoryHandler(_character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character);
+            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, camera);
+            InitStateMachine(_character, camera);
+            InitArm(_character, camera);
 
             return _character;
         }
 
+        private void InitArm(GameObject character, Camera camera)
+        {
+            character.GetComponentInChildren<ArmAnimatorController>(true)
+                .Construct(_inputService, camera, character.transform);
+        }
+
+        private void InitStateMachine(GameObject character, Camera camera)
+        {
+            character.GetComponent<CharacterStateMachine>().Construct(_inputService,
+                character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
+                character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
+                character.GetComponent<CharacterRangeAttack>(), camera);
+        }
+
+        private void InitInventoryHandler(GameObject character)
+        {
+            _inventoryHandler = character.GetComponent<InventoryHandler>();
+            _inventoryHandler.Construct(_inputService, character.GetComponent<CharacterAnimatorController>());
+        }
+
         private void InitCharacterAttack(GameObject character)
         {
-            var characterAttack = character.GetComponent<CharacterAttack>();
-            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(), _inputService,
-                character.GetComponent<CharacterAnimationEventsHandler>());
+            var characterAttack = character.GetComponent<CharacterMeleeAttack>();
+            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
+                character.GetComponent<CharacterAnimationEventsHandler>(),
+                character.GetComponent<CharacterVFXController>());
         }
 
         private void InitInteractions(GameObject character)
@@ -106,7 +144,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
+            var healthHandler = character.GetComponent<HealthHandler>();
+            
+            healthHandler.Construct(_healthUIHandler, staticData.Health);
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
+                character.GetComponent<CharacterVFXController>(), healthHandler,
                 staticData.Health);
         }
 
@@ -147,13 +189,33 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Add(spawnerId, spawner);
         }
 
-        public void CreateInventoryHandler() => _inventoryHandler =
-            _assetProvider.Instantiate<InventoryHandler>(AssetPath.InventoryHandlerPath);
-
-        public void CreateUIHandler()
+        public void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId,
+            GunType gunType)
         {
-            _uiHandler = _assetProvider.Instantiate<UIHandler>(AssetPath.UIHandlerPath);
-            _uiHandler.Construct(_inventoryHandler, _staticData, _assetProvider, _uiFactory, _inputService);
+            var spawner = _assetProvider.Instantiate<GunUsableObjectSpawner>(AssetPath.GunObjectSpawnerPath,
+                spawnerPosition, spawnerRotation);
+            spawner.Construct(_usableObjectFactory, gunType);
+            _gunSpawners.Add(spawnerId, spawner);
+        }
+
+        public void CreateHud() => _hud = _uiFactory.CreateHud().GetComponent<Hud>();
+
+        public void CreateItemsUIHandler()
+        {
+            _itemsUIHandler = _assetProvider.Instantiate<ItemsUIHandler>(AssetPath.ItemsUIHandlerPath);
+            _itemsUIHandler.Construct(_inventoryHandler, _hud, _staticData, _assetProvider, _uiFactory, _inputService);
+        }
+
+        public void CreateGunsUiHandler()
+        {
+            _gunsUIHandler = _assetProvider.Instantiate<GunsUIHandler>(AssetPath.GunsUIHandlerPath);
+            _gunsUIHandler.Construct(_inventoryHandler, _hud, _assetProvider, _staticData);
+        }
+
+        public void CreateHealthUIHandler()
+        {
+            _healthUIHandler = _assetProvider.Instantiate<HealthUIHandler>(AssetPath.HealthUIHandlerPath);
+            _healthUIHandler.Construct(_hud);
         }
 
         public void SpawnAllObjects()
@@ -163,6 +225,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var usableObject = spawner.Value.Spawn();
 
                 InitUsableObject(spawner, usableObject);
+            }
+        }
+
+        public void SpawnGuns()
+        {
+            foreach (var gunSpawner in _gunSpawners)
+            {
+                var gun = gunSpawner.Value.Spawn();
+                gun.GetComponent<Gun>().Construct(_inputService, _inventoryHandler, gunSpawner.Value.GunType);
             }
         }
 
@@ -183,11 +254,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var collisionOwner = monster.GetComponentInChildren<CollisionOwner>();
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
+                var vfxController = monster.GetComponent<EnemyVFXController>();
 
                 monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
-                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, monsterData.Health);
+                monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
+                    monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
-                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler);
+                monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
+                    vfxController);
                 monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
                     monsterData.MeleeAttackRange);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
@@ -213,11 +287,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private static void InitTransparency(GameObject character, Camera camera) =>
             character.GetComponent<PlayerTransparency>().Construct(camera);
 
-        private void InitAnimations(CharacterStaticData staticData, GameObject character)
+        private void InitAnimations(CharacterStaticData staticData, GameObject character, Camera camera)
         {
             var characterAnimationController = character.GetComponent<CharacterAnimatorController>();
             characterAnimationController.Construct(_inputService, character.GetComponent<Animator>(),
-                character.GetComponent<CharacterController>(), staticData.WalkSpeed, staticData.SneakSpeed);
+                character.GetComponent<CharacterController>(), camera, staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
         private void InitMovement(CharacterStaticData staticData, GameObject character)

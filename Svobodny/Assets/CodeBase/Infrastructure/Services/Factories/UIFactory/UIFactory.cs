@@ -29,9 +29,9 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
             _canvas = _uiRoot.GetComponentInChildren<Canvas>().transform;
         }
 
-        public GameObject CreateItemsInventory()
+        public GameObject CreateHud()
         {
-            var inventory = _assetProvider.Instantiate(AssetPath.UIPath.ItemsInventory, _canvas);
+            var inventory = _assetProvider.Instantiate(AssetPath.UIPath.Hud, _canvas);
             return inventory;
         }
 

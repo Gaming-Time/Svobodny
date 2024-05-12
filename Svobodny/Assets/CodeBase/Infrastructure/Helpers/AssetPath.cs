@@ -9,8 +9,10 @@ namespace CodeBase.Infrastructure.Helpers
         public const string EnemySpawnerPath = "Enemies/Enemy Spawner";
         public const string NpcSpawnerPath = "Npcs/Npc Spawner";
         public const string ObjectSpawnerPath = "UsableObjects/Object Spawner";
-        public const string InventoryHandlerPath = "InventoryHandler";
-        public const string UIHandlerPath = "UIHandler";
+        public const string ItemsUIHandlerPath = "ItemsUIHandler";
+        public const string GunsUIHandlerPath = "GunsUIHandler";
+        public const string HealthUIHandlerPath = "HealthUIHandler";
+        public const string GunObjectSpawnerPath = "Usableobjects/Gun Object Spawner";
         
         public static class StaticDataPath
         {
@@ -19,6 +21,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Npc = "Static Data/NPCs";
             public const string Character = "Static Data/Character/CharacterData";
             public const string Item = "Static Data/Items";
+            public const string Gun = "Static Data/Guns";
         }
 
         public static class ObjectsPath
@@ -32,13 +35,20 @@ namespace CodeBase.Infrastructure.Helpers
             public const string KeySixPath = "UsableObjects/Keys/KeySix";
             public const string DoorPath = "UsableObjects/Doors/Door";
             public const string ClosedDoorPath = "UsableObjects/Doors/ClosedDoor";
+
+            public static class Guns
+            {
+                public const string KnifePath = "UsableObjects/Guns/Knife";
+                public const string PistolPath = "UsableObjects/Guns/Pistol";
+            }
         }
 
         public static class UIPath
         {
             public const string UIRoot = "UI/UIRoot";
-            public const string Slot = "UI/Slot";
-            public const string ItemsInventory = "UI/ItemsInventory";
+            public const string ItemSlot = "UI/ItemSlot";
+            public const string GunSlot = "UI/GunSlot";
+            public const string Hud = "UI/HUD";
             public const string DeathMenu = "UI/Windows/DeathWindow";
             public const string DoorOneWindow = "UI/Windows/DoorOneWindow";
             public const string DoorTwoWindow = "UI/Windows/DoorTwoWindow";
@@ -46,6 +56,12 @@ namespace CodeBase.Infrastructure.Helpers
             public const string DoorFourWindow = "UI/Windows/DoorFourWindow";
             public const string DoorFiveWindow = "UI/Windows/DoorFiveWindow";
             public const string DoorSixWindow = "UI/Windows/DoorSixWindow";
+        }
+
+        public static class Gizmos
+        {
+            public const string KnifeImage = "Knife";
+            public const string PistolImage = "Handgun";
         }
     }
 }
