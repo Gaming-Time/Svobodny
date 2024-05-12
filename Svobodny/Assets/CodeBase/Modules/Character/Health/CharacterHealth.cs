@@ -1,5 +1,7 @@
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.StateMachine;
+using CodeBase.Modules.Character.StateMachine.States;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
@@ -15,16 +17,19 @@ namespace CodeBase.Modules.Character.Health
         private IWindowService _windowService;
         private CharacterVFXController _vfxController;
         private HealthHandler _healthHandler;
+        private CharacterStateMachine _stateMachine;
 
         public int Health => _currentHealth;
 
         public void Construct(CharacterAnimatorController animatorController, IWindowService windowService,
-            CharacterVFXController vfxController, HealthHandler healthHandler, int health)
+            CharacterVFXController vfxController, HealthHandler healthHandler,
+            CharacterStateMachine characterStateMachine, int health)
         {
             _animatorController = animatorController;
             _windowService = windowService;
             _vfxController = vfxController;
             _healthHandler = healthHandler;
+            _stateMachine = characterStateMachine;
 
             _currentHealth = health;
             _healthHandler.HandleHealthChange(_currentHealth);
@@ -38,7 +43,10 @@ namespace CodeBase.Modules.Character.Health
             _healthHandler.HandleHealthChange(_currentHealth);
 
             if (_currentHealth >= 1)
+            {
+                _stateMachine.Enter<HitState>();
                 return;
+            }
 
             Die();
         }

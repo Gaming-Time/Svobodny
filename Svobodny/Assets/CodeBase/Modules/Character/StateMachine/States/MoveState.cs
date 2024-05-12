@@ -41,5 +41,6 @@ namespace CodeBase.Modules.Character.StateMachine.States
 
             _characterMove.Move();
         }
+        
     }
 }
