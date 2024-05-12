@@ -335,13 +335,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3840782985484891909}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.122787856, y: -0.122787856, z: -0.6963643, w: 0.6963643}
+  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: -0.157, y: 0.431, z: -0.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6485721414648319185}
-  m_LocalEulerAnglesHint: {x: -20, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!114 &4479272807928918162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodEffect: {fileID: 4669864378440877248}
   sliceEffect: {fileID: 5673320968680785857}
+  flashEffect: {fileID: 0}
 --- !u!114 &8206927296214202628
 MonoBehaviour:
   m_ObjectHideFlags: 0

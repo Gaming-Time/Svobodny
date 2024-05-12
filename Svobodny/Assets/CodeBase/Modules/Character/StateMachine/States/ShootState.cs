@@ -15,8 +15,8 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly ArmAnimatorController _armAnimatorController;
         private readonly Camera _camera;
         private readonly Transform _characterTransform;
-        
-        private  Plane _plane;
+
+        private Plane _plane;
         private Vector3 _worldPosition;
 
         public ShootState(CharacterStateMachine stateMachine, IInputService inputService,
@@ -47,13 +47,13 @@ namespace CodeBase.Modules.Character.StateMachine.States
 
         public void Update()
         {
-            if(!_inputService.IsAimButtonHeld())
+            if (!_inputService.IsAimButtonHeld())
                 _stateMachine.Enter<MoveState>();
             SetArmPosition();
             _armAnimatorController.SetMouseVariables();
             SetArmRotation();
-            
-            if(_inputService.IsAttackButtonDown())
+
+            if (_inputService.IsAttackButtonDown())
                 _rangeAttack.Shoot();
         }
 
@@ -62,17 +62,14 @@ namespace CodeBase.Modules.Character.StateMachine.States
             var mousePosition = _inputService.MousePosition;
             var ray = _camera.ScreenPointToRay(mousePosition);
 
-            _plane = new Plane(_arm.forward, 0);
+            _plane = new Plane(_arm.forward, _arm.transform.position);
 
             if (_plane.Raycast(ray, out var distance))
             {
                 _worldPosition = ray.GetPoint(distance);
-            } 
+            }
 
-            _worldPosition.z = _arm.position.z;
-            
             var direction = (_worldPosition - _arm.position).normalized;
-
             _arm.right = direction;
         }
 
@@ -81,14 +78,14 @@ namespace CodeBase.Modules.Character.StateMachine.States
             var mousePosition = _inputService.MousePosition;
             var playerScreenPosition = _camera.WorldToScreenPoint(_characterTransform.position);
             var direction = (mousePosition - playerScreenPosition).normalized;
-            
+
             var angle = Vector2.SignedAngle(Vector2.right, direction);
-                
+
             _arm.localPosition = angle switch
             {
                 > -45 and < 45 => new Vector3(0.086f, 0.431f, -0.375f),
                 >= 45 and <= 135 => new Vector3(0.139f, 0.08f, 0.252f),
-                <= -45 and >= -135 => new Vector3(-0.157f,0.431f,-0.375f),
+                <= -45 and >= -135 => new Vector3(-0.157f, 0.431f, -0.375f),
                 < -135 or > 135 => new Vector3(-0.112f, -0.011f, 0.228f),
                 _ => _arm.localPosition
             };

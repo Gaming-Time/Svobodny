@@ -7044,6 +7044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunUsableObjectSpawnMarke
       objectReference: {fileID: 0}
+    - target: {fileID: 6477307083171353091, guid: 76ea916f47e73f0429be00c4190d38fc, type: 3}
+      propertyPath: GunType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8674497715730280685, guid: 76ea916f47e73f0429be00c4190d38fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.9243093

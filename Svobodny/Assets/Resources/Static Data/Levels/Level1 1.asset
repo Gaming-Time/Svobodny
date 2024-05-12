@@ -82,7 +82,7 @@ MonoBehaviour:
     Position: {x: 17.2, y: 0.4353053, z: 1.288}
   GunsSpawners:
   - Id: Level1 1_f3443bf3-8647-4ae6-8f73-65551725a0f2
-    GunType: 0
+    GunType: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 2.9243093, y: -0.12, z: 4.577079}
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
