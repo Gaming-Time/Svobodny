@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 
 namespace CodeBase.Modules.Character.StateMachine.States

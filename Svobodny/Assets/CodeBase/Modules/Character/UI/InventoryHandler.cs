@@ -5,7 +5,7 @@ using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Character.Animation;
 using UnityEngine;
 
-namespace CodeBase.Modules.Inventory
+namespace CodeBase.Modules.Character.UI
 {
     public class InventoryHandler : MonoBehaviour
     {

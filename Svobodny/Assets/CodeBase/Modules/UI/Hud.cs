@@ -1,7 +1,9 @@
+using CodeBase.Modules.Inventory;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace CodeBase.Modules.Inventory.Items
+namespace CodeBase.Modules.UI
 {
     public class Hud : MonoBehaviour
     {
@@ -14,6 +16,7 @@ namespace CodeBase.Modules.Inventory.Items
 
         [SerializeField] private Transform knifeSlotContainer;
         [SerializeField] private Transform pistolSlotContainer;
+        [SerializeField] private Slider healthSlider;
 
         public Transform UpSlotContainer => upSlotContainer;
         public Transform CentralSlotContainer => centralSlotContainer;
@@ -23,5 +26,6 @@ namespace CodeBase.Modules.Inventory.Items
 
         public Transform KnifeSlotContainer => knifeSlotContainer;
         public Transform PistolSlotContainer => pistolSlotContainer;
+        public Slider HealthSlider => healthSlider;
     }
 }

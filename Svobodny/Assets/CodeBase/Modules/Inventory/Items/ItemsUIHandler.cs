@@ -6,8 +6,9 @@ using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
-using CodeBase.Modules.Inventory.Items;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory.Slots;
+using CodeBase.Modules.UI;
 using TMPro;
 using UnityEngine;
 

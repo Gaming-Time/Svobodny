@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEditor;
 using UnityEngine;

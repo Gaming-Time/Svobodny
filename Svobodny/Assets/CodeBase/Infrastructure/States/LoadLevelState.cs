@@ -71,9 +71,11 @@ namespace CodeBase.Infrastructure.States
             
             CreateObjectSpawners();
             CreateGunObjectsSpawners();
+            _gameFactory.CreateHud();
+            _gameFactory.CreateHealthUIHandler();
+            
             var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
             
-            _gameFactory.CreateHud();
             _gameFactory.CreateItemsUIHandler();
             _gameFactory.CreateGunsUiHandler();
             

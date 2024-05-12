@@ -7,6 +7,7 @@ using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 

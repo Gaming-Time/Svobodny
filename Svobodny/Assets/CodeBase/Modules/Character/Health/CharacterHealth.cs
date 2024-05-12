@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
@@ -13,17 +14,20 @@ namespace CodeBase.Modules.Character.Health
         private CharacterAnimatorController _animatorController;
         private IWindowService _windowService;
         private CharacterVFXController _vfxController;
+        private HealthHandler _healthHandler;
 
         public int Health => _currentHealth;
 
         public void Construct(CharacterAnimatorController animatorController, IWindowService windowService,
-            CharacterVFXController vfxController, int health)
+            CharacterVFXController vfxController, HealthHandler healthHandler, int health)
         {
             _animatorController = animatorController;
             _windowService = windowService;
             _vfxController = vfxController;
+            _healthHandler = healthHandler;
 
             _currentHealth = health;
+            _healthHandler.HandleHealthChange(_currentHealth);
         }
 
         public void DoDamage(int damage)
@@ -31,6 +35,7 @@ namespace CodeBase.Modules.Character.Health
             _animatorController.Damage();
 
             _currentHealth -= damage;
+            _healthHandler.HandleHealthChange(_currentHealth);
 
             if (_currentHealth >= 1)
                 return;

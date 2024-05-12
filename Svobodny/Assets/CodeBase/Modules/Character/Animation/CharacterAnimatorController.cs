@@ -1,6 +1,7 @@
 ﻿using System;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Logic.Animations;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 

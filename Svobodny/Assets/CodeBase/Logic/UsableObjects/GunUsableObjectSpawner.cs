@@ -1,4 +1,5 @@
 using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 

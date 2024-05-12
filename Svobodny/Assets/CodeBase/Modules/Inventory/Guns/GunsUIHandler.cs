@@ -4,8 +4,9 @@ using System.Linq;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.StaticData;
-using CodeBase.Modules.Inventory.Items;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory.Slots;
+using CodeBase.Modules.UI;
 using UnityEngine;
 
 namespace CodeBase.Modules.Inventory.Guns

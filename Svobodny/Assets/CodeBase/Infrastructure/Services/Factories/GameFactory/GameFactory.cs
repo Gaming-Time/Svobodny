@@ -27,6 +27,7 @@ using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
 using CodeBase.Modules.Character.StateMachine;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
@@ -35,9 +36,10 @@ using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Enemies.VFX;
+using CodeBase.Modules.Health;
 using CodeBase.Modules.Inventory;
 using CodeBase.Modules.Inventory.Guns;
-using CodeBase.Modules.Inventory.Items;
+using CodeBase.Modules.UI;
 using UnityEngine;
 using UnityEngine.AI;
 using Gun = CodeBase.Logic.UsableObjects.Gun;
@@ -66,6 +68,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private ItemsUIHandler _itemsUIHandler;
         private GunsUIHandler _gunsUIHandler;
         private Hud _hud;
+        private HealthUIHandler _healthUIHandler;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -141,8 +144,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitHealth(CharacterStaticData staticData, GameObject character)
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
+            var healthHandler = character.GetComponent<HealthHandler>();
+            
+            healthHandler.Construct(_healthUIHandler, staticData.Health);
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
-                character.GetComponent<CharacterVFXController>(),
+                character.GetComponent<CharacterVFXController>(), healthHandler,
                 staticData.Health);
         }
 
@@ -203,6 +209,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             _gunsUIHandler = _assetProvider.Instantiate<GunsUIHandler>(AssetPath.GunsUIHandlerPath);
             _gunsUIHandler.Construct(_inventoryHandler, _hud, _assetProvider, _staticData);
+        }
+
+        public void CreateHealthUIHandler()
+        {
+            _healthUIHandler = _assetProvider.Instantiate<HealthUIHandler>(AssetPath.HealthUIHandlerPath);
+            _healthUIHandler.Construct(_hud);
         }
 
         public void SpawnAllObjects()

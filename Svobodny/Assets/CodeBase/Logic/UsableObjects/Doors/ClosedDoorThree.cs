@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 
 namespace CodeBase.Logic.UsableObjects.Doors

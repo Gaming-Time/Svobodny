@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.States;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.StateMachine.States;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 

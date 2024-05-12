@@ -9,9 +9,9 @@ namespace CodeBase.Infrastructure.Helpers
         public const string EnemySpawnerPath = "Enemies/Enemy Spawner";
         public const string NpcSpawnerPath = "Npcs/Npc Spawner";
         public const string ObjectSpawnerPath = "UsableObjects/Object Spawner";
-        public const string InventoryHandlerPath = "InventoryHandler";
         public const string ItemsUIHandlerPath = "ItemsUIHandler";
         public const string GunsUIHandlerPath = "GunsUIHandler";
+        public const string HealthUIHandlerPath = "HealthUIHandler";
         public const string GunObjectSpawnerPath = "Usableobjects/Gun Object Spawner";
         
         public static class StaticDataPath

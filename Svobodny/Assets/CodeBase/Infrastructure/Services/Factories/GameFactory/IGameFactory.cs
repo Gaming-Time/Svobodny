@@ -2,6 +2,7 @@ using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
 
@@ -23,5 +24,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void CreateGunsUiHandler();
         void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId, GunType gunType);
         void SpawnGuns();
+        void CreateHealthUIHandler();
     }
 }

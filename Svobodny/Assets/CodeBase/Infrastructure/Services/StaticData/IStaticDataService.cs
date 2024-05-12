@@ -5,6 +5,7 @@ using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 
 namespace CodeBase.Infrastructure.Services.StaticData
