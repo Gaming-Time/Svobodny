@@ -29,17 +29,23 @@ namespace CodeBase.Modules.Enemies.Attack
             _vfxController = vfxController;
         }
 
-        public void Attack(Vector3 targetPosition)
+        public void SetDirectionAndPlayAnimation(Vector3 targetPosition)
         {
             if (Time.time < _lastAttackTime + attackDelay)
                 return;
 
+            _animationEventsHandler.DoDamageAnimationEvent += Attack;
+
             _animatorController.SetAttackDirection(targetPosition);
             _animatorController.PlayAttackAnimation();
+            
+            _lastAttackTime = Time.time;
+        }
+
+        private void Attack()
+        {
             _vfxController.PlaySlice();
             ScanForTargets();
-
-            _lastAttackTime = Time.time;
         }
 
         private void ScanForTargets()
@@ -48,8 +54,6 @@ namespace CodeBase.Modules.Enemies.Attack
                 attackLayerMask, QueryTriggerInteraction.Ignore);
             if (hitCount == 0)
                 return;
-
-            Debug.Log("hit");
             var hitCollider = _hitCollection[0];
 
             var health = hitCollider.GetComponentInParent<IHealth>();

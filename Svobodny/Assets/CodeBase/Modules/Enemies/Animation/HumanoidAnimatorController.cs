@@ -40,12 +40,12 @@ namespace CodeBase.Modules.Enemies.Animation
         public void SetAttackDirection(Vector3 targetPosition)
         {
             var position = transform.position;
-
-            var deltaX = targetPosition.x - position.x;
-            var deltaY = targetPosition.z - position.z;
-
-            _animator.SetFloat(HumanoidAnimationVariables.AttackDirectionXHash, deltaX);
-            _animator.SetFloat(HumanoidAnimationVariables.AttackDirectionYHash, deltaY);
+            var positionXZ = new Vector2(position.x, position.z);
+            var targetPositionXZ = new Vector2(targetPosition.x, targetPosition.z);
+            var direction = (targetPositionXZ - positionXZ).normalized;
+            var attackAngle = Vector2.SignedAngle(Vector2.right, direction);
+            
+            _animator.SetFloat(HumanoidAnimationVariables.AttackAngleHash, attackAngle);
         }
 
         public void PlayAttackAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.AttackTriggerHash);

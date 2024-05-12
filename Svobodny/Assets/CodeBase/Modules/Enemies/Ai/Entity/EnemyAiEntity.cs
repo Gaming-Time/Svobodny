@@ -44,7 +44,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
         public void MeleeAttack(IEntity target)
         {
-            _attacker.Attack(target.Position);
+            _attacker.SetDirectionAndPlayAnimation(target.Position);
         }
 
         public void StartMovement()
