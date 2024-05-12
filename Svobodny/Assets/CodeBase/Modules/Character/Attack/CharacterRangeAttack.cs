@@ -21,9 +21,10 @@ namespace CodeBase.Modules.Character.Attack
         private Plane _plane;
         private float _lastShootTime;
 
-        public void Construct(IInputService inputService, Camera camera)
+        public void Construct(IInputService inputService, CharacterVFXController vfxController, Camera camera)
         {
             _inputService = inputService;
+            _vfxController = vfxController;
             _camera = camera;
 
             _plane = new Plane(Vector3.up, 0);
