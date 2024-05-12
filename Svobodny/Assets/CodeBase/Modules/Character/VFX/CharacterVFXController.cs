@@ -7,6 +7,7 @@ namespace CodeBase.Modules.Character.VFX
     {
         [SerializeField] private VisualEffect bloodEffect;
         [SerializeField] private VisualEffect sliceEffect;
+        [SerializeField] private VisualEffect flashEffect;
         
         public void PlayBlood(Vector3 direction)
         {
@@ -19,5 +20,7 @@ namespace CodeBase.Modules.Character.VFX
         }
 
         public void PlaySlice() => sliceEffect.Play();
+
+        public void PlayFlash() => flashEffect.Play();
     }
 }

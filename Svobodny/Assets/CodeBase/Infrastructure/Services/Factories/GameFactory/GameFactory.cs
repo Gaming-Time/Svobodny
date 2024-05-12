@@ -96,7 +96,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character);
-            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, camera);
+            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService,
+                _character.GetComponent<CharacterVFXController>(), camera);
             InitStateMachine(_character, camera);
             InitArm(_character, camera);
 
@@ -145,7 +146,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
             var healthHandler = character.GetComponent<HealthHandler>();
-            
+
             healthHandler.Construct(_healthUIHandler, staticData.Health);
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
                 character.GetComponent<CharacterVFXController>(), healthHandler,

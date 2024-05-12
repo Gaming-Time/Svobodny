@@ -1,4 +1,5 @@
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace CodeBase.Modules.Character.Attack
     {
         private Camera _camera;
         private IInputService _inputService;
+        private CharacterVFXController _vfxController;
         
         [SerializeField] private Transform arm;
         [SerializeField] private Transform shootPoint;
@@ -19,9 +21,10 @@ namespace CodeBase.Modules.Character.Attack
         private Plane _plane;
         private float _lastShootTime;
 
-        public void Construct(IInputService inputService, Camera camera)
+        public void Construct(IInputService inputService, CharacterVFXController vfxController, Camera camera)
         {
             _inputService = inputService;
+            _vfxController = vfxController;
             _camera = camera;
 
             _plane = new Plane(Vector3.up, 0);
@@ -34,6 +37,7 @@ namespace CodeBase.Modules.Character.Attack
                 return;
 
             _lastShootTime = Time.time;
+            _vfxController.PlayFlash();
             var ray = _camera.ScreenPointToRay(_inputService.MousePosition);
             if (_plane.Raycast(ray, out var distance))
                 _worldMousePosition = ray.GetPoint(distance);

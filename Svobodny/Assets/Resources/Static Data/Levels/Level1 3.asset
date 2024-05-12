@@ -72,6 +72,7 @@ MonoBehaviour:
     TypeId: 6
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: -36.850002, y: 0.75, z: -13.85}
+  GunsSpawners: []
   DayPlayerPosition: {x: -4.474624, y: 0.2, z: -11.150001}
   DayPlayerRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   NightPlayerPosition: {x: -4.600617, y: 0.3, z: -10.836096}
