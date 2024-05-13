@@ -70,7 +70,7 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
                 case WindowID.Level2EndDialog:
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level2EndDialog, _canvas);
                 case WindowID.Level3EndDialog:
-                    return null;
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level3EndDialog, _canvas);
                 case WindowID.KnifeDialog:
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.KnifeDialog, _canvas);
                 case WindowID.Count:
