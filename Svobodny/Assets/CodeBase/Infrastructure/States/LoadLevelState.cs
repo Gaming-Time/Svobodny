@@ -3,7 +3,9 @@ using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
+using CodeBase.Infrastructure.Services.WindowService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -16,6 +18,7 @@ namespace CodeBase.Infrastructure.States
         private readonly IStaticDataService _staticDataService;
         private readonly IProgressService _progressService;
         private readonly IUIFactory _uiFactory;
+        private readonly IWindowService _windowService;
 
         private LevelStaticData _levelStaticData;
 
@@ -48,7 +51,7 @@ namespace CodeBase.Infrastructure.States
 
         private void InitLevel()
         {
-            _levelStaticData = _staticDataService.ForLevel(_progressService.Progress.LevelName);
+            _levelStaticData = LevelStaticData();
             var characterData = _staticDataService.ForCharacter();
             Vector3 playerPosition = new();
             Quaternion playerRotation = new();
@@ -83,7 +86,7 @@ namespace CodeBase.Infrastructure.States
             
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
-            
+            _gameFactory.InitTriggers();
         }
 
         private void InitUI()
@@ -126,6 +129,8 @@ namespace CodeBase.Infrastructure.States
                 _gameFactory.CreateNpcSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
             }
         }
+
+        private LevelStaticData LevelStaticData() => _staticDataService.ForLevel(SceneManager.GetActiveScene().name);
 
         public void Exit() => _loadingCurtain.Hide();
     }

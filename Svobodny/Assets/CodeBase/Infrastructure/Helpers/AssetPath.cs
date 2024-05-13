@@ -56,6 +56,13 @@ namespace CodeBase.Infrastructure.Helpers
             public const string DoorFourWindow = "UI/Windows/DoorFourWindow";
             public const string DoorFiveWindow = "UI/Windows/DoorFiveWindow";
             public const string DoorSixWindow = "UI/Windows/DoorSixWindow";
+
+            public static class Dialogs
+            {
+                public const string Level1InitialDialog = "UI/Windows/Dialogs/Level1InitialDialog";
+                public const string Level1EndDialog = "UI/Windows/Dialogs/Level1EndDialog";
+                public const string Level2InitialDialog = "UI/Windows/Dialogs/Level2InitialDialog";
+            }
         }
 
         public static class Gizmos

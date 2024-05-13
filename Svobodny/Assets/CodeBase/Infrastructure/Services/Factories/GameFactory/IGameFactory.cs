@@ -26,5 +26,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void CreateGunObjectSpawner(Vector3 spawnerPosition, Quaternion spawnerRotation, string spawnerId, GunType gunType);
         void SpawnGuns();
         void CreateHealthUIHandler();
+        void InitTriggers();
     }
 }

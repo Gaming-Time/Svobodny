@@ -15,6 +15,7 @@ using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Logic.Enemies;
 using CodeBase.Logic.Npcs;
+using CodeBase.Logic.Triggers;
 using CodeBase.Logic.UsableObjects;
 using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Logic.UsableObjects.Doors;
@@ -277,6 +278,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             foreach (var spawner in _npcSpawners)
             {
                 spawner.Value.Spawn();
+            }
+        }
+
+        public void InitTriggers()
+        {
+            foreach (var dialogTrigger in Object.FindObjectsOfType<DialogTrigger>())
+            {
+                dialogTrigger.Construct(_windowService);
             }
         }
 

@@ -15,7 +15,8 @@ namespace CodeBase.Infrastructure
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services)
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services,
+            ICoroutineRunner coroutineRunner)
         {
             _states = new Dictionary<Type, IExitableState>
             {
@@ -28,7 +29,8 @@ namespace CodeBase.Infrastructure
                     services.Single<IStaticDataService>(), services.Single<IProgressService>(),
                     services.Single<IUIFactory>()),
                 [typeof(GameLoopState)] =
-                    new GameLoopState(services.Single<IGameFactory>(), services.Single<IWindowService>()),
+                    new GameLoopState(services.Single<IGameFactory>(), services.Single<IWindowService>(),
+                        coroutineRunner, curtain),
             };
         }
 
