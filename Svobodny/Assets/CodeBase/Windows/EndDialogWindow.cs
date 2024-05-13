@@ -20,7 +20,6 @@ namespace CodeBase.Windows
         public override void Hide()
         {
             base.Hide();
-            Time.timeScale = 1;
             if(transferTo == Levels.None)
                 return;
 

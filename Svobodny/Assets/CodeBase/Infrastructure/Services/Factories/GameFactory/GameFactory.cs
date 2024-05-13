@@ -123,7 +123,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitInventoryHandler(GameObject character)
         {
             _inventoryHandler = character.GetComponent<InventoryHandler>();
-            _inventoryHandler.Construct(_inputService, character.GetComponent<CharacterAnimatorController>());
+            _inventoryHandler.Construct(_inputService, _windowService,
+                character.GetComponent<CharacterAnimatorController>());
         }
 
         private void InitCharacterAttack(GameObject character)

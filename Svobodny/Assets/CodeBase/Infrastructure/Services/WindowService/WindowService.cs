@@ -59,6 +59,7 @@ namespace CodeBase.Infrastructure.Services.WindowService
         Level1EndDialog,
         Level2EndDialog,
         Level3EndDialog,
+        KnifeDialog,
         Count
     }
 }

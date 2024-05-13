@@ -62,6 +62,9 @@ namespace CodeBase.Infrastructure.Helpers
                 public const string Level1InitialDialog = "UI/Windows/Dialogs/Level1InitialDialog";
                 public const string Level1EndDialog = "UI/Windows/Dialogs/Level1EndDialog";
                 public const string Level2InitialDialog = "UI/Windows/Dialogs/Level2InitialDialog";
+                public const string Level2EndDialog = "UI/Windows/Dialogs/Level2EndDialog";
+                public const string Level3InitialDialog = "UI/Windows/Dialogs/Level3InitialDialog";
+                public const string KnifeDialog = "UI/Windows/Dialogs/KnifeDialog";
             }
         }
 

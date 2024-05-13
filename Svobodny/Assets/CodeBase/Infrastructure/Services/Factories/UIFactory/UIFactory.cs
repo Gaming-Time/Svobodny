@@ -63,13 +63,16 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level2InitialDialog,
                         _canvas);
                 case WindowID.Level3InitialDialog:
-                    return null;
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level3InitialDialog,
+                        _canvas);
                 case WindowID.Level1EndDialog:
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level1EndDialog, _canvas);
                 case WindowID.Level2EndDialog:
-                    return null;
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.Level2EndDialog, _canvas);
                 case WindowID.Level3EndDialog:
                     return null;
+                case WindowID.KnifeDialog:
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.KnifeDialog, _canvas);
                 case WindowID.Count:
                 default:
                     throw new ArgumentOutOfRangeException(nameof(windowID), windowID, null);
