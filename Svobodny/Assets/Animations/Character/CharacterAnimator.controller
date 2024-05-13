@@ -772,9 +772,6 @@ AnimatorStateMachine:
   - {fileID: -1744059840943692540}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 1003619190252574439}
-    second:
-    - {fileID: 4789193343232428368}
   - first: {fileID: 8033578042399217706}
     second:
     - {fileID: 704587672324300995}
@@ -787,6 +784,9 @@ AnimatorStateMachine:
     second:
     - {fileID: -233621137890345310}
     - {fileID: -3581286786231177382}
+  - first: {fileID: 1003619190252574439}
+    second:
+    - {fileID: 4789193343232428368}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -250, y: -10, z: 0}
   m_EntryPosition: {x: 140, y: 170, z: 0}
@@ -1534,7 +1534,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 5d1c67127fcc55b47b7dd2c2cf110c2b, type: 2}
-  m_Tag: 
+  m_Tag: MeleeAttack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -2014,7 +2014,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 0}
-  m_Tag: 
+  m_Tag: MeleeAttack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -2384,7 +2384,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e7b43785df787394c81a80b05591ab23, type: 2}
-  m_Tag: 
+  m_Tag: MeleeAttack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -2816,6 +2816,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -4363167293282255884}
   - {fileID: -7628761718189090664}
+  - {fileID: 6518988041984828684}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -2914,7 +2915,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 5be9528320185814587361062e6d18d8, type: 2}
-  m_Tag: 
+  m_Tag: MeleeAttack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -2937,7 +2938,7 @@ AnimatorStateTransition:
   m_IsExit: 1
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.008114792
+  m_TransitionOffset: 0
   m_ExitTime: 0.996242
   m_HasExitTime: 0
   m_HasFixedDuration: 1
@@ -3325,7 +3326,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 81e512e7fc0524e4cb00d3ba851f7439, type: 2}
-  m_Tag: 
+  m_Tag: MeleeAttack
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -3404,7 +3405,7 @@ AnimatorStateMachine:
     m_Position: {x: 230, y: 160, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: -5152452285531718858}
-    m_Position: {x: 480, y: 90, z: 0}
+    m_Position: {x: 520, y: 80, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions:
   - {fileID: -5083490437092196442}
@@ -3425,7 +3426,7 @@ AnimatorStateMachine:
     - {fileID: 401868275588610873}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 520, y: 250, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 70, y: 70, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 2573724831672228171}
@@ -3761,6 +3762,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &6518988041984828684
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsPistolSelected
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.7564935
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &6989090162109022143
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

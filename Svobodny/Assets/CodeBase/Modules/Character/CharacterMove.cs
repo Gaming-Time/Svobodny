@@ -1,6 +1,4 @@
-﻿using System;
-using CodeBase.Infrastructure.Services.Input;
-using CodeBase.Modules.Character.Animation;
+﻿using CodeBase.Infrastructure.Services.Input;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character
@@ -8,34 +6,24 @@ namespace CodeBase.Modules.Character
     public class CharacterMove : MonoBehaviour
     {
         private IInputService _inputService;
-        private CharacterAnimationEventsHandler _animationEventsHandler;
         private CharacterController _characterController;
 
         private bool _isStopped;
 
-        [SerializeField]
-        private float walkSpeed;
-        [SerializeField]
-        private float sneakSpeed;
+        [SerializeField] private float walkSpeed;
+        [SerializeField] private float sneakSpeed;
 
-        public void Construct(IInputService inputService, CharacterController characterController, CharacterAnimationEventsHandler animationEventsHandler)
+        public void Construct(IInputService inputService, CharacterController characterController)
         {
             _inputService = inputService;
             _characterController = characterController;
-            _animationEventsHandler = animationEventsHandler;
         }
 
         public void Init(float walkSpeed, float sneakSpeed)
         {
             (this.walkSpeed, this.sneakSpeed) = (walkSpeed, sneakSpeed);
         }
-
-
-        void Update()
-        {
-            
-        }
-
+        
         public void Move()
         {
             var inputNormalized = _inputService.MovementInput.normalized;
@@ -45,12 +33,5 @@ namespace CodeBase.Modules.Character
 
             _characterController.SimpleMove(move);
         }
-
-        private void OnDestroy()
-        {
-        }
-
-        public void StopMovement() => _isStopped = true;
-        public void AllowMovement() => _isStopped = false;
     }
 }

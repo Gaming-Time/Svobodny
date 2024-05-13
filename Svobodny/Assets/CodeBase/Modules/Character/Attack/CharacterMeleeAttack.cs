@@ -16,7 +16,9 @@ namespace CodeBase.Modules.Character.Attack
         private CharacterAnimatorController _animatorController;
         private CharacterAnimationEventsHandler _animationEvents;
         private CharacterVFXController _vfxController;
-        
+
+        public bool HasEnded { get; private set; }
+
         private Collider[] _hitCollection = new Collider[5];
 
         public void Construct(CharacterAnimatorController animatorController,
@@ -27,16 +29,21 @@ namespace CodeBase.Modules.Character.Attack
             _vfxController = vfxController;
 
             _animationEvents.AttackEvent += OnAttack;
+            _animationEvents.ExitAttackAnimationEvent += OnAttackAnimationExit;
         }
 
         private void OnDestroy()
         {
             if (_animationEvents)
+            {
                 _animationEvents.AttackEvent -= OnAttack;
+                _animationEvents.ExitAttackAnimationEvent -= OnAttackAnimationExit;
+            }
         }
 
         public void Attack()
         {
+            HasEnded = false;
             _animatorController.PlayAttackAnimation();
         }
 
@@ -58,6 +65,11 @@ namespace CodeBase.Modules.Character.Attack
                 var health = _hitCollection[i].GetComponentInParent<IHealth>();
                 health.DoDamage(DamageType.Melee, damage, transform.position);
             }
+        }
+
+        private void OnAttackAnimationExit()
+        {
+            HasEnded = true;
         }
     }
 }

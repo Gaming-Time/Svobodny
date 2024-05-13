@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
+using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
 using UnityEngine;
@@ -15,12 +16,14 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly ArmAnimatorController _armAnimatorController;
         private readonly Camera _camera;
         private readonly Transform _characterTransform;
+        private readonly CharacterAnimatorController _characterAnimatorController;
 
         private Plane _plane;
         private Vector3 _worldPosition;
 
         public ShootState(CharacterStateMachine stateMachine, IInputService inputService,
-            CharacterRangeAttack rangeAttack, Transform arm, Camera camera, Transform playerTransform)
+            CharacterRangeAttack rangeAttack, Transform arm, Camera camera, Transform playerTransform,
+            CharacterAnimatorController characterAnimatorController)
         {
             _stateMachine = stateMachine;
             _inputService = inputService;
@@ -28,17 +31,20 @@ namespace CodeBase.Modules.Character.StateMachine.States
             _arm = arm;
             _camera = camera;
             _characterTransform = playerTransform;
+            _characterAnimatorController = characterAnimatorController;
 
             _armAnimatorController = _arm.GetComponent<ArmAnimatorController>();
         }
 
         public void Exit()
         {
+            _characterAnimatorController.HandleAim(false);
             _arm.gameObject.SetActive(false);
         }
 
         public void Enter()
         {
+            _characterAnimatorController.HandleAim(true);
             _arm.gameObject.SetActive(true);
             SetArmPosition();
             _armAnimatorController.SetMouseVariables();
@@ -49,6 +55,7 @@ namespace CodeBase.Modules.Character.StateMachine.States
         {
             if (!_inputService.IsAimButtonHeld())
                 _stateMachine.Enter<MoveState>();
+          
             SetArmPosition();
             _armAnimatorController.SetMouseVariables();
             SetArmRotation();
