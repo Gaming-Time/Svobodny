@@ -285,6 +285,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _enemySpawners.Clear();
             _npcSpawners.Clear();
             _objectSpawners.Clear();
+            _gunSpawners.Clear();
         }
 
         private static void InitTransparency(GameObject character, Camera camera) =>
