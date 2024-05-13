@@ -2,7 +2,6 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Logic.Animations;
 using CodeBase.Modules.Character.UI;
-using CodeBase.Modules.Inventory;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character.Animation
@@ -43,7 +42,7 @@ namespace CodeBase.Modules.Character.Animation
             _animator.SetFloat(AnimatorVariables.Character.Movement.WalkSpeed, _walkSpeed);
             _animator.SetFloat(AnimatorVariables.Character.Movement.SneakSpeed, _sneakSpeed);
             _animator.SetBool(AnimatorVariables.Character.Movement.IsSneaking, _inputService.IsSneakButtonDown());
-            _animator.SetBool(AnimatorVariables.Character.Battle.IsAiming, _inputService.IsAimButtonHeld());
+
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementX, _inputService.MovementInput.x);
             _animator.SetFloat(AnimatorVariables.Character.Movement.MovementY, _inputService.MovementInput.y);
         }
@@ -52,6 +51,9 @@ namespace CodeBase.Modules.Character.Animation
         public void ExitWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.ExitWardrobe);
         public void Damage() => _animator.SetTrigger(AnimatorVariables.Character.Battle.HitTriggerHash);
         public void PlayAttackAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.AttackTriggerHash);
+
+        public void HandleAim(bool state) =>
+            _animator.SetBool(AnimatorVariables.Character.Battle.IsAiming, state);
 
         public void SelectGun(GunType? gun)
         {

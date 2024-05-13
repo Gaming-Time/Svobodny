@@ -115,7 +115,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             character.GetComponent<CharacterStateMachine>().Construct(_inputService,
                 character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
-                character.GetComponent<CharacterRangeAttack>(), camera);
+                character.GetComponent<CharacterRangeAttack>(),
+                character.GetComponent<CharacterAnimatorController>(), camera);
         }
 
         private void InitInventoryHandler(GameObject character)
@@ -299,8 +300,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitMovement(CharacterStaticData staticData, GameObject character)
         {
             var characterMove = character.GetComponent<CharacterMove>();
-            characterMove.Construct(_inputService, character.GetComponent<CharacterController>(),
-                character.GetComponent<CharacterAnimationEventsHandler>());
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
         }
 

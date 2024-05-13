@@ -1,6 +1,8 @@
+using System.Collections;
+using CodeBase.Infrastructure;
 using CodeBase.Infrastructure.States;
-using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
+using UnityEngine;
 
 namespace CodeBase.Modules.Character.StateMachine.States
 {
@@ -8,28 +10,37 @@ namespace CodeBase.Modules.Character.StateMachine.States
     {
         private readonly CharacterStateMachine _stateMachine;
         private readonly CharacterMeleeAttack _characterMeleeAttack;
-        private readonly CharacterAnimationEventsHandler _animationEventsHandler;
+        private readonly ICoroutineRunner _coroutineRunner;
+        private readonly WaitUntil _waitUntilAttackEnded;
 
         public MeleeAttackState(CharacterStateMachine stateMachine, CharacterMeleeAttack characterMeleeAttack,
-            CharacterAnimationEventsHandler animationEventsHandler)
+            ICoroutineRunner coroutineRunner)
         {
             _stateMachine = stateMachine;
             _characterMeleeAttack = characterMeleeAttack;
-            _animationEventsHandler = animationEventsHandler;
+            _coroutineRunner = coroutineRunner;
+
+            _waitUntilAttackEnded = new WaitUntil(() => _characterMeleeAttack.HasEnded);
         }
 
-        public void Exit() => _animationEventsHandler.ExitAttackAnimationEvent -= OnAttackAnimationFinished;
+        public void Exit()
+        {
+        }
 
         public void Enter()
         {
             _characterMeleeAttack.Attack();
-            _animationEventsHandler.ExitAttackAnimationEvent += OnAttackAnimationFinished;
+            _coroutineRunner.StartCoroutine(WaitForAttackAnimationFinish());
         }
-
-        private void OnAttackAnimationFinished() => _stateMachine.Enter<MoveState>();
 
         public void Update()
         {
+        }
+
+        private IEnumerator WaitForAttackAnimationFinish()
+        {
+            yield return _waitUntilAttackEnded;
+            _stateMachine.Enter<MoveState>();
         }
     }
 }

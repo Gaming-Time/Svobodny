@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
+using UnityEngine;
 
 namespace CodeBase.Modules.Character.StateMachine.States
 {
