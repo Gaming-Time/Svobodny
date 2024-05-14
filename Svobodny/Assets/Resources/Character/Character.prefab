@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7378573651756019313}
   m_Layer: 10
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1370183255655980861}
   m_Layer: 10
   m_Name: ShootPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 3428441857636125859}
   m_Layer: 12
   m_Name: PlayerTrigger
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2657502627189157464}
   m_Layer: 10
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 2430071437837134090}
   m_Layer: 10
   m_Name: AttackPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 8618279790095584618}
   m_Layer: 10
   m_Name: Arm
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 4699968031450257136}
   m_Layer: 10
   m_Name: FOVviz
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 7172968289510517070}
   m_Layer: 10
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 8206927296214202628}
   m_Layer: 10
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1057,9 +1057,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6280324468228504056, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8534655020633264906, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
       propertyPath: m_Name
       value: vfx_Blood01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534655020633264906, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1084,9 +1092,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6485721414648319185}
     m_Modifications:
+    - target: {fileID: 1399039714342552908, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1455571107053818084, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_Name
       value: vfx_Slash01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455571107053818084, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1668481300488851538, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1178,6 +1194,14 @@ PrefabInstance:
     - target: {fileID: 722193391058278434, guid: dfd14a033a19c3a44b22dd9ad60aab82, type: 3}
       propertyPath: m_Name
       value: vfx_Flash01
+      objectReference: {fileID: 0}
+    - target: {fileID: 722193391058278434, guid: dfd14a033a19c3a44b22dd9ad60aab82, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888805714511974229, guid: dfd14a033a19c3a44b22dd9ad60aab82, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7022365002491037431, guid: dfd14a033a19c3a44b22dd9ad60aab82, type: 3}
       propertyPath: m_LocalRotation.w

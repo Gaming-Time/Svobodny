@@ -15,6 +15,7 @@ using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Logic.Enemies;
 using CodeBase.Logic.Npcs;
+using CodeBase.Logic.Triggers;
 using CodeBase.Logic.UsableObjects;
 using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Logic.UsableObjects.Doors;
@@ -122,7 +123,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private void InitInventoryHandler(GameObject character)
         {
             _inventoryHandler = character.GetComponent<InventoryHandler>();
-            _inventoryHandler.Construct(_inputService, character.GetComponent<CharacterAnimatorController>());
+            _inventoryHandler.Construct(_inputService, _windowService,
+                character.GetComponent<CharacterAnimatorController>());
         }
 
         private void InitCharacterAttack(GameObject character)
@@ -280,11 +282,20 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             }
         }
 
+        public void InitTriggers()
+        {
+            foreach (var dialogTrigger in Object.FindObjectsOfType<DialogTrigger>())
+            {
+                dialogTrigger.Construct(_windowService);
+            }
+        }
+
         public void Cleanup()
         {
             _enemySpawners.Clear();
             _npcSpawners.Clear();
             _objectSpawners.Clear();
+            _gunSpawners.Clear();
         }
 
         private static void InitTransparency(GameObject character, Camera camera) =>

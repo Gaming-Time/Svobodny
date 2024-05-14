@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace CodeBase.Modules.Character.UI
     public class InventoryHandler : MonoBehaviour
     {
         private IInputService _inputService;
+        private IWindowService _windowService;
         private CharacterAnimatorController _characterAnimatorController;
 
         private List<Item> _items = new();
@@ -23,12 +25,14 @@ namespace CodeBase.Modules.Character.UI
         public event Action<GunType> GunAdded;
         public event Action<GunType> GunRemoved;
         public event Action<GunType?> GunSelected;
-        
 
-        public void Construct(IInputService inputService, CharacterAnimatorController animatorController)
+
+        public void Construct(IInputService inputService, IWindowService windowService,
+            CharacterAnimatorController animatorController)
         {
             _inputService = inputService;
             _characterAnimatorController = animatorController;
+            _windowService = windowService;
 
             Initialize();
         }
@@ -81,6 +85,9 @@ namespace CodeBase.Modules.Character.UI
 
             if (SelectedGun == null)
                 SelectGun(gunType);
+            
+            if(gunType == GunType.Knife)
+                _windowService.OpenOrCreateWindow(WindowID.KnifeDialog);
         }
 
         public void RemoveGun(GunType gunType)

@@ -23,6 +23,11 @@ namespace CodeBase.Infrastructure.Services.Mediator
             _buttonMediator.ExitToMenuEvent += ExitToMenu;
         }
 
+        public void LoadLevel(string levelName)
+        {
+            _gameStateMachine.Enter<LoadLevelState, string>(levelName);
+        }
+
         private void ExitToMenu()
         {
             Time.timeScale = 1f;

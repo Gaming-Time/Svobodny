@@ -53,6 +53,13 @@ namespace CodeBase.Infrastructure.Services.WindowService
         DoorFourWindow,
         DoorFiveWindow,
         DoorSixWindow,
+        Level1InitialDialog,
+        Level2InitialDialog,
+        Level3InitialDialog,
+        Level1EndDialog,
+        Level2EndDialog,
+        Level3EndDialog,
+        KnifeDialog,
         Count
     }
 }
