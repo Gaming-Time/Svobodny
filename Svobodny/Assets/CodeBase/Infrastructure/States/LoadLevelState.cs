@@ -132,6 +132,9 @@ namespace CodeBase.Infrastructure.States
 
         private LevelStaticData LevelStaticData() => _staticDataService.ForLevel(SceneManager.GetActiveScene().name);
 
-        public void Exit() => _loadingCurtain.Hide();
+        public void Exit()
+        {
+            
+        }
     }
 }

@@ -27,6 +27,8 @@ namespace CodeBase.Infrastructure.States
 
         public void Enter()
         {
+            Time.timeScale = 1;
+            _curtain.Hide();
             _coroutineRunner.StartCoroutine(WaitForCurtainToFadeOut());
         }
 
@@ -38,7 +40,7 @@ namespace CodeBase.Infrastructure.States
 
         private IEnumerator WaitForCurtainToFadeOut()
         {
-            yield return new WaitUntil(() => !_curtain.isActiveAndEnabled);
+            yield return new WaitUntil(() => _curtain.IsHidden);
             ShowStartDialog();
         }
 
