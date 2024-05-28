@@ -15,6 +15,7 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
 
             var playerEntity = enemyContext.Memory.allObservations
                 .First(observation => observation.entity.Type == EntityType.Player).entity;
+            enemyEntity.CurrentWaypointIndex = -1;
 
             enemyEntity.MoveTarget = playerEntity.Position;
         }

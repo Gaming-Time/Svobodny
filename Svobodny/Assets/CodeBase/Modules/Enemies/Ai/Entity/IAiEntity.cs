@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Ai.Entity
@@ -11,6 +12,8 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         float MeleeAttackRange { get; }
         Vector3 Velocity { get; }
         public bool IsDead { get; }
+        List<Vector3> Waypoints { get; }
+        int CurrentWaypointIndex { get; set; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);

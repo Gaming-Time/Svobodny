@@ -26,8 +26,9 @@ namespace CodeBase.Editor
             if (GUILayout.Button("Collect"))
             {
                 levelData!.EnemySpawners = FindObjectsOfType<EnemySpawnMarker>().Select(x =>
-                    new EnemySpawnerData(x.GetComponent<UniqueId>().Id, x.TypeID, x.transform.rotation,
-                        x.transform.position)).ToList();
+                        new EnemySpawnerData(x.GetComponent<UniqueId>().Id, x.TypeID, x.transform.rotation,
+                            x.transform.position, x.Waypoints.Select(waypoint => waypoint.transform.position).ToList()))
+                    .ToList();
                 levelData.NpcSpawners = FindObjectsOfType<NPCSpawnMarker>().Select(x =>
                     new NpcSpawnerData(x.GetComponent<UniqueId>().Id, x.TypeId, x.transform.rotation,
                         x.transform.position)).ToList();
