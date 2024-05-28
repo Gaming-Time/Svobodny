@@ -41,14 +41,9 @@ namespace CodeBase.Logic.UsableObjects.Closet
             _animatorController.Enter();
             _characterWardrobeInteraction.Enter(characterPivot.position);
         }
-
-        public void GetOut()
-        {
-            _animatorController.Exit();
-        }
-
         public void StartPlayerAnimation() => _characterWardrobeInteraction.Exit();
-
         public void OnExitAnimationFinished() => _isActive = false;
+
+        private void GetOut() => _animatorController.Exit();
     }
 }

@@ -21,7 +21,6 @@ namespace CodeBase.Infrastructure.States
 
         public void Exit()
         {
-            
         }
 
         public void Enter()
@@ -33,7 +32,7 @@ namespace CodeBase.Infrastructure.States
                 Object.FindObjectOfType<MenuController>().Construct(_stateMachine);
                 return;
             }
-            
+
             _sceneLoader.Load(MainMenuSceneName, () =>
             {
                 Object.FindObjectOfType<MenuController>().Construct(_stateMachine);

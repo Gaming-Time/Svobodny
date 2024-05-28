@@ -22,8 +22,7 @@ namespace CodeBase.Infrastructure
             {
                 [typeof(MainMenuState)] = new MainMenuState(curtain, sceneLoader, this),
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadProgressState)] = new LoadProgressState(this,
-                    services.Single<IStaticDataService>(), services.Single<IProgressService>()),
+                [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IProgressService>()),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain,
                     services.Single<IGameFactory>(),
                     services.Single<IStaticDataService>(), services.Single<IProgressService>(),
@@ -46,8 +45,6 @@ namespace CodeBase.Infrastructure
             state.Enter(payload);
         }
 
-        public void ShutDown() => _activeState.Exit();
-
         private TState ChangeState<TState>() where TState : class, IExitableState
         {
             _activeState?.Exit();
@@ -57,6 +54,7 @@ namespace CodeBase.Infrastructure
             return state;
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
+        private TState GetState<TState>() where TState : class, IExitableState =>
+            _states[typeof(TState)] as TState;
     }
 }

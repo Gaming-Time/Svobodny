@@ -28,7 +28,7 @@ namespace CodeBase.Infrastructure.Services.Factories.EnemyFactory
             {
                 MonsterTypeID.Test => AssetPath.TestEnemyPath,
                 MonsterTypeID.Knife => AssetPath.EnemyKnifePath,
-                _ => throw new ArgumentException(typeId.ToString() + " не реализован в фабрике"),
+                _ => throw new ArgumentException(typeId + " не реализован в фабрике"),
             };
         }
     }

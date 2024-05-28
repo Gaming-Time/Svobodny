@@ -7,10 +7,6 @@ namespace CodeBase.Modules.Enemies.Ai.Memory
     public class AiMemory
     {
         private List<Observation> _observations;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AIMemory"/> class.
-        /// </summary>
         public AiMemory()
         {
             _observations = new List<Observation>(10);

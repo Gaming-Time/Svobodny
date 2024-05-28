@@ -40,6 +40,10 @@ namespace CodeBase.Infrastructure.States
             _loadingCurtain.Show();
             _sceneLoader.Load(payload, OnLoaded);
         }
+        
+        public void Exit()
+        {
+        }
 
         private void OnLoaded()
         {
@@ -53,37 +57,25 @@ namespace CodeBase.Infrastructure.States
         {
             _levelStaticData = LevelStaticData();
             var characterData = _staticDataService.ForCharacter();
-            Vector3 playerPosition = new();
-            Quaternion playerRotation = new();
 
-            switch (_levelStaticData.initialPhase)
-            {
-                case LevelPhase.Day:
-                    CreateNpcSpawners();
-                    _gameFactory.SpawnAllNpcs();
-                    playerPosition = _levelStaticData.DayPlayerPosition;
-                    playerRotation = _levelStaticData.DayPlayerRotation;
-                    break;
-                case LevelPhase.Night:
-                    CreateEnemySpawners();
-                    _gameFactory.SpawnAllMonsters();
-                    playerPosition = _levelStaticData.NightPlayerPosition;
-                    playerRotation = _levelStaticData.NightPlayerRotation;
-                    break;
-            }
-            
+            CreateEnemySpawners();
+            _gameFactory.SpawnAllMonsters();
+            var playerPosition = _levelStaticData.NightPlayerPosition;
+            var playerRotation = _levelStaticData.NightPlayerRotation;
+
+
             CreateObjectSpawners();
             CreateGunObjectsSpawners();
             _gameFactory.CreateHud();
             _gameFactory.CreateHealthUIHandler();
-            
+
             var character = _gameFactory.CreateCharacter(playerPosition, playerRotation, characterData);
-            
+
             _gameFactory.CreateItemsUIHandler();
             _gameFactory.CreateGunsUiHandler();
-            
+
             _gameFactory.InitCamera(character);
-            
+
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
             _gameFactory.InitTriggers();
@@ -121,20 +113,6 @@ namespace CodeBase.Infrastructure.States
             }
         }
 
-        private void CreateNpcSpawners()
-        {
-            var spawners = _levelStaticData.NpcSpawners;
-            foreach (var spawner in spawners)
-            {
-                _gameFactory.CreateNpcSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
-            }
-        }
-
         private LevelStaticData LevelStaticData() => _staticDataService.ForLevel(SceneManager.GetActiveScene().name);
-
-        public void Exit()
-        {
-            
-        }
     }
 }

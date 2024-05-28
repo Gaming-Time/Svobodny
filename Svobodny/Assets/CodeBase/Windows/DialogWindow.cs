@@ -38,6 +38,9 @@ namespace CodeBase.Windows
         }
 
         private void HideCurrentPhrase() => phrases[_currentPhraseIndex].SetActive(false);
-        private void ShowCurrentPhrase() => phrases[_currentPhraseIndex].SetActive(true);
+        private void ShowCurrentPhrase()
+        {
+            phrases[_currentPhraseIndex].SetActive(true);
+        }
     }
 }
