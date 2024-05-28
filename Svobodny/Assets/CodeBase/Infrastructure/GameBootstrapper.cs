@@ -1,6 +1,4 @@
-﻿using System;
-using CodeBase.Infrastructure.States;
-using CodeBase.Modules.UI.MainMenu;
+﻿using CodeBase.Infrastructure.States;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,19 +15,14 @@ namespace CodeBase.Infrastructure
         {
             _game = new Game(this,Instantiate(CurtainPrefab));
             
-            if(SceneManager.GetActiveScene().name != "MainMenu")
+            if(SceneManager.GetActiveScene().name != MenuSceneName)
                 _game.StateMachine.Enter<BootstrapState>();
             else
             {
                 _game.StateMachine.Enter<MainMenuState>();
             }
             
-            
             DontDestroyOnLoad(this);
         }
-
-        private void OnApplicationQuit() => _game.StateMachine.ShutDown();
-
-        public void ChangeLevel(){}
     }
 }

@@ -24,7 +24,6 @@ namespace CodeBase.Infrastructure
 
         private IEnumerator DoFadeIn()
         {
-            Debug.Log(Time.timeScale);
             while (Curtain.alpha > 0)
             {
                 Curtain.alpha -= 0.03f;

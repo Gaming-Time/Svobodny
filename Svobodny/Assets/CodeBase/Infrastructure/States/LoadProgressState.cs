@@ -1,5 +1,4 @@
 ﻿using CodeBase.Data;
-using CodeBase.Infrastructure.Services.StaticData;
 using System;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Logic;
@@ -11,13 +10,11 @@ namespace CodeBase.Infrastructure.States
     {
         private const string DefaultLevelName = "Level1 1";
         private readonly GameStateMachine _gameStateMachine;
-        private readonly IStaticDataService _staticDataService;
         private readonly IProgressService _progressService;
 
-        public LoadProgressState(GameStateMachine gameStateMachine, IStaticDataService staticDataService, IProgressService progressService)
+        public LoadProgressState(GameStateMachine gameStateMachine, IProgressService progressService)
         {
             _gameStateMachine = gameStateMachine;
-            _staticDataService = staticDataService;
             _progressService = progressService;
         }
 

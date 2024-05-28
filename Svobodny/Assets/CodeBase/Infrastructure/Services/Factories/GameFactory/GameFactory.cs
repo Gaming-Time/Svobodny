@@ -105,64 +105,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             return _character;
         }
 
-        private void InitArm(GameObject character, Camera camera)
-        {
-            character.GetComponentInChildren<ArmAnimatorController>(true)
-                .Construct(_inputService, camera, character.transform);
-        }
-
-        private void InitStateMachine(GameObject character, Camera camera)
-        {
-            character.GetComponent<CharacterStateMachine>().Construct(_inputService,
-                character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
-                character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
-                character.GetComponent<CharacterRangeAttack>(),
-                character.GetComponent<CharacterAnimatorController>(), camera);
-        }
-
-        private void InitInventoryHandler(GameObject character)
-        {
-            _inventoryHandler = character.GetComponent<InventoryHandler>();
-            _inventoryHandler.Construct(_inputService, _windowService,
-                character.GetComponent<CharacterAnimatorController>());
-        }
-
-        private void InitCharacterAttack(GameObject character)
-        {
-            var characterAttack = character.GetComponent<CharacterMeleeAttack>();
-            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
-                character.GetComponent<CharacterAnimationEventsHandler>(),
-                character.GetComponent<CharacterVFXController>());
-        }
-
-        private void InitInteractions(GameObject character)
-        {
-            var wardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
-            var animatorController = character.GetComponent<CharacterAnimatorController>();
-            var characterController = character.GetComponent<CharacterController>();
-            var characterMove = character.GetComponent<CharacterMove>();
-
-            wardrobeInteraction.Construct(animatorController, characterController, characterMove);
-        }
-
-        private void InitHealth(CharacterStaticData staticData, GameObject character)
-        {
-            var characterHealth = character.GetComponent<CharacterHealth>();
-            var healthHandler = character.GetComponent<HealthHandler>();
-
-            healthHandler.Construct(_healthUIHandler, staticData.Health);
-            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
-                character.GetComponent<CharacterVFXController>(), healthHandler,
-                character.GetComponent<CharacterStateMachine>(),
-                staticData.Health);
-        }
-
-        private void InitFov(GameObject character, Camera camera, IInputService inputService)
-        {
-            var moveWithMouseScript = character.GetComponentInChildren<RotateWithMouse>();
-            moveWithMouseScript.Construct(camera, inputService);
-        }
-
         public void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID)
         {
             EnemySpawner spawner = _assetProvider.Instantiate(AssetPath.EnemySpawnerPath, position, rotation)
@@ -297,6 +239,65 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Clear();
             _gunSpawners.Clear();
         }
+
+        private void InitArm(GameObject character, Camera camera)
+        {
+            character.GetComponentInChildren<ArmAnimatorController>(true)
+                .Construct(_inputService, camera, character.transform);
+        }
+
+        private void InitStateMachine(GameObject character, Camera camera)
+        {
+            character.GetComponent<CharacterStateMachine>().Construct(_inputService,
+                character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
+                character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
+                character.GetComponent<CharacterRangeAttack>(),
+                character.GetComponent<CharacterAnimatorController>(), camera);
+        }
+
+        private void InitInventoryHandler(GameObject character)
+        {
+            _inventoryHandler = character.GetComponent<InventoryHandler>();
+            _inventoryHandler.Construct(_inputService, _windowService,
+                character.GetComponent<CharacterAnimatorController>());
+        }
+
+        private void InitCharacterAttack(GameObject character)
+        {
+            var characterAttack = character.GetComponent<CharacterMeleeAttack>();
+            characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
+                character.GetComponent<CharacterAnimationEventsHandler>(),
+                character.GetComponent<CharacterVFXController>());
+        }
+
+        private void InitInteractions(GameObject character)
+        {
+            var wardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
+            var animatorController = character.GetComponent<CharacterAnimatorController>();
+            var characterController = character.GetComponent<CharacterController>();
+            var characterMove = character.GetComponent<CharacterMove>();
+
+            wardrobeInteraction.Construct(animatorController, characterController, characterMove);
+        }
+
+        private void InitHealth(CharacterStaticData staticData, GameObject character)
+        {
+            var characterHealth = character.GetComponent<CharacterHealth>();
+            var healthHandler = character.GetComponent<HealthHandler>();
+
+            healthHandler.Construct(_healthUIHandler, staticData.Health);
+            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
+                character.GetComponent<CharacterVFXController>(), healthHandler,
+                character.GetComponent<CharacterStateMachine>(),
+                staticData.Health);
+        }
+
+        private void InitFov(GameObject character, Camera camera, IInputService inputService)
+        {
+            var moveWithMouseScript = character.GetComponentInChildren<RotateWithMouse>();
+            moveWithMouseScript.Construct(camera, inputService);
+        }
+
 
         private static void InitTransparency(GameObject character, Camera camera) =>
             character.GetComponent<PlayerTransparency>().Construct(camera);

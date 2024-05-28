@@ -5,7 +5,6 @@ namespace CodeBase.Infrastructure.Services.Input
     public class DesktopInputService : AbstractInputService
     {
         public override Vector2 MovementInput => GetMovementInput();
-
         public override Vector2 CameraInput => GetCameraInput();
         public override Vector3 MousePosition => GetMousePosition();
         public override float ScrollInput => GetScrollInput();

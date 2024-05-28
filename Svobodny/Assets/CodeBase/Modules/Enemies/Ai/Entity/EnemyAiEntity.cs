@@ -16,7 +16,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         [SerializeField] private float meleeAttackRange;
         [SerializeField] private float fovAngle;
 
-        public EntityType Type { get; }
+        public EntityType Type => EntityType.Enemy;
         public GameObject GameObject => gameObject;
         public Vector3 Position => transform.position;
         public Vector3? MoveTarget { get; set; }
@@ -27,7 +27,9 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public Vector3 Velocity => _mover.Velocity;
         public bool IsDead => _enemyHealth.Health <= 0;
 
-        public void Construct(IMove mover, EnemyAttack attacker, EnemyHealth enemyHealth, float scanRange, float meleeAttackRange)
+        public void Construct(IMove mover, EnemyAttack attacker, 
+            EnemyHealth enemyHealth, float scanRange,
+            float meleeAttackRange)
         {
             _mover = mover;
             _attacker = attacker;

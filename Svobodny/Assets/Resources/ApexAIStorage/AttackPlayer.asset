@@ -26,8 +26,8 @@ MonoBehaviour:
     Assembly-CSharp"}]}}},{"@type":"Apex.AI.ScoreSelector, ApexAI","_id":f7e1eaa70eb04402ad62a64be99227a9,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.AttackTarget,
     Assembly-CSharp"}]}}}]}'
-  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":100,"@top":100,"@width":240,"@height":220},"QualifierView":{"Name":"Entity
+  editorConfiguration: '{"offset":{"@x":58,"@y":-46},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":153,"@top":49,"@width":228,"@height":209},"QualifierView":{"Name":"Entity
     is dead"},"QualifierView":{"Name":"Player is visible and in attack range","ActionView":{"@connectorType":"Composite","Name":"Set
     player as attack target"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Allow
-    movement and clear target"}}},"SelectorView":{"ViewArea":{"@left":520,"@top":160,"@width":200,"@height":100},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Stop
+    movement and clear target"}}},"SelectorView":{"ViewArea":{"@left":552,"@top":106,"@width":190,"@height":95},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Stop
     and attack target"}}}}'

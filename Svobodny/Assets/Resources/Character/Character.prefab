@@ -968,7 +968,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2056
   delay: 1
-  pistolDamage: 0
+  pistolDamage: 3
 --- !u!114 &8003553684473161306
 MonoBehaviour:
   m_ObjectHideFlags: 0

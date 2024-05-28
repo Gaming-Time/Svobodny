@@ -24,9 +24,6 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                 TargetLayerMask,
                 QueryTriggerInteraction.Collide);
 
-            
-            Debug.Log(enemyEntity.Velocity);
-
             for (int i = 0; i < hitsCount; i++)
             {
                 var hit = hits[i];

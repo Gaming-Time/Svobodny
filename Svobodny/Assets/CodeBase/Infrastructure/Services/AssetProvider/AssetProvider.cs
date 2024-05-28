@@ -16,14 +16,6 @@ namespace CodeBase.Infrastructure.Services.AssetProvider
         public GameObject Instantiate(string path, Vector3 at, Quaternion rotation) =>
             Object.Instantiate(LoadPrefab(path), at, rotation);
 
-        public GameObject Instantiate(string path, Vector3 at, Quaternion rotation, Vector3 scale)
-        {
-            var instance = Instantiate(path, at, rotation);
-            instance.transform.localScale = scale;
-
-            return instance;
-        }
-
         public T Instantiate<T>(string path) where T : Object =>
             Object.Instantiate(LoadComponentOfPrefab<T>(path));
 
