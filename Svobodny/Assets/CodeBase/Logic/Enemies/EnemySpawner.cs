@@ -1,4 +1,5 @@
-﻿using CodeBase.Data.StaticData.Monster;
+﻿using System.Collections.Generic;
+using CodeBase.Data.StaticData.Monster;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using UnityEngine;
 
@@ -9,11 +10,13 @@ namespace CodeBase.Logic.Enemies
         private IEnemyFactory _enemyFactory;
 
         public MonsterTypeID TypeID;
+        public List<Vector3> Waypoints;
 
-        public void Construct(IEnemyFactory enemyFactory, MonsterTypeID typeID)
+        public void Construct(IEnemyFactory enemyFactory, MonsterTypeID typeID, List<Vector3> waypoints)
         {
             _enemyFactory = enemyFactory;
             TypeID = typeID;
+            Waypoints = waypoints;
         }
 
         public GameObject Spawn()

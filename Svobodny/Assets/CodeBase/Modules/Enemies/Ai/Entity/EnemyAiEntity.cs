@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
@@ -26,10 +27,13 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public float MeleeAttackRange => meleeAttackRange;
         public Vector3 Velocity => _mover.Velocity;
         public bool IsDead => _enemyHealth.Health <= 0;
+        public List<Vector3> Waypoints { get; private set; }
+
+        public int CurrentWaypointIndex { get; set; }
 
         public void Construct(IMove mover, EnemyAttack attacker, 
             EnemyHealth enemyHealth, float scanRange,
-            float meleeAttackRange)
+            float meleeAttackRange, List<Vector3> waypoints)
         {
             _mover = mover;
             _attacker = attacker;
@@ -37,6 +41,8 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
             this.scanRange = scanRange;
             this.meleeAttackRange = meleeAttackRange;
+            Waypoints = waypoints;
+            CurrentWaypointIndex = -1;
         }
 
         public void MoveTo(Vector3 destination)

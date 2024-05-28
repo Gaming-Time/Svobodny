@@ -40,7 +40,7 @@ namespace CodeBase.Infrastructure.States
             _loadingCurtain.Show();
             _sceneLoader.Load(payload, OnLoaded);
         }
-        
+
         public void Exit()
         {
         }
@@ -109,7 +109,8 @@ namespace CodeBase.Infrastructure.States
             var spawners = _levelStaticData.EnemySpawners;
             foreach (var spawner in spawners)
             {
-                _gameFactory.CreateEnemySpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId);
+                _gameFactory.CreateEnemySpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.TypeId,
+                    spawner.Waypoints);
             }
         }
 

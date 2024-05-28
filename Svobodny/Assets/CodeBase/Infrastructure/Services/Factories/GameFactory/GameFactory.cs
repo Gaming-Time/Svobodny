@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
@@ -13,6 +14,7 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Logic;
 using CodeBase.Logic.Enemies;
 using CodeBase.Logic.Npcs;
 using CodeBase.Logic.Triggers;
@@ -105,11 +107,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             return _character;
         }
 
-        public void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID)
+        public void CreateEnemySpawner(Vector3 position, Quaternion rotation, string spawnerID, MonsterTypeID typeID,
+            List<Vector3> waypoints)
         {
             EnemySpawner spawner = _assetProvider.Instantiate(AssetPath.EnemySpawnerPath, position, rotation)
                 .GetComponent<EnemySpawner>();
-            spawner.Construct(_enemyFactory, typeID);
+            spawner.Construct(_enemyFactory, typeID,
+                waypoints);
             _enemySpawners.Add(spawnerID, spawner);
         }
 
@@ -210,7 +214,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
                     vfxController);
                 monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
-                    monsterData.MeleeAttackRange);
+                    monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
             }
