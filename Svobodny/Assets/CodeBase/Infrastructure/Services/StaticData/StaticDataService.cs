@@ -6,9 +6,9 @@ using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
+using CodeBase.Data.StaticData.Sound;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Modules.Character.UI;
-using CodeBase.Modules.Inventory;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.StaticData
@@ -20,6 +20,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<NpcTypeId, NpcStaticData> _npcs;
         private Dictionary<ItemType, ItemStaticData> _items;
         private Dictionary<GunType, GunStaticData> _guns;
+        private Dictionary<SoundType, SoundStaticData> _sounds;
         private CharacterStaticData _character;
 
 
@@ -35,6 +36,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(itemData => itemData.ItemType, itemData => itemData);
             _guns = Resources.LoadAll<GunStaticData>(AssetPath.StaticDataPath.Gun)
                 .ToDictionary(gunData => gunData.GunType, gunData => gunData);
+            _sounds = Resources.LoadAll<SoundStaticData>(AssetPath.StaticDataPath.Sound)
+                .ToDictionary(soundData => soundData.SoundType, soundData => soundData);
             _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
@@ -51,6 +54,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
             _items.GetValueOrDefault(itemType);
 
         public GunStaticData ForGun(GunType gunType) => _guns.GetValueOrDefault(gunType);
+
+        public SoundStaticData ForSound(SoundType soundType) => _sounds.GetValueOrDefault(soundType);
 
         public CharacterStaticData ForCharacter() => _character;
     }

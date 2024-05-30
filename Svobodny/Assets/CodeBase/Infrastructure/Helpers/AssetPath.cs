@@ -22,6 +22,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Character = "Static Data/Character/CharacterData";
             public const string Item = "Static Data/Items";
             public const string Gun = "Static Data/Guns";
+            public const string Sound = "Static Data/Sounds";
         }
 
         public static class ObjectsPath
