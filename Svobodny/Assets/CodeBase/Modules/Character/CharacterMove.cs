@@ -34,18 +34,6 @@ namespace CodeBase.Modules.Character
             Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
 
             var sneakInput = _inputService.IsSneakButtonDown();
-
-            if (move.magnitude > 0.1)
-            {
-                if(sneakInput)
-                    _audioController.ActivateSlowFootsteps();
-                else
-                    _audioController.ActivateFootSteps();
-            }
-            else
-            {
-                _audioController.DeactivateFootSteps();
-            }
             
             move *= sneakInput ? sneakSpeed : walkSpeed;
 

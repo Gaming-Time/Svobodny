@@ -9,6 +9,7 @@ namespace CodeBase.Modules.Enemies.Audio
         [SerializeField] private AudioSource walkSource;
         [SerializeField] private AudioSource detectionSource;
         [SerializeField] private AudioSource attackSource;
+        [SerializeField] private AudioSource deathSource;
 
         private IStaticDataService _staticDataService;
 
@@ -16,6 +17,7 @@ namespace CodeBase.Modules.Enemies.Audio
         private AudioClip _detectionClip;
         private AudioClip _slashClip;
         private AudioClip _attackDamageClip;
+        private AudioClip _deathClip;
 
         public void Construct(IStaticDataService staticDataService)
         {
@@ -25,8 +27,10 @@ namespace CodeBase.Modules.Enemies.Audio
             _detectionClip = _staticDataService.ForSound(SoundType.EnemyDetection).AudioClip;
             _slashClip = _staticDataService.ForSound(SoundType.MeleeAttack).AudioClip;
             _attackDamageClip = _staticDataService.ForSound(SoundType.Slash).AudioClip;
+            _deathClip = _staticDataService.ForSound(SoundType.EnemyFall).AudioClip;
             walkSource.clip = _walkClip;
             detectionSource.clip = _detectionClip;
+            deathSource.clip = _deathClip;
         }
 
         public void PlayDetection() => detectionSource.Play();
@@ -55,6 +59,8 @@ namespace CodeBase.Modules.Enemies.Audio
         {
             StopWalkSource();
         }
+
+        public void PlayDeath() => deathSource.Play();
 
         private void StopWalkSource()
         {       

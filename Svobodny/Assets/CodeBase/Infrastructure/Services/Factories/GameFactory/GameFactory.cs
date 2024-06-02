@@ -108,7 +108,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _character.GetComponent<CharacterRangeAttack>().Construct(_inputService,
                 _character.GetComponent<CharacterVFXController>(),
                 audioController, camera);
-            InitStateMachine(_character, camera);
+            InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
             return _character;
@@ -218,6 +218,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 audioController.Construct(_staticData);
                 monsterMover.Construct(monsterAgent, animationEventHandler, audioController, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
+                    audioController,
                     monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
@@ -268,13 +269,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 .Construct(_inputService, camera, character.transform);
         }
 
-        private void InitStateMachine(GameObject character, Camera camera)
+        private void InitStateMachine(GameObject character, Camera camera, CharacterAudioController audioController)
         {
             character.GetComponent<CharacterStateMachine>().Construct(_inputService,
                 character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
                 character.GetComponent<CharacterRangeAttack>(),
-                character.GetComponent<CharacterAnimatorController>(), camera);
+                character.GetComponent<CharacterAnimatorController>(), audioController,
+                character.GetComponent<CharacterController>(), camera);
         }
 
         private void InitInventoryHandler(GameObject character)
