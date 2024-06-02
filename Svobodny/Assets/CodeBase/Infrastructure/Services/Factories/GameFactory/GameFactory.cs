@@ -222,7 +222,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
                     vfxController, audioController);
-                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, audioController,
+                    monsterData.ScanRange,
                     monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);

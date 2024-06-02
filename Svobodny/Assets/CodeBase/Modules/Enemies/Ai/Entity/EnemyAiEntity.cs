@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CodeBase.Modules.Enemies.Attack;
+using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         private IMove _mover;
         private EnemyAttack _attacker;
         private EnemyHealth _enemyHealth;
+        private EnemyAudioController _audioController;
 
         [SerializeField] private float scanRange;
         [SerializeField] private float meleeAttackRange;
@@ -30,19 +32,22 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public List<Vector3> Waypoints { get; private set; }
 
         public int CurrentWaypointIndex { get; set; }
+        public bool WasPlayerVisiblePreviously { get; set; }
 
-        public void Construct(IMove mover, EnemyAttack attacker, 
-            EnemyHealth enemyHealth, float scanRange,
+        public void Construct(IMove mover, EnemyAttack attacker,
+            EnemyHealth enemyHealth, EnemyAudioController audioController, float scanRange,
             float meleeAttackRange, List<Vector3> waypoints)
         {
             _mover = mover;
             _attacker = attacker;
             _enemyHealth = enemyHealth;
+            _audioController = audioController;
 
             this.scanRange = scanRange;
             this.meleeAttackRange = meleeAttackRange;
             Waypoints = waypoints;
             CurrentWaypointIndex = -1;
+            WasPlayerVisiblePreviously = false;
         }
 
         public void MoveTo(Vector3 destination)
@@ -64,5 +69,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         {
             _mover.Stop();
         }
+
+        public void PlayDetectionSound() => _audioController.PlayDetection();
     }
 }
