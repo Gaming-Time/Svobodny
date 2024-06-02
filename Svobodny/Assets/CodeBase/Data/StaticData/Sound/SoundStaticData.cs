@@ -27,6 +27,8 @@ namespace CodeBase.Data.StaticData.Sound
         Slash,//
         EnemyFall,//
         Shoot,//
-        Meat,//
+        Meat,
+        Kitchen,
+        TV,
     }
 }

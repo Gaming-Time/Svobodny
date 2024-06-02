@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cinemachine;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
@@ -14,7 +13,6 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
-using CodeBase.Logic;
 using CodeBase.Logic.Enemies;
 using CodeBase.Logic.Npcs;
 using CodeBase.Logic.Triggers;
@@ -259,6 +257,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             _gameMusic = Object.FindObjectOfType<GameMusic>();
             _gameMusic.Construct(_staticData);
+        }
+
+        public void InitMusicTriggers()
+        {
+            var triggers = Object.FindObjectsOfType<MusicTrigger>();
+            foreach (var musicTrigger in triggers)
+            {
+                musicTrigger.Construct(_staticData);
+            }
         }
 
         public void PlayGameMusic() => _gameMusic.Play();
