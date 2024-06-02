@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
   m_Name: Meat
   m_EditorClassIdentifier: 
-  SoundType: 15
+  SoundType: 16
   AudioClip: {fileID: 8300000, guid: 8091a42a3bbff624781df2bad9ad4599, type: 3}

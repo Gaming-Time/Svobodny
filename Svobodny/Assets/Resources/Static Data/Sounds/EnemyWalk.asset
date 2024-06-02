@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
   m_Name: EnemyWalk
   m_EditorClassIdentifier: 
-  SoundType: 8
+  SoundType: 9
   AudioClip: {fileID: 8300000, guid: 801c5a07559258f4c86341d962fd438c, type: 3}

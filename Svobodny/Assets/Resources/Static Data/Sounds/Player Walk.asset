@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Walk
   m_EditorClassIdentifier: 
   SoundType: 7
-  AudioClip: {fileID: 8300000, guid: 5d01784435def3f4dacf9c3d2174398a, type: 3}
+  AudioClip: {fileID: 8300000, guid: 067d209eef2a43447a74277fc6942a95, type: 3}

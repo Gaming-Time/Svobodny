@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
   m_Name: Close Door
   m_EditorClassIdentifier: 
-  SoundType: 10
+  SoundType: 11
   AudioClip: {fileID: 8300000, guid: eabfe4746c77c254d9774290f9f34e21, type: 3}

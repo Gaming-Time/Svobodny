@@ -19,6 +19,7 @@ namespace CodeBase.Data.StaticData.Sound
         MainMenuMusic,
         GameMusic,//
         PlayerWalk,//
+        PlayerSlowWalk,
         EnemyWalk,
         OpenDoor,//
         CloseDoor,//

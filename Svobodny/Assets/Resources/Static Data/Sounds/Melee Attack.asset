@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
   m_Name: Melee Attack
   m_EditorClassIdentifier: 
-  SoundType: 11
+  SoundType: 12
   AudioClip: {fileID: 8300000, guid: 42c0189d520c8554692fc082919c5fc1, type: 3}

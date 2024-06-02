@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
-  m_Name: Shoot
+  m_Name: Player Slow Walk
   m_EditorClassIdentifier: 
-  SoundType: 15
-  AudioClip: {fileID: 8300000, guid: 2ba15ba6b61e9724d969caed38e1edfa, type: 3}
+  SoundType: 8
+  AudioClip: {fileID: 8300000, guid: 0fa8d2d3462fdcf46a37074739150607, type: 3}

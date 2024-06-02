@@ -1,4 +1,5 @@
 ﻿using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Modules.Character.Audio;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character
@@ -7,29 +8,46 @@ namespace CodeBase.Modules.Character
     {
         private IInputService _inputService;
         private CharacterController _characterController;
+        private CharacterAudioController _audioController;
 
         private bool _isStopped;
 
         [SerializeField] private float walkSpeed;
         [SerializeField] private float sneakSpeed;
 
-        public void Construct(IInputService inputService, CharacterController characterController)
+        public void Construct(IInputService inputService, CharacterController characterController,
+            CharacterAudioController audioController)
         {
             _inputService = inputService;
             _characterController = characterController;
+            _audioController = audioController;
         }
 
         public void Init(float walkSpeed, float sneakSpeed)
         {
             (this.walkSpeed, this.sneakSpeed) = (walkSpeed, sneakSpeed);
         }
-        
+
         public void Move()
         {
             var inputNormalized = _inputService.MovementInput.normalized;
             Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
 
-            move *= _inputService.IsSneakButtonDown() ? sneakSpeed : walkSpeed;
+            var sneakInput = _inputService.IsSneakButtonDown();
+
+            if (move.magnitude > 0.1)
+            {
+                if(sneakInput)
+                    _audioController.ActivateSlowFootsteps();
+                else
+                    _audioController.ActivateFootSteps();
+            }
+            else
+            {
+                _audioController.DeactivateFootSteps();
+            }
+            
+            move *= sneakInput ? sneakSpeed : walkSpeed;
 
             _characterController.SimpleMove(move);
         }

@@ -26,6 +26,7 @@ using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
+using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
@@ -93,16 +94,19 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             _character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
             var camera = Object.FindObjectOfType<Camera>();
-            InitMovement(staticData, _character);
+            var audioController = _character.GetComponentInChildren<CharacterAudioController>();
+            audioController.Construct(_staticData);
+            InitMovement(staticData, _character, audioController);
             InitAnimations(staticData, _character, camera);
             InitInventoryHandler(_character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
             InitInteractions(_character);
-            InitCharacterAttack(_character);
+            InitCharacterAttack(_character, audioController);
             _character.GetComponent<CharacterRangeAttack>().Construct(_inputService,
-                _character.GetComponent<CharacterVFXController>(), camera);
+                _character.GetComponent<CharacterVFXController>(),
+                audioController, camera);
             InitStateMachine(_character, camera);
             InitArm(_character, camera);
 
@@ -276,12 +280,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterAnimatorController>());
         }
 
-        private void InitCharacterAttack(GameObject character)
+        private void InitCharacterAttack(GameObject character, CharacterAudioController audioController)
         {
             var characterAttack = character.GetComponent<CharacterMeleeAttack>();
             characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(),
-                character.GetComponent<CharacterVFXController>());
+                character.GetComponent<CharacterVFXController>(),
+                audioController);
         }
 
         private void InitInteractions(GameObject character)
@@ -323,10 +328,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterController>(), camera, staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
-        private void InitMovement(CharacterStaticData staticData, GameObject character)
+        private void InitMovement(CharacterStaticData staticData, GameObject character,
+            CharacterAudioController audioController)
         {
             var characterMove = character.GetComponent<CharacterMove>();
-            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>(), audioController);
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
