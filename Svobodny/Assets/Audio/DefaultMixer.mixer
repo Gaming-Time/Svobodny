@@ -37,6 +37,7 @@ AudioMixerController:
     - 14cd530733d6afe4b81b865828875bd4
     - 0af2500e534c89e4890442894901e36b
     - 1a2644deebef1de4bb86068092ce47f5
+    - fcb033898f91318489c33426093bfca8
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -85,7 +86,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 2d94f68ac3f25bf429d8d978aa5f7b82
   m_FloatValues:
-    f7cb12ff4204f7848ac6996c72cc542f: 7.2
+    f6ae72efb5e2b374c948aef5f3ed5e08: 10.6
+    f7cb12ff4204f7848ac6996c72cc542f: 5.9
   m_TransitionOverrides: {}
 --- !u!244 &310842272622340159
 AudioMixerEffectController:
@@ -169,6 +171,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &3649326878496677670
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9217fe5b30bd05a4687b9e39e88c8a60
+  m_EffectName: Attenuation
+  m_MixLevel: b718c79c6dcede643a360fd794e5502d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &4323280217442589056
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -188,6 +204,25 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &5608804702145667989
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Walk
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: fcb033898f91318489c33426093bfca8
+  m_Children: []
+  m_Volume: f6ae72efb5e2b374c948aef5f3ed5e08
+  m_Pitch: f603268bb3ddfcc429efcf05d799d5f4
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3649326878496677670}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &6136050451956808976
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -197,7 +232,8 @@ AudioMixerGroupController:
   m_Name: Enemy
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 1a2644deebef1de4bb86068092ce47f5
-  m_Children: []
+  m_Children:
+  - {fileID: 5608804702145667989}
   m_Volume: f7cb12ff4204f7848ac6996c72cc542f
   m_Pitch: 2cdec53d887d27e45a06432b225404b8
   m_Send: 00000000000000000000000000000000
