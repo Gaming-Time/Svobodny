@@ -37,6 +37,7 @@ using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
+using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Enemies.VFX;
@@ -212,13 +213,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
                 var vfxController = monster.GetComponent<EnemyVFXController>();
+                var audioController = monster.GetComponentInChildren<EnemyAudioController>();
 
-                monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
+                audioController.Construct(_staticData);
+                monsterMover.Construct(monsterAgent, animationEventHandler, audioController, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
                     monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
-                    vfxController);
+                    vfxController, audioController);
                 monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
                     monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);

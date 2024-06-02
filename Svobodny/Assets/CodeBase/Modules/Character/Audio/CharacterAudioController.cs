@@ -30,7 +30,6 @@ namespace CodeBase.Modules.Character.Audio
 
             meleeAttackSource.clip = _slashClip;
             shootSource.clip = _shootClip;
-            walkSource.clip = _walkClip;
         }
 
         public void PlaySlash()
