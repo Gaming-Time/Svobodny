@@ -80,6 +80,7 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.SpawnGuns();
             _gameFactory.InitTriggers();
             _gameFactory.InitGameMusic();
+            _gameFactory.InitMeatBlobs();
         }
 
         private void InitUI()

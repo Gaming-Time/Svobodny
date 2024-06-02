@@ -39,5 +39,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void InitTriggers();
         void InitGameMusic();
         void PlayGameMusic();
+        void InitMeatBlobs();
     }
 }

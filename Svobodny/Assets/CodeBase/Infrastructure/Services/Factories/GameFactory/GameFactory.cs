@@ -263,6 +263,15 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         public void PlayGameMusic() => _gameMusic.Play();
 
+        public void InitMeatBlobs()
+        {
+            var blobs = Object.FindObjectsOfType<MeatBlobSound>();
+            foreach (var meatBlobSound in blobs)
+            {
+                meatBlobSound.Construct(_staticData);
+            }
+        }
+
         private void InitArm(GameObject character, Camera camera)
         {
             character.GetComponentInChildren<ArmAnimatorController>(true)

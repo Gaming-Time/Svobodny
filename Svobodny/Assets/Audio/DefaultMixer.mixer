@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7692899814011752271
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cd1448706c2603a489793188eeae330d
+  m_EffectName: Attenuation
+  m_MixLevel: fe3579961ee9d654e9f70324a4fbcd41
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-7348286894856148073
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -156,6 +170,7 @@ AudioMixerController:
     - 8801eaa48bcc5554c854ef934a82b629
     - f64de5505dee83c4aa9c2c6f8680154c
     - f7a356cb979388b498c03738c48f92af
+    - 45b42616f8f5e5f4b9642f02780d0417
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -205,6 +220,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 2d94f68ac3f25bf429d8d978aa5f7b82
   m_FloatValues:
+    ec362586fd4443c4691611fa16b7ef1e: 7
     ffae461a338e6c645bb7125a8f7e9e0f: -10.9
     817c26bb8f7420442a1e4e3dbf75361f: -12.1
     f6eef42e059ea454cbfd3ddb233f6dca: 0
@@ -271,6 +287,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 4323280217442589056}
   - {fileID: 6136050451956808976}
+  - {fileID: 5016299779728882884}
   m_Volume: 2f9662c8ca218124bb3495ac98946d90
   m_Pitch: 00badddd440b7354980db8670fa5dc69
   m_Send: 00000000000000000000000000000000
@@ -326,6 +343,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 310842272622340159}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &5016299779728882884
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blobs
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 45b42616f8f5e5f4b9642f02780d0417
+  m_Children: []
+  m_Volume: ec362586fd4443c4691611fa16b7ef1e
+  m_Pitch: c8bcfc2a7a357ca45b31e58b2e9512eb
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7692899814011752271}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
