@@ -27,6 +27,7 @@ namespace CodeBase.Infrastructure.States
 
         public void Enter()
         {
+            _gameFactory.PlayGameMusic();
             Time.timeScale = 1;
             _curtain.Hide();
             _coroutineRunner.StartCoroutine(WaitForCurtainToFadeOut());

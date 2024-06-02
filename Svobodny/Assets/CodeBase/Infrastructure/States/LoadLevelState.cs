@@ -79,6 +79,7 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
             _gameFactory.InitTriggers();
+            _gameFactory.InitGameMusic();
         }
 
         private void InitUI()

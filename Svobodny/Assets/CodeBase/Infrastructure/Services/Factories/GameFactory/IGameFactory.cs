@@ -37,5 +37,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void SpawnGuns();
         void CreateHealthUIHandler();
         void InitTriggers();
+        void InitGameMusic();
+        void PlayGameMusic();
     }
 }

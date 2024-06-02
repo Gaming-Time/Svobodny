@@ -42,6 +42,7 @@ using CodeBase.Modules.Enemies.VFX;
 using CodeBase.Modules.Health;
 using CodeBase.Modules.Inventory;
 using CodeBase.Modules.Inventory.Guns;
+using CodeBase.Modules.Music;
 using CodeBase.Modules.UI;
 using UnityEngine;
 using UnityEngine.AI;
@@ -72,6 +73,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private GunsUIHandler _gunsUIHandler;
         private Hud _hud;
         private HealthUIHandler _healthUIHandler;
+        private GameMusic _gameMusic;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -243,6 +245,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Clear();
             _gunSpawners.Clear();
         }
+
+        public void InitGameMusic()
+        {
+            _gameMusic = Object.FindObjectOfType<GameMusic>();
+            _gameMusic.Construct(_staticData);
+        }
+
+        public void PlayGameMusic() => _gameMusic.Play();
 
         private void InitArm(GameObject character, Camera camera)
         {
