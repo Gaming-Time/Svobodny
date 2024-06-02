@@ -353,11 +353,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 case UsableObjectTypeId.Door:
                     var door = usableObject.GetComponent<Door>();
                     var doorAnimatorController = door.GetComponent<DoorAnimatorController>();
+                    var doorAudioController = door.GetComponent<DoorAudioController>();
 
                     var doorAnimator = door.GetComponent<Animator>();
 
                     doorAnimatorController.Construct(doorAnimator);
-                    door.Construct(_inputService, _inventoryHandler, doorAnimatorController);
+                    doorAudioController.Construct(_staticData);
+                    door.Construct(_inputService, doorAnimatorController, doorAudioController);
 
                     break;
 
@@ -401,8 +403,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var door = doorObject.GetComponent<ClosedDoor>();
             var animatorController = doorObject.GetComponent<DoorAnimatorController>();
+            var audioController = doorObject.GetComponent<DoorAudioController>();
             var animator = door.GetComponent<Animator>();
+
             animatorController.Construct(animator);
+            audioController.Construct(_staticData);
 
             WindowID popupWindow;
             ItemType keyType;
@@ -418,7 +423,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 _ => throw new ArgumentOutOfRangeException(nameof(typeId), typeId, null)
             };
 
-            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, keyType, popupWindow);
+            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, audioController,
+                keyType, popupWindow);
         }
     }
 }
