@@ -14,10 +14,12 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public bool IsDead { get; }
         List<Vector3> Waypoints { get; }
         int CurrentWaypointIndex { get; set; }
+        bool WasPlayerVisiblePreviously { get; set; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);
         void StartMovement();
         void StopMovement();
+        void PlayDetectionSound();
     }
 }

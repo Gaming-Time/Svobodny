@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cinemachine;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
@@ -14,7 +13,6 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
-using CodeBase.Logic;
 using CodeBase.Logic.Enemies;
 using CodeBase.Logic.Npcs;
 using CodeBase.Logic.Triggers;
@@ -26,6 +24,7 @@ using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
+using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.FOV;
 using CodeBase.Modules.Character.Health;
 using CodeBase.Modules.Character.Interaction;
@@ -36,12 +35,14 @@ using CodeBase.Modules.Enemies.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
+using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
 using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Enemies.VFX;
 using CodeBase.Modules.Health;
 using CodeBase.Modules.Inventory;
 using CodeBase.Modules.Inventory.Guns;
+using CodeBase.Modules.Music;
 using CodeBase.Modules.UI;
 using UnityEngine;
 using UnityEngine.AI;
@@ -72,6 +73,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private GunsUIHandler _gunsUIHandler;
         private Hud _hud;
         private HealthUIHandler _healthUIHandler;
+        private GameMusic _gameMusic;
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -91,17 +93,20 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             _character = _assetProvider.Instantiate(AssetPath.CharacterPath, position, rotation);
             var camera = Object.FindObjectOfType<Camera>();
-            InitMovement(staticData, _character);
+            var audioController = _character.GetComponentInChildren<CharacterAudioController>();
+            audioController.Construct(_staticData);
+            InitMovement(staticData, _character, audioController);
             InitAnimations(staticData, _character, camera);
             InitInventoryHandler(_character);
             InitTransparency(_character, camera);
             InitFov(_character, camera, _inputService);
             InitHealth(staticData, _character);
             InitInteractions(_character);
-            InitCharacterAttack(_character);
+            InitCharacterAttack(_character, audioController);
             _character.GetComponent<CharacterRangeAttack>().Construct(_inputService,
-                _character.GetComponent<CharacterVFXController>(), camera);
-            InitStateMachine(_character, camera);
+                _character.GetComponent<CharacterVFXController>(),
+                audioController, camera);
+            InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
             return _character;
@@ -206,14 +211,18 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var monsterAttack = monster.GetComponent<EnemyAttack>();
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
                 var vfxController = monster.GetComponent<EnemyVFXController>();
+                var audioController = monster.GetComponentInChildren<EnemyAudioController>();
 
-                monsterMover.Construct(monsterAgent, animationEventHandler, monsterData.Speed);
+                audioController.Construct(_staticData);
+                monsterMover.Construct(monsterAgent, animationEventHandler, audioController, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
+                    audioController,
                     monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
-                    vfxController);
-                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, monsterData.ScanRange,
+                    vfxController, audioController);
+                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, audioController,
+                    monsterData.ScanRange,
                     monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
                 collisionOwner.Construct(monsterEntity);
@@ -244,19 +253,46 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _gunSpawners.Clear();
         }
 
+        public void InitGameMusic()
+        {
+            _gameMusic = Object.FindObjectOfType<GameMusic>();
+            _gameMusic.Construct(_staticData);
+        }
+
+        public void InitMusicTriggers()
+        {
+            var triggers = Object.FindObjectsOfType<MusicTrigger>();
+            foreach (var musicTrigger in triggers)
+            {
+                musicTrigger.Construct(_staticData);
+            }
+        }
+
+        public void PlayGameMusic() => _gameMusic.Play();
+
+        public void InitMeatBlobs()
+        {
+            var blobs = Object.FindObjectsOfType<MeatBlobSound>();
+            foreach (var meatBlobSound in blobs)
+            {
+                meatBlobSound.Construct(_staticData);
+            }
+        }
+
         private void InitArm(GameObject character, Camera camera)
         {
             character.GetComponentInChildren<ArmAnimatorController>(true)
                 .Construct(_inputService, camera, character.transform);
         }
 
-        private void InitStateMachine(GameObject character, Camera camera)
+        private void InitStateMachine(GameObject character, Camera camera, CharacterAudioController audioController)
         {
             character.GetComponent<CharacterStateMachine>().Construct(_inputService,
                 character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
                 character.GetComponent<CharacterRangeAttack>(),
-                character.GetComponent<CharacterAnimatorController>(), camera);
+                character.GetComponent<CharacterAnimatorController>(), audioController,
+                character.GetComponent<CharacterController>(), camera);
         }
 
         private void InitInventoryHandler(GameObject character)
@@ -266,12 +302,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterAnimatorController>());
         }
 
-        private void InitCharacterAttack(GameObject character)
+        private void InitCharacterAttack(GameObject character, CharacterAudioController audioController)
         {
             var characterAttack = character.GetComponent<CharacterMeleeAttack>();
             characterAttack.Construct(character.GetComponent<CharacterAnimatorController>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(),
-                character.GetComponent<CharacterVFXController>());
+                character.GetComponent<CharacterVFXController>(),
+                audioController);
         }
 
         private void InitInteractions(GameObject character)
@@ -313,10 +350,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterController>(), camera, staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
-        private void InitMovement(CharacterStaticData staticData, GameObject character)
+        private void InitMovement(CharacterStaticData staticData, GameObject character,
+            CharacterAudioController audioController)
         {
             var characterMove = character.GetComponent<CharacterMove>();
-            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>(), audioController);
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
@@ -343,11 +381,13 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 case UsableObjectTypeId.Door:
                     var door = usableObject.GetComponent<Door>();
                     var doorAnimatorController = door.GetComponent<DoorAnimatorController>();
+                    var doorAudioController = door.GetComponent<DoorAudioController>();
 
                     var doorAnimator = door.GetComponent<Animator>();
 
                     doorAnimatorController.Construct(doorAnimator);
-                    door.Construct(_inputService, _inventoryHandler, doorAnimatorController);
+                    doorAudioController.Construct(_staticData);
+                    door.Construct(_inputService, doorAnimatorController, doorAudioController);
 
                     break;
 
@@ -391,8 +431,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var door = doorObject.GetComponent<ClosedDoor>();
             var animatorController = doorObject.GetComponent<DoorAnimatorController>();
+            var audioController = doorObject.GetComponent<DoorAudioController>();
             var animator = door.GetComponent<Animator>();
+
             animatorController.Construct(animator);
+            audioController.Construct(_staticData);
 
             WindowID popupWindow;
             ItemType keyType;
@@ -408,7 +451,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 _ => throw new ArgumentOutOfRangeException(nameof(typeId), typeId, null)
             };
 
-            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, keyType, popupWindow);
+            door.Construct(_inputService, _windowService, _inventoryHandler, animatorController, audioController,
+                keyType, popupWindow);
         }
     }
 }

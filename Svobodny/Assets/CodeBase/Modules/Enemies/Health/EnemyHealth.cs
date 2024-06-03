@@ -1,5 +1,6 @@
 using CodeBase.Modules.Common.Health;
 using CodeBase.Modules.Enemies.Animation;
+using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.VFX;
 using UnityEngine;
 
@@ -13,23 +14,28 @@ namespace CodeBase.Modules.Enemies.Health
         private HumanoidAnimatorController _animatorController;
         private HumanoidAnimationEventsHandler _animationEventsHandler;
         private EnemyVFXController _vfxController;
+        private EnemyAudioController _audioController;
 
         public int Health => _currentHealth;
 
         public void Construct(HumanoidAnimatorController animatorController,
-            HumanoidAnimationEventsHandler animationEventsHandler, EnemyVFXController vfxController, int health)
+            HumanoidAnimationEventsHandler animationEventsHandler, EnemyVFXController vfxController,
+            EnemyAudioController audioController, int health)
         {
             _animatorController = animatorController;
             _animationEventsHandler = animationEventsHandler;
             _vfxController = vfxController;
+            _audioController = audioController;
 
             _animationEventsHandler.ExitDeathAnimationEvent += DestroyAfterDeath;
+            _animationEventsHandler.FallAnimationEvent += PlayFallAudio;
             _currentHealth = health;
         }
 
         private void OnDestroy()
         {
             _animationEventsHandler.ExitDeathAnimationEvent -= DestroyAfterDeath;
+            _animationEventsHandler.FallAnimationEvent -= PlayFallAudio;
         }
 
         public void DoDamage(int damage)
@@ -65,7 +71,12 @@ namespace CodeBase.Modules.Enemies.Health
             DoDamage(damage);
         }
 
-        public void Die() => _animatorController.PlayDeathAnimation();
+        public void Die()
+        {
+            _animatorController.PlayDeathAnimation();
+        }
+
+        private void PlayFallAudio() => _audioController.PlayDeath();
 
         private void DestroyAfterDeath() => Destroy(gameObject, destroyDelay);
     }

@@ -9,9 +9,11 @@ namespace CodeBase.Logic.UsableObjects.Doors
     public class ClosedDoor : UsableObject
     {
         protected override IInputService InputService { get; set; }
+        
         private InventoryHandler _inventoryHandler;
         private DoorAnimatorController _animatorController;
         private IWindowService _windowService;
+        private DoorAudioController _audioController;
         private ItemType _itemType;
         private WindowID _windowId;
 
@@ -19,12 +21,13 @@ namespace CodeBase.Logic.UsableObjects.Doors
 
         public void Construct(IInputService inputService, IWindowService windowService,
             InventoryHandler inventoryHandler,
-            DoorAnimatorController animatorController, ItemType itemType, WindowID windowID)
+            DoorAnimatorController animatorController, DoorAudioController audioController, ItemType itemType, WindowID windowID)
         {
             InputService = inputService;
             _windowService = windowService;
             _inventoryHandler = inventoryHandler;
             _animatorController = animatorController;
+            _audioController = audioController;
             _itemType = itemType;
             _windowId = windowID;
         }
@@ -34,6 +37,7 @@ namespace CodeBase.Logic.UsableObjects.Doors
             if (_isOpen)
             {
                 _animatorController.PlayCloseAnimation();
+                _audioController.PlayCloseSound();
                 _isOpen = false;
 
                 return;
@@ -47,6 +51,8 @@ namespace CodeBase.Logic.UsableObjects.Doors
             }
 
             _animatorController.PlayOpenAnimation();
+            _audioController.PlayOpenSound();
+            
             _isOpen = true;
         }
     }

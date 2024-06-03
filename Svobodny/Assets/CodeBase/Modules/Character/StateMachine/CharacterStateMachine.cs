@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
+using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.StateMachine.States;
 using CodeBase.Modules.Character.UI;
 using UnityEngine;
@@ -24,12 +25,15 @@ namespace CodeBase.Modules.Character.StateMachine
         private CharacterRangeAttack _rangeAttack;
         private Camera _camera;
         private CharacterAnimatorController _characterAnimatorController;
+        private CharacterAudioController _audioController;
+        private CharacterController _characterController;
 
         [SerializeField] private Transform arm;
 
         public void Construct(IInputService inputService, CharacterMove characterMove, CharacterMeleeAttack meleeAttack,
             CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler,
-            CharacterRangeAttack rangeAttack, CharacterAnimatorController characterAnimatorController, Camera camera)
+            CharacterRangeAttack rangeAttack, CharacterAnimatorController characterAnimatorController,
+            CharacterAudioController audioController, CharacterController characterController, Camera camera)
         {
             _inputService = inputService;
             _characterMove = characterMove;
@@ -38,6 +42,8 @@ namespace CodeBase.Modules.Character.StateMachine
             _inventoryHandler = inventoryHandler;
             _rangeAttack = rangeAttack;
             _characterAnimatorController = characterAnimatorController;
+            _audioController = audioController;
+            _characterController = characterController;
             _camera = camera;
 
             InitializeStateMachine();
@@ -57,7 +63,9 @@ namespace CodeBase.Modules.Character.StateMachine
         {
             _states = new Dictionary<Type, IUpdatableState>()
             {
-                [typeof(MoveState)] = new MoveState(this, _characterMove, _inventoryHandler, _inputService),
+                [typeof(MoveState)] =
+                    new MoveState(this, _characterMove, _inventoryHandler, _inputService, _audioController,
+                        _characterController),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, this),
                 [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera, transform,
                     _characterAnimatorController),

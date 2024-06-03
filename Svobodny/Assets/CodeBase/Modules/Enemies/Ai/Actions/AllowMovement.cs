@@ -1,4 +1,5 @@
 using Apex.AI;
+using CodeBase.Modules.Enemies.Ai.Entity;
 using JetBrains.Annotations;
 
 namespace CodeBase.Modules.Enemies.Ai.Actions
@@ -11,5 +12,6 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
             var enemyContext = context as EnemyAiContext;
             enemyContext!.Entity.StartMovement();
         }
+        
     }
 }

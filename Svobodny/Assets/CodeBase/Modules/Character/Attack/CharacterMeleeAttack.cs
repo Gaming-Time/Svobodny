@@ -1,4 +1,5 @@
 using CodeBase.Modules.Character.Animation;
+using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
@@ -16,17 +17,20 @@ namespace CodeBase.Modules.Character.Attack
         private CharacterAnimatorController _animatorController;
         private CharacterAnimationEventsHandler _animationEvents;
         private CharacterVFXController _vfxController;
+        private CharacterAudioController _audioController;
 
         public bool HasEnded { get; private set; }
 
         private Collider[] _hitCollection = new Collider[5];
 
         public void Construct(CharacterAnimatorController animatorController,
-            CharacterAnimationEventsHandler animationEvents, CharacterVFXController vfxController)
+            CharacterAnimationEventsHandler animationEvents, CharacterVFXController vfxController,
+            CharacterAudioController audioController)
         {
             _animatorController = animatorController;
             _animationEvents = animationEvents;
             _vfxController = vfxController;
+            _audioController = audioController;
 
             _animationEvents.AttackEvent += OnAttack;
             _animationEvents.ExitAttackAnimationEvent += OnAttackAnimationExit;
@@ -50,6 +54,7 @@ namespace CodeBase.Modules.Character.Attack
         public void OnAttack()
         {
             _vfxController.PlaySlice();
+            _audioController.PlaySlash();
             ScanForTargets();
         }
 
@@ -58,7 +63,12 @@ namespace CodeBase.Modules.Character.Attack
             var hitCount = Physics.OverlapSphereNonAlloc(attackPoint.position, attackRadius, _hitCollection,
                 attackLayerMask, QueryTriggerInteraction.Collide);
             if (hitCount == 0)
+            {
+                _audioController.PlaySlash();
                 return;
+            }
+            
+            _audioController.PlayMeleeDamage();
 
             for (int i = 0; i < hitCount; i++)
             {

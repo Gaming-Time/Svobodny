@@ -1,3 +1,4 @@
+using CodeBase.Modules.Music;
 using CodeBase.Modules.UI.MainMenu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,16 +29,24 @@ namespace CodeBase.Infrastructure.States
             _curtain.Show();
             if (SceneManager.GetActiveScene().name == MainMenuSceneName)
             {
-                _curtain.Hide();
-                Object.FindObjectOfType<MenuController>().Construct(_stateMachine);
+                InitMenu();
                 return;
             }
 
             _sceneLoader.Load(MainMenuSceneName, () =>
             {
-                Object.FindObjectOfType<MenuController>().Construct(_stateMachine);
+                InitMenu();
                 _curtain.Hide();
             });
+        }
+
+        private void InitMenu()
+        {
+            Object.FindObjectOfType<MenuController>().Construct(_stateMachine);
+            var music = Object.FindObjectOfType<MainMenuMusic>();
+            music.Construct();
+            music.Play();
+            _curtain.Hide();
         }
     }
 }

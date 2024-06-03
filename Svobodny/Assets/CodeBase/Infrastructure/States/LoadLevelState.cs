@@ -4,7 +4,6 @@ using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.States
@@ -79,6 +78,9 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
             _gameFactory.InitTriggers();
+            _gameFactory.InitGameMusic();
+            _gameFactory.InitMusicTriggers();
+            _gameFactory.InitMeatBlobs();
         }
 
         private void InitUI()
