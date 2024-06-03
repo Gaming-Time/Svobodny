@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0606ed1218ac4e07a0f3c64391a8f5b8, type: 3}
-  m_Name: Open Door
+  m_Name: Open Closed Door
   m_EditorClassIdentifier: 
-  SoundType: 10
-  AudioClip: {fileID: 8300000, guid: 0c9388c0c37154c439a3c26769044b54, type: 3}
+  SoundType: 19
+  AudioClip: {fileID: 8300000, guid: 8b35286ba47020b4091a343bb55ab3a0, type: 3}

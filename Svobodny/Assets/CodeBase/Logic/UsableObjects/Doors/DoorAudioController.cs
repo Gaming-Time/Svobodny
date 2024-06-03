@@ -7,6 +7,7 @@ namespace CodeBase.Logic.UsableObjects.Doors
     public class DoorAudioController : MonoBehaviour
     {
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private SoundType openSound;
         
         private IStaticDataService _staticDataService;
         private AudioClip _openSound;
@@ -16,7 +17,7 @@ namespace CodeBase.Logic.UsableObjects.Doors
         {
             _staticDataService = staticDataService;
 
-            _openSound = _staticDataService.ForSound(SoundType.OpenDoor).AudioClip;
+            _openSound = _staticDataService.ForSound(openSound).AudioClip;
             _closeSound = _staticDataService.ForSound(SoundType.CloseDoor).AudioClip;
         }
 

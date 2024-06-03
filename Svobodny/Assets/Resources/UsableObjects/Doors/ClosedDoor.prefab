@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4252634005752294932}
+  openSound: 19
 --- !u!82 &4252634005752294932
 AudioSource:
   m_ObjectHideFlags: 0

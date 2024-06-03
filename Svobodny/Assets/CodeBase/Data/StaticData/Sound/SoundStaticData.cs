@@ -30,5 +30,6 @@ namespace CodeBase.Data.StaticData.Sound
         Meat,
         Kitchen,
         TV,
+        OpenClosedDoor,
     }
 }
