@@ -18,11 +18,13 @@ namespace CodeBase.Modules.UI.MainMenu
         
         public void NewGameDialogYes()
         {
+            PlayerPrefs.DeleteKey("Progress");
             _gameStateMachine.Enter<BootstrapState>();
         }
 
         public void LoadGameDialogYes()
         {
+            _gameStateMachine.Enter<BootstrapState>();
         }
 
         public void ExitButton()
