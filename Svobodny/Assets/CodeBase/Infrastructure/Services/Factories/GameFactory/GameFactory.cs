@@ -101,7 +101,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             var camera = Object.FindObjectOfType<Camera>();
             var audioController = _character.GetComponentInChildren<CharacterAudioController>();
             audioController.Construct(_staticData);
-            InitMovement(staticData, _character, audioController);
+            InitMovement(staticData, _character);
             InitAnimations(staticData, _character, camera);
             InitInventoryHandler(_character);
             InitTransparency(_character, camera);
@@ -369,12 +369,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterController>(), camera, staticData.WalkSpeed, staticData.SneakSpeed);
         }
 
-        private void InitMovement(CharacterStaticData staticData, GameObject character,
-            CharacterAudioController audioController)
+        private void InitMovement(CharacterStaticData staticData, GameObject character)
         {
             var characterMove = character.GetComponent<CharacterMove>();
-            characterMove.Construct(_inputService, character.GetComponent<CharacterController>(), audioController);
+            characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
+            
+            ProgressReaders.Add(characterMove);
+            ProgressWriters.Add(characterMove);
         }
 
         private void InitUsableObject(KeyValuePair<string, UsableObjectSpawner> spawner, GameObject usableObject)
