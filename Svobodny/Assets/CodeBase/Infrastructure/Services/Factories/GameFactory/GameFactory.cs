@@ -5,12 +5,15 @@ using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
+using CodeBase.Infrastructure.Logic;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.Progress;
+using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Logic.Enemies;
@@ -74,6 +77,9 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Hud _hud;
         private HealthUIHandler _healthUIHandler;
         private GameMusic _gameMusic;
+
+        public List<ISavedProgressReader> ProgressReaders { get; } = new();
+        public List<ISavedProgress> ProgressWriters { get; } = new();
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
@@ -279,6 +285,17 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             }
         }
 
+        public void InitSaveTriggers()
+        {
+            var saveTriggers = Object.FindObjectsOfType<SaveTrigger>();
+            var saveLoadService = AllServices.Container.Single<ISaveLoadService>();
+
+            foreach (var saveTrigger in saveTriggers)
+            {
+                saveTrigger.Construct(saveLoadService);
+            }
+        }
+
         private void InitArm(GameObject character, Camera camera)
         {
             character.GetComponentInChildren<ArmAnimatorController>(true)
@@ -300,6 +317,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _inventoryHandler = character.GetComponent<InventoryHandler>();
             _inventoryHandler.Construct(_inputService, _windowService,
                 character.GetComponent<CharacterAnimatorController>());
+            ProgressWriters.Add(_inventoryHandler);
+            ProgressReaders.Add(_inventoryHandler);
         }
 
         private void InitCharacterAttack(GameObject character, CharacterAudioController audioController)

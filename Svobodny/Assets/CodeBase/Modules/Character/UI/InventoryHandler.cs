@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Data;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character.UI
 {
-    public class InventoryHandler : MonoBehaviour
+    public class InventoryHandler : MonoBehaviour, ISavedProgress
     {
         private IInputService _inputService;
         private IWindowService _windowService;
@@ -110,6 +112,16 @@ namespace CodeBase.Modules.Character.UI
             SelectedGun = gunType;
             GunSelected?.Invoke(gunType);
             _characterAnimatorController.SelectGun(gunType);
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            progress.InventoryData.Guns.ForEach(gun => AddGun(gun.GunType));
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
+            progress.InventoryData.Guns = _guns;
         }
     }
 
