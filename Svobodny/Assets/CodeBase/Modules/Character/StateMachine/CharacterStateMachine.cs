@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Infrastructure.States;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
@@ -14,10 +15,13 @@ namespace CodeBase.Modules.Character.StateMachine
 {
     public class CharacterStateMachine : MonoBehaviour, ICoroutineRunner
     {
+        [SerializeField] private Collider characterTrigger;
+        
         private Dictionary<Type, IUpdatableState> _states;
         private IUpdatableState _activeState;
 
         private IInputService _inputService;
+        private IWindowService _windowService;
         private InventoryHandler _inventoryHandler;
         private CharacterMove _characterMove;
         private CharacterMeleeAttack _characterMeleeAttack;
@@ -30,12 +34,14 @@ namespace CodeBase.Modules.Character.StateMachine
 
         [SerializeField] private Transform arm;
 
-        public void Construct(IInputService inputService, CharacterMove characterMove, CharacterMeleeAttack meleeAttack,
+        public void Construct(IInputService inputService, IWindowService windowService, CharacterMove characterMove,
+            CharacterMeleeAttack meleeAttack,
             CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler,
             CharacterRangeAttack rangeAttack, CharacterAnimatorController characterAnimatorController,
             CharacterAudioController audioController, CharacterController characterController, Camera camera)
         {
             _inputService = inputService;
+            _windowService = windowService;
             _characterMove = characterMove;
             _characterMeleeAttack = meleeAttack;
             _animationEventsHandler = animationEventsHandler;
@@ -69,7 +75,9 @@ namespace CodeBase.Modules.Character.StateMachine
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, this),
                 [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera, transform,
                     _characterAnimatorController),
-                [typeof(HitState)] = new HitState(this, _animationEventsHandler)
+                [typeof(HitState)] = new HitState(this, _animationEventsHandler),
+                [typeof(DeathState)] =
+                    new DeathState(_windowService, _characterAnimatorController, _animationEventsHandler, characterTrigger)
             };
         }
 

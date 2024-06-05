@@ -10,6 +10,7 @@ namespace CodeBase.Modules.Character.Animation
         public event Action AttackEvent;
         public event Action EnterAttackAnimationEvent;
         public event Action ExitAttackAnimationEvent;
+        public event Action DeathAnimationFinishedEvent;
 
         public void OnEnterHitAnimation() => EnterHitAnimationEvent?.Invoke();
         public void OnExitHitAnimation() => ExitHitAnimationEvent?.Invoke();
@@ -17,5 +18,6 @@ namespace CodeBase.Modules.Character.Animation
         public void OnAttack() => AttackEvent?.Invoke();
         public void OnEnterAttackAnimation() => EnterAttackAnimationEvent?.Invoke();
         public void OnExitAttackAnimation() => ExitAttackAnimationEvent?.Invoke();
+        public void OnDeathAnimationFinished() => DeathAnimationFinishedEvent?.Invoke();
     }
 }

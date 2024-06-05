@@ -28,7 +28,7 @@ namespace CodeBase.Infrastructure.Services.Mediator
             _gameStateMachine.Enter<LoadLevelState, string>(levelName);
         }
 
-        private void ExitToMenu()
+        public void ExitToMenu()
         {
             Time.timeScale = 1f;
             _gameStateMachine.Enter<MainMenuState>();

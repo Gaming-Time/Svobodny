@@ -30,6 +30,7 @@ namespace CodeBase.Logic.Animations
                 public static readonly int HitTriggerHash = Animator.StringToHash("Hit");
                 public static readonly int AttackTriggerHash = Animator.StringToHash("Attack");
                 public static readonly int IsAiming = Animator.StringToHash("IsAiming");
+                public static readonly int DieTriggerHash = Animator.StringToHash("Die");
             }
 
             public static class Inventory

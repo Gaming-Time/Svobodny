@@ -45,6 +45,9 @@ namespace CodeBase.Modules.Character
             if (CurrentScene() != progress.PositionOnLevel.Level)
                 return;
 
+            if(!progress.PositionOnLevel.IsInitialized)
+                return;
+            
             var savedPosition = progress.PositionOnLevel.Position;
             var savedRotation = progress.PositionOnLevel.Rotation;
 

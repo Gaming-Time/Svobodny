@@ -88,8 +88,7 @@ namespace CodeBase.Modules.Character.UI
             if (SelectedGun == null)
                 SelectGun(gunType);
             
-            if(gunType == GunType.Knife)
-                _windowService.OpenOrCreateWindow(WindowID.KnifeDialog);
+            
         }
 
         public void RemoveGun(GunType gunType)

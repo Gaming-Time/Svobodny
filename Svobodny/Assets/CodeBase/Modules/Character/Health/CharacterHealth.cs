@@ -1,3 +1,4 @@
+using System;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
@@ -25,7 +26,8 @@ namespace CodeBase.Modules.Character.Health
 
         public void Construct(CharacterAnimatorController animatorController, IWindowService windowService,
             CharacterVFXController vfxController, HealthHandler healthHandler,
-            CharacterStateMachine characterStateMachine, int health)
+            CharacterStateMachine characterStateMachine,
+            int health)
         {
             _animatorController = animatorController;
             _windowService = windowService;
@@ -67,8 +69,7 @@ namespace CodeBase.Modules.Character.Health
 
         public void Die()
         {
-            gameObject.SetActive(false);
-            _windowService.OpenOrCreateWindow(WindowID.Death);
+            _stateMachine.Enter<DeathState>();
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -77,7 +78,7 @@ namespace CodeBase.Modules.Character.Health
 
             if (loadedHealth > 0)
                 _currentHealth = loadedHealth;
-            
+
             _healthHandler.HandleHealthChange(_currentHealth);
         }
 

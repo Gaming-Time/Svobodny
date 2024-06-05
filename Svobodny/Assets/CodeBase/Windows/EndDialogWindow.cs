@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Mediator;
 using CodeBase.Infrastructure.Services.SaveLoad;
+using CodeBase.Infrastructure.Services.WindowService;
 using UnityEngine;
 
 namespace CodeBase.Windows
@@ -11,6 +12,7 @@ namespace CodeBase.Windows
     {
         private IMediator _mediator;
         private ISaveLoadService _saveLoadService;
+        private IWindowService _windowService;
 
         [SerializeField] private Levels transferTo;
 
@@ -18,6 +20,7 @@ namespace CodeBase.Windows
         {
             _mediator = AllServices.Container.Single<IMediator>();
             _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
+            _windowService = AllServices.Container.Single<IWindowService>();
         }
 
         public override void Activate()
@@ -32,7 +35,10 @@ namespace CodeBase.Windows
             base.Hide();
             Time.timeScale = 1;
             if(transferTo == Levels.None)
+            {
+                _windowService.OpenOrCreateWindow(WindowID.FinalDialog);
                 return;
+            }
 
             var levelName = transferTo switch
             {
