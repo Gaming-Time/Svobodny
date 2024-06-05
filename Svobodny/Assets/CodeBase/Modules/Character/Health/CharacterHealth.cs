@@ -1,3 +1,5 @@
+using CodeBase.Data;
+using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.StateMachine;
@@ -9,7 +11,7 @@ using UnityEngine;
 
 namespace CodeBase.Modules.Character.Health
 {
-    public class CharacterHealth : MonoBehaviour, IHealth
+    public class CharacterHealth : MonoBehaviour, IHealth, ISavedProgress
     {
         [SerializeField] private int _currentHealth;
 
@@ -67,6 +69,21 @@ namespace CodeBase.Modules.Character.Health
         {
             gameObject.SetActive(false);
             _windowService.OpenOrCreateWindow(WindowID.Death);
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            var loadedHealth = progress.State.Health;
+
+            if (loadedHealth > 0)
+                _currentHealth = loadedHealth;
+            
+            _healthHandler.HandleHealthChange(_currentHealth);
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
+            progress.State.Health = _currentHealth;
         }
     }
 }

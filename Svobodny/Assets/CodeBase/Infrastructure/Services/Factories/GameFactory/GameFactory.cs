@@ -350,6 +350,9 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterVFXController>(), healthHandler,
                 character.GetComponent<CharacterStateMachine>(),
                 staticData.Health);
+            
+            ProgressReaders.Add(characterHealth);
+            ProgressWriters.Add(characterHealth);
         }
 
         private void InitFov(GameObject character, Camera camera, IInputService inputService)

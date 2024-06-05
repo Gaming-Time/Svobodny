@@ -9,11 +9,15 @@ namespace CodeBase.Data
     {
         public PositionOnLevel PositionOnLevel;
         public InventoryData InventoryData;
+        public CharacterState State;
+        public StartDialogsState StartDialogsState;
 
         public PlayerProgress(string initialLevel)
         {
             PositionOnLevel = new PositionOnLevel(initialLevel);
             InventoryData = new InventoryData();
+            State = new CharacterState();
+            StartDialogsState = new StartDialogsState();
         }
     }
 
@@ -56,5 +60,19 @@ namespace CodeBase.Data
             Y = y;
             Z = z;
         }
+    }
+
+    [Serializable]
+    public class CharacterState
+    {
+        public int Health = -1;
+    }
+
+    [Serializable]
+    public class StartDialogsState
+    {
+        public bool FirstDialogDone;
+        public bool SecondDialogDone;
+        public bool ThirdDialogDone;
     }
 }

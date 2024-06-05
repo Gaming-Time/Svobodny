@@ -31,7 +31,7 @@ namespace CodeBase.Infrastructure
                     services.Single<IUIFactory>()),
                 [typeof(GameLoopState)] =
                     new GameLoopState(services.Single<IGameFactory>(), services.Single<IWindowService>(),
-                        coroutineRunner, curtain),
+                        coroutineRunner, curtain, services.Single<IProgressService>()),
             };
         }
 
