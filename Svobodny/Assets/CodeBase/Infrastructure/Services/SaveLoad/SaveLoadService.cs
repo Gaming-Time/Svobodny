@@ -31,6 +31,8 @@ namespace CodeBase.Infrastructure.Services.SaveLoad
 
             var currentScene = SceneManager.GetActiveScene().name;
 
+            _progressService.Progress.PositionOnLevel.Level = currentScene;
+
             switch (currentScene)
             {
                 case LevelNames.Level1:

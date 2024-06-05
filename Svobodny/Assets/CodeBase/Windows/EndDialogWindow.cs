@@ -2,6 +2,7 @@ using System;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.Mediator;
+using CodeBase.Infrastructure.Services.SaveLoad;
 using UnityEngine;
 
 namespace CodeBase.Windows
@@ -9,12 +10,21 @@ namespace CodeBase.Windows
     public class EndDialogWindow : DialogWindow
     {
         private IMediator _mediator;
+        private ISaveLoadService _saveLoadService;
 
         [SerializeField] private Levels transferTo;
 
-        private void Start()
+        private void Awake()
         {
             _mediator = AllServices.Container.Single<IMediator>();
+            _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
+        }
+
+        public override void Activate()
+        {
+            base.Activate();
+            
+            _saveLoadService.SaveProgress();
         }
 
         public override void Hide()

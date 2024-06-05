@@ -257,6 +257,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _npcSpawners.Clear();
             _objectSpawners.Clear();
             _gunSpawners.Clear();
+            ProgressWriters.Clear();
+            ProgressReaders.Clear();
         }
 
         public void InitGameMusic()
