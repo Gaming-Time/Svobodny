@@ -1,4 +1,3 @@
-using System;
 using CodeBase.Modules.UI.MainMenu;
 using UnityEngine;
 
