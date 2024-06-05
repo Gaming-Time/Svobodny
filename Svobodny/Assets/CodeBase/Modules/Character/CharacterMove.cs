@@ -45,10 +45,13 @@ namespace CodeBase.Modules.Character
             if (CurrentScene() != progress.PositionOnLevel.Level)
                 return;
 
+            if(!progress.PositionOnLevel.IsInitialized)
+                return;
+            
             var savedPosition = progress.PositionOnLevel.Position;
             var savedRotation = progress.PositionOnLevel.Rotation;
 
-            /*_characterController.enabled = false;
+            _characterController.enabled = false;
 
             if (savedPosition != null)
                 transform.position = savedPosition.AsUnityVector();
@@ -56,7 +59,7 @@ namespace CodeBase.Modules.Character
             if (savedRotation != null)
                 transform.rotation = Quaternion.Euler(savedRotation.AsUnityVector());
 
-            _characterController.enabled = true;*/
+            _characterController.enabled = true;
         }
 
         public void UpdateProgress(PlayerProgress progress)

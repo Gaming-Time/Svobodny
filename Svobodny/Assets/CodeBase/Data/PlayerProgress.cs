@@ -33,10 +33,14 @@ namespace CodeBase.Data
         public string Level;
         public Vector3Data Position;
         public Vector3Data Rotation;
+        public bool IsInitialized;
 
         public PositionOnLevel(string initialLevel)
         {
             Level = initialLevel;
+            Position = null;
+            Rotation = null;
+            IsInitialized = false;
         }
 
         public PositionOnLevel(string level, Vector3Data position, Vector3Data rotation)
@@ -44,6 +48,7 @@ namespace CodeBase.Data
             Level = level;
             Position = position;
             Rotation = rotation;
+            IsInitialized = true;
         }
     }
 
