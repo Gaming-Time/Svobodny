@@ -195,7 +195,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             foreach (var gunSpawner in _gunSpawners)
             {
                 var gun = gunSpawner.Value.Spawn();
-                gun.GetComponent<Gun>().Construct(_inputService, _windowService, _inventoryHandler, gunSpawner.Value.GunType);
+                gun.GetComponent<Gun>().Construct(_inputService, _windowService, _inventoryHandler,
+                    gunSpawner.Value.GunType);
             }
         }
 
@@ -306,7 +307,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         private void InitStateMachine(GameObject character, Camera camera, CharacterAudioController audioController)
         {
-            character.GetComponent<CharacterStateMachine>().Construct(_inputService,
+            character.GetComponent<CharacterStateMachine>().Construct(_inputService, _windowService,
                 character.GetComponent<CharacterMove>(), character.GetComponent<CharacterMeleeAttack>(),
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
                 character.GetComponent<CharacterRangeAttack>(),
@@ -346,13 +347,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var characterHealth = character.GetComponent<CharacterHealth>();
             var healthHandler = character.GetComponent<HealthHandler>();
+            var characterAnimationEvents = character.GetComponent<CharacterAnimationEventsHandler>();
 
             healthHandler.Construct(_healthUIHandler, staticData.Health);
             characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
                 character.GetComponent<CharacterVFXController>(), healthHandler,
                 character.GetComponent<CharacterStateMachine>(),
                 staticData.Health);
-            
+
             ProgressReaders.Add(characterHealth);
             ProgressWriters.Add(characterHealth);
         }
@@ -379,7 +381,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             var characterMove = character.GetComponent<CharacterMove>();
             characterMove.Construct(_inputService, character.GetComponent<CharacterController>());
             characterMove.Init(staticData.WalkSpeed, staticData.SneakSpeed);
-            
+
             ProgressReaders.Add(characterMove);
             ProgressWriters.Add(characterMove);
         }

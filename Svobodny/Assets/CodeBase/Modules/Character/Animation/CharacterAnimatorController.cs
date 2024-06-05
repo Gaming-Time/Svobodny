@@ -51,6 +51,7 @@ namespace CodeBase.Modules.Character.Animation
         public void ExitWardrobe() => _animator.SetTrigger(AnimatorVariables.Character.Interactions.ExitWardrobe);
         public void Damage() => _animator.SetTrigger(AnimatorVariables.Character.Battle.HitTriggerHash);
         public void PlayAttackAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.AttackTriggerHash);
+        public void PlayDeathAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.DieTriggerHash);
 
         public void HandleAim(bool state) =>
             _animator.SetBool(AnimatorVariables.Character.Battle.IsAiming, state);

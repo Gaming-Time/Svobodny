@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08291c18f6cb41379e323b0dcf34c3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterTrigger: {fileID: 3428441857636125859}
   arm: {fileID: 4426261639471603427}
 --- !u!114 &7481952114548313139
 MonoBehaviour:

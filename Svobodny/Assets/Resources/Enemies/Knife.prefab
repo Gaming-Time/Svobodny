@@ -372,13 +372,13 @@ MonoBehaviour:
     intervalMax: 0.2
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 0
+    isActive: 1
   - aiId: c76d248a-3aa4-48f6-8850-2bccbc1ef5bc
     intervalMin: 0.5
     intervalMax: 0.5
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 0
+    isActive: 1
 --- !u!114 &1312011722134564088
 MonoBehaviour:
   m_ObjectHideFlags: 0
