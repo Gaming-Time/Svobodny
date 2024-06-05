@@ -195,7 +195,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             foreach (var gunSpawner in _gunSpawners)
             {
                 var gun = gunSpawner.Value.Spawn();
-                gun.GetComponent<Gun>().Construct(_inputService, _inventoryHandler, gunSpawner.Value.GunType);
+                gun.GetComponent<Gun>().Construct(_inputService, _windowService, _inventoryHandler, gunSpawner.Value.GunType);
             }
         }
 
