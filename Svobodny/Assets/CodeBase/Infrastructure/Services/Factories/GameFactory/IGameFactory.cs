@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using CodeBase.Data.StaticData.Character;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
+using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Logic;
 using CodeBase.Logic.UsableObjects;
 using CodeBase.Modules.Character.UI;
@@ -41,5 +42,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         void PlayGameMusic();
         void InitMeatBlobs();
         void InitMusicTriggers();
+        List<ISavedProgressReader> ProgressReaders { get; }
+        List<ISavedProgress> ProgressWriters { get; }
+        void InitSaveTriggers();
     }
 }

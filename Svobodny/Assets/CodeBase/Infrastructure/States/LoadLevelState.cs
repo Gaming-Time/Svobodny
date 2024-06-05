@@ -48,8 +48,17 @@ namespace CodeBase.Infrastructure.States
         {
             InitUI();
             InitLevel();
+            InformProgressReaders();
 
             _gameStateMachine.Enter<GameLoopState>();
+        }
+
+        private void InformProgressReaders()
+        {
+            foreach (var progressReader in _gameFactory.ProgressReaders)
+            {
+                progressReader.LoadProgress(_progressService.Progress);
+            }
         }
 
         private void InitLevel()
@@ -81,6 +90,7 @@ namespace CodeBase.Infrastructure.States
             _gameFactory.InitGameMusic();
             _gameFactory.InitMusicTriggers();
             _gameFactory.InitMeatBlobs();
+            _gameFactory.InitSaveTriggers();
         }
 
         private void InitUI()

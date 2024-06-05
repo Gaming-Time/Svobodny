@@ -9,6 +9,7 @@ using CodeBase.Infrastructure.Services.Factories.UsableObjectFactory;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.Mediator;
 using CodeBase.Infrastructure.Services.Progress;
+using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Infrastructure.Services.StaticData;
 using CodeBase.Infrastructure.Services.WindowService;
 
@@ -62,6 +63,8 @@ namespace CodeBase.Infrastructure.States
                 _services.Single<IUsableObjectFactory>(), _services.Single<IWindowService>(),
                 _services.Single<IUIFactory>()));
             _services.RegisterSingle<IProgressService>(new ProgressService());
+            _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IGameFactory>(),
+                _services.Single<IProgressService>()));
         }
 
         private void ConfigFactories()

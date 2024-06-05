@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using CodeBase.Infrastructure;
 using UnityEngine;
 
 namespace CodeBase.Windows
