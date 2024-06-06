@@ -61,6 +61,7 @@ namespace CodeBase.Infrastructure.Services.WindowService
         Level3EndDialog,
         KnifeDialog,
         FinalDialog,
+        PauseWindow,
         Count
     }
 }

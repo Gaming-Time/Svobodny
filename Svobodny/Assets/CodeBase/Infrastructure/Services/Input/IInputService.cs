@@ -18,5 +18,6 @@ namespace CodeBase.Infrastructure.Services.Input
         bool IsKnifeSlotSelectedButtonDown();
         bool IsPistolSLotSelectedButtonDown();
         Vector3 MouseWorldPosition(Vector3 position);
+        bool IsEscapeButtonDown();
     }
 }

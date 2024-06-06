@@ -56,5 +56,7 @@ namespace CodeBase.Infrastructure.Services.Input
 
         public bool IsKnifeSlotSelectedButtonDown() => UnityEngine.Input.GetButtonDown(KnifeSlotSelectedButton);
         public bool IsPistolSLotSelectedButtonDown() => UnityEngine.Input.GetButtonDown(PistolSlotSelectedButton);
+
+        public bool IsEscapeButtonDown() => UnityEngine.Input.GetButtonDown("Cancel");
     }
 }
