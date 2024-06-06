@@ -249,10 +249,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 7277804388090557631}
   m_HandleRect: {fileID: 6599853757060091376}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
-  m_WholeNumbers: 1
-  m_Value: 2
+  m_MinValue: 0.001
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 24300002, guid: 1b23aeb2ebfe46643bfadcefdc181023, type: 2}
+  slider: {fileID: 5659781206409818389}
 --- !u!1 &7491816477890111990
 GameObject:
   m_ObjectHideFlags: 0
