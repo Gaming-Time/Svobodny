@@ -115,6 +115,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
+            _character.GetComponent<CharacterInputHandler>().Construct(_windowService, _inputService);
+
             return _character;
         }
 

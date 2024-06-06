@@ -57,6 +57,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string DoorFourWindow = "UI/Windows/DoorFourWindow";
             public const string DoorFiveWindow = "UI/Windows/DoorFiveWindow";
             public const string DoorSixWindow = "UI/Windows/DoorSixWindow";
+            public const string PauseWindow = "UI/Windows/PauseWindow";
 
             public static class Dialogs
             {
