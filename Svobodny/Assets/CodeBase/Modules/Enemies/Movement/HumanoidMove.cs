@@ -60,5 +60,11 @@ namespace CodeBase.Modules.Enemies.Movement
                 _audioController.ActivateFootsteps();
             }
         }
+
+        public bool IsPathToPositionValid(Vector3 position)
+        {
+            var path = new NavMeshPath();
+            return _agent.CalculatePath(position, path) && path.status == NavMeshPathStatus.PathComplete;
+        }
     }
 }

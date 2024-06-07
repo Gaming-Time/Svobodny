@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.ButtonMediator;
+using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
@@ -47,6 +48,7 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle(_stateMachine);
             _services.RegisterSingle<IAssets>(new AssetProvider());
             _services.RegisterSingle<IInputService>(new DesktopInputService());
+            _services.RegisterSingle<IEnemyDetectionService>(new EnemyDetectionService());
             _services.RegisterSingle(GetLoadedStaticData());
             _services.RegisterSingle<INpcFactory>(new NpcFactory(_services.Single<IAssets>()));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.Single<IAssets>()));
@@ -61,7 +63,7 @@ namespace CodeBase.Infrastructure.States
                 _services.Single<IEnemyFactory>(), _services.Single<INpcFactory>(),
                 _services.Single<IInputService>(), _services.Single<IStaticDataService>(),
                 _services.Single<IUsableObjectFactory>(), _services.Single<IWindowService>(),
-                _services.Single<IUIFactory>()));
+                _services.Single<IUIFactory>(), _services.Single<IEnemyDetectionService>()));
             _services.RegisterSingle<IProgressService>(new ProgressService());
             _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IGameFactory>(),
                 _services.Single<IProgressService>()));

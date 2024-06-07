@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Ai.Scorers
 {
-    public class IsNearWaypoint : ContextualScorerBase
+    public class IsNearMoveTarget : ContextualScorerBase
     {
         [ApexSerialization] [UsedImplicitly] public bool Not;
 
@@ -14,8 +14,6 @@ namespace CodeBase.Modules.Enemies.Ai.Scorers
             var enemyEntity = ((EnemyAiContext)context).Entity;
 
             var distance = (enemyEntity.MoveTarget.Value - enemyEntity.Position).sqrMagnitude;
-            
-            Debug.LogWarning(distance);
 
             if ( distance < 0.8f)
                 return Not ? 0f : score;
