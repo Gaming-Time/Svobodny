@@ -9,7 +9,7 @@ namespace CodeBase.Infrastructure.Services.Input
         float ScrollInput { get; }
         Vector3 MousePosition { get; }
 
-        bool IsSneakButtonDown();
+        bool IsSneakButtonHeld();
         bool IsUseButtonDown();
         bool IsAttackButtonDown();
         bool IsAimButtonDown();
@@ -19,5 +19,6 @@ namespace CodeBase.Infrastructure.Services.Input
         bool IsPistolSLotSelectedButtonDown();
         Vector3 MouseWorldPosition(Vector3 position);
         bool IsEscapeButtonDown();
+        bool IsSneakButtonDown();
     }
 }

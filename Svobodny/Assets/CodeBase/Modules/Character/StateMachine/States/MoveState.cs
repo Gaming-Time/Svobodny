@@ -50,7 +50,7 @@ namespace CodeBase.Modules.Character.StateMachine.States
             _characterMove.Move();
 
             var controllerSpeed = _characterController.velocity.sqrMagnitude;
-            var sneakInput = _inputService.IsSneakButtonDown();
+            var sneakInput = _inputService.IsSneakButtonHeld();
 
             if (controllerSpeed > 0.01f)
             {

@@ -24,6 +24,7 @@ using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Logic.UsableObjects.Doors;
 using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
+using CodeBase.Modules.Character.Ai;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
@@ -116,6 +117,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitArm(_character, camera);
 
             _character.GetComponent<CharacterInputHandler>().Construct(_windowService, _inputService);
+            _character.GetComponent<PlayerEntity>().Construct(_inputService);
 
             return _character;
         }

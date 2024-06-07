@@ -1,11 +1,13 @@
 using System.Linq;
 using Apex.AI;
 using Apex.Serialization;
+using CodeBase.Modules.Character.Ai;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Ai.Helpers;
 using CodeBase.Modules.Enemies.Ai.Memory;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace CodeBase.Modules.Enemies.Ai.Actions
 {
@@ -37,15 +39,28 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                     continue;
 
                 var direction = (enemyEntity.Velocity == Vector3.zero)
-                ? (hitEntity.Position - enemyEntity.Position).normalized 
-                : Vector3.Normalize(enemyEntity.Velocity);
+                    ? -enemyEntity.GameObject.transform.forward
+                    : Vector3.Normalize(enemyEntity.Velocity);
 
-                var visibility = (hitEntity.Type == EntityType.Player)
-                    ? Utilities.IsVisibleWithFov(enemyEntity.Position, hitEntity.Position, direction,
-                        enemyEntity.ScanRange, enemyEntity.FovAngle, BlockLayers)
-                    : Utilities.IsVisible(enemyEntity.Position, hitEntity.Position,
+                bool visibility;
+
+                if (hitEntity.Type == EntityType.Player)
+                {
+                    Assert.IsTrue(hitEntity is PlayerEntity);
+
+                    var playerEntity = (PlayerEntity)hitEntity;
+
+                    visibility = playerEntity.IsSneaking
+                        ? Utilities.IsVisibleWithFov(enemyEntity.Position, playerEntity.Position, direction,
+                            enemyEntity.ScanRange, enemyEntity.FovAngle, BlockLayers)
+                        : Utilities.IsVisible(enemyEntity.Position, playerEntity.Position, enemyEntity.ScanRange,
+                            BlockLayers);
+                }
+                else
+                {
+                    visibility = Utilities.IsVisible(enemyEntity.Position, hitEntity.Position,
                         enemyEntity.ScanRange, BlockLayers);
-
+                }
 
                 enemyContext.Memory.AddOrUpdateObservation(new Observation(hitEntity, visibility));
             }

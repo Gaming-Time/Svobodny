@@ -33,7 +33,7 @@ namespace CodeBase.Modules.Character
             var inputNormalized = _inputService.MovementInput.normalized;
             Vector3 move = new(inputNormalized.x, 0, inputNormalized.y);
 
-            var sneakInput = _inputService.IsSneakButtonDown();
+            var sneakInput = _inputService.IsSneakButtonHeld();
 
             move *= sneakInput ? sneakSpeed : walkSpeed;
 
