@@ -39,7 +39,9 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
                     continue;
 
                 var direction = (enemyEntity.Velocity == Vector3.zero)
-                    ? -enemyEntity.GameObject.transform.forward
+                    ? enemyEntity.AttackTarget == null
+                        ? -enemyEntity.GameObject.transform.forward
+                        : (enemyEntity.AttackTarget.Position - enemyEntity.Position).normalized
                     : Vector3.Normalize(enemyEntity.Velocity);
 
                 bool visibility;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5357124432268646400}
   - component: {fileID: 4319182134157637658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2308589883796891529}
   - component: {fileID: 3106096139290439340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648351294875083722}
   - component: {fileID: 6212797843205949009}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WalkSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 1312011722134564088}
   - component: {fileID: 1481648775820196312}
   - component: {fileID: 2638911071758050430}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,13 +373,13 @@ MonoBehaviour:
     intervalMax: 0.2
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 0
+    isActive: 1
   - aiId: c76d248a-3aa4-48f6-8850-2bccbc1ef5bc
     intervalMin: 0.5
     intervalMax: 0.5
     startDelayMin: 0
     startDelayMax: 0
-    isActive: 0
+    isActive: 1
 --- !u!114 &1312011722134564088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 6573059771072727268}
   - component: {fileID: 8105324527421858742}
   - component: {fileID: 4473229718997355451}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 7847418504548026731}
   - component: {fileID: 673232896192805746}
   - component: {fileID: 1007112028211076619}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278438300785645663}
   - component: {fileID: 8366320931803539932}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DeathSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574654499403027452}
   - component: {fileID: 2540436739371932525}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DetectionSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6238923393931538627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 6240907821012130194}
   - component: {fileID: 6717516889644333040}
   - component: {fileID: 8455908824405780128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1399039714342552908, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1455571107053818084, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_Name
@@ -1050,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1455571107053818084, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1668481300488851538, guid: 479dd866e6177fb4cb998b4b79aa0ba7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1181,7 +1181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6280324468228504056, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8534655020633264906, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
       propertyPath: m_Name
@@ -1189,7 +1189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8534655020633264906, guid: 394c937ec6054554c8c26d6553c33a98, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

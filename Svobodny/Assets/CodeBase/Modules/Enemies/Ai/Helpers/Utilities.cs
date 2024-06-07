@@ -13,7 +13,7 @@ namespace CodeBase.Modules.Enemies.Ai.Helpers
             if (sqrMag == 0f)
                 return true;
 
-            if (sqrMag > range * range)
+            if (Vector3.Distance(from, to) > range)
                 return false;
 
             var blockHit = Physics.Linecast(from, to, layers);
