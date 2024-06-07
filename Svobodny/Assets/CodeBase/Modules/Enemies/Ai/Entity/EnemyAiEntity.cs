@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
@@ -14,6 +16,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         private EnemyAttack _attacker;
         private EnemyHealth _enemyHealth;
         private EnemyAudioController _audioController;
+        private IEnemyDetectionService _enemyDetectionService;
 
         [SerializeField] private float scanRange;
         [SerializeField] private float meleeAttackRange;
@@ -33,11 +36,15 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
         public int CurrentWaypointIndex { get; set; }
         public bool WasPlayerVisiblePreviously { get; set; }
+        
+        public bool ShouldHandleShot { get; set; }
+        public Vector3 LastShotPosition { get; private set; }
 
-        public void Construct(IMove mover, EnemyAttack attacker,
+        public void Construct(IEnemyDetectionService enemyDetectionService, IMove mover, EnemyAttack attacker,
             EnemyHealth enemyHealth, EnemyAudioController audioController, float scanRange,
             float meleeAttackRange, List<Vector3> waypoints)
         {
+            _enemyDetectionService = enemyDetectionService;
             _mover = mover;
             _attacker = attacker;
             _enemyHealth = enemyHealth;
@@ -48,6 +55,18 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
             Waypoints = waypoints;
             CurrentWaypointIndex = -1;
             WasPlayerVisiblePreviously = false;
+            _enemyDetectionService.ShotEvent += OnShot;
+        }
+
+        private void OnDestroy()
+        {
+            _enemyDetectionService.ShotEvent -= OnShot;
+        }
+
+        private void OnShot(Vector3 position)
+        {
+            LastShotPosition = position;
+            ShouldHandleShot = true;
         }
 
         public void MoveTo(Vector3 destination)
@@ -71,5 +90,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         }
 
         public void PlayDetectionSound() => _audioController.PlayDetection();
+
+        public bool IsPathToPositionValid(Vector3 position) => _mover.IsPathToPositionValid(position);
     }
 }

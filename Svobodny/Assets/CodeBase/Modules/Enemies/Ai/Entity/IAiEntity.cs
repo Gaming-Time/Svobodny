@@ -15,11 +15,14 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         List<Vector3> Waypoints { get; }
         int CurrentWaypointIndex { get; set; }
         bool WasPlayerVisiblePreviously { get; set; }
+        bool ShouldHandleShot { get; set; }
+        Vector3 LastShotPosition { get; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);
         void StartMovement();
         void StopMovement();
         void PlayDetectionSound();
+        bool IsPathToPositionValid(Vector3 position);
     }
 }

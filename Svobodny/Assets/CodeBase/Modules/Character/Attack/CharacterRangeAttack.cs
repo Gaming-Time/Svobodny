@@ -1,3 +1,4 @@
+using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.VFX;
@@ -10,6 +11,7 @@ namespace CodeBase.Modules.Character.Attack
     {
         private Camera _camera;
         private IInputService _inputService;
+        private IEnemyDetectionService _enemyDetectionService;
         private CharacterVFXController _vfxController;
         private CharacterAudioController _audioController;
 
@@ -23,10 +25,12 @@ namespace CodeBase.Modules.Character.Attack
         private Plane _plane;
         private float _lastShootTime;
 
-        public void Construct(IInputService inputService, CharacterVFXController vfxController,
+        public void Construct(IInputService inputService, IEnemyDetectionService enemyDetectionService,
+            CharacterVFXController vfxController,
             CharacterAudioController audioController, Camera camera)
         {
             _inputService = inputService;
+            _enemyDetectionService = enemyDetectionService;
             _vfxController = vfxController;
             _audioController = audioController;
             _camera = camera;
@@ -43,6 +47,7 @@ namespace CodeBase.Modules.Character.Attack
             _lastShootTime = Time.time;
             _vfxController.PlayFlash();
             _audioController.PlayShoot();
+            _enemyDetectionService.RegisterShot(transform.position);
             var ray = _camera.ScreenPointToRay(_inputService.MousePosition);
             if (_plane.Raycast(ray, out var distance))
                 _worldMousePosition = ray.GetPoint(distance);

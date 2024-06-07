@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 301707633407469744}
   - component: {fileID: 1312011722134564088}
   - component: {fileID: 1481648775820196312}
+  - component: {fileID: 2638911071758050430}
   m_Layer: 11
   m_Name: AI
   m_TagString: Untagged
@@ -405,7 +406,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanRange: 0
   meleeAttackRange: 0
-  fovAngle: 90
+  fovAngle: 72
+--- !u!114 &2638911071758050430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353591998700442903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b550cd6ebc4b6a9b7b540a9bf40704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyAiEntity: {fileID: 1481648775820196312}
 --- !u!1 &3702559615869342975
 GameObject:
   m_ObjectHideFlags: 0

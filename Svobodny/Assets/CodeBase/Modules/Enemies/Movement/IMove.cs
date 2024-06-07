@@ -8,5 +8,6 @@ namespace CodeBase.Modules.Enemies.Movement
         void AllowMovement();
         void Stop();
         void MoveToPosition(Vector3 destination);
+        bool IsPathToPositionValid(Vector3 position);
     }
 }

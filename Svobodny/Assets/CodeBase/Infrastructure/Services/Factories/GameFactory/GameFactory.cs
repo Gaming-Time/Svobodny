@@ -7,6 +7,7 @@ using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Logic;
 using CodeBase.Infrastructure.Services.AssetProvider;
+using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.NpcFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
@@ -24,6 +25,7 @@ using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Logic.UsableObjects.Doors;
 using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
+using CodeBase.Modules.Character.Ai;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
@@ -64,6 +66,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private readonly IUsableObjectFactory _usableObjectFactory;
         private readonly IWindowService _windowService;
         private readonly IUIFactory _uiFactory;
+        private readonly IEnemyDetectionService _enemyDetectionService;
 
         private Dictionary<string, EnemySpawner> _enemySpawners = new();
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
@@ -83,7 +86,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         public GameFactory(IAssets assetProvider, IEnemyFactory enemyFactory, INpcFactory npcFactory,
             IInputService inputService, IStaticDataService staticData, IUsableObjectFactory usableObjectFactory,
-            IWindowService windowService, IUIFactory uiFactory)
+            IWindowService windowService, IUIFactory uiFactory, IEnemyDetectionService enemyDetectionService)
         {
             _assetProvider = assetProvider;
             _enemyFactory = enemyFactory;
@@ -93,6 +96,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _usableObjectFactory = usableObjectFactory;
             _windowService = windowService;
             _uiFactory = uiFactory;
+            _enemyDetectionService = enemyDetectionService;
         }
 
         public GameObject CreateCharacter(Vector3 position, Quaternion rotation, CharacterStaticData staticData)
@@ -109,13 +113,14 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitHealth(staticData, _character);
             InitInteractions(_character);
             InitCharacterAttack(_character, audioController);
-            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService,
+            _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, _enemyDetectionService,
                 _character.GetComponent<CharacterVFXController>(),
                 audioController, camera);
             InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
             _character.GetComponent<CharacterInputHandler>().Construct(_windowService, _inputService);
+            _character.GetComponent<PlayerEntity>().Construct(_inputService);
 
             return _character;
         }
@@ -230,7 +235,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
                     vfxController, audioController);
-                monsterEntity.Construct(monsterMover, monsterAttack, monsterHealth, audioController,
+                monsterEntity.Construct(_enemyDetectionService, monsterMover, monsterAttack, monsterHealth,
+                    audioController,
                     monsterData.ScanRange,
                     monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);

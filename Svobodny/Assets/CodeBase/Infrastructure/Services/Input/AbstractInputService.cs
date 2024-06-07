@@ -46,7 +46,8 @@ namespace CodeBase.Infrastructure.Services.Input
             return worldMousePosition;
         }
 
-        public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButton(SneakButton);
+        public virtual bool IsSneakButtonHeld() => UnityEngine.Input.GetButton(SneakButton);
+        public virtual bool IsSneakButtonDown() => UnityEngine.Input.GetButtonDown(SneakButton);
         public bool IsUseButtonDown() => UnityEngine.Input.GetButtonDown(UseButton);
         public bool IsAttackButtonDown() => UnityEngine.Input.GetButtonDown(AttackButton);
         public bool IsAimButtonDown() => UnityEngine.Input.GetButtonDown(AimButton);
