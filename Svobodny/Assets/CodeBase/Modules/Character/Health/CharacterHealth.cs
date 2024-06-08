@@ -1,7 +1,8 @@
 using System;
 using CodeBase.Data;
+using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.Progress;
-using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.StateMachine;
 using CodeBase.Modules.Character.StateMachine.States;
@@ -15,28 +16,42 @@ namespace CodeBase.Modules.Character.Health
     public class CharacterHealth : MonoBehaviour, IHealth, ISavedProgress
     {
         [SerializeField] private int _currentHealth;
+        [SerializeField] private int medicineHealthAddition;
 
+        private IInputService _inputService;
         private CharacterAnimatorController _animatorController;
-        private IWindowService _windowService;
         private CharacterVFXController _vfxController;
         private HealthHandler _healthHandler;
         private CharacterStateMachine _stateMachine;
+        private InventoryHandler _inventoryHandler;
+        private int _startHealth;
 
         public int Health => _currentHealth;
 
-        public void Construct(CharacterAnimatorController animatorController, IWindowService windowService,
+        public void Construct(IInputService inputService, CharacterAnimatorController animatorController,
             CharacterVFXController vfxController, HealthHandler healthHandler,
-            CharacterStateMachine characterStateMachine,
+            CharacterStateMachine characterStateMachine, InventoryHandler inventoryHandler,
             int health)
         {
+            _inputService = inputService;
             _animatorController = animatorController;
-            _windowService = windowService;
             _vfxController = vfxController;
             _healthHandler = healthHandler;
             _stateMachine = characterStateMachine;
+            _inventoryHandler = inventoryHandler;
 
             _currentHealth = health;
+            _startHealth = health;
             _healthHandler.HandleHealthChange(_currentHealth);
+        }
+
+        private void Update()
+        {
+            if (_inputService.IsUseMedicineButtonDown() && _inventoryHandler.HasEssential(EssentialType.Medicine))
+            {
+                AddHealth(medicineHealthAddition);
+                _inventoryHandler.RemoveEssential(EssentialType.Medicine);
+            }
         }
 
         public void DoDamage(int damage)
@@ -65,6 +80,12 @@ namespace CodeBase.Modules.Character.Health
             var direction = (from - transform.position).normalized;
             _vfxController.PlayBlood(direction);
             DoDamage(damage);
+        }
+
+        private void AddHealth(int amount)
+        {
+            _currentHealth = Mathf.Clamp(_currentHealth + amount, _currentHealth, _startHealth);
+            _healthHandler.HandleHealthChange(_currentHealth);
         }
 
         public void Die()

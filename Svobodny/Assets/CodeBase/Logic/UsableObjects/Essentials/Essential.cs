@@ -12,15 +12,16 @@ namespace CodeBase.Logic.UsableObjects.Essentials
         private int _amount;
         private EssentialType _essentialType;
 
-        public void Construct(IInputService inputService, EssentialType essentialType, int amount)
+        public void Construct(IInputService inputService, InventoryHandler inventoryHandler, EssentialType essentialType, int amount)
         {
             InputService = inputService;
+            _inventoryHandler = inventoryHandler;
             _essentialType = essentialType;
             _amount = amount;
         }
         public override void Use()
         {
-            Debug.LogWarning($"{_amount} of {_essentialType} used");
+            _inventoryHandler.AddEssential(_essentialType, _amount);
             Destroy(gameObject);
         }
     }

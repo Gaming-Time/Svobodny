@@ -1,6 +1,8 @@
 using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.Audio;
+using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Character.VFX;
 using CodeBase.Modules.Common.Health;
 using UnityEngine;
@@ -14,6 +16,7 @@ namespace CodeBase.Modules.Character.Attack
         private IEnemyDetectionService _enemyDetectionService;
         private CharacterVFXController _vfxController;
         private CharacterAudioController _audioController;
+        private InventoryHandler _inventoryHandler;
 
         [SerializeField] private Transform arm;
         [SerializeField] private Transform shootPoint;
@@ -27,12 +30,13 @@ namespace CodeBase.Modules.Character.Attack
 
         public void Construct(IInputService inputService, IEnemyDetectionService enemyDetectionService,
             CharacterVFXController vfxController,
-            CharacterAudioController audioController, Camera camera)
+            CharacterAudioController audioController, InventoryHandler inventoryHandler, Camera camera)
         {
             _inputService = inputService;
             _enemyDetectionService = enemyDetectionService;
             _vfxController = vfxController;
             _audioController = audioController;
+            _inventoryHandler = inventoryHandler;
             _camera = camera;
 
             _plane = new Plane(Vector3.up, 0);
@@ -44,6 +48,7 @@ namespace CodeBase.Modules.Character.Attack
             if (_lastShootTime + delay > Time.time)
                 return;
 
+            _inventoryHandler.RemoveEssential(EssentialType.Bullet,1);
             _lastShootTime = Time.time;
             _vfxController.PlayFlash();
             _audioController.PlayShoot();

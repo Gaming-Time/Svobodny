@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 0
+  medicineHealthAddition: 3
 --- !u!114 &6793251854950668844
 MonoBehaviour:
   m_ObjectHideFlags: 0

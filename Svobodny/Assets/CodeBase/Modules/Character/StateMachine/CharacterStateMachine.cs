@@ -16,7 +16,7 @@ namespace CodeBase.Modules.Character.StateMachine
     public class CharacterStateMachine : MonoBehaviour, ICoroutineRunner
     {
         [SerializeField] private Collider characterTrigger;
-        
+
         private Dictionary<Type, IUpdatableState> _states;
         private IUpdatableState _activeState;
 
@@ -74,10 +74,11 @@ namespace CodeBase.Modules.Character.StateMachine
                         _characterController),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, this),
                 [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera, transform,
-                    _characterAnimatorController),
+                    _characterAnimatorController, _inventoryHandler),
                 [typeof(HitState)] = new HitState(this, _animationEventsHandler),
                 [typeof(DeathState)] =
-                    new DeathState(_windowService, _characterAnimatorController, _animationEventsHandler, characterTrigger)
+                    new DeathState(_windowService, _characterAnimatorController, _animationEventsHandler,
+                        characterTrigger)
             };
         }
 

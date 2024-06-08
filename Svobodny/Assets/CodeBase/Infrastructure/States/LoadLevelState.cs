@@ -82,6 +82,7 @@ namespace CodeBase.Infrastructure.States
 
             _gameFactory.CreateItemsUIHandler();
             _gameFactory.CreateGunsUiHandler();
+            _gameFactory.CreateEssentialsUIHandler();
 
             _gameFactory.InitCamera(character);
 

@@ -25,6 +25,7 @@ namespace CodeBase.Data
     public class InventoryData
     {
         public List<Gun> Guns = new();
+        public List<Essential> Essentials = new();
     }
 
     [Serializable]

@@ -1,8 +1,10 @@
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Arm;
 using CodeBase.Modules.Character.Attack;
+using CodeBase.Modules.Character.UI;
 using UnityEngine;
 
 namespace CodeBase.Modules.Character.StateMachine.States
@@ -17,13 +19,14 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly Camera _camera;
         private readonly Transform _characterTransform;
         private readonly CharacterAnimatorController _characterAnimatorController;
+        private readonly InventoryHandler _inventoryHandler;
 
         private Plane _plane;
         private Vector3 _worldPosition;
 
         public ShootState(CharacterStateMachine stateMachine, IInputService inputService,
             CharacterRangeAttack rangeAttack, Transform arm, Camera camera, Transform playerTransform,
-            CharacterAnimatorController characterAnimatorController)
+            CharacterAnimatorController characterAnimatorController, InventoryHandler inventoryHandler)
         {
             _stateMachine = stateMachine;
             _inputService = inputService;
@@ -32,6 +35,7 @@ namespace CodeBase.Modules.Character.StateMachine.States
             _camera = camera;
             _characterTransform = playerTransform;
             _characterAnimatorController = characterAnimatorController;
+            _inventoryHandler = inventoryHandler;
 
             _armAnimatorController = _arm.GetComponent<ArmAnimatorController>();
         }
@@ -60,8 +64,10 @@ namespace CodeBase.Modules.Character.StateMachine.States
             _armAnimatorController.SetMouseVariables();
             SetArmRotation();
 
-            if (_inputService.IsAttackButtonDown())
+            if (_inputService.IsAttackButtonDown() && _inventoryHandler.HasEssential(EssentialType.Bullet))
+            {
                 _rangeAttack.Shoot();
+            }
         }
 
         private void SetArmRotation()

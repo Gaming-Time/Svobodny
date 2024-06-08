@@ -35,6 +35,14 @@ namespace CodeBase.Modules.Inventory.Guns
             Initialize();
         }
 
+        private void OnDestroy()
+        {
+            if(!_inventoryHandler)
+                return;
+            
+            CleanUp();
+        }
+
         private void Initialize()
         {
             _knifeSlotContainer = _hud.KnifeSlotContainer;

@@ -51,5 +51,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             EssentialType essentialType, int amount);
 
         void SpawnEssentials();
+        void CreateEssentialsUIHandler();
     }
 }

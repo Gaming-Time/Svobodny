@@ -1,6 +1,7 @@
 using CodeBase.Modules.Inventory;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CodeBase.Modules.UI
@@ -16,6 +17,8 @@ namespace CodeBase.Modules.UI
 
         [SerializeField] private Transform knifeSlotContainer;
         [SerializeField] private Transform pistolSlotContainer;
+        [SerializeField] private Transform bulletSlotContainer;
+        [SerializeField] private Transform medicineSlotContainer;
         [SerializeField] private Slider healthSlider;
 
         public Transform UpSlotContainer => upSlotContainer;
@@ -26,6 +29,8 @@ namespace CodeBase.Modules.UI
 
         public Transform KnifeSlotContainer => knifeSlotContainer;
         public Transform PistolSlotContainer => pistolSlotContainer;
+        public Transform BulletSlotContainer => bulletSlotContainer;
+        public Transform MedicineSlotContainer => medicineSlotContainer;
         public Slider HealthSlider => healthSlider;
     }
 }

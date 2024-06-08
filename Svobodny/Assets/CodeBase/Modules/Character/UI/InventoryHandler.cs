@@ -5,8 +5,10 @@ using CodeBase.Data;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.Animation;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace CodeBase.Modules.Character.UI
 {
@@ -18,6 +20,7 @@ namespace CodeBase.Modules.Character.UI
 
         private List<Item> _items = new();
         private List<Gun> _guns = new();
+        private List<Essential> _essentials = new();
 
         public GunType? SelectedGun { get; private set; }
 
@@ -27,6 +30,9 @@ namespace CodeBase.Modules.Character.UI
         public event Action<GunType> GunAdded;
         public event Action<GunType> GunRemoved;
         public event Action<GunType?> GunSelected;
+
+        public event Action<EssentialType, int> EssentialAdded;
+        public event Action<EssentialType, int> EssentialRemoved;
 
 
         public void Construct(IInputService inputService, IWindowService windowService,
@@ -87,8 +93,6 @@ namespace CodeBase.Modules.Character.UI
 
             if (SelectedGun == null)
                 SelectGun(gunType);
-            
-            
         }
 
         public void RemoveGun(GunType gunType)
@@ -104,7 +108,39 @@ namespace CodeBase.Modules.Character.UI
                 SelectGun(null);
         }
 
+        public void AddEssential(EssentialType essentialType, int amount)
+        {
+            EssentialAdded?.Invoke(essentialType, amount);
+            var essential = _essentials.FirstOrDefault(essential => essential.EssentialType == essentialType);
+
+            if (essential != null)
+            {
+                essential.Amount += amount;
+
+                return;
+            }
+
+            _essentials.Add(new Essential(essentialType, amount));
+        }
+
+        public void RemoveEssential(EssentialType essentialType, int amount = 1)
+        {
+            var essential = _essentials.FirstOrDefault(essential => essential.EssentialType == essentialType);
+
+            Assert.IsTrue(essential != null);
+
+            EssentialRemoved?.Invoke(essentialType, amount);
+
+            essential.Amount -= amount;
+
+            if (essential.Amount <= 0)
+                _essentials.Remove(essential);
+        }
+
         public bool HasItem(ItemType itemType) => _items.Exists(item => item.ItemType == itemType);
+
+        public bool HasEssential(EssentialType essentialType) =>
+            _essentials.Exists(essential => essential.EssentialType == essentialType);
 
         private void SelectGun(GunType? gunType)
         {
@@ -116,11 +152,13 @@ namespace CodeBase.Modules.Character.UI
         public void LoadProgress(PlayerProgress progress)
         {
             progress.InventoryData.Guns.ForEach(gun => AddGun(gun.GunType));
+            progress.InventoryData.Essentials.ForEach(essential => AddEssential(essential.EssentialType, essential.Amount));
         }
 
         public void UpdateProgress(PlayerProgress progress)
         {
             progress.InventoryData.Guns = _guns;
+            progress.InventoryData.Essentials = _essentials;
         }
     }
 
@@ -143,6 +181,19 @@ namespace CodeBase.Modules.Character.UI
         public Gun(GunType gunType)
         {
             GunType = gunType;
+        }
+    }
+
+    [Serializable]
+    public class Essential
+    {
+        public EssentialType EssentialType;
+        public int Amount;
+
+        public Essential(EssentialType essentialType, int amount)
+        {
+            EssentialType = essentialType;
+            Amount = amount;
         }
     }
 

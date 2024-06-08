@@ -14,6 +14,7 @@ namespace CodeBase.Infrastructure.Services.Input
         private const string KnifeSlotSelectedButton = "Knife Slot";
         private const string PistolSlotSelectedButton = "Pistol Slot";
         private const string AimButton = "Aim Button";
+        private const string MedicineButtonName = "Medicine";
 
         private Camera _mainCamera;
 
@@ -59,5 +60,7 @@ namespace CodeBase.Infrastructure.Services.Input
         public bool IsPistolSLotSelectedButtonDown() => UnityEngine.Input.GetButtonDown(PistolSlotSelectedButton);
 
         public bool IsEscapeButtonDown() => UnityEngine.Input.GetButtonDown("Cancel");
+
+        public bool IsUseMedicineButtonDown() => UnityEngine.Input.GetButtonDown(MedicineButtonName);
     }
 }

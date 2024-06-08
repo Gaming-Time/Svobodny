@@ -47,11 +47,13 @@ using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Enemies.VFX;
 using CodeBase.Modules.Health;
 using CodeBase.Modules.Inventory;
+using CodeBase.Modules.Inventory.Essentials;
 using CodeBase.Modules.Inventory.Guns;
 using CodeBase.Modules.Music;
 using CodeBase.Modules.UI;
 using UnityEngine;
 using UnityEngine.AI;
+using Essential = CodeBase.Logic.UsableObjects.Essentials.Essential;
 using Gun = CodeBase.Logic.UsableObjects.Gun;
 using Object = UnityEngine.Object;
 
@@ -82,6 +84,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Hud _hud;
         private HealthUIHandler _healthUIHandler;
         private GameMusic _gameMusic;
+        private EssentialsUIHandler _essentialsUIHandler;
 
         public List<ISavedProgressReader> ProgressReaders { get; } = new();
         public List<ISavedProgress> ProgressWriters { get; } = new();
@@ -117,7 +120,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitCharacterAttack(_character, audioController);
             _character.GetComponent<CharacterRangeAttack>().Construct(_inputService, _enemyDetectionService,
                 _character.GetComponent<CharacterVFXController>(),
-                audioController, camera);
+                audioController, _inventoryHandler, camera);
             InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
@@ -199,6 +202,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _healthUIHandler.Construct(_hud);
         }
 
+        public void CreateEssentialsUIHandler()
+        {
+            _essentialsUIHandler = _assetProvider.Instantiate<EssentialsUIHandler>(AssetPath.EssentialsUIHandlerPath);
+            _essentialsUIHandler.Construct(_inventoryHandler, _hud, _assetProvider, _staticData);
+        }
+
         public void SpawnAllObjects()
         {
             foreach (var spawner in _objectSpawners)
@@ -224,7 +233,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             foreach (var essentialSpawner in _essentialSpawners)
             {
                 var essential = essentialSpawner.Value.Spawn();
-                essential.GetComponent<Essential>().Construct(_inputService, essentialSpawner.Value.EssentialType,
+                essential.GetComponent<Essential>().Construct(_inputService, _inventoryHandler,
+                    essentialSpawner.Value.EssentialType,
                     essentialSpawner.Value.Amount);
             }
         }
@@ -288,6 +298,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _npcSpawners.Clear();
             _objectSpawners.Clear();
             _gunSpawners.Clear();
+            _essentialSpawners.Clear();
             ProgressWriters.Clear();
             ProgressReaders.Clear();
         }
@@ -380,9 +391,9 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             var characterAnimationEvents = character.GetComponent<CharacterAnimationEventsHandler>();
 
             healthHandler.Construct(_healthUIHandler, staticData.Health);
-            characterHealth.Construct(character.GetComponent<CharacterAnimatorController>(), _windowService,
+            characterHealth.Construct(_inputService,character.GetComponent<CharacterAnimatorController>(),
                 character.GetComponent<CharacterVFXController>(), healthHandler,
-                character.GetComponent<CharacterStateMachine>(),
+                character.GetComponent<CharacterStateMachine>(), _inventoryHandler,
                 staticData.Health);
 
             ProgressReaders.Add(characterHealth);
