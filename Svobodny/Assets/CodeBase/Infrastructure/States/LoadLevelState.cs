@@ -74,6 +74,7 @@ namespace CodeBase.Infrastructure.States
 
             CreateObjectSpawners();
             CreateGunObjectsSpawners();
+            CreateEssentialObjectsSpawners();
             _gameFactory.CreateHud();
             _gameFactory.CreateHealthUIHandler();
 
@@ -86,6 +87,7 @@ namespace CodeBase.Infrastructure.States
 
             _gameFactory.SpawnAllObjects();
             _gameFactory.SpawnGuns();
+            _gameFactory.SpawnEssentials();
             _gameFactory.InitTriggers();
             _gameFactory.InitGameMusic();
             _gameFactory.InitMusicTriggers();
@@ -114,6 +116,14 @@ namespace CodeBase.Infrastructure.States
 
             spawners.ForEach(spawner =>
                 _gameFactory.CreateGunObjectSpawner(spawner.Position, spawner.Rotation, spawner.Id, spawner.GunType));
+        }
+
+        private void CreateEssentialObjectsSpawners()
+        {
+            var spawners = _levelStaticData.EssentialsSpawners;
+            
+            spawners.ForEach(spawner => _gameFactory.CreateEssentialObjectSpawner(spawner.Position, spawner.Rotation,
+                spawner.Id, spawner.EssentialType, spawner.Amount));
         }
 
         private void CreateEnemySpawners()

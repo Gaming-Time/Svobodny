@@ -23,6 +23,7 @@ using CodeBase.Logic.Triggers;
 using CodeBase.Logic.UsableObjects;
 using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Logic.UsableObjects.Doors;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Logic.UsableObjects.Key;
 using CodeBase.Modules.Character;
 using CodeBase.Modules.Character.Ai;
@@ -72,6 +73,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private Dictionary<string, NpcSpawner> _npcSpawners = new();
         private Dictionary<string, UsableObjectSpawner> _objectSpawners = new();
         private Dictionary<string, GunUsableObjectSpawner> _gunSpawners = new();
+        private Dictionary<string, EssentialUsableObjectSpawner> _essentialSpawners = new();
 
         private GameObject _character;
         private InventoryHandler _inventoryHandler;
@@ -167,6 +169,16 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _gunSpawners.Add(spawnerId, spawner);
         }
 
+        public void CreateEssentialObjectSpawner(Vector3 position, Quaternion rotation, string id,
+            EssentialType essentialType, int amount)
+        {
+            var spawner =
+                _assetProvider.Instantiate<EssentialUsableObjectSpawner>(AssetPath.EssentialObjectSpawnerPath, position,
+                    rotation);
+            spawner.Construct(_usableObjectFactory, essentialType, amount);
+            _essentialSpawners.Add(id, spawner);
+        }
+
         public void CreateHud() => _hud = _uiFactory.CreateHud().GetComponent<Hud>();
 
         public void CreateItemsUIHandler()
@@ -204,6 +216,16 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var gun = gunSpawner.Value.Spawn();
                 gun.GetComponent<Gun>().Construct(_inputService, _windowService, _inventoryHandler,
                     gunSpawner.Value.GunType);
+            }
+        }
+
+        public void SpawnEssentials()
+        {
+            foreach (var essentialSpawner in _essentialSpawners)
+            {
+                var essential = essentialSpawner.Value.Spawn();
+                essential.GetComponent<Essential>().Construct(_inputService, essentialSpawner.Value.EssentialType,
+                    essentialSpawner.Value.Amount);
             }
         }
 

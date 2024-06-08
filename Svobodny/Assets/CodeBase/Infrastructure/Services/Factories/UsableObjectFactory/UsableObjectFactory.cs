@@ -2,6 +2,7 @@ using System;
 using CodeBase.Infrastructure.Helpers;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
@@ -28,6 +29,24 @@ namespace CodeBase.Infrastructure.Services.Factories.UsableObjectFactory
         {
             var objectPath = GetGunObjectPath(gunType);
             return _assetProvider.Instantiate(objectPath, position, rotation);
+        }
+
+        public GameObject CreateEssentialUsableObject(EssentialType essentialType, Vector3 position,
+            Quaternion rotation)
+        {
+            var path = EssentialObjectPath(essentialType);
+
+            return _assetProvider.Instantiate(path, position, rotation);
+        }
+
+        private string EssentialObjectPath(EssentialType essentialType)
+        {
+            return essentialType switch
+            {
+                EssentialType.Bullet => AssetPath.ObjectsPath.Essentials.BulletPath,
+                EssentialType.Medicine => AssetPath.ObjectsPath.Essentials.MedicinePath,
+                _ => throw new ArgumentOutOfRangeException(nameof(essentialType), essentialType, null)
+            };
         }
 
         private static string GetObjectPath(UsableObjectTypeId typeId)

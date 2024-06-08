@@ -13,6 +13,7 @@ namespace CodeBase.Infrastructure.Helpers
         public const string GunsUIHandlerPath = "GunsUIHandler";
         public const string HealthUIHandlerPath = "HealthUIHandler";
         public const string GunObjectSpawnerPath = "Usableobjects/Gun Object Spawner";
+        public const string EssentialObjectSpawnerPath = "UsableObjects/Essential ObjectSpawner";
         
         public static class StaticDataPath
         {
@@ -41,6 +42,12 @@ namespace CodeBase.Infrastructure.Helpers
             {
                 public const string KnifePath = "UsableObjects/Guns/Knife";
                 public const string PistolPath = "UsableObjects/Guns/Pistol";
+            }
+
+            public static class Essentials
+            {
+                public const string BulletPath = "UsableObjects/Essentials/Bullet";
+                public const string MedicinePath = "UsableObjects/Essentials/Medicine";
             }
         }
 
@@ -76,6 +83,8 @@ namespace CodeBase.Infrastructure.Helpers
         {
             public const string KnifeImage = "Knife";
             public const string PistolImage = "Handgun";
+            public const string BulletImage = "Ammo";
+            public const string MedicineImage = "Heal";
         }
     }
 }
