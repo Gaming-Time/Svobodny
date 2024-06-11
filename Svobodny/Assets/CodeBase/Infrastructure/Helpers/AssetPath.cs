@@ -12,7 +12,9 @@ namespace CodeBase.Infrastructure.Helpers
         public const string ItemsUIHandlerPath = "ItemsUIHandler";
         public const string GunsUIHandlerPath = "GunsUIHandler";
         public const string HealthUIHandlerPath = "HealthUIHandler";
+        public const string EssentialsUIHandlerPath = "EssentialsUIHandler";
         public const string GunObjectSpawnerPath = "Usableobjects/Gun Object Spawner";
+        public const string EssentialObjectSpawnerPath = "UsableObjects/Essential ObjectSpawner";
         
         public static class StaticDataPath
         {
@@ -23,6 +25,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Item = "Static Data/Items";
             public const string Gun = "Static Data/Guns";
             public const string Sound = "Static Data/Sounds";
+            public const string Essential = "Static Data/Essentials";
         }
 
         public static class ObjectsPath
@@ -42,6 +45,12 @@ namespace CodeBase.Infrastructure.Helpers
                 public const string KnifePath = "UsableObjects/Guns/Knife";
                 public const string PistolPath = "UsableObjects/Guns/Pistol";
             }
+
+            public static class Essentials
+            {
+                public const string BulletPath = "UsableObjects/Essentials/Bullet";
+                public const string MedicinePath = "UsableObjects/Essentials/Medicine";
+            }
         }
 
         public static class UIPath
@@ -49,6 +58,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string UIRoot = "UI/UIRoot";
             public const string ItemSlot = "UI/ItemSlot";
             public const string GunSlot = "UI/GunSlot";
+            public const string EssentialSlot = "UI/EssentialSlot";
             public const string Hud = "UI/HUD";
             public const string DeathMenu = "UI/Windows/DeathWindow";
             public const string DoorOneWindow = "UI/Windows/DoorOneWindow";
@@ -76,6 +86,8 @@ namespace CodeBase.Infrastructure.Helpers
         {
             public const string KnifeImage = "Knife";
             public const string PistolImage = "Handgun";
+            public const string BulletImage = "Ammo";
+            public const string MedicineImage = "Heal";
         }
     }
 }

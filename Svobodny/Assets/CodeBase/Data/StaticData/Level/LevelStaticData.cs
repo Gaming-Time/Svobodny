@@ -14,6 +14,7 @@ namespace CodeBase.Data.StaticData.Level
         public List<NpcSpawnerData> NpcSpawners;
         public List<ObjectSpawnerData> ObjectsSpawners;
         public List<GunSpawnerData> GunsSpawners;
+        public List<EssentialSpawnerData> EssentialsSpawners;
 
         public Vector3 DayPlayerPosition;
         public Quaternion DayPlayerRotation;

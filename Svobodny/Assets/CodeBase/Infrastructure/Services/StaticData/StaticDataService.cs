@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Essentials;
 using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
@@ -8,6 +9,7 @@ using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Data.StaticData.Sound;
 using CodeBase.Infrastructure.Helpers;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.UI;
 using UnityEngine;
 
@@ -20,6 +22,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<NpcTypeId, NpcStaticData> _npcs;
         private Dictionary<ItemType, ItemStaticData> _items;
         private Dictionary<GunType, GunStaticData> _guns;
+        private Dictionary<EssentialType, EssentialStaticData> _essentials;
         private Dictionary<SoundType, SoundStaticData> _sounds;
         private CharacterStaticData _character;
 
@@ -38,6 +41,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(gunData => gunData.GunType, gunData => gunData);
             _sounds = Resources.LoadAll<SoundStaticData>(AssetPath.StaticDataPath.Sound)
                 .ToDictionary(soundData => soundData.SoundType, soundData => soundData);
+            _essentials = Resources.LoadAll<EssentialStaticData>(AssetPath.StaticDataPath.Essential)
+                .ToDictionary(essentialData => essentialData.EssentialType, essentialData => essentialData);
             _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
@@ -58,5 +63,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
         public SoundStaticData ForSound(SoundType soundType) => _sounds.GetValueOrDefault(soundType);
 
         public CharacterStaticData ForCharacter() => _character;
+
+        public EssentialStaticData ForEssential(EssentialType essentialType) =>
+            _essentials.GetValueOrDefault(essentialType);
     }
 }

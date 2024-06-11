@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Essentials;
 using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
 using CodeBase.Data.StaticData.Level;
 using CodeBase.Data.StaticData.Monster;
 using CodeBase.Data.StaticData.Npc;
 using CodeBase.Data.StaticData.Sound;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 
@@ -21,5 +23,6 @@ namespace CodeBase.Infrastructure.Services.StaticData
         ItemStaticData ForItem(ItemType itemType);
         GunStaticData ForGun(GunType gunType);
         SoundStaticData ForSound(SoundType soundType);
+        EssentialStaticData ForEssential(EssentialType essentialType);
     }
 }

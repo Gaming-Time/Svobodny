@@ -284,6 +284,41 @@ RectTransform:
   m_AnchoredPosition: {x: 71.431, y: -118.89317}
   m_SizeDelta: {x: 103.45, y: 84.1364}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2211410104393975212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3991717849899093430}
+  m_Layer: 0
+  m_Name: MedicineSlotContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3991717849899093430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211410104393975212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 218172716339660966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 284.9, y: -40.697}
+  m_SizeDelta: {x: 52.5193, y: 50.154}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2404666204094413415
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +524,8 @@ RectTransform:
   m_Children:
   - {fileID: 636968177292045254}
   - {fileID: 6702948006218695055}
+  - {fileID: 1024401873631144656}
+  - {fileID: 3991717849899093430}
   m_Father: {fileID: 609044835100017752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -1074,6 +1111,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &7393589096645719259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024401873631144656}
+  m_Layer: 0
+  m_Name: BulletSlotContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1024401873631144656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7393589096645719259}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 218172716339660966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 210.3, y: -40.697}
+  m_SizeDelta: {x: 52.5193, y: 50.154}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8815072193979227831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1314,8 @@ MonoBehaviour:
   animatorController: {fileID: 2022460930941707843}
   knifeSlotContainer: {fileID: 636968177292045254}
   pistolSlotContainer: {fileID: 6702948006218695055}
+  bulletSlotContainer: {fileID: 1024401873631144656}
+  medicineSlotContainer: {fileID: 3991717849899093430}
   healthSlider: {fileID: 1637963459212381092}
 --- !u!114 &2022460930941707843
 MonoBehaviour:

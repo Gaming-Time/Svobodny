@@ -20,5 +20,6 @@ namespace CodeBase.Infrastructure.Services.Input
         Vector3 MouseWorldPosition(Vector3 position);
         bool IsEscapeButtonDown();
         bool IsSneakButtonDown();
+        bool IsUseMedicineButtonDown();
     }
 }

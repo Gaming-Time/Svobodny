@@ -5,6 +5,7 @@ using CodeBase.Data.StaticData.Npc;
 using CodeBase.Data.StaticData.UsableObjects;
 using CodeBase.Logic;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects.Essentials;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +39,10 @@ namespace CodeBase.Editor
                 levelData.GunsSpawners = FindObjectsOfType<GunUsableObjectSpawnMarker>().Select(marker =>
                     new GunSpawnerData(marker.GetComponent<UniqueId>().Id, marker.GunType, marker.transform.rotation,
                         marker.transform.position)).ToList();
+                levelData.EssentialsSpawners = FindObjectsOfType<EssentialUsableObjectSpawnMarker>().Select(marker =>
+                    new EssentialSpawnerData(marker.GetComponent<UniqueId>().Id, marker.EssentialType,
+                        marker.transform.rotation,
+                        marker.transform.position, marker.Amount)).ToList();
 
                 levelData.LevelKey = SceneManager.GetActiveScene().name;
                 var dayPlayer = GameObject.FindWithTag(InitialDayPointTag);

@@ -33,10 +33,6 @@ MonoBehaviour:
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 6.6, y: 0.4353053, z: 1.288}
-  - Id: Level1 1_9931c747-2947-41b1-895f-f975e9febff6
-    TypeId: 13
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 12.05, y: 0.4353053, z: 1.288}
   - Id: Level1 1_4ad5a108-db03-407c-9c3d-095b8ef27e77
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -45,10 +41,6 @@ MonoBehaviour:
     TypeId: 4
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 19.25, y: 0.35, z: -2.25}
-  - Id: Level1 1_46a3095a-c727-476d-9911-b53884ad8d1b
-    TypeId: 1
-    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    Position: {x: 6.25, y: 0.4353053, z: 5.9500003}
   - Id: Level1 1_fdfe7ba3-7ad0-4fa5-82b2-99daac9b0230
     TypeId: 11
     Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
@@ -57,10 +49,18 @@ MonoBehaviour:
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 8.650001, y: 0.4353053, z: -1.8000001}
+  - Id: Level1 1_9931c747-2947-41b1-895f-f975e9febff6
+    TypeId: 13
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 12.05, y: 0.4353053, z: 1.288}
   - Id: Level1 1_071794aa-8524-4c57-a3c2-7acde699d77d
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 1.15, y: 0.4353053, z: -1.8000001}
+  - Id: Level1 1_46a3095a-c727-476d-9911-b53884ad8d1b
+    TypeId: 1
+    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    Position: {x: 6.25, y: 0.4353053, z: 5.9500003}
   - Id: Level1 1_0e165cdc-1c7e-42fd-b18c-7078bd2e03ed
     TypeId: 5
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -69,10 +69,6 @@ MonoBehaviour:
     TypeId: 10
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 22.75, y: 0.4353053, z: 1.288}
-  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
-    TypeId: 12
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 17.2, y: 0.4353053, z: 1.288}
   - Id: Level1 1_41ba6923-2ae4-4f81-b939-adb5af067002
     TypeId: 0
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -81,6 +77,10 @@ MonoBehaviour:
     TypeId: 7
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 20.65, y: 0.3, z: 5.9500003}
+  - Id: Level1 1_5498157e-357e-4a67-a92a-a1da9a2b9acd
+    TypeId: 12
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 17.2, y: 0.4353053, z: 1.288}
   - Id: Level1 1_addd58f3-4341-410e-8968-f4fbc51eb752
     TypeId: 1
     Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
@@ -102,6 +102,17 @@ MonoBehaviour:
     GunType: 0
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 7.9881077, y: -0.108, z: 2.8104477}
+  EssentialsSpawners:
+  - Id: Level1 1_6ff1af0c-7fc4-48fd-9f00-781aeacd28a5
+    EssentialType: 1
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 15.75, y: -0.108, z: -0.6}
+    Amount: 1
+  - Id: Level1 1_468eb05b-da21-437a-a85a-6a5a405a7ff3
+    EssentialType: 0
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 10.69, y: -0.108, z: 4.606}
+    Amount: 20
   DayPlayerPosition: {x: 3.245082, y: 0, z: 0.08398569}
   DayPlayerRotation: {x: -0, y: -0, z: -0, w: 1}
   NightPlayerPosition: {x: 2.1000001, y: 0, z: 4.75}

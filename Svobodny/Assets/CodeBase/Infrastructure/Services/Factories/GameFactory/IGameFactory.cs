@@ -5,6 +5,7 @@ using CodeBase.Data.StaticData.Npc;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Logic;
 using CodeBase.Logic.UsableObjects;
+using CodeBase.Logic.UsableObjects.Essentials;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
 using UnityEngine;
@@ -45,5 +46,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
         void InitSaveTriggers();
+
+        void CreateEssentialObjectSpawner(Vector3 position, Quaternion rotation, string id,
+            EssentialType essentialType, int amount);
+
+        void SpawnEssentials();
+        void CreateEssentialsUIHandler();
     }
 }
