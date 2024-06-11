@@ -53,7 +53,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
             this.scanRange = scanRange;
             this.meleeAttackRange = meleeAttackRange;
             Waypoints = waypoints;
-            CurrentWaypointIndex = 0;
+            CurrentWaypointIndex = -1;
             WasPlayerVisiblePreviously = false;
             _enemyDetectionService.ShotEvent += OnShot;
         }

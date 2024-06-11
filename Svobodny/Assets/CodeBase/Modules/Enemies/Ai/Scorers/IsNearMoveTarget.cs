@@ -13,8 +13,8 @@ namespace CodeBase.Modules.Enemies.Ai.Scorers
         {
             var enemyEntity = ((EnemyAiContext)context).Entity;
 
-            if (enemyEntity.MoveTarget == null)
-                return Not ? score : 0f;
+            /*if (enemyEntity.MoveTarget == null)
+                return Not ? score : 0f;*/
 
             var distance = (enemyEntity.MoveTarget.Value - enemyEntity.Position).sqrMagnitude;
 
