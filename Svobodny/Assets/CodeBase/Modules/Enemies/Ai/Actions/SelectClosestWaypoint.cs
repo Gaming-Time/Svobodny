@@ -12,7 +12,7 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
             var enemyEntity = ((EnemyAiContext)context).Entity;
 
             var minDistance = float.MaxValue;
-            int index = -1;
+            int index = 0;
 
             for (int i = 0; i < enemyEntity.Waypoints.Count; i++)
             {
