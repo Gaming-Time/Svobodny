@@ -17,6 +17,10 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
             for (int i = 0; i < enemyEntity.Waypoints.Count; i++)
             {
                 var waypoint = enemyEntity.Waypoints[i];
+                
+                if(!enemyEntity.IsPathToPositionValid(waypoint))
+                    continue;
+                
                 var distance = Vector3.Distance(enemyEntity.Position, waypoint);
                 if (distance < minDistance)
                 {

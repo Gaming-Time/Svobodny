@@ -20,6 +20,6 @@ MonoBehaviour:
     ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
     Assembly-CSharp","Not":false,"score":10}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.ScanForEntities,
-    Assembly-CSharp","TargetLayerMask":3072,"BlockLayers":8}}}]}'
+    Assembly-CSharp","TargetLayerMask":3072,"BlockLayers":520}}}]}'
   editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":160,"@top":80,"@width":200,"@height":160},"QualifierView":{"Name":"Entity
     is dead"},"DefaultQualifier":{"ActionView":{}}}}'
