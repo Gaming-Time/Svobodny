@@ -17,7 +17,7 @@ MonoBehaviour:
   aiId: e69ca060-5719-4a23-8a93-5307d37b46c1
   configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":e37cd079d9cb46bcb7b84887be0fb703,"_id":e69ca06057194a238a935307d37b46c1,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
     ApexAI","_id":e37cd079d9cb46bcb7b84887be0fb703,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
-    ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
+    ApexAI","action":{"@type":"CodeBase.Modules.Enemies.Ai.Actions.Stop, Assembly-CSharp"},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
     Assembly-CSharp","Not":false,"score":100}]},{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":148a7b3f97cc407b8b326e8291521532},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityVisibleAndInScanRange,
     Assembly-CSharp","Not":false,"EntityType":Player,"score":60}]},{"@type":"Apex.AI.CompositeScoreQualifier,
@@ -59,14 +59,14 @@ MonoBehaviour:
     Assembly-CSharp","Not":false,"score":10}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[],"_connectorAction":{"@type":"Apex.AI.SelectorAction,
     ApexAI","_selectorId":a69940863e2345608f8972cc24fda5c9}}}}]}'
-  editorConfiguration: '{"offset":{"@x":120,"@y":47},"zoom":0.69999999,"SelectorView":{"ViewArea":{"@left":190,"@top":117,"@width":140,"@height":280},"QualifierView":{"Name":"Entity
-    Is Dead"},"QualifierView":{"Name":"Player is visible","ActionView":{"@connectorType":"Selector"}},"QualifierView":{"Name":"ShouldHandleShot","ActionView":{"@connectorType":"Composite"}},"QualifierView":{"Name":"Has
+  editorConfiguration: '{"offset":{"@x":312,"@y":-15},"zoom":0.5,"SelectorView":{"ViewArea":{"@left":362,"@top":35,"@width":100,"@height":200},"QualifierView":{"Name":"Entity
+    Is Dead","ActionView":{}},"QualifierView":{"Name":"Player is visible","ActionView":{"@connectorType":"Selector"}},"QualifierView":{"Name":"ShouldHandleShot","ActionView":{"@connectorType":"Composite"}},"QualifierView":{"Name":"Has
     Not Any Waypoint","ActionView":{"@connectorType":"Composite","Name":"Move To
     Start Position"}},"QualifierView":{"Name":"Has Current Waypoint","ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Select
-    Closest Waypoint"}}},"SelectorView":{"ViewArea":{"@left":1044,"@top":159,"@width":140,"@height":70},"Name":"Move
-    to move target","DefaultQualifier":{"ActionView":{}}},"SelectorView":{"ViewArea":{"@left":484,"@top":425,"@width":140,"@height":112},"QualifierView":{"Name":"Select
-    Next Waypoint","ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Selector"}}},"SelectorView":{"ViewArea":{"@left":806,"@top":425,"@width":140,"@height":70},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Set
-    Waypoint As Move Target"}}},"SelectorView":{"ViewArea":{"@left":372,"@top":-93,"@width":140,"@height":112},"QualifierView":{"Name":"Player
+    Closest Waypoint"}}},"SelectorView":{"ViewArea":{"@left":972,"@top":65,"@width":100,"@height":50},"Name":"Move
+    to move target","DefaultQualifier":{"ActionView":{}}},"SelectorView":{"ViewArea":{"@left":572,"@top":255,"@width":100,"@height":80},"QualifierView":{"Name":"Select
+    Next Waypoint","ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Selector"}}},"SelectorView":{"ViewArea":{"@left":802,"@top":255,"@width":100,"@height":50},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Set
+    Waypoint As Move Target"}}},"SelectorView":{"ViewArea":{"@left":492,"@top":-115,"@width":100,"@height":80},"QualifierView":{"Name":"Player
     was visible last frame","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Play
-    detection and change last visibility"}}},"SelectorView":{"ViewArea":{"@left":736,"@top":5,"@width":140,"@height":70},"Name":"Set
-    Player As Move Target","DefaultQualifier":{"ActionView":{"@connectorType":"Composite"}}},"SelectorView":{"ViewArea":{"@left":540,"@top":103,"@width":140,"@height":112},"QualifierView":{"Name":"IsNearShotPoint","ActionView":{}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite"}}}}'
+    detection and change last visibility"}}},"SelectorView":{"ViewArea":{"@left":752,"@top":-45,"@width":100,"@height":50},"Name":"Set
+    Player As Move Target","DefaultQualifier":{"ActionView":{"@connectorType":"Composite"}}},"SelectorView":{"ViewArea":{"@left":612,"@top":25,"@width":100,"@height":80},"QualifierView":{"Name":"IsNearShotPoint","ActionView":{}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite"}}}}'
