@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 124f83ef12bdd5944b8dd8fff127a107
+guid: edec864f2a170eb4ba17d50a64a20289
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,132 +119,14 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_0
+      name: Enemy-Human-Knife1-Back-Idle_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 15
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58fae99b487c9d4459952b130235f1ac
-      internalID: -1557216049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 0
-        width: 10
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ad31443bd6eed54db1265327362b52e
-      internalID: 2114672125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_2
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 0
-        width: 10
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3dd8e44b9a31fc42a6ba5b38b2b8640
-      internalID: 384410194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 17
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34eb0ff8f773214468b594e7fad990fa
-      internalID: -235155505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_4
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 19
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 248e276ae91d05b498b59e9cd7940582
-      internalID: 810385409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_5
-      rect:
-        serializedVersion: 2
-        x: 107
+        x: 0
         y: 0
         width: 14
         height: 40
@@ -242,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 867212c0233ed7241ac5caab373a48ee
-      internalID: -402194628
+      spriteID: 440140f4f24f7f843bf4c3e514d6db10
+      internalID: 1221067517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_6
+      name: Enemy-Human-Knife1-Back-Idle_1
       rect:
         serializedVersion: 2
-        x: 130
+        x: 14
         y: 0
-        width: 10
+        width: 14
         height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -263,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c04f3af96243fc74aa2faf36ca377973
-      internalID: -1569214125
+      spriteID: 405c75d57e749c149a3a2fa0a8d245e0
+      internalID: 610362508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy-Human-Knife1-Left-Walk_7
+      name: Enemy-Human-Knife1-Back-Idle_2
       rect:
         serializedVersion: 2
-        x: 148
+        x: 28
         y: 0
-        width: 15
+        width: 14
         height: 40
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -284,8 +179,239 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69d637568b81cfb4291cf2aa1f435903
-      internalID: -668315006
+      spriteID: 3bbdbe901a5f40a4d9b39edd61341315
+      internalID: -1739696559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a3cd0a47a7d1d419b5ea73990e1fc6
+      internalID: 901652812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060398644d159a54d9e05bfc4776a393
+      internalID: -1300276207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1eb91d022efddb4db26dd02e03dd167
+      internalID: -1498911052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72263d1b11f23946a88f35fe2f7acc9
+      internalID: -88749724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2436bac4fe8efae49b73d289cb549ba5
+      internalID: -1975621676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00c38475a95deb458a45b52c5dac709
+      internalID: -931629894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1232b2d046a309440a9a13c42f2ff3fb
+      internalID: -1736905245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1606dbeb8b89a4a8ebe6d66d35fbfd
+      internalID: 411772380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a269fbac50e969e4ab952e5082a31fc2
+      internalID: -7863963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6c07601f254734692726c2cd61903d
+      internalID: -1670003156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy-Human-Knife1-Back-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 14
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd572a8d7818ebb4da0f9d15a56f6756
+      internalID: -950490155
       vertices: []
       indices: 
       edges: []
@@ -293,7 +419,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 77c0449ff2ccbb74ea897d7caadf0931
     internalID: 0
     vertices: []
     indices: 
@@ -301,14 +427,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy-Human-Knife1-Left-Walk_0: -1557216049
-      Enemy-Human-Knife1-Left-Walk_1: 2114672125
-      Enemy-Human-Knife1-Left-Walk_2: 384410194
-      Enemy-Human-Knife1-Left-Walk_3: -235155505
-      Enemy-Human-Knife1-Left-Walk_4: 810385409
-      Enemy-Human-Knife1-Left-Walk_5: -402194628
-      Enemy-Human-Knife1-Left-Walk_6: -1569214125
-      Enemy-Human-Knife1-Left-Walk_7: -668315006
+      Enemy-Human-Knife1-Back-Idle_0: 1221067517
+      Enemy-Human-Knife1-Back-Idle_1: 610362508
+      Enemy-Human-Knife1-Back-Idle_10: 411772380
+      Enemy-Human-Knife1-Back-Idle_11: -7863963
+      Enemy-Human-Knife1-Back-Idle_12: -1670003156
+      Enemy-Human-Knife1-Back-Idle_13: -950490155
+      Enemy-Human-Knife1-Back-Idle_2: -1739696559
+      Enemy-Human-Knife1-Back-Idle_3: 901652812
+      Enemy-Human-Knife1-Back-Idle_4: -1300276207
+      Enemy-Human-Knife1-Back-Idle_5: -1498911052
+      Enemy-Human-Knife1-Back-Idle_6: -88749724
+      Enemy-Human-Knife1-Back-Idle_7: -1975621676
+      Enemy-Human-Knife1-Back-Idle_8: -931629894
+      Enemy-Human-Knife1-Back-Idle_9: -1736905245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

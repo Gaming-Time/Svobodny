@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,15 +126,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 15
-        height: 41
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 54388a5f73aa62e429390cb63ff1b02a
@@ -134,15 +155,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 2
-        width: 17
-        height: 40
+        x: 20.75
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: dec6ece6f1345694fb39c6bc29d528fc
@@ -155,15 +184,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_2
       rect:
         serializedVersion: 2
-        x: 44
-        y: 3
-        width: 16
-        height: 39
+        x: 41.5
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: cd52f77822d25c049bfcaf3f4c0fa085
@@ -176,15 +213,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_3
       rect:
         serializedVersion: 2
-        x: 65
-        y: 4
-        width: 15
-        height: 37
+        x: 62.25
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 503acf4c2b6c76e4ab109ea7886a9142
@@ -197,15 +242,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_4
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1
-        width: 15
-        height: 40
+        x: 83
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 013367bc91f577b488bebf9284eca5f8
@@ -218,15 +271,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_5
       rect:
         serializedVersion: 2
-        x: 107
-        y: 2
-        width: 15
-        height: 40
+        x: 103.75
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 7a96581f60efc84439d75b230c3d7b82
@@ -239,15 +300,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 3
-        width: 15
-        height: 39
+        x: 124.5
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: b5e695cebc468cb41a34e9fdf1d68c5f
@@ -260,15 +329,23 @@ TextureImporter:
       name: Enemy-Human-Knife1-Front-Walk_7
       rect:
         serializedVersion: 2
-        x: 149
-        y: 2
-        width: 15
-        height: 39
+        x: 145.25
+        y: 0
+        width: 20.75
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
+      physicsShape:
+      - - {x: 0, y: -21}
+        - {x: 10.375, y: 0}
+        - {x: 0, y: 21}
+        - {x: -10.375, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 386e1dea354402141a179a3023d3f0d4
