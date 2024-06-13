@@ -10,6 +10,7 @@ namespace CodeBase.Modules.Enemies.Health
     {
         [SerializeField] private int _currentHealth;
         [SerializeField] private float destroyDelay = 3f;
+        [SerializeField] private GameObject collider;
 
         private HumanoidAnimatorController _animatorController;
         private HumanoidAnimationEventsHandler _animationEventsHandler;
@@ -28,14 +29,14 @@ namespace CodeBase.Modules.Enemies.Health
             _audioController = audioController;
 
             _animationEventsHandler.ExitDeathAnimationEvent += DestroyAfterDeath;
-            _animationEventsHandler.FallAnimationEvent += PlayFallAudio;
+            _animationEventsHandler.FallAnimationEvent += HandleFall;
             _currentHealth = health;
         }
 
         private void OnDestroy()
         {
             _animationEventsHandler.ExitDeathAnimationEvent -= DestroyAfterDeath;
-            _animationEventsHandler.FallAnimationEvent -= PlayFallAudio;
+            _animationEventsHandler.FallAnimationEvent -= HandleFall;
         }
 
         public void DoDamage(int damage)
@@ -76,7 +77,11 @@ namespace CodeBase.Modules.Enemies.Health
             _animatorController.PlayDeathAnimation();
         }
 
-        private void PlayFallAudio() => _audioController.PlayDeath();
+        private void HandleFall()
+        {
+            _audioController.PlayDeath();
+            collider.SetActive(false);
+        }
 
         private void DestroyAfterDeath() => Destroy(gameObject, destroyDelay);
     }

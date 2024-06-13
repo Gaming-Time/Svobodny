@@ -5,12 +5,13 @@ using UnityEngine;
 
 namespace CodeBase.DebugScripts
 {
-    
     public class EnemyDebug : MonoBehaviour
     {
 #if UNITY_EDITOR
         
         public EnemyAiEntity EnemyAiEntity;
+
+        private Vector3 _direction = Vector3.zero;
 
         private void OnDrawGizmos()
         {
@@ -20,8 +21,10 @@ namespace CodeBase.DebugScripts
             }
             Gizmos.DrawWireSphere(EnemyAiEntity.Position, EnemyAiEntity.ScanRange);
 
+            _direction = _direction == Vector3.zero ? -EnemyAiEntity.transform.forward : _direction;
+
             var forwardDirection = EnemyAiEntity.Velocity.magnitude < 0.1f
-                ? -EnemyAiEntity.GameObject.transform.forward
+                ? _direction
                 : EnemyAiEntity.Velocity.normalized;
             var fromForwardToVelocityRotation = Quaternion.FromToRotation(EnemyAiEntity.GameObject.transform.forward,
                 forwardDirection);

@@ -32,8 +32,12 @@ namespace CodeBase.Modules.Enemies.Animation
 
         private void UpdateVariables()
         {
-            _animator.SetFloat(HumanoidAnimationVariables.DirectionXHash, _direction.x);
-            _animator.SetFloat(HumanoidAnimationVariables.DirectionYHash, _direction.z);
+            if (_direction.magnitude > 0.1f)
+            {
+                _animator.SetFloat(HumanoidAnimationVariables.DirectionXHash, _direction.x);
+                _animator.SetFloat(HumanoidAnimationVariables.DirectionYHash, _direction.z);
+            }
+
             _animator.SetFloat(HumanoidAnimationVariables.SpeedHash, _speed);
         }
 
@@ -44,7 +48,7 @@ namespace CodeBase.Modules.Enemies.Animation
             var targetPositionXZ = new Vector2(targetPosition.x, targetPosition.z);
             var direction = (targetPositionXZ - positionXZ).normalized;
             var attackAngle = Vector2.SignedAngle(Vector2.right, direction);
-            
+
             _animator.SetFloat(HumanoidAnimationVariables.AttackAngleHash, attackAngle);
         }
 

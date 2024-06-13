@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Apex.AI;
 using Apex.Serialization;
 using CodeBase.Modules.Character.Ai;
@@ -8,6 +9,7 @@ using CodeBase.Modules.Enemies.Ai.Memory;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Vector3 = UnityEngine.Vector3;
 
 namespace CodeBase.Modules.Enemies.Ai.Actions
 {
@@ -16,10 +18,14 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
         [ApexSerialization] [UsedImplicitly] public LayerMask TargetLayerMask;
         [ApexSerialization] [UsedImplicitly] public LayerMask BlockLayers;
 
+        private Vector3 _direction = Vector3.zero;
+
         public override void Execute(IAIContext context)
         {
             var enemyContext = context as EnemyAiContext;
             var enemyEntity = enemyContext!.Entity;
+
+            _direction = _direction == Vector3.zero ? -enemyEntity.GameObject.transform.forward : _direction;
 
             var hits = new Collider[10];
             int hitsCount = Physics.OverlapSphereNonAlloc(enemyEntity.Position, enemyEntity.ScanRange, hits,
@@ -40,7 +46,7 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
 
                 var direction = (enemyEntity.Velocity == Vector3.zero)
                     ? enemyEntity.AttackTarget == null
-                        ? -enemyEntity.GameObject.transform.forward
+                        ? _direction
                         : (enemyEntity.AttackTarget.Position - enemyEntity.Position).normalized
                     : Vector3.Normalize(enemyEntity.Velocity);
 
