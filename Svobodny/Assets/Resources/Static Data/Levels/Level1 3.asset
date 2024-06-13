@@ -76,7 +76,7 @@ MonoBehaviour:
   - Id: Level1 3_d5e34a74-1518-4030-b11b-fae7a46cf7e3
     TypeId: 2
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: -9.25, y: 0.7, z: -12.900001}
+    Position: {x: -9.25, y: 0.731, z: -12.900001}
   - Id: Level1 3_69807a65-485f-432f-98b8-bdffcc6f3ef3
     TypeId: 10
     Rotation: {x: 0, y: 0, z: 0, w: 1}

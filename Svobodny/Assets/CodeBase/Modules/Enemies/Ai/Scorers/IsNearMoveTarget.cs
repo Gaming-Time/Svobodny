@@ -16,9 +16,9 @@ namespace CodeBase.Modules.Enemies.Ai.Scorers
             /*if (enemyEntity.MoveTarget == null)
                 return Not ? score : 0f;*/
 
-            var distance = (enemyEntity.MoveTarget.Value - enemyEntity.Position).sqrMagnitude;
+            var distance = Vector3.Distance(enemyEntity.Position, enemyEntity.MoveTarget.Value);
 
-            if ( distance < 0.9f)
+            if ( distance < 1f)
                 return Not ? 0f : score;
 
             return Not ? score : 0f;
