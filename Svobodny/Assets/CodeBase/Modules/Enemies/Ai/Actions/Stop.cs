@@ -10,6 +10,7 @@ namespace CodeBase.Modules.Enemies.Ai.Actions
         {
             var enemyContext = context as EnemyAiContext;
             enemyContext!.Entity.StopMovement();
+            enemyContext!.Entity.MoveTarget = null;
         }
     }
 }

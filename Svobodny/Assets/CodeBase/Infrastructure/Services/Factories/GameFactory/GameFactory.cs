@@ -262,8 +262,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 audioController.Construct(_staticData);
                 monsterMover.Construct(monsterAgent, animationEventHandler, audioController, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
-                    audioController,
-                    monsterData.Health);
+                    audioController, monsterEntity, monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
                     vfxController, audioController);
@@ -391,7 +390,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             var characterAnimationEvents = character.GetComponent<CharacterAnimationEventsHandler>();
 
             healthHandler.Construct(_healthUIHandler, staticData.Health);
-            characterHealth.Construct(_inputService,character.GetComponent<CharacterAnimatorController>(),
+            characterHealth.Construct(_inputService, character.GetComponent<CharacterAnimatorController>(),
                 character.GetComponent<CharacterVFXController>(), healthHandler,
                 character.GetComponent<CharacterStateMachine>(), _inventoryHandler,
                 staticData.Health);
