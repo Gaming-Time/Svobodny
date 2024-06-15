@@ -1,3 +1,4 @@
+using CodeBase.Extensions;
 using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Logic.UsableObjects.Essentials;
@@ -17,15 +18,13 @@ namespace CodeBase.Modules.Character.Attack
         private CharacterVFXController _vfxController;
         private CharacterAudioController _audioController;
         private InventoryHandler _inventoryHandler;
-
-        [SerializeField] private Transform arm;
-        [SerializeField] private Transform shootPoint;
+        
         [SerializeField] private LayerMask shootMask;
+        [SerializeField] private LayerMask blockMask;
         [SerializeField] private float delay;
         [SerializeField] private int pistolDamage;
-
-        private Vector3 _worldMousePosition;
-        private Plane _plane;
+        [SerializeField] private Transform eyesPosition;
+        
         private float _lastShootTime;
 
         public void Construct(IInputService inputService, IEnemyDetectionService enemyDetectionService,
@@ -38,8 +37,7 @@ namespace CodeBase.Modules.Character.Attack
             _audioController = audioController;
             _inventoryHandler = inventoryHandler;
             _camera = camera;
-
-            _plane = new Plane(Vector3.up, 0);
+            
             _lastShootTime = -delay;
         }
 
@@ -48,25 +46,36 @@ namespace CodeBase.Modules.Character.Attack
             if (_lastShootTime + delay > Time.time)
                 return;
 
-            _inventoryHandler.RemoveEssential(EssentialType.Bullet,1);
+            _inventoryHandler.RemoveEssential(EssentialType.Bullet, 1);
             _lastShootTime = Time.time;
             _vfxController.PlayFlash();
             _audioController.PlayShoot();
             _enemyDetectionService.RegisterShot(transform.position);
             var ray = _camera.ScreenPointToRay(_inputService.MousePosition);
-            if (_plane.Raycast(ray, out var distance))
-                _worldMousePosition = ray.GetPoint(distance);
+            if (!Physics.Raycast(ray, out var hitInfo, 100f, shootMask))
+                return;
 
-            _worldMousePosition.y = shootPoint.position.y;
-            var direction = _worldMousePosition - shootPoint.position;
-            var shootRay = new Ray(shootPoint.position, direction);
+            var direction = hitInfo.transform.position - eyesPosition.position;
+            var blockRay = new Ray(eyesPosition.position, direction);
+            IHealth health;
 
-            if (!Physics.Raycast(shootRay, out var hit, direction.magnitude, shootMask)) return;
+            if (Physics.Raycast(blockRay, out var blockHit, direction.magnitude, blockMask))
+            {
+                var blockHitGameObject = blockHit.transform.gameObject;
+                if (!shootMask.IsLayerInMask(blockHitGameObject.layer))
+                    return;
 
-            Debug.LogWarning(hit.transform.gameObject.name);
-            var health = hit.transform.GetComponent<IHealth>();
-            health ??= hit.transform.GetComponentInParent<IHealth>();
-            health?.DoDamage(DamageType.Shot, pistolDamage, shootPoint.position);
+                health = blockHitGameObject.GetComponent<IHealth>();
+                health ??= blockHitGameObject.GetComponentInParent<IHealth>();
+            }
+            else
+            {
+                var hitGameobject = hitInfo.transform.gameObject;
+                health = hitGameobject.GetComponent<IHealth>();
+                health ??= hitGameobject.GetComponentInParent<IHealth>();
+            }
+
+            health?.DoDamage(DamageType.Shot, pistolDamage, eyesPosition.position);
         }
     }
 }
