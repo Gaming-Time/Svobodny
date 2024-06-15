@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4908145214413238332, guid: c9f54f38e7944314a84b33b745029742, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5717017077539285638, guid: c9f54f38e7944314a84b33b745029742, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0148

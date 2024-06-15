@@ -1,4 +1,6 @@
+using System.Collections;
 using CodeBase.Modules.Common.Health;
+using CodeBase.Modules.Enemies.Ai.Entity;
 using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.VFX;
@@ -10,32 +12,37 @@ namespace CodeBase.Modules.Enemies.Health
     {
         [SerializeField] private int _currentHealth;
         [SerializeField] private float destroyDelay = 3f;
+        [SerializeField] private GameObject collider;
 
         private HumanoidAnimatorController _animatorController;
         private HumanoidAnimationEventsHandler _animationEventsHandler;
         private EnemyVFXController _vfxController;
         private EnemyAudioController _audioController;
+        private EnemyAiEntity _entity;
+        private WaitForSeconds _waitForHitAnimationTime;
 
         public int Health => _currentHealth;
 
         public void Construct(HumanoidAnimatorController animatorController,
             HumanoidAnimationEventsHandler animationEventsHandler, EnemyVFXController vfxController,
-            EnemyAudioController audioController, int health)
+            EnemyAudioController audioController, EnemyAiEntity entity, int health)
         {
             _animatorController = animatorController;
             _animationEventsHandler = animationEventsHandler;
             _vfxController = vfxController;
             _audioController = audioController;
+            _entity = entity;
 
             _animationEventsHandler.ExitDeathAnimationEvent += DestroyAfterDeath;
-            _animationEventsHandler.FallAnimationEvent += PlayFallAudio;
+            _animationEventsHandler.FallAnimationEvent += HandleFall;
             _currentHealth = health;
+            _waitForHitAnimationTime = new WaitForSeconds(0.5f);
         }
 
         private void OnDestroy()
         {
             _animationEventsHandler.ExitDeathAnimationEvent -= DestroyAfterDeath;
-            _animationEventsHandler.FallAnimationEvent -= PlayFallAudio;
+            _animationEventsHandler.FallAnimationEvent -= HandleFall;
         }
 
         public void DoDamage(int damage)
@@ -53,6 +60,8 @@ namespace CodeBase.Modules.Enemies.Health
             }
 
             _animatorController.PLayHitAnimation();
+            _entity.IsBeingHit = true;
+            StartCoroutine(WaitForHitAnimation());
         }
 
 
@@ -73,11 +82,23 @@ namespace CodeBase.Modules.Enemies.Health
 
         public void Die()
         {
+            _entity.IsDead = true;
             _animatorController.PlayDeathAnimation();
         }
 
-        private void PlayFallAudio() => _audioController.PlayDeath();
+        private void HandleFall()
+        {
+            _audioController.PlayDeath();
+            collider.SetActive(false);
+        }
 
         private void DestroyAfterDeath() => Destroy(gameObject, destroyDelay);
+
+        private IEnumerator WaitForHitAnimation()
+        {
+            yield return _waitForHitAnimationTime;
+
+            _entity.IsBeingHit = false;
+        }
     }
 }

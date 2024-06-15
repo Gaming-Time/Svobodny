@@ -31,7 +31,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public float FovAngle => fovAngle;
         public float MeleeAttackRange => meleeAttackRange;
         public Vector3 Velocity => _mover.Velocity;
-        public bool IsDead => _enemyHealth.Health <= 0;
+        public bool IsDead { get; set; }
         public List<Vector3> Waypoints { get; private set; }
 
         public int CurrentWaypointIndex { get; set; }
@@ -39,6 +39,9 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         
         public bool ShouldHandleShot { get; set; }
         public Vector3 LastShotPosition { get; private set; }
+        public bool IsBeingHit { get; set; }
+        
+        public bool IsAttacking { get; set; }
 
         public void Construct(IEnemyDetectionService enemyDetectionService, IMove mover, EnemyAttack attacker,
             EnemyHealth enemyHealth, EnemyAudioController audioController, float scanRange,

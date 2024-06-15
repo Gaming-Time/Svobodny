@@ -19,6 +19,8 @@ MonoBehaviour:
     ApexAI","_id":afe1b0b49e824d5a90c701739b250375,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
     Assembly-CSharp","Not":false,"score":100}]},{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsBeingHit,
+    Assembly-CSharp","Not":false,"score":90}]},{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.SetPlayerAsAttackTarget,
     Assembly-CSharp"}],"_connectorAction":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":f7e1eaa70eb04402ad62a64be99227a9}},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityVisibleAndInAttackRange,
     Assembly-CSharp","Not":false,"EntityType":Player,"score":10}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
@@ -26,8 +28,9 @@ MonoBehaviour:
     Assembly-CSharp"}]}}},{"@type":"Apex.AI.ScoreSelector, ApexAI","_id":f7e1eaa70eb04402ad62a64be99227a9,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.AttackTarget,
     Assembly-CSharp"}]}}}]}'
-  editorConfiguration: '{"offset":{"@x":58,"@y":-46},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":153,"@top":49,"@width":228,"@height":209},"QualifierView":{"Name":"Entity
-    is dead"},"QualifierView":{"Name":"Player is visible and in attack range","ActionView":{"@connectorType":"Composite","Name":"Set
+  editorConfiguration: '{"offset":{"@x":8,"@y":-117},"zoom":0.94999999,"SelectorView":{"ViewArea":{"@left":103,"@top":-22,"@width":228,"@height":266},"QualifierView":{"Name":"Entity
+    is dead"},"QualifierView":{"Name":"IsBeingHit"},"QualifierView":{"Name":"Player
+    is visible and in attack range","ActionView":{"@connectorType":"Composite","Name":"Set
     player as attack target"}},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Allow
-    movement and clear target"}}},"SelectorView":{"ViewArea":{"@left":552,"@top":106,"@width":190,"@height":95},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Stop
+    movement and clear target"}}},"SelectorView":{"ViewArea":{"@left":502,"@top":35,"@width":190,"@height":95},"DefaultQualifier":{"ActionView":{"@connectorType":"Composite","Name":"Stop
     and attack target"}}}}'

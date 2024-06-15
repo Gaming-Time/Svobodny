@@ -11,12 +11,14 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         float FovAngle { get; }
         float MeleeAttackRange { get; }
         Vector3 Velocity { get; }
-        public bool IsDead { get; }
+        public bool IsDead { get; set; }
         List<Vector3> Waypoints { get; }
         int CurrentWaypointIndex { get; set; }
         bool WasPlayerVisiblePreviously { get; set; }
         bool ShouldHandleShot { get; set; }
         Vector3 LastShotPosition { get; }
+        bool IsBeingHit { get; set; }
+        bool IsAttacking { get; set; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);

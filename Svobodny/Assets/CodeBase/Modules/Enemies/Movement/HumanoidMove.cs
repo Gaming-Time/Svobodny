@@ -48,7 +48,8 @@ namespace CodeBase.Modules.Enemies.Movement
 
         public void MoveToPosition(Vector3 destination)
         {
-            if ((destination - transform.position).sqrMagnitude < stopDistance)
+            var distance = Vector3.Distance(destination, transform.position);
+            if (distance < 1f)
             {
                 _audioController.DeactivateFootsteps();
                 return;
