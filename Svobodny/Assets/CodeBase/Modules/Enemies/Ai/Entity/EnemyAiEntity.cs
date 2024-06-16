@@ -87,7 +87,10 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
         private void OnDestroy()
         {
+            if (_enemyDetectionService == null) return;
             _enemyDetectionService.ShotEvent -= OnShot;
+            _enemyDetectionService.WardrobeEnterEvent -= OnWardrobeEnter;
+            _enemyDetectionService.WardrobeExitEvent -= OnWardrobeExit;
         }
 
         private void OnShot(Vector3 position)
