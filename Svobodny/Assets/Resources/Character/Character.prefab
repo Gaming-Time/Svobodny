@@ -1126,8 +1126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc22be2b6ed470091b3d30456c710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arm: {fileID: 4426261639471603427}
-  shootPoint: {fileID: 1370183255655980861}
   shootMask:
     serializedVersion: 2
     m_Bits: 2048
