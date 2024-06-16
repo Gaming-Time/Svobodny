@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Services.EnemyDetection;
+using CodeBase.Logic.UsableObjects.Closet;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
+using CodeBase.Modules.Enemies.Interactions;
 using CodeBase.Modules.Enemies.Movement;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,6 +18,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         private EnemyAttack _attacker;
         private EnemyHealth _enemyHealth;
         private EnemyAudioController _audioController;
+        private EnemyWardrobeInteraction _wardrobeInteraction;
         private IEnemyDetectionService _enemyDetectionService;
 
         [SerializeField] private float scanRange;
@@ -36,15 +39,19 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
 
         public int CurrentWaypointIndex { get; set; }
         public bool WasPlayerVisiblePreviously { get; set; }
-        
+
         public bool ShouldHandleShot { get; set; }
         public Vector3 LastShotPosition { get; private set; }
         public bool IsBeingHit { get; set; }
-        
+
         public bool IsAttacking { get; set; }
 
+        public bool ShouldHandleWardrobe { get; private set; }
+        public Wardrobe Wardrobe { get; private set; }
+
         public void Construct(IEnemyDetectionService enemyDetectionService, IMove mover, EnemyAttack attacker,
-            EnemyHealth enemyHealth, EnemyAudioController audioController, float scanRange,
+            EnemyHealth enemyHealth, EnemyAudioController audioController, EnemyWardrobeInteraction wardrobeInteraction,
+            float scanRange,
             float meleeAttackRange, List<Vector3> waypoints)
         {
             _enemyDetectionService = enemyDetectionService;
@@ -52,6 +59,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
             _attacker = attacker;
             _enemyHealth = enemyHealth;
             _audioController = audioController;
+            _wardrobeInteraction = wardrobeInteraction;
 
             this.scanRange = scanRange;
             this.meleeAttackRange = meleeAttackRange;
@@ -59,11 +67,30 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
             CurrentWaypointIndex = -1;
             WasPlayerVisiblePreviously = false;
             _enemyDetectionService.ShotEvent += OnShot;
+            _enemyDetectionService.WardrobeEnterEvent += OnWardrobeEnter;
+            _enemyDetectionService.WardrobeExitEvent += OnWardrobeExit;
+        }
+
+        private void OnWardrobeExit()
+        {
+            ShouldHandleWardrobe = false;
+        }
+
+        private void OnWardrobeEnter(Wardrobe wardrobe)
+        {
+            if (!WasPlayerVisiblePreviously)
+                return;
+
+            ShouldHandleWardrobe = true;
+            Wardrobe = wardrobe;
         }
 
         private void OnDestroy()
         {
+            if (_enemyDetectionService == null) return;
             _enemyDetectionService.ShotEvent -= OnShot;
+            _enemyDetectionService.WardrobeEnterEvent -= OnWardrobeEnter;
+            _enemyDetectionService.WardrobeExitEvent -= OnWardrobeExit;
         }
 
         private void OnShot(Vector3 position)
@@ -95,5 +122,7 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         public void PlayDetectionSound() => _audioController.PlayDetection();
 
         public bool IsPathToPositionValid(Vector3 position) => _mover.IsPathToPositionValid(position);
+
+        public void PullOut() => _wardrobeInteraction.PullOut(Wardrobe);
     }
 }

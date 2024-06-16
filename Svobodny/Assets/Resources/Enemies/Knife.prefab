@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 6240907821012130194}
   - component: {fileID: 6717516889644333040}
   - component: {fileID: 8455908824405780128}
+  - component: {fileID: 2454065373079510566}
   m_Layer: 11
   m_Name: Knife
   m_TagString: Untagged
@@ -1033,6 +1034,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodEffect: {fileID: 992531311597556702}
   sliceEffect: {fileID: 7631283994373164862}
+--- !u!114 &2454065373079510566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954773150905848177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d46743dc684a25808d3f902c7076ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &428568290392326175
 PrefabInstance:
   m_ObjectHideFlags: 0

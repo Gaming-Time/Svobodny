@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CodeBase.Logic.UsableObjects.Closet;
 using UnityEngine;
 
 namespace CodeBase.Modules.Enemies.Ai.Entity
@@ -19,6 +20,8 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         Vector3 LastShotPosition { get; }
         bool IsBeingHit { get; set; }
         bool IsAttacking { get; set; }
+        bool ShouldHandleWardrobe { get; }
+        Wardrobe Wardrobe { get; }
 
         void MoveTo(Vector3 destination);
         void MeleeAttack(IEntity target);
@@ -26,5 +29,6 @@ namespace CodeBase.Modules.Enemies.Ai.Entity
         void StopMovement();
         void PlayDetectionSound();
         bool IsPathToPositionValid(Vector3 position);
+        void PullOut();
     }
 }

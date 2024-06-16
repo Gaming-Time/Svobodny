@@ -55,6 +55,7 @@ namespace CodeBase.Modules.Enemies.Animation
         public void PlayAttackAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.AttackTriggerHash);
         public void PlayDeathAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.DieTriggerHash);
         public void PLayHitAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.HitTriggerHash);
+        public void PlayPullOutAnimation() => _animator.SetTrigger(HumanoidAnimationVariables.PullOutTriggerHash);
 
         public void SetHitDirection(Vector3 from)
         {

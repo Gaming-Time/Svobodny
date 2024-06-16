@@ -12,5 +12,7 @@ namespace CodeBase.Logic.UsableObjects.Closet
         public void Enter() => _animator.SetTrigger(AnimatorVariables.Wardrobe.EnterTrigger);
 
         public void Exit() => _animator.SetTrigger(AnimatorVariables.Wardrobe.ExitTrigger);
+
+        public void PullOut() => _animator.SetTrigger(AnimatorVariables.PullOut);
     }
 }

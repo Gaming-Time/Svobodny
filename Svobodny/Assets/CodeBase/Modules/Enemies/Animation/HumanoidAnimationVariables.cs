@@ -15,5 +15,6 @@ namespace CodeBase.Modules.Enemies.Animation
         public static readonly int HitTriggerHash = Animator.StringToHash("Hit");
         public static readonly int HitDirectionXHash = Animator.StringToHash("HitDirectionX");
         public static readonly int HitDirectionYHash = Animator.StringToHash("HitDirectionY");
+        public static readonly int PullOutTriggerHash = Animator.StringToHash("PullOut");
     }
 }
