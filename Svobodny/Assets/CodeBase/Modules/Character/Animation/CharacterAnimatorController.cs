@@ -53,6 +53,8 @@ namespace CodeBase.Modules.Character.Animation
         public void PlayAttackAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.AttackTriggerHash);
         public void PlayDeathAnimation() => _animator.SetTrigger(AnimatorVariables.Character.Battle.DieTriggerHash);
 
+        public void PullOut() => _animator.SetTrigger(AnimatorVariables.PullOut);
+
         public void HandleAim(bool state) =>
             _animator.SetBool(AnimatorVariables.Character.Battle.IsAiming, state);
 

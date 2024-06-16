@@ -4,6 +4,7 @@ namespace CodeBase.Logic.Animations
 {
     public static class AnimatorVariables
     {
+        public static int PullOut = Animator.StringToHash("PullOut");
         public static class Character
         {
             public static readonly int Angle = Animator.StringToHash("Angle");

@@ -1,4 +1,3 @@
-using System;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Modules.Enemies.Ai.Entity;
 using UnityEngine;
@@ -13,6 +12,7 @@ namespace CodeBase.Modules.Character.Ai
         public GameObject GameObject => gameObject;
         public Vector3 Position => transform.position;
         public bool IsSneaking { get; set; }
+        
 
         public void Construct(IInputService inputService)
         {
@@ -22,7 +22,6 @@ namespace CodeBase.Modules.Character.Ai
         private void Update()
         {
             IsSneaking = _inputService.IsSneakButtonHeld();
-            Debug.Log(IsSneaking);
         }
     }
 }

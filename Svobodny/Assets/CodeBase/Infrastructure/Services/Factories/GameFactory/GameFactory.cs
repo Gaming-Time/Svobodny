@@ -43,6 +43,7 @@ using CodeBase.Modules.Enemies.Animation;
 using CodeBase.Modules.Enemies.Attack;
 using CodeBase.Modules.Enemies.Audio;
 using CodeBase.Modules.Enemies.Health;
+using CodeBase.Modules.Enemies.Interactions;
 using CodeBase.Modules.Enemies.Movement;
 using CodeBase.Modules.Enemies.VFX;
 using CodeBase.Modules.Health;
@@ -258,16 +259,18 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 var animationEventHandler = monster.GetComponentInChildren<HumanoidAnimationEventsHandler>();
                 var vfxController = monster.GetComponent<EnemyVFXController>();
                 var audioController = monster.GetComponentInChildren<EnemyAudioController>();
+                var wardrobeInteraction = monster.GetComponent<EnemyWardrobeInteraction>();
 
                 audioController.Construct(_staticData);
                 monsterMover.Construct(monsterAgent, animationEventHandler, audioController, monsterData.Speed);
                 monsterHealth.Construct(monsterAnimatorController, animationEventHandler, vfxController,
                     audioController, monsterEntity, monsterData.Health);
                 monsterAnimatorController.Construct(monster.GetComponentInChildren<Animator>(), monsterMover);
+                wardrobeInteraction.Construct(monsterAnimatorController);
                 monsterAttack.Construct(monsterData.MeleeAttackRange, monsterAnimatorController, animationEventHandler,
                     vfxController, audioController);
                 monsterEntity.Construct(_enemyDetectionService, monsterMover, monsterAttack, monsterHealth,
-                    audioController,
+                    audioController, wardrobeInteraction,
                     monsterData.ScanRange,
                     monsterData.MeleeAttackRange, spawner.Value.Waypoints);
                 monsterContextProvider.Construct(monsterEntity, spawner.Value.transform.position);
@@ -377,10 +380,12 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         {
             var wardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
             var animatorController = character.GetComponent<CharacterAnimatorController>();
+            var animationEventsHandler = character.GetComponent<CharacterAnimationEventsHandler>();
             var characterController = character.GetComponent<CharacterController>();
             var characterMove = character.GetComponent<CharacterMove>();
 
-            wardrobeInteraction.Construct(animatorController, characterController, characterMove);
+            wardrobeInteraction.Construct(_windowService, animatorController, animationEventsHandler,
+                characterController, characterMove);
         }
 
         private void InitHealth(CharacterStaticData staticData, GameObject character)
@@ -437,7 +442,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
 
                     var wardrobe = usableObject.GetComponent<Wardrobe>();
-                    wardrobe.Construct(_inputService,
+                    wardrobe.Construct(_inputService, _enemyDetectionService,
                         wardrobeAnimatorController, characterWardrobeInteraction);
 
                     var wardrobeAnimationEventsManager =
