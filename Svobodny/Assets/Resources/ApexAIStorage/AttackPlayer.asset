@@ -20,7 +20,7 @@ MonoBehaviour:
     ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityDead,
     Assembly-CSharp","Not":false,"score":100}]},{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsBeingHit,
-    Assembly-CSharp","Not":false,"score":90}]},{"@type":"Apex.AI.CompositeScoreQualifier,
+    Assembly-CSharp","isDisabled":true,"Not":false,"score":90}]},{"@type":"Apex.AI.CompositeScoreQualifier,
     ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"CodeBase.Modules.Enemies.Ai.Actions.SetPlayerAsAttackTarget,
     Assembly-CSharp"}],"_connectorAction":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":f7e1eaa70eb04402ad62a64be99227a9}},"_scorers":[{"@type":"CodeBase.Modules.Enemies.Ai.Scorers.IsEntityVisibleAndInAttackRange,
     Assembly-CSharp","Not":false,"EntityType":Player,"score":10}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,

@@ -50,6 +50,7 @@ namespace CodeBase.Modules.Enemies.Attack
         {
             _vfxController.PlaySlice();
             ScanForTargets();
+            _animationEventsHandler.DoDamageAnimationEvent -= Attack;
         }
 
         private void ScanForTargets()

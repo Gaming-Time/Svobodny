@@ -357,8 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiConfigs:
   - aiId: e2e168f6-d5c6-4fc1-9b79-49a3128e67b7
-    intervalMin: 1
-    intervalMax: 1
+    intervalMin: 0.3
+    intervalMax: 0.3
     startDelayMin: 0
     startDelayMax: 0
     isActive: 1
@@ -468,7 +468,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 7847418504548026731}
   - component: {fileID: 673232896192805746}
   - component: {fileID: 1007112028211076619}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -876546973899608171, guid: 118257a8465167945af8aa1d04a0962d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -576,7 +576,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &7847418504548026731
 Animator:
   serializedVersion: 5

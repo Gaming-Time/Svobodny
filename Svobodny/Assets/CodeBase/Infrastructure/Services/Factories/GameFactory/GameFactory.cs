@@ -355,7 +355,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                 character.GetComponent<CharacterAnimationEventsHandler>(), _inventoryHandler,
                 character.GetComponent<CharacterRangeAttack>(),
                 character.GetComponent<CharacterAnimatorController>(), audioController,
-                character.GetComponent<CharacterController>(), camera);
+                character.GetComponent<CharacterController>(), character.GetComponent<PlayerEntity>(), camera);
         }
 
         private void InitInventoryHandler(GameObject character)

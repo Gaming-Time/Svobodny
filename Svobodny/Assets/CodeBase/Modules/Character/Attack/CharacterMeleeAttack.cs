@@ -32,7 +32,7 @@ namespace CodeBase.Modules.Character.Attack
             _vfxController = vfxController;
             _audioController = audioController;
 
-            _animationEvents.AttackEvent += OnAttack;
+            _animationEvents.AttackEvent += OnAttackFrame;
             _animationEvents.ExitAttackAnimationEvent += OnAttackAnimationExit;
         }
 
@@ -40,7 +40,7 @@ namespace CodeBase.Modules.Character.Attack
         {
             if (_animationEvents)
             {
-                _animationEvents.AttackEvent -= OnAttack;
+                _animationEvents.AttackEvent -= OnAttackFrame;
                 _animationEvents.ExitAttackAnimationEvent -= OnAttackAnimationExit;
             }
         }
@@ -51,7 +51,7 @@ namespace CodeBase.Modules.Character.Attack
             _animatorController.PlayAttackAnimation();
         }
 
-        public void OnAttack()
+        private void OnAttackFrame()
         {
             _vfxController.PlaySlice();
             _audioController.PlaySlash();

@@ -929,7 +929,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 357b2f39cf99eab4fbe8fed76901739c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 0
-  medicineHealthAddition: 3
+  medicineHealthAddition: 2
 --- !u!114 &6793251854950668844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,8 +1126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc22be2b6ed470091b3d30456c710d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arm: {fileID: 4426261639471603427}
-  shootPoint: {fileID: 1370183255655980861}
   shootMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -1135,7 +1133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2569
   delay: 1
-  pistolDamage: 3
+  pistolDamage: 2
   eyesPosition: {fileID: 1491545839357112750}
 --- !u!114 &8003553684473161306
 MonoBehaviour:

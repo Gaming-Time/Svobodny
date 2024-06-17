@@ -4,6 +4,7 @@ using CodeBase.Infrastructure;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Infrastructure.States;
+using CodeBase.Modules.Character.Ai;
 using CodeBase.Modules.Character.Animation;
 using CodeBase.Modules.Character.Attack;
 using CodeBase.Modules.Character.Audio;
@@ -31,6 +32,7 @@ namespace CodeBase.Modules.Character.StateMachine
         private CharacterAnimatorController _characterAnimatorController;
         private CharacterAudioController _audioController;
         private CharacterController _characterController;
+        private PlayerEntity _playerEntity;
 
         [SerializeField] private Transform arm;
 
@@ -38,7 +40,8 @@ namespace CodeBase.Modules.Character.StateMachine
             CharacterMeleeAttack meleeAttack,
             CharacterAnimationEventsHandler animationEventsHandler, InventoryHandler inventoryHandler,
             CharacterRangeAttack rangeAttack, CharacterAnimatorController characterAnimatorController,
-            CharacterAudioController audioController, CharacterController characterController, Camera camera)
+            CharacterAudioController audioController, CharacterController characterController,
+            PlayerEntity playerEntity, Camera camera)
         {
             _inputService = inputService;
             _windowService = windowService;
@@ -50,6 +53,7 @@ namespace CodeBase.Modules.Character.StateMachine
             _characterAnimatorController = characterAnimatorController;
             _audioController = audioController;
             _characterController = characterController;
+            _playerEntity = playerEntity;
             _camera = camera;
 
             InitializeStateMachine();
@@ -71,7 +75,7 @@ namespace CodeBase.Modules.Character.StateMachine
             {
                 [typeof(MoveState)] =
                     new MoveState(this, _characterMove, _inventoryHandler, _inputService, _audioController,
-                        _characterController),
+                        _characterController, _playerEntity),
                 [typeof(MeleeAttackState)] = new MeleeAttackState(this, _characterMeleeAttack, this),
                 [typeof(ShootState)] = new ShootState(this, _inputService, _rangeAttack, arm, _camera, transform,
                     _characterAnimatorController, _inventoryHandler),

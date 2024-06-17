@@ -42,6 +42,7 @@ namespace CodeBase.Windows
             
             if(_currentFrameIndex >= frames.Length)
             {
+                PlayerPrefs.DeleteKey("Progress");
                 _mediator.ExitToMenu();
                 return;
             }
