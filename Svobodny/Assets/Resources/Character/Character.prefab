@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHealth: 0
-  medicineHealthAddition: 3
+  medicineHealthAddition: 2
 --- !u!114 &6793251854950668844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2569
   delay: 1
-  pistolDamage: 3
+  pistolDamage: 2
   eyesPosition: {fileID: 1491545839357112750}
 --- !u!114 &8003553684473161306
 MonoBehaviour:
