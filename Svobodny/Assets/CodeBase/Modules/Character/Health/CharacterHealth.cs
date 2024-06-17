@@ -25,6 +25,7 @@ namespace CodeBase.Modules.Character.Health
         private CharacterStateMachine _stateMachine;
         private InventoryHandler _inventoryHandler;
         private int _startHealth;
+        private bool _isDead;
 
         public int Health => _currentHealth;
 
@@ -47,6 +48,8 @@ namespace CodeBase.Modules.Character.Health
 
         private void Update()
         {
+            if(_isDead)
+                return;
             if (_inputService.IsUseMedicineButtonDown() && _inventoryHandler.HasEssential(EssentialType.Medicine))
             {
                 AddHealth(medicineHealthAddition);
@@ -92,6 +95,7 @@ namespace CodeBase.Modules.Character.Health
 
         public void Die()
         {
+            _isDead = true;
             _stateMachine.Enter<DeathState>();
         }
 
