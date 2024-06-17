@@ -56,6 +56,8 @@ namespace CodeBase.Modules.Character.Health
 
         public void DoDamage(int damage)
         {
+            if(_currentHealth < 1)
+                return;
             _animatorController.Damage();
 
             _currentHealth -= damage;

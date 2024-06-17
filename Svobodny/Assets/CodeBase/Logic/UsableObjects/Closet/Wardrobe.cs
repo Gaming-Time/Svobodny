@@ -16,6 +16,7 @@ namespace CodeBase.Logic.UsableObjects.Closet
         private IEnemyDetectionService _detectionService;
 
         private bool _isActive;
+        private bool _isPullingOut;
         public Transform EnemyPivot => enemyPivot;
 
         protected override IInputService InputService { get; set; }
@@ -43,6 +44,8 @@ namespace CodeBase.Logic.UsableObjects.Closet
 
         public override void Use()
         {
+            if(_isPullingOut)
+                return;
             _isActive = true;
             _animatorController.Enter();
             _characterWardrobeInteraction.Enter(characterPivot.position);
@@ -51,6 +54,7 @@ namespace CodeBase.Logic.UsableObjects.Closet
 
         public void PullOut()
         {
+            _isPullingOut = true;
             _characterWardrobeInteraction.PullOut(characterPulloutPivot.position);
             _animatorController.PullOut();
         }
@@ -60,6 +64,8 @@ namespace CodeBase.Logic.UsableObjects.Closet
 
         private void GetOut()
         {
+            if(_isPullingOut)
+                return;
             _detectionService.RegisterWardrobeExit();
             _animatorController.Exit();
         }
