@@ -85,7 +85,10 @@ namespace CodeBase.Modules.Inventory.Essentials
 
         private void OnEssentialRemoved(EssentialType essentialType, int amount)
         {
-            Assert.IsTrue(_essentialSlots.TryGetValue(essentialType, out var slot));
+            _essentialSlots.TryGetValue(essentialType, out var slot);
+
+            if (!slot)
+                return;
 
             if (slot.Amount - amount <= 0)
             {
