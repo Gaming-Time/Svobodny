@@ -99,6 +99,7 @@ namespace CodeBase.Modules.Enemies.Health
             yield return _waitForHitAnimationTime;
 
             _entity.IsBeingHit = false;
+            _entity.StartMovement();
         }
     }
 }

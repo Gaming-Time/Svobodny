@@ -357,8 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiConfigs:
   - aiId: e2e168f6-d5c6-4fc1-9b79-49a3128e67b7
-    intervalMin: 1
-    intervalMax: 1
+    intervalMin: 0.3
+    intervalMax: 0.3
     startDelayMin: 0
     startDelayMax: 0
     isActive: 1

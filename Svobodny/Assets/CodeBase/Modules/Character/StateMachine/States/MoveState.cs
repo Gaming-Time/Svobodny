@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Infrastructure.Services.Input;
 using CodeBase.Infrastructure.States;
+using CodeBase.Modules.Character.Ai;
 using CodeBase.Modules.Character.Audio;
 using CodeBase.Modules.Character.UI;
 using CodeBase.Modules.Inventory;
@@ -16,10 +17,11 @@ namespace CodeBase.Modules.Character.StateMachine.States
         private readonly IInputService _inputService;
         private readonly CharacterAudioController _audioController;
         private readonly CharacterController _characterController;
+        private readonly PlayerEntity _playerEntity;
 
         public MoveState(CharacterStateMachine stateMachine, CharacterMove characterMove,
             InventoryHandler inventoryHandler, IInputService inputService, CharacterAudioController audioController,
-            CharacterController characterController)
+            CharacterController characterController, PlayerEntity playerEntity)
         {
             _stateMachine = stateMachine;
             _characterMove = characterMove;
@@ -27,11 +29,13 @@ namespace CodeBase.Modules.Character.StateMachine.States
             _inputService = inputService;
             _audioController = audioController;
             _characterController = characterController;
+            _playerEntity = playerEntity;
         }
 
 
         public void Exit()
         {
+            _playerEntity.IsSneaking = false;
             _audioController.DeactivateFootSteps();
         }
 
@@ -42,15 +46,22 @@ namespace CodeBase.Modules.Character.StateMachine.States
         public void Update()
         {
             if (_inputService.IsAttackButtonDown() && _inventoryHandler.SelectedGun == GunType.Knife)
+            {
                 _stateMachine.Enter<MeleeAttackState>();
+                return;
+            }
 
             if (_inputService.IsAimButtonHeld() && _inventoryHandler.SelectedGun == GunType.Pistol)
+            {
                 _stateMachine.Enter<ShootState>();
+                return;
+            }
 
             _characterMove.Move();
 
             var controllerSpeed = _characterController.velocity.sqrMagnitude;
             var sneakInput = _inputService.IsSneakButtonHeld();
+            _playerEntity.IsSneaking = sneakInput;
 
             if (controllerSpeed > 0.01f)
             {

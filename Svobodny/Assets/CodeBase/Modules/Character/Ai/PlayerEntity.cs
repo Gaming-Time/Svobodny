@@ -21,7 +21,7 @@ namespace CodeBase.Modules.Character.Ai
 
         private void Update()
         {
-            IsSneaking = _inputService.IsSneakButtonHeld();
+            
         }
     }
 }
