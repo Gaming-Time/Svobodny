@@ -19,6 +19,13 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 12.807664, y: 0.157, z: -15.52}
     Waypoints: []
+  - Id: Level1 2_2400de6e-b175-4fbf-b4f3-78b364261f8d
+    TypeId: 1
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: -11.508, y: 0, z: -0.9425568}
+    Waypoints:
+    - {x: -10.533, y: 0, z: -5.194}
+    - {x: -12.397, y: 0, z: -1.643}
   - Id: Level1 2_d7dbfb67-33b1-4471-b4f9-11d232544eb3
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -27,35 +34,40 @@ MonoBehaviour:
     - {x: 2.26, y: 0, z: -9.52}
     - {x: 2.26, y: 0, z: -5.355}
     - {x: 5.15, y: 0, z: -5.52}
-  - Id: Level1 2_2400de6e-b175-4fbf-b4f3-78b364261f8d
-    TypeId: 1
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: -11.508, y: 0, z: -0.9425568}
-    Waypoints:
-    - {x: -10.533, y: 0, z: -5.194}
-    - {x: -12.397, y: 0, z: -1.643}
   NpcSpawners: []
   ObjectsSpawners:
-  - Id: Level1 2_51266f8d-c882-4e0b-badc-1a10c068f064
+  - Id: Level1 2_75eb2edd-0d31-470e-b79e-442081e65656
     TypeId: 1
     Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    Position: {x: -10.574, y: 0.684, z: -0.839}
+    Position: {x: 10.045, y: 0.684, z: -7.804}
   - Id: Level1 2_c68ba6bb-1a98-467d-8a21-d232a8c269f5
     TypeId: 4
     Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 1.876, y: 0.151, z: -10.291}
-  - Id: Level1 2_0d02e657-8a6a-4268-8e7d-a768a5274954
-    TypeId: 2
-    Rotation: {x: 0, y: 0, z: 0, w: 1}
-    Position: {x: 8.17, y: 0.04, z: -10.11}
+    Position: {x: 1.876, y: 0.151, z: -9.467}
+  - Id: Level1 2_d4930c99-0591-49ed-8ed8-5d2cd1e8d034
+    TypeId: 9
+    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    Position: {x: 10.045, y: 0.684, z: -6.204}
+  - Id: Level1 2_93e3bd8e-a353-4733-b4ca-8c9054526a78
+    TypeId: 8
+    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    Position: {x: -8.184, y: 0.684, z: -0.839}
   - Id: Level1 2_cc668465-60f2-4d89-be3f-c1d8a0f2816f
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 12.705, y: 0.565, z: -12.424}
+  - Id: Level1 2_0d02e657-8a6a-4268-8e7d-a768a5274954
+    TypeId: 2
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    Position: {x: 8.17, y: 0.04, z: -10.11}
   - Id: Level1 2_d25742e2-3a74-4f82-a33a-d66fb3530ba0
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Position: {x: 8.88, y: 0.565, z: 0.19}
+  - Id: Level1 2_51266f8d-c882-4e0b-badc-1a10c068f064
+    TypeId: 1
+    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    Position: {x: -10.574, y: 0.684, z: -0.839}
   - Id: Level1 2_e270b0cd-19ca-4dbf-a31f-ac7275533560
     TypeId: 1
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -68,18 +80,6 @@ MonoBehaviour:
     TypeId: 10
     Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
     Position: {x: 8.37, y: 0.684, z: -16.436}
-  - Id: Level1 2_d4930c99-0591-49ed-8ed8-5d2cd1e8d034
-    TypeId: 9
-    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    Position: {x: 10.045, y: 0.684, z: -6.204}
-  - Id: Level1 2_75eb2edd-0d31-470e-b79e-442081e65656
-    TypeId: 1
-    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    Position: {x: 10.045, y: 0.684, z: -7.804}
-  - Id: Level1 2_93e3bd8e-a353-4733-b4ca-8c9054526a78
-    TypeId: 8
-    Rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-    Position: {x: -8.184, y: 0.684, z: -0.839}
   GunsSpawners:
   - Id: Level1 1_f3443bf3-8647-4ae6-8f73-65551725a0f2
     GunType: 0
