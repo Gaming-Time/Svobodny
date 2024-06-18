@@ -86,6 +86,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
         private HealthUIHandler _healthUIHandler;
         private GameMusic _gameMusic;
         private EssentialsUIHandler _essentialsUIHandler;
+        private CharacterInputHandler _characterInputHandler;
 
         public List<ISavedProgressReader> ProgressReaders { get; } = new();
         public List<ISavedProgress> ProgressWriters { get; } = new();
@@ -125,7 +126,8 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             InitStateMachine(_character, camera, audioController);
             InitArm(_character, camera);
 
-            _character.GetComponent<CharacterInputHandler>().Construct(_windowService, _inputService);
+            _characterInputHandler = _character.GetComponent<CharacterInputHandler>();
+            _characterInputHandler.Construct(_windowService, _inputService);
             _character.GetComponent<PlayerEntity>().Construct(_inputService);
 
             return _character;
@@ -301,6 +303,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             _objectSpawners.Clear();
             _gunSpawners.Clear();
             _essentialSpawners.Clear();
+            _characterInputHandler = null;
             ProgressWriters.Clear();
             ProgressReaders.Clear();
         }
@@ -340,6 +343,11 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             {
                 saveTrigger.Construct(saveLoadService);
             }
+        }
+
+        public void SendReadyMessage()
+        {
+            _characterInputHandler.GameReady();
         }
 
         private void InitArm(GameObject character, Camera camera)

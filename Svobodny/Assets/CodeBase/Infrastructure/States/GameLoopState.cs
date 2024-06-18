@@ -51,6 +51,7 @@ namespace CodeBase.Infrastructure.States
         private IEnumerator WaitForCurtainToFadeOut()
         {
             yield return new WaitUntil(() => _curtain.IsHidden);
+            _gameFactory.SendReadyMessage();
             ShowStartDialog();
         }
 

@@ -10,6 +10,8 @@ namespace CodeBase.Modules.Character
         private IWindowService _windowService;
         private IInputService _inputService;
 
+        private bool _isGameReady;
+
         public void Construct(IWindowService windowService, IInputService inputService)
         {
             _windowService = windowService;
@@ -18,8 +20,15 @@ namespace CodeBase.Modules.Character
 
         private void Update()
         {
+            if(!_isGameReady)
+                return;
             if(_inputService.IsEscapeButtonDown())
                 _windowService.OpenOrCreateWindow(WindowID.PauseWindow);
+        }
+
+        public void GameReady()
+        {
+            _isGameReady = true;
         }
     }
 }

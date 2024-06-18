@@ -5,7 +5,6 @@ using CodeBase.Infrastructure.Services.ButtonMediator;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.UI.ButtonHandler;
 using CodeBase.Windows;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UIFactory

@@ -52,5 +52,6 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
         void SpawnEssentials();
         void CreateEssentialsUIHandler();
+        void SendReadyMessage();
     }
 }
