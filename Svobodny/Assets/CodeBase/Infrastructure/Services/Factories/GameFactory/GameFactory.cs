@@ -234,7 +234,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
             foreach (var essentialSpawner in _essentialSpawners)
             {
                 var essential = essentialSpawner.Value.Spawn();
-                essential.GetComponent<Essential>().Construct(_inputService, _inventoryHandler,
+                essential.GetComponent<Essential>().Construct(_inputService, _windowService, _inventoryHandler,
                     essentialSpawner.Value.EssentialType,
                     essentialSpawner.Value.Amount);
             }
@@ -442,7 +442,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                     var characterWardrobeInteraction = _character.GetComponent<CharacterWardrobeInteraction>();
 
                     var wardrobe = usableObject.GetComponent<Wardrobe>();
-                    wardrobe.Construct(_inputService, _enemyDetectionService,
+                    wardrobe.Construct(_inputService, _enemyDetectionService, _windowService,
                         wardrobeAnimatorController, characterWardrobeInteraction);
 
                     var wardrobeAnimationEventsManager =
@@ -460,7 +460,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
 
                     doorAnimatorController.Construct(doorAnimator);
                     doorAudioController.Construct(_staticData);
-                    door.Construct(_inputService, doorAnimatorController, doorAudioController);
+                    door.Construct(_inputService, _windowService, doorAnimatorController, doorAudioController);
 
                     break;
 
@@ -481,7 +481,7 @@ namespace CodeBase.Infrastructure.Services.Factories.GameFactory
                         UsableObjectTypeId.KeyFive => ItemType.KeyFive,
                         UsableObjectTypeId.KeySix => ItemType.KeySix,
                     };
-                    key.Construct(_inputService, _inventoryHandler, itemType);
+                    key.Construct(_inputService, _windowService, _inventoryHandler, itemType);
 
                     break;
 

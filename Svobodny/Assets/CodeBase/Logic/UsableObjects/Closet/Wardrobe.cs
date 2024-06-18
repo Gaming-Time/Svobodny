@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.Character.Interaction;
 using UnityEngine;
 
@@ -20,11 +21,13 @@ namespace CodeBase.Logic.UsableObjects.Closet
         public Transform EnemyPivot => enemyPivot;
 
         protected override IInputService InputService { get; set; }
+        protected override IWindowService WindowService { get; set; }
 
-        public void Construct(IInputService inputService, IEnemyDetectionService detectionService,
+        public void Construct(IInputService inputService, IEnemyDetectionService detectionService, IWindowService windowService,
             WardrobeAnimatorController animatorController, CharacterWardrobeInteraction wardrobeInteraction)
         {
             InputService = inputService;
+            WindowService = windowService;
             _detectionService = detectionService;
             _animatorController = animatorController;
             _characterWardrobeInteraction = wardrobeInteraction;
@@ -42,8 +45,9 @@ namespace CodeBase.Logic.UsableObjects.Closet
                 GetOut();
         }
 
-        public override void Use()
+        protected override void Use()
         {
+            base.Use();
             if(_isPullingOut)
                 return;
             _isActive = true;

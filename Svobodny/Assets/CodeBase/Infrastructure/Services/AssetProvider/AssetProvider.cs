@@ -30,7 +30,6 @@ namespace CodeBase.Infrastructure.Services.AssetProvider
 
         private static GameObject LoadPrefab(string path) =>
             Resources.Load<GameObject>(path);
-
         private static T LoadComponentOfPrefab<T>(string path) where T : Object =>
             Resources.Load<T>(path);
     }

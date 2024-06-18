@@ -1,4 +1,5 @@
 using CodeBase.Infrastructure.Services.Input;
+using CodeBase.Infrastructure.Services.WindowService;
 using UnityEngine;
 
 namespace CodeBase.Logic.UsableObjects
@@ -8,6 +9,7 @@ namespace CodeBase.Logic.UsableObjects
     public abstract class UsableObject : MonoBehaviour
     {
         protected abstract IInputService InputService {  get; set; }
+        protected abstract IWindowService WindowService { get; set; }
         private bool _isRequested;
 
 
@@ -21,6 +23,7 @@ namespace CodeBase.Logic.UsableObjects
             if (other.gameObject.layer != LayerMask.NameToLayer("Character Trigger"))
                 return;
 
+            WindowService.OpenOrCreateWindow(WindowID.InteractionButton);
             _isRequested = true;
         }
 
@@ -29,10 +32,14 @@ namespace CodeBase.Logic.UsableObjects
             if (other.gameObject.layer != LayerMask.NameToLayer("Character Trigger"))
                 return;
 
+            WindowService.CloseWindow(WindowID.InteractionButton);
             _isRequested = false;
         }
 
-        public abstract void Use();
+        protected virtual void Use()
+        {
+            WindowService.CloseWindow(WindowID.InteractionButton);   
+        }
 
         protected virtual void OnUpdate()
         {

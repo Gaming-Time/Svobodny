@@ -62,6 +62,7 @@ namespace CodeBase.Infrastructure.Services.WindowService
         KnifeDialog,
         FinalDialog,
         PauseWindow,
+        InteractionButton,
         Count
     }
 }

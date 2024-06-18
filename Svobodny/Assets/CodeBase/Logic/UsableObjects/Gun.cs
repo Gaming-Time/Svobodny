@@ -7,24 +7,25 @@ namespace CodeBase.Logic.UsableObjects
     public class Gun : UsableObject
     {
         protected override IInputService InputService { get; set; }
+        protected override IWindowService WindowService { get; set; }
 
         private InventoryHandler _inventoryHandler;
-        private IWindowService _windowService;
         private GunType _gunType;
 
         public void Construct(IInputService inputService, IWindowService windowService,
             InventoryHandler inventoryHandler, GunType gunType)
         {
             InputService = inputService;
-            _windowService = windowService;
+            WindowService = windowService;
             _inventoryHandler = inventoryHandler;
             _gunType = gunType;
         }
 
-        public override void Use()
+        protected override void Use()
         {
+            base.Use();
             if (_gunType == GunType.Knife)
-                _windowService.OpenOrCreateWindow(WindowID.KnifeDialog);
+                WindowService.OpenOrCreateWindow(WindowID.KnifeDialog);
 
             _inventoryHandler.AddGun(_gunType);
             Destroy(gameObject);

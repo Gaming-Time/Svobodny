@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Services.ButtonMediator;
 using CodeBase.Infrastructure.Services.WindowService;
 using CodeBase.Modules.UI.ButtonHandler;
 using CodeBase.Windows;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Services.Factories.UIFactory
@@ -77,6 +78,8 @@ namespace CodeBase.Infrastructure.Services.Factories.UIFactory
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.Dialogs.FinalDialog, _canvas);
                 case WindowID.PauseWindow:
                     return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.PauseWindow, _canvas);
+                case WindowID.InteractionButton:
+                    return _assetProvider.Instantiate<WindowBase>(AssetPath.UIPath.ButtonInteraction, _canvas);
                 case WindowID.Count:
                 default:
                     throw new ArgumentOutOfRangeException(nameof(windowID), windowID, null);
