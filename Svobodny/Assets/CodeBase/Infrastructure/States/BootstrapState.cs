@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.AssetProvider;
 using CodeBase.Infrastructure.Services.ButtonMediator;
+using CodeBase.Infrastructure.Services.Cursor;
 using CodeBase.Infrastructure.Services.EnemyDetection;
 using CodeBase.Infrastructure.Services.Factories.EnemyFactory;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
@@ -50,6 +51,7 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IInputService>(new DesktopInputService());
             _services.RegisterSingle<IEnemyDetectionService>(new EnemyDetectionService());
             _services.RegisterSingle(GetLoadedStaticData());
+            _services.RegisterSingle<ICursorService>(new CursorService(_services.Single<IStaticDataService>()));
             _services.RegisterSingle<INpcFactory>(new NpcFactory(_services.Single<IAssets>()));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.Single<IAssets>()));
             _services.RegisterSingle<IUsableObjectFactory>(new UsableObjectFactory(_services.Single<IAssets>()));

@@ -26,6 +26,7 @@ namespace CodeBase.Infrastructure.Helpers
             public const string Gun = "Static Data/Guns";
             public const string Sound = "Static Data/Sounds";
             public const string Essential = "Static Data/Essentials";
+            public const string Cursor = "Static Data/Cursors";
         }
 
         public static class ObjectsPath

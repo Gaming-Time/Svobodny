@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using CodeBase.Data.StaticData.Cursor;
 using CodeBase.Infrastructure.Helpers;
+using CodeBase.Infrastructure.Services.Cursor;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Progress;
 using CodeBase.Infrastructure.Services.WindowService;
@@ -15,22 +17,25 @@ namespace CodeBase.Infrastructure.States
         private readonly LoadingCurtain _curtain;
         private readonly ICoroutineRunner _coroutineRunner;
         private readonly IProgressService _progressService;
+        private readonly ICursorService _cursorService;
 
         private bool _isCurtainFadeOut;
 
         public GameLoopState(IGameFactory gameFactory, IWindowService windowService, ICoroutineRunner coroutineRunner,
-            LoadingCurtain curtain, IProgressService progressService)
+            LoadingCurtain curtain, IProgressService progressService, ICursorService cursorService)
         {
             _gameFactory = gameFactory;
             _windowService = windowService;
             _coroutineRunner = coroutineRunner;
             _curtain = curtain;
             _progressService = progressService;
+            _cursorService = cursorService;
         }
 
         public void Enter()
         {
             _gameFactory.PlayGameMusic();
+            _cursorService.ChangeCursor(CursorType.Game);
             Time.timeScale = 1;
             _curtain.Hide();
             _coroutineRunner.StartCoroutine(WaitForCurtainToFadeOut());
@@ -38,6 +43,7 @@ namespace CodeBase.Infrastructure.States
 
         public void Exit()
         {
+            _cursorService.ChangeCursor(CursorType.Menu);
             _gameFactory.Cleanup();
             _windowService.Cleanup();
         }

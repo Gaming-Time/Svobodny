@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Cursor;
 using CodeBase.Data.StaticData.Essentials;
 using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
@@ -24,5 +25,6 @@ namespace CodeBase.Infrastructure.Services.StaticData
         GunStaticData ForGun(GunType gunType);
         SoundStaticData ForSound(SoundType soundType);
         EssentialStaticData ForEssential(EssentialType essentialType);
+        CursorData ForCursor(CursorType cursorType);
     }
 }

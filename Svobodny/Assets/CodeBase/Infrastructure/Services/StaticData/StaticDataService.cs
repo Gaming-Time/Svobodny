@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Data.StaticData.Character;
+using CodeBase.Data.StaticData.Cursor;
 using CodeBase.Data.StaticData.Essentials;
 using CodeBase.Data.StaticData.Guns;
 using CodeBase.Data.StaticData.Items;
@@ -24,6 +25,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
         private Dictionary<GunType, GunStaticData> _guns;
         private Dictionary<EssentialType, EssentialStaticData> _essentials;
         private Dictionary<SoundType, SoundStaticData> _sounds;
+        private Dictionary<CursorType, CursorData> _cursors;
         private CharacterStaticData _character;
 
 
@@ -43,6 +45,8 @@ namespace CodeBase.Infrastructure.Services.StaticData
                 .ToDictionary(soundData => soundData.SoundType, soundData => soundData);
             _essentials = Resources.LoadAll<EssentialStaticData>(AssetPath.StaticDataPath.Essential)
                 .ToDictionary(essentialData => essentialData.EssentialType, essentialData => essentialData);
+            _cursors = Resources.LoadAll<CursorData>(AssetPath.StaticDataPath.Cursor)
+                .ToDictionary(key => key.CursorType, value => value);
             _character = Resources.Load<CharacterStaticData>(AssetPath.StaticDataPath.Character);
         }
 
@@ -66,5 +70,7 @@ namespace CodeBase.Infrastructure.Services.StaticData
 
         public EssentialStaticData ForEssential(EssentialType essentialType) =>
             _essentials.GetValueOrDefault(essentialType);
+
+        public CursorData ForCursor(CursorType cursorType) => _cursors.GetValueOrDefault(cursorType);
     }
 }

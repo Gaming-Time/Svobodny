@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.Services.Cursor;
 using CodeBase.Infrastructure.Services.Factories.GameFactory;
 using CodeBase.Infrastructure.Services.Factories.UIFactory;
 using CodeBase.Infrastructure.Services.Progress;
@@ -21,7 +22,8 @@ namespace CodeBase.Infrastructure
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(MainMenuState)] = new MainMenuState(curtain, sceneLoader, this),
+                [typeof(MainMenuState)] =
+                    new MainMenuState(curtain, sceneLoader, this),
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IProgressService>(),
                     services.Single<ISaveLoadService>()),
@@ -31,7 +33,8 @@ namespace CodeBase.Infrastructure
                     services.Single<IUIFactory>()),
                 [typeof(GameLoopState)] =
                     new GameLoopState(services.Single<IGameFactory>(), services.Single<IWindowService>(),
-                        coroutineRunner, curtain, services.Single<IProgressService>()),
+                        coroutineRunner, curtain, services.Single<IProgressService>(),
+                        services.Single<ICursorService>()),
             };
         }
 
