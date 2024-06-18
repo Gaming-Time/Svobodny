@@ -23,7 +23,7 @@ namespace CodeBase.Logic.UsableObjects
             if (other.gameObject.layer != LayerMask.NameToLayer("Character Trigger"))
                 return;
 
-            WindowService.OpenOrCreateWindow(WindowID.InteractionButton);
+            ShowInteractionButton();
             _isRequested = true;
         }
 
@@ -45,6 +45,11 @@ namespace CodeBase.Logic.UsableObjects
         {
             if (_isRequested && InputService.IsUseButtonDown())
                 Use();
+        }
+
+        protected virtual void ShowInteractionButton()
+        {
+            WindowService.OpenOrCreateWindow(WindowID.InteractionButton);
         }
     }
 }

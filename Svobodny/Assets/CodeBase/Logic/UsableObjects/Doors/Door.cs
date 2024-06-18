@@ -26,6 +26,7 @@ namespace CodeBase.Logic.UsableObjects.Doors
 
         protected override void Use()
         {
+            base.Use();
             if (_isOpen)
             {
                 _animatorController.PlayCloseAnimation();
@@ -38,6 +39,10 @@ namespace CodeBase.Logic.UsableObjects.Doors
             }
 
             _isOpen = !_isOpen;
+        }
+
+        protected override void ShowInteractionButton()
+        {
         }
     }
 }
