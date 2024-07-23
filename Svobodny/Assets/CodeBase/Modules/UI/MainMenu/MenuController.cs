@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Infrastructure;
@@ -25,7 +24,7 @@ namespace CodeBase.Modules.UI.MainMenu
         private int _currentResolutionIndex;
 
         private Resolution _chosenResolution;
-        private bool _isFullScreen;
+        private bool _isWindowed;
 
         private GameStateMachine _gameStateMachine;
         private string _levelToLoad;
@@ -42,9 +41,9 @@ namespace CodeBase.Modules.UI.MainMenu
             resolutionDropDown.ClearOptions();
             _currentRefreshRate = Screen.currentResolution.refreshRateRatio;
             _chosenResolution = Screen.currentResolution;
-            _isFullScreen = Screen.fullScreen;
+            _isWindowed = !Screen.fullScreen;
 
-            fullScreenToggle.isOn = _isFullScreen;
+            fullScreenToggle.isOn = _isWindowed;
             _resolutions = Screen.resolutions
                 .Where(resolution => resolution.refreshRateRatio.value == _currentRefreshRate.value)
                 .ToList();
@@ -68,10 +67,10 @@ namespace CodeBase.Modules.UI.MainMenu
             _chosenResolution = _resolutions[resolutionIndex];
         }
 
-        public void ChangeFullScreen(bool isFullScreen) => _isFullScreen = isFullScreen;
+        public void ChangeFullScreen(bool isWindowed) => _isWindowed = isWindowed;
 
         public void ApplyResolution() =>
-            Screen.SetResolution(_chosenResolution.width, _chosenResolution.height, _isFullScreen);
+            Screen.SetResolution(_chosenResolution.width, _chosenResolution.height, !_isWindowed);
 
         public void NewGameDialogYes()
         {
